@@ -1,0 +1,4 @@
+# Preserve upstream physics; each step advances exactly this many native substeps.
+env_id: myoHandPoseFixed-v0
+seed: 0
+substeps: 1
