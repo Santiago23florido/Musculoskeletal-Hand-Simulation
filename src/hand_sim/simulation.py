@@ -10,6 +10,7 @@ import numpy as np
 import yaml
 
 from hand_sim.identifiers import ModelIdentifiers
+from hand_sim.sensors import PhysicalSensors
 
 DEFAULT_ENV = "myoHandPoseFixed-v0"
 
@@ -34,6 +35,7 @@ class HandSimulation:
             if not isinstance(self.model, mujoco.MjModel) or not isinstance(self.data, mujoco.MjData):
                 raise RuntimeError("Installed MyoSuite does not expose native CPU MjModel/MjData")
             self.identifiers = ModelIdentifiers(self.model, tuple(host.tip_sids))
+            self.sensors = PhysicalSensors(self.model, self.data, self.identifiers)
             self.provenance = {
                 "env_id": env_id,
                 "backend": "cpu",
@@ -107,6 +109,14 @@ class HandSimulation:
     def get_model_inventory(self) -> dict:
         self._ensure_open()
         return {**self.identifiers.inventory(), "provenance": dict(self.provenance)}
+
+    def get_joint_state(self, name: str) -> dict:
+        self._ensure_open()
+        return self.sensors.joint(name)
+
+    def get_sensor_data(self, name: str) -> np.ndarray:
+        self._ensure_open()
+        return self.sensors.native_sensor(name)
 
     def close(self) -> None:
         if not self._closed:
