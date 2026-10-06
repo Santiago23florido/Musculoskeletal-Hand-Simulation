@@ -37,6 +37,45 @@ class PhysicalSensors:
         dim = int(self.model.sensor_dim[i])
         return self.data.sensordata[start:start + dim].copy()
 
+    def muscle(self, name: str) -> dict:
+        i = self.ids.resolve("actuator", name)
+        if i not in self.ids.muscle_ids:
+            raise ValueError(f"Actuator {name!r} does not use the MuJoCo muscle force law")
+        start = int(self.model.actuator_actadr[i])
+        count = int(self.model.actuator_actnum[i])
+        return {
+            "name": name, "id": i, "source": "MjData",
+            "excitation": float(self.data.ctrl[i]),
+            "activation": self.data.act[start:start + count].copy()
+            if start >= 0 and count else None,
+            "activation_indices": list(range(start, start + count)) if start >= 0 else [],
+            "actuator_force": float(self.data.actuator_force[i]),
+            "actuator_length": float(self.data.actuator_length[i]),
+            "actuator_velocity": float(self.data.actuator_velocity[i]),
+        }
+
+    def tendon(self, name: str) -> dict:
+        i = self.ids.resolve("tendon", name)
+        # Only a tendon transmission gives a direct scalar actuator contribution.
+        attached = np.flatnonzero(
+            (self.model.actuator_trntype == mujoco.mjtTrn.mjTRN_TENDON)
+            & (self.model.actuator_trnid[:, 0] == i)
+        )
+        contributions = [
+            {"actuator_id": int(a), "actuator_name": self.ids.name("actuator", int(a)),
+             "signed_force": float(self.model.actuator_gear[a, 0] * self.data.actuator_force[a])}
+            for a in attached
+        ]
+        return {
+            "name": name, "id": i, "source": "MjData",
+            "length": float(self.data.ten_length[i]),
+            "velocity": float(self.data.ten_velocity[i]),
+            "actuator_force_contributions": contributions,
+            "force_contribution_source": "derived: actuator_force * scalar transmission gear",
+            "total_tendon_force": None,
+            "unavailable_reason": "MjData exposes no total per-tendon force channel",
+        }
+
     def capabilities(self) -> dict:
         return {
             "native_sensor_count": int(self.model.nsensor),

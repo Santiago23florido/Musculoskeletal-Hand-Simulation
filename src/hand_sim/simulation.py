@@ -118,6 +118,14 @@ class HandSimulation:
         self._ensure_open()
         return self.sensors.native_sensor(name)
 
+    def get_muscle_state(self, name: str) -> dict:
+        self._ensure_open()
+        return self.sensors.muscle(name)
+
+    def get_tendon_state(self, name: str) -> dict:
+        self._ensure_open()
+        return self.sensors.tendon(name)
+
     def close(self) -> None:
         if not self._closed:
             self._env.close()
