@@ -126,6 +126,22 @@ class HandSimulation:
         self._ensure_open()
         return self.sensors.tendon(name)
 
+    def get_site_position(self, name: str) -> np.ndarray:
+        self._ensure_open()
+        return self.sensors.site_position(name)
+
+    def get_site_velocity(self, name: str) -> np.ndarray:
+        self._ensure_open()
+        return self.sensors.site_velocity(name)
+
+    def get_body_state(self, name: str) -> dict:
+        self._ensure_open()
+        return self.sensors.body(name)
+
+    def get_contacts(self) -> list[dict]:
+        self._ensure_open()
+        return self.sensors.contacts()
+
     def close(self) -> None:
         if not self._closed:
             self._env.close()

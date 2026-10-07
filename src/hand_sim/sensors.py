@@ -88,3 +88,55 @@ class PhysicalSensors:
             "unavailable": ["synthetic_emg", "motor_unit_activity",
                             "separate_muscle_fiber_force", "total_tendon_force_sensor"],
         }
+
+    def site_position(self, name: str) -> np.ndarray:
+        return self.data.site_xpos[self.ids.resolve("site", name)].copy()
+
+    def site_velocity(self, name: str) -> np.ndarray:
+        """World-frame translational velocity (m/s), derived from the native Jacobian."""
+        i = self.ids.resolve("site", name)
+        jacobian = np.empty((3, self.model.nv))
+        mujoco.mj_jacSite(self.model, self.data, jacobian, None, i)
+        return jacobian @ self.data.qvel
+
+    def fingertips(self) -> dict:
+        return {
+            self.ids.name("site", i): {
+                "id": i, "position_world": self.data.site_xpos[i].copy(),
+                "velocity_world": self.site_velocity(self.ids.name("site", i)),
+            }
+            for i in self.ids.fingertip_ids
+        }
+
+    def body(self, name: str) -> dict:
+        i = self.ids.resolve("body", name)
+        return {
+            "id": i, "name": name, "source": "MjData",
+            "position_world": self.data.xpos[i].copy(),
+            "quaternion_world_wxyz": self.data.xquat[i].copy(),
+            "rotation_matrix_world": self.data.xmat[i].reshape(3, 3).copy(),
+        }
+
+    def contacts(self) -> list[dict]:
+        """Native collision records; wrench is unavailable for non-constraint contacts."""
+        records = []
+        for i in range(self.data.ncon):
+            contact = self.data.contact[i]
+            active = contact.efc_address >= 0
+            wrench = np.empty(6) if active else None
+            if active:
+                mujoco.mj_contactForce(self.model, self.data, i, wrench)
+            records.append({
+                "id": i,
+                "geom_ids": [int(contact.geom1), int(contact.geom2)],
+                "geom_names": [mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_GEOM, int(g))
+                               if g >= 0 else None for g in (contact.geom1, contact.geom2)],
+                "position_world": contact.pos.copy(),
+                "distance": float(contact.dist),
+                "dimension": int(contact.dim),
+                "frame_world_to_contact": contact.frame.reshape(3, 3).copy(),
+                "constraint_active": active,
+                "wrench_contact_frame_force_then_torque": wrench,
+                "wrench_source": "mj_contactForce" if active else "unavailable: no constraint",
+            })
+        return records
