@@ -11,6 +11,7 @@ import yaml
 
 from hand_sim.identifiers import ModelIdentifiers
 from hand_sim.sensors import PhysicalSensors
+from hand_sim.state import snapshot
 
 DEFAULT_ENV = "myoHandPoseFixed-v0"
 
@@ -63,6 +64,8 @@ class HandSimulation:
         self._ensure_open()
         if seed is not None:
             self.seed = seed
+        if hasattr(self, "provenance"):
+            self.provenance["seed"] = self.seed
         self._env.reset(seed=self.seed)
         mujoco.mj_forward(self.model, self.data)
         return self.get_state()
@@ -101,10 +104,7 @@ class HandSimulation:
 
     def get_state(self) -> dict:
         self._ensure_open()
-        return {"time": float(self.data.time), "qpos": self.data.qpos.copy(),
-                "qvel": self.data.qvel.copy(), "activation": self.data.act.copy(),
-                "excitation": self.data.ctrl.copy(),
-                "actuator_force": self.data.actuator_force.copy()}
+        return snapshot(self.data)
 
     def get_model_inventory(self) -> dict:
         self._ensure_open()
