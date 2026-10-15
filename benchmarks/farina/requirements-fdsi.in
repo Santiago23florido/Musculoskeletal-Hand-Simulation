@@ -1,0 +1,10 @@
+# Additional imports required by the pinned v1.0.0 reference package.
+# Keep the tutorial's numerical stack and the MyoHand environment unchanged.
+-r requirements.in
+loguru
+pandas<3
+scikit-learn
+seaborn
+optuna
+plotly
+tqdm
