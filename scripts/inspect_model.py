@@ -10,8 +10,20 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/simulation.yaml")
     parser.add_argument("--output", help="Export the complete inventory to this JSON path")
-    parser.add_argument("--list", choices=("all", "bodies", "joints", "actuators", "muscles",
-                                         "tendons", "sites", "sensors", "fingertips"))
+    parser.add_argument(
+        "--list",
+        choices=(
+            "all",
+            "bodies",
+            "joints",
+            "actuators",
+            "muscles",
+            "tendons",
+            "sites",
+            "sensors",
+            "fingertips",
+        ),
+    )
     for kind in ("joint", "muscle", "tendon", "site", "body", "sensor"):
         parser.add_argument(f"--{kind}", help=f"Query an existing {kind} by its exact native name")
     args = parser.parse_args()
@@ -26,9 +38,12 @@ def main() -> None:
         if args.list:
             result["inventory"] = inventory if args.list == "all" else inventory[args.list]
         queries = {
-            "joint": sim.get_joint_state, "muscle": sim.get_muscle_state,
-            "tendon": sim.get_tendon_state, "site": sim.get_site_position,
-            "body": sim.get_body_state, "sensor": sim.get_sensor_data,
+            "joint": sim.get_joint_state,
+            "muscle": sim.get_muscle_state,
+            "tendon": sim.get_tendon_state,
+            "site": sim.get_site_position,
+            "body": sim.get_body_state,
+            "sensor": sim.get_sensor_data,
         }
         for kind, query in queries.items():
             name = getattr(args, kind)

@@ -62,14 +62,31 @@ class ModelIdentifiers:
         m = self.model
         result = {
             "schema_version": 1,
-            "dimensions": {key: int(getattr(m, key)) for key in (
-                "nq", "nv", "nu", "na", "nbody", "njnt", "ntendon", "nsite", "nsensor",
-                "nsensordata",
-            )},
+            "dimensions": {
+                key: int(getattr(m, key))
+                for key in (
+                    "nq",
+                    "nv",
+                    "nu",
+                    "na",
+                    "nbody",
+                    "njnt",
+                    "ntendon",
+                    "nsite",
+                    "nsensor",
+                    "nsensordata",
+                )
+            },
             "timestep_seconds": float(m.opt.timestep),
         }
-        plural = {"body": "bodies", "joint": "joints", "actuator": "actuators",
-                  "tendon": "tendons", "site": "sites", "sensor": "sensors"}
+        plural = {
+            "body": "bodies",
+            "joint": "joints",
+            "actuator": "actuators",
+            "tendon": "tendons",
+            "site": "sites",
+            "sensor": "sensors",
+        }
         for kind, (_, count) in OBJECTS.items():
             entries = []
             for i in range(getattr(m, count)):
@@ -100,7 +117,9 @@ class ModelIdentifiers:
                         control_range=m.actuator_ctrlrange[i].tolist(),
                     )
                 elif kind == "site":
-                    entry.update(body_id=int(m.site_bodyid[i]), is_fingertip=i in self.fingertip_ids)
+                    entry.update(
+                        body_id=int(m.site_bodyid[i]), is_fingertip=i in self.fingertip_ids
+                    )
                 elif kind == "sensor":
                     entry.update(
                         type=mujoco.mjtSensor(int(m.sensor_type[i])).name,
@@ -121,6 +140,7 @@ class ModelIdentifiers:
         inventory = self.inventory()
         if metadata is not None:
             inventory["provenance"] = metadata
-        destination.write_text(json.dumps(inventory, indent=2, allow_nan=False) + "\n",
-                               encoding="utf-8")
+        destination.write_text(
+            json.dumps(inventory, indent=2, allow_nan=False) + "\n", encoding="utf-8"
+        )
         return destination

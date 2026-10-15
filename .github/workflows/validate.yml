@@ -1,0 +1,31 @@
+name: Validate physical simulation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  physics:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.21'
+      - name: Install Linux OpenGL runtime
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libgl1 libglfw3
+      - run: uv sync --locked --python 3.12
+      - run: uv run --locked ruff check src scripts tests
+      - run: uv run --locked ruff format --check src scripts tests
+      - run: uv run --locked pytest -q
+      - run: uv run --locked python scripts/run_simulation.py --steps 200 --output outputs/smoke.npz
+      - run: uv run --locked python scripts/inspect_model.py --output outputs/model_inventory.json

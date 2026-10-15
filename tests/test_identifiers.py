@@ -6,9 +6,17 @@ import pytest
 from hand_sim.identifiers import ModelIdentifiers
 
 
-@pytest.mark.parametrize("kind,plural", [("body", "bodies"), ("joint", "joints"),
-                                      ("actuator", "actuators"), ("tendon", "tendons"),
-                                      ("site", "sites"), ("sensor", "sensors")])
+@pytest.mark.parametrize(
+    "kind,plural",
+    [
+        ("body", "bodies"),
+        ("joint", "joints"),
+        ("actuator", "actuators"),
+        ("tendon", "tendons"),
+        ("site", "sites"),
+        ("sensor", "sensors"),
+    ],
+)
 def test_all_named_identifiers_roundtrip(sim, kind, plural):
     inventory = sim.get_model_inventory()
     for entry in inventory[plural]:
@@ -22,9 +30,11 @@ def test_all_named_identifiers_roundtrip(sim, kind, plural):
 def test_hand_joint_indices_cover_generalized_coordinates(sim):
     inventory = sim.get_model_inventory()
     assert [q for joint in inventory["joints"] for q in joint["qpos_indices"]] == list(
-        range(sim.model.nq))
+        range(sim.model.nq)
+    )
     assert [v for joint in inventory["joints"] for v in joint["qvel_indices"]] == list(
-        range(sim.model.nv))
+        range(sim.model.nv)
+    )
     for joint in inventory["joints"]:
         assert joint["dofs"] == len(joint["qvel_indices"])
         assert joint["type"] == "mjJNT_HINGE"
@@ -32,12 +42,12 @@ def test_hand_joint_indices_cover_generalized_coordinates(sim):
 
 def test_free_ball_and_hinge_use_different_coordinate_widths():
     # A separate metadata fixture: it is never substituted for the official hand.
-    model = mujoco.MjModel.from_xml_string('''<mujoco><worldbody>
+    model = mujoco.MjModel.from_xml_string("""<mujoco><worldbody>
       <body><freejoint name="free"/><geom type="sphere" size=".1"/></body>
       <body pos="1 0 0"><joint name="ball" type="ball"/>
         <geom type="sphere" size=".1"/>
         <body pos="0 0 1"><joint name="hinge"/><geom type="sphere" size=".1"/></body>
-      </body></worldbody></mujoco>''')
+      </body></worldbody></mujoco>""")
     ids = ModelIdentifiers(model)
     entries = ids.inventory()["joints"]
     assert entries[0]["qpos_indices"] == list(range(7))
@@ -53,7 +63,12 @@ def test_export_inventory_and_upstream_fingertips(sim, tmp_path):
     inventory = json.loads(path.read_text(encoding="utf-8"))
     assert inventory == sim.get_model_inventory()
     assert {site["name"] for site in inventory["fingertips"]} == {
-        "THtip_r", "IFtip_r", "MFtip_r", "RFtip_r", "LFtip_r"}
+        "THtip_r",
+        "IFtip_r",
+        "MFtip_r",
+        "RFtip_r",
+        "LFtip_r",
+    }
     assert len(inventory["muscles"]) == sim.model.nu
     assert len(inventory["tendons"]) == sim.model.ntendon
     assert len(inventory["sites"]) == sim.model.nsite

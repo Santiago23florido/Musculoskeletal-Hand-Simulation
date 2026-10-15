@@ -13,11 +13,26 @@ def test_model_matches_official_cpu_environment(sim):
         upstream = env.unwrapped.model
         assert isinstance(sim.model, mujoco.MjModel)
         assert sim.model.nu == len(sim.identifiers.muscle_ids) == 39
-        for field in ("body_mass", "body_inertia", "body_pos", "body_quat", "jnt_type",
-                      "jnt_range", "jnt_stiffness", "dof_damping", "tendon_stiffness",
-                      "tendon_damping", "actuator_gainprm", "actuator_biasprm",
-                      "actuator_dynprm", "actuator_ctrlrange", "geom_friction",
-                      "geom_contype", "geom_conaffinity", "eq_data"):
+        for field in (
+            "body_mass",
+            "body_inertia",
+            "body_pos",
+            "body_quat",
+            "jnt_type",
+            "jnt_range",
+            "jnt_stiffness",
+            "dof_damping",
+            "tendon_stiffness",
+            "tendon_damping",
+            "actuator_gainprm",
+            "actuator_biasprm",
+            "actuator_dynprm",
+            "actuator_ctrlrange",
+            "geom_friction",
+            "geom_contype",
+            "geom_conaffinity",
+            "eq_data",
+        ):
             np.testing.assert_array_equal(getattr(sim.model, field), getattr(upstream, field))
         assert sim.model.opt.timestep == upstream.opt.timestep
         assert sim.provenance["biomechanical_modifications"] == []
@@ -31,8 +46,12 @@ def test_reset_and_advance_at_least_200_steps(sim, excitation):
     for _ in range(200):
         state = sim.step(np.full(sim.model.nu, excitation))
     assert state["time"] == pytest.approx(200 * sim.dt)
-    for key, size in (("qpos", sim.model.nq), ("qvel", sim.model.nv),
-                      ("activation", sim.model.na), ("actuator_force", sim.model.nu)):
+    for key, size in (
+        ("qpos", sim.model.nq),
+        ("qvel", sim.model.nv),
+        ("activation", sim.model.na),
+        ("actuator_force", sim.model.nu),
+    ):
         assert state[key].shape == (size,)
         assert np.all(np.isfinite(state[key]))
     if excitation > 0:
@@ -111,8 +130,9 @@ def test_load_yaml_configuration(tmp_path):
         assert sim.dt == pytest.approx(3 * sim.model.opt.timestep)
 
 
-@pytest.mark.parametrize("contents", ["[]", "", "unknown_setting: 1", "substeps: 0",
-                                    "env_id: invented_model"])
+@pytest.mark.parametrize(
+    "contents", ["[]", "", "unknown_setting: 1", "substeps: 0", "env_id: invented_model"]
+)
 def test_reject_invalid_configuration(tmp_path, contents):
     config = tmp_path / "invalid.yaml"
     config.write_text(contents, encoding="utf-8")

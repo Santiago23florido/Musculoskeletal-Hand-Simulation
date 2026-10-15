@@ -16,8 +16,9 @@ if TYPE_CHECKING:
 
 def hand_camera(sim: HandSimulation) -> mujoco.MjvCamera:
     """Frame the moving hand from native joint anchors and upstream fingertip sites."""
-    points = np.concatenate((sim.data.xanchor,
-                             sim.data.site_xpos[list(sim.identifiers.fingertip_ids)]))
+    points = np.concatenate(
+        (sim.data.xanchor, sim.data.site_xpos[list(sim.identifiers.fingertip_ids)])
+    )
     low, high = points.min(axis=0), points.max(axis=0)
     camera = mujoco.MjvCamera()
     mujoco.mjv_defaultCamera(camera)
@@ -28,8 +29,9 @@ def hand_camera(sim: HandSimulation) -> mujoco.MjvCamera:
     return camera
 
 
-def launch_viewer(sim: HandSimulation, *, duration: float | None = None,
-                  excitation=None, realtime: bool = True) -> int:
+def launch_viewer(
+    sim: HandSimulation, *, duration: float | None = None, excitation=None, realtime: bool = True
+) -> int:
     """Display native geometry and tendons while advancing the same CPU simulation.
 
     A finite duration is useful for an explicit graphics smoke test. The viewer
@@ -38,7 +40,9 @@ def launch_viewer(sim: HandSimulation, *, duration: float | None = None,
     sim._ensure_open()
     if duration is not None and (not np.isfinite(duration) or duration <= 0):
         raise ValueError("duration must be finite and positive")
-    if sys.platform.startswith("linux") and not (os.getenv("DISPLAY") or os.getenv("WAYLAND_DISPLAY")):
+    if sys.platform.startswith("linux") and not (
+        os.getenv("DISPLAY") or os.getenv("WAYLAND_DISPLAY")
+    ):
         raise RuntimeError("No graphical display. Use headless simulation or enable WSLg/X11.")
     import mujoco.viewer
 

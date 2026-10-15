@@ -22,7 +22,9 @@ def test_muscle_activation_address_and_actuator_measurements(sim):
     for item in sim.get_model_inventory()["muscles"]:
         i = item["id"]
         state = sim.get_muscle_state(item["name"])
-        np.testing.assert_array_equal(state["activation"], sim.data.act[state["activation_indices"]])
+        np.testing.assert_array_equal(
+            state["activation"], sim.data.act[state["activation_indices"]]
+        )
         assert state["excitation"] == sim.data.ctrl[i]
         for field in ("actuator_force", "actuator_length", "actuator_velocity"):
             assert state[field] == getattr(sim.data, field)[i]
@@ -41,13 +43,15 @@ def test_tendon_lengths_velocities_and_qualified_force_contributions(sim):
         for contribution in state["actuator_force_contributions"]:
             a = contribution["actuator_id"]
             assert contribution["signed_force"] == pytest.approx(
-                sim.data.actuator_force[a] * sim.model.actuator_gear[a, 0])
+                sim.data.actuator_force[a] * sim.model.actuator_gear[a, 0]
+            )
 
 
 def test_all_anatomical_sites_and_body_orientations_are_queryable(sim):
     for site in sim.get_model_inventory()["sites"]:
-        np.testing.assert_array_equal(sim.get_site_position(site["name"]),
-                                      sim.data.site_xpos[site["id"]])
+        np.testing.assert_array_equal(
+            sim.get_site_position(site["name"]), sim.data.site_xpos[site["id"]]
+        )
     for item in sim.get_model_inventory()["bodies"]:
         body = sim.get_body_state(item["name"])
         np.testing.assert_array_equal(body["position_world"], sim.data.xpos[item["id"]])
@@ -77,11 +81,11 @@ def test_original_hand_has_no_native_sensors(sim):
 
 def test_registered_sensor_slicing_on_separate_metadata_fixture():
     # Test actual MuJoCo sensor dimensions without adding sensors to the hand.
-    model = mujoco.MjModel.from_xml_string('''<mujoco><worldbody>
+    model = mujoco.MjModel.from_xml_string("""<mujoco><worldbody>
       <body><joint name="hinge"/><geom type="sphere" size=".1"/>
         <site name="point" pos="0 0 .1"/></body></worldbody>
       <sensor><jointpos name="angle" joint="hinge"/>
-        <framepos name="position" objtype="site" objname="point"/></sensor></mujoco>''')
+        <framepos name="position" objtype="site" objname="point"/></sensor></mujoco>""")
     data = mujoco.MjData(model)
     data.qpos[:] = 0.2
     mujoco.mj_forward(model, data)
@@ -93,10 +97,10 @@ def test_registered_sensor_slicing_on_separate_metadata_fixture():
 
 
 def test_contact_wrench_on_separate_collision_fixture():
-    model = mujoco.MjModel.from_xml_string('''<mujoco><worldbody>
+    model = mujoco.MjModel.from_xml_string("""<mujoco><worldbody>
       <geom name="floor" type="plane" size="1 1 .1"/>
       <body pos="0 0 .04"><freejoint/>
-        <geom name="sphere" type="sphere" size=".05"/></body></worldbody></mujoco>''')
+        <geom name="sphere" type="sphere" size=".05"/></body></worldbody></mujoco>""")
     data = mujoco.MjData(model)
     mujoco.mj_forward(model, data)
     sensors = PhysicalSensors(model, data, ModelIdentifiers(model))
@@ -112,7 +116,13 @@ def test_contact_wrench_on_separate_collision_fixture():
 
 
 def test_unknown_anatomical_names_raise(sim):
-    for query in (sim.get_joint_state, sim.get_muscle_state, sim.get_tendon_state,
-                  sim.get_site_position, sim.get_site_velocity, sim.get_body_state):
+    for query in (
+        sim.get_joint_state,
+        sim.get_muscle_state,
+        sim.get_tendon_state,
+        sim.get_site_position,
+        sim.get_site_velocity,
+        sim.get_body_state,
+    ):
         with pytest.raises(KeyError):
             query("not_a_native_name")

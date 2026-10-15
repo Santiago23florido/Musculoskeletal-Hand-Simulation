@@ -13,8 +13,10 @@ def test_camera_frames_the_native_hand(sim):
 
 
 @pytest.mark.graphics
-@pytest.mark.skipif(os.environ.get("HAND_SIM_TEST_GRAPHICS") != "1",
-                    reason="Set HAND_SIM_TEST_GRAPHICS=1 on a graphical desktop")
+@pytest.mark.skipif(
+    os.environ.get("HAND_SIM_TEST_GRAPHICS") != "1",
+    reason="Set HAND_SIM_TEST_GRAPHICS=1 on a graphical desktop",
+)
 def test_standard_mujoco_viewer_launches_and_steps(sim):
     assert launch_viewer(sim, duration=0.5) > 0
     assert sim.data.time > 0

@@ -33,7 +33,9 @@ class HandSimulation:
             host = self._env.unwrapped
             self.model = host.model
             self.data = host.data
-            if not isinstance(self.model, mujoco.MjModel) or not isinstance(self.data, mujoco.MjData):
+            if not isinstance(self.model, mujoco.MjModel) or not isinstance(
+                self.data, mujoco.MjData
+            ):
                 raise RuntimeError("Installed MyoSuite does not expose native CPU MjModel/MjData")
             self.identifiers = ModelIdentifiers(self.model, tuple(host.tip_sids))
             self.sensors = PhysicalSensors(self.model, self.data, self.identifiers)
@@ -84,7 +86,9 @@ class HandSimulation:
         if excitation is not None:
             control = np.asarray(excitation, dtype=float)
             if control.shape != (self.model.nu,) or not np.all(np.isfinite(control)):
-                raise ValueError(f"excitation must be a finite vector with shape ({self.model.nu},)")
+                raise ValueError(
+                    f"excitation must be a finite vector with shape ({self.model.nu},)"
+                )
             limits = self.model.actuator_ctrlrange
             limited = self.model.actuator_ctrllimited.astype(bool)
             if np.any(limited & ((control < limits[:, 0]) | (control > limits[:, 1]))):
