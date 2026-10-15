@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from importlib.metadata import version
 from pathlib import Path
 
@@ -112,7 +113,7 @@ class HandSimulation:
 
     def get_model_inventory(self) -> dict:
         self._ensure_open()
-        return {**self.identifiers.inventory(), "provenance": dict(self.provenance)}
+        return {**self.identifiers.inventory(), "provenance": deepcopy(self.provenance)}
 
     def get_joint_state(self, name: str) -> dict:
         self._ensure_open()

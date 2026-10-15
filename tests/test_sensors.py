@@ -126,3 +126,26 @@ def test_unknown_anatomical_names_raise(sim):
     ):
         with pytest.raises(KeyError):
             query("not_a_native_name")
+
+
+def test_muscle_activation_address_is_independent_of_actuator_id():
+    model = mujoco.MjModel.from_xml_string("""<mujoco><worldbody>
+      <body><joint name="hinge"/><geom type="sphere" size=".1"/></body></worldbody>
+      <tendon><fixed name="path"><joint joint="hinge" coef="1"/></fixed></tendon>
+      <actuator><motor name="stateless" joint="hinge"/>
+        <muscle name="muscle" tendon="path" gear="2" lengthrange=".1 1"/>
+      </actuator></mujoco>""")
+    data = mujoco.MjData(model)
+    data.qpos[:] = 0.2
+    data.act[:] = 0.3
+    mujoco.mj_forward(model, data)
+    sensors = PhysicalSensors(model, data, ModelIdentifiers(model))
+    muscle = sensors.muscle("muscle")
+    assert muscle["id"] == 1
+    assert muscle["activation_indices"] == [0]
+    np.testing.assert_array_equal(muscle["activation"], [0.3])
+    assert sensors.tendon("path")["actuator_force_contributions"][0]["signed_force"] == (
+        2 * data.actuator_force[1]
+    )
+    with pytest.raises(ValueError, match="muscle force law"):
+        sensors.muscle("stateless")

@@ -81,3 +81,9 @@ def test_invalid_ids_are_rejected(sim):
             sim.identifiers.joint_slices(value)
     with pytest.raises(ValueError):
         ModelIdentifiers(sim.model, (-1,))
+
+
+def test_inventory_provenance_is_independent_of_simulation(sim):
+    inventory = sim.get_model_inventory()
+    inventory["provenance"]["versions"]["mujoco"] = "changed"
+    assert sim.provenance["versions"]["mujoco"] != "changed"
