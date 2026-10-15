@@ -25,6 +25,9 @@ Python 3.12 is downloaded by uv if needed. No system Python changes, NVIDIA GPU,
 CUDA toolkit or separate MuJoCo download are required. Keep the environment
 variable set in each PowerShell session so Windows uses `.venv-windows` and WSL
 can use its separate `.venv`. The scripts below run from the repository root.
+After installing uv, `powershell -ExecutionPolicy Bypass -File scripts/setup_windows.ps1 -Validate`
+also creates and verifies the native environment; the policy change applies only
+to that PowerShell process. The script locates uv on `PATH` or in `.local/bin`.
 
 ```powershell
 uv run --locked python scripts/run_simulation.py --steps 200 --output outputs/smoke.npz
