@@ -104,6 +104,8 @@ uv run --locked python scripts/inspect_model.py --list sensors
 The inventory includes IDs, joint types, independent `qpos`/`qvel` indices,
 activation-state addresses, actuator transmission IDs, limits and sensor dimensions.
 No assumption equates a joint ID with a generalized coordinate index.
+The complete checked-in [name list](docs/anatomical_names.md) and
+[JSON inventory](docs/model_inventory.json) were generated from this pinned model.
 
 Joint coordinates, commands, activation states, actuator forces, actuator/tendon
 lengths and velocities, and body/site poses are read from native model/data fields.

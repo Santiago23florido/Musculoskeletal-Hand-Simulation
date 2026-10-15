@@ -144,3 +144,33 @@ class ModelIdentifiers:
             json.dumps(inventory, indent=2, allow_nan=False) + "\n", encoding="utf-8"
         )
         return destination
+
+    def export_names(self, path: str | Path) -> Path:
+        """Write a readable list of every native anatomical name and ID."""
+        inventory = self.inventory()
+        lines = [
+            "# Loaded MyoHand anatomical names",
+            "",
+            "Generated from the installed official model using `scripts/inspect_model.py`.",
+            "Detailed indices, limits and provenance: [model_inventory.json](model_inventory.json).",
+            "Regenerate both files with:",
+            "",
+            "```powershell",
+            "uv run --locked python scripts/inspect_model.py "
+            "--output docs/model_inventory.json --names-output docs/anatomical_names.md",
+            "```",
+            "",
+        ]
+        for group in ("bodies", "joints", "muscles", "tendons", "sites", "fingertips", "sensors"):
+            entries = inventory[group]
+            lines.extend([f"## {group.capitalize()} ({len(entries)})", ""])
+            if entries:
+                lines.extend(["| Native ID | Native name |", "| --- | --- |"])
+                lines.extend(f"| {e['id']} | `{e['name']}` |" for e in entries)
+            else:
+                lines.append("No registered channels in this upstream environment.")
+            lines.append("")
+        destination = Path(path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text("\n".join(lines), encoding="utf-8")
+        return destination

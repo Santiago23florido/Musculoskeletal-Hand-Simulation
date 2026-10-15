@@ -1,0 +1,5294 @@
+{
+  "schema_version": 1,
+  "dimensions": {
+    "nq": 23,
+    "nv": 23,
+    "nu": 39,
+    "na": 39,
+    "nbody": 38,
+    "njnt": 23,
+    "ntendon": 39,
+    "nsite": 496,
+    "nsensor": 0,
+    "nsensordata": 0
+  },
+  "timestep_seconds": 0.002,
+  "bodies": [
+    {
+      "id": 0,
+      "name": "world",
+      "parent_id": 0
+    },
+    {
+      "id": 1,
+      "name": "myoarm_r_root",
+      "parent_id": 0
+    },
+    {
+      "id": 2,
+      "name": "clavicle_r",
+      "parent_id": 1
+    },
+    {
+      "id": 3,
+      "name": "clavphant_r",
+      "parent_id": 2
+    },
+    {
+      "id": 4,
+      "name": "scapula_r",
+      "parent_id": 3
+    },
+    {
+      "id": 5,
+      "name": "scapphant_r",
+      "parent_id": 4
+    },
+    {
+      "id": 6,
+      "name": "humphant_r",
+      "parent_id": 5
+    },
+    {
+      "id": 7,
+      "name": "humphant1_r",
+      "parent_id": 6
+    },
+    {
+      "id": 8,
+      "name": "humerus_r",
+      "parent_id": 7
+    },
+    {
+      "id": 9,
+      "name": "ulna_r",
+      "parent_id": 8
+    },
+    {
+      "id": 10,
+      "name": "radius_r",
+      "parent_id": 9
+    },
+    {
+      "id": 11,
+      "name": "lunate_r",
+      "parent_id": 10
+    },
+    {
+      "id": 12,
+      "name": "scaphoid_r",
+      "parent_id": 11
+    },
+    {
+      "id": 13,
+      "name": "pisiform_r",
+      "parent_id": 11
+    },
+    {
+      "id": 14,
+      "name": "triquetrum_r",
+      "parent_id": 11
+    },
+    {
+      "id": 15,
+      "name": "capitate_r",
+      "parent_id": 11
+    },
+    {
+      "id": 16,
+      "name": "trapezium_r",
+      "parent_id": 15
+    },
+    {
+      "id": 17,
+      "name": "firstmc_r",
+      "parent_id": 16
+    },
+    {
+      "id": 18,
+      "name": "proximal_thumb_r",
+      "parent_id": 17
+    },
+    {
+      "id": 19,
+      "name": "distal_thumb_r",
+      "parent_id": 18
+    },
+    {
+      "id": 20,
+      "name": "trapezoid_r",
+      "parent_id": 15
+    },
+    {
+      "id": 21,
+      "name": "hamate_r",
+      "parent_id": 15
+    },
+    {
+      "id": 22,
+      "name": "secondmc_r",
+      "parent_id": 15
+    },
+    {
+      "id": 23,
+      "name": "2proxph_r",
+      "parent_id": 22
+    },
+    {
+      "id": 24,
+      "name": "midph2_r",
+      "parent_id": 23
+    },
+    {
+      "id": 25,
+      "name": "distph2_r",
+      "parent_id": 24
+    },
+    {
+      "id": 26,
+      "name": "thirdmc_r",
+      "parent_id": 15
+    },
+    {
+      "id": 27,
+      "name": "3proxph_r",
+      "parent_id": 26
+    },
+    {
+      "id": 28,
+      "name": "midph3_r",
+      "parent_id": 27
+    },
+    {
+      "id": 29,
+      "name": "distph3_r",
+      "parent_id": 28
+    },
+    {
+      "id": 30,
+      "name": "fourthmc_r",
+      "parent_id": 15
+    },
+    {
+      "id": 31,
+      "name": "4proxph_r",
+      "parent_id": 30
+    },
+    {
+      "id": 32,
+      "name": "midph4_r",
+      "parent_id": 31
+    },
+    {
+      "id": 33,
+      "name": "distph4_r",
+      "parent_id": 32
+    },
+    {
+      "id": 34,
+      "name": "fifthmc_r",
+      "parent_id": 15
+    },
+    {
+      "id": 35,
+      "name": "5proxph_r",
+      "parent_id": 34
+    },
+    {
+      "id": 36,
+      "name": "midph5_r",
+      "parent_id": 35
+    },
+    {
+      "id": 37,
+      "name": "distph5_r",
+      "parent_id": 36
+    }
+  ],
+  "joints": [
+    {
+      "id": 0,
+      "name": "pro_sup_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 10,
+      "qpos_indices": [
+        0
+      ],
+      "qvel_indices": [
+        0
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -1.5708,
+        1.5708
+      ]
+    },
+    {
+      "id": 1,
+      "name": "deviation_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 11,
+      "qpos_indices": [
+        1
+      ],
+      "qvel_indices": [
+        1
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.174533,
+        0.436332
+      ]
+    },
+    {
+      "id": 2,
+      "name": "flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 11,
+      "qpos_indices": [
+        2
+      ],
+      "qvel_indices": [
+        2
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.785398,
+        0.785398
+      ]
+    },
+    {
+      "id": 3,
+      "name": "cmc_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 17,
+      "qpos_indices": [
+        3
+      ],
+      "qvel_indices": [
+        3
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.78,
+        0.7
+      ]
+    },
+    {
+      "id": 4,
+      "name": "cmc_abduction_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 17,
+      "qpos_indices": [
+        4
+      ],
+      "qvel_indices": [
+        4
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.5,
+        0.78
+      ]
+    },
+    {
+      "id": 5,
+      "name": "mp_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 18,
+      "qpos_indices": [
+        5
+      ],
+      "qvel_indices": [
+        5
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.785398,
+        0.698132
+      ]
+    },
+    {
+      "id": 6,
+      "name": "ip_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 19,
+      "qpos_indices": [
+        6
+      ],
+      "qvel_indices": [
+        6
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -1.309,
+        0.436332
+      ]
+    },
+    {
+      "id": 7,
+      "name": "mcp2_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 23,
+      "qpos_indices": [
+        7
+      ],
+      "qvel_indices": [
+        7
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 8,
+      "name": "mcp2_abduction_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 23,
+      "qpos_indices": [
+        8
+      ],
+      "qvel_indices": [
+        8
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.261799,
+        0.261799
+      ]
+    },
+    {
+      "id": 9,
+      "name": "pm2_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 24,
+      "qpos_indices": [
+        9
+      ],
+      "qvel_indices": [
+        9
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 10,
+      "name": "md2_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 25,
+      "qpos_indices": [
+        10
+      ],
+      "qvel_indices": [
+        10
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 11,
+      "name": "mcp3_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 27,
+      "qpos_indices": [
+        11
+      ],
+      "qvel_indices": [
+        11
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 12,
+      "name": "mcp3_abduction_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 27,
+      "qpos_indices": [
+        12
+      ],
+      "qvel_indices": [
+        12
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.261799,
+        0.261799
+      ]
+    },
+    {
+      "id": 13,
+      "name": "pm3_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 28,
+      "qpos_indices": [
+        13
+      ],
+      "qvel_indices": [
+        13
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 14,
+      "name": "md3_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 29,
+      "qpos_indices": [
+        14
+      ],
+      "qvel_indices": [
+        14
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 15,
+      "name": "mcp4_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 31,
+      "qpos_indices": [
+        15
+      ],
+      "qvel_indices": [
+        15
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 16,
+      "name": "mcp4_abduction_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 31,
+      "qpos_indices": [
+        16
+      ],
+      "qvel_indices": [
+        16
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.261799,
+        0.261799
+      ]
+    },
+    {
+      "id": 17,
+      "name": "pm4_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 32,
+      "qpos_indices": [
+        17
+      ],
+      "qvel_indices": [
+        17
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 18,
+      "name": "md4_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 33,
+      "qpos_indices": [
+        18
+      ],
+      "qvel_indices": [
+        18
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 19,
+      "name": "mcp5_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 35,
+      "qpos_indices": [
+        19
+      ],
+      "qvel_indices": [
+        19
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 20,
+      "name": "mcp5_abduction_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 35,
+      "qpos_indices": [
+        20
+      ],
+      "qvel_indices": [
+        20
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        -0.261799,
+        0.261799
+      ]
+    },
+    {
+      "id": 21,
+      "name": "pm5_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 36,
+      "qpos_indices": [
+        21
+      ],
+      "qvel_indices": [
+        21
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    },
+    {
+      "id": 22,
+      "name": "md5_flexion_r",
+      "type": "mjJNT_HINGE",
+      "body_id": 37,
+      "qpos_indices": [
+        22
+      ],
+      "qvel_indices": [
+        22
+      ],
+      "dofs": 1,
+      "limited": true,
+      "range": [
+        0.0,
+        1.5708
+      ]
+    }
+  ],
+  "actuators": [
+    {
+      "id": 0,
+      "name": "ECRL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        0,
+        -1
+      ],
+      "activation_address": 0,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 1,
+      "name": "ECRB_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        1,
+        -1
+      ],
+      "activation_address": 1,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ECU_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        2,
+        -1
+      ],
+      "activation_address": 2,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 3,
+      "name": "FCR_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        3,
+        -1
+      ],
+      "activation_address": 3,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 4,
+      "name": "FCU_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        4,
+        -1
+      ],
+      "activation_address": 4,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 5,
+      "name": "PL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        5,
+        -1
+      ],
+      "activation_address": 5,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 6,
+      "name": "PT_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        6,
+        -1
+      ],
+      "activation_address": 6,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 7,
+      "name": "PQ_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        7,
+        -1
+      ],
+      "activation_address": 7,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 8,
+      "name": "FDS5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        8,
+        -1
+      ],
+      "activation_address": 8,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 9,
+      "name": "FDS4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        9,
+        -1
+      ],
+      "activation_address": 9,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 10,
+      "name": "FDS3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        10,
+        -1
+      ],
+      "activation_address": 10,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 11,
+      "name": "FDS2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        11,
+        -1
+      ],
+      "activation_address": 11,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 12,
+      "name": "FDP5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        12,
+        -1
+      ],
+      "activation_address": 12,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 13,
+      "name": "FDP4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        13,
+        -1
+      ],
+      "activation_address": 13,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 14,
+      "name": "FDP3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        14,
+        -1
+      ],
+      "activation_address": 14,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 15,
+      "name": "FDP2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        15,
+        -1
+      ],
+      "activation_address": 15,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 16,
+      "name": "EDC5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        16,
+        -1
+      ],
+      "activation_address": 16,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 17,
+      "name": "EDC4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        17,
+        -1
+      ],
+      "activation_address": 17,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 18,
+      "name": "EDC3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        18,
+        -1
+      ],
+      "activation_address": 18,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 19,
+      "name": "EDC2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        19,
+        -1
+      ],
+      "activation_address": 19,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 20,
+      "name": "EDM_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        20,
+        -1
+      ],
+      "activation_address": 20,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 21,
+      "name": "EIP_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        21,
+        -1
+      ],
+      "activation_address": 21,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 22,
+      "name": "EPL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        22,
+        -1
+      ],
+      "activation_address": 22,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 23,
+      "name": "EPB_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        23,
+        -1
+      ],
+      "activation_address": 23,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 24,
+      "name": "FPL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        24,
+        -1
+      ],
+      "activation_address": 24,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 25,
+      "name": "APL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        25,
+        -1
+      ],
+      "activation_address": 25,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 26,
+      "name": "OP_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        26,
+        -1
+      ],
+      "activation_address": 26,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 27,
+      "name": "RI2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        27,
+        -1
+      ],
+      "activation_address": 27,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 28,
+      "name": "LU_RB2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        28,
+        -1
+      ],
+      "activation_address": 28,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 29,
+      "name": "UI_UB2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        29,
+        -1
+      ],
+      "activation_address": 29,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 30,
+      "name": "RI3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        30,
+        -1
+      ],
+      "activation_address": 30,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 31,
+      "name": "LU_RB3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        31,
+        -1
+      ],
+      "activation_address": 31,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 32,
+      "name": "UI_UB3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        32,
+        -1
+      ],
+      "activation_address": 32,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 33,
+      "name": "RI4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        33,
+        -1
+      ],
+      "activation_address": 33,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 34,
+      "name": "LU_RB4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        34,
+        -1
+      ],
+      "activation_address": 34,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 35,
+      "name": "UI_UB4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        35,
+        -1
+      ],
+      "activation_address": 35,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 36,
+      "name": "RI5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        36,
+        -1
+      ],
+      "activation_address": 36,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 37,
+      "name": "LU_RB5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        37,
+        -1
+      ],
+      "activation_address": 37,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 38,
+      "name": "UI_UB5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        38,
+        -1
+      ],
+      "activation_address": 38,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "tendons": [
+    {
+      "id": 0,
+      "name": "ECRL_tendon_r"
+    },
+    {
+      "id": 1,
+      "name": "ECRB_tendon_r"
+    },
+    {
+      "id": 2,
+      "name": "ECU_tendon_r"
+    },
+    {
+      "id": 3,
+      "name": "FCR_tendon_r"
+    },
+    {
+      "id": 4,
+      "name": "FCU_tendon_r"
+    },
+    {
+      "id": 5,
+      "name": "PL_tendon_r"
+    },
+    {
+      "id": 6,
+      "name": "PT_tendon_r"
+    },
+    {
+      "id": 7,
+      "name": "PQ_tendon_r"
+    },
+    {
+      "id": 8,
+      "name": "FDS5_tendon_r"
+    },
+    {
+      "id": 9,
+      "name": "FDS4_tendon_r"
+    },
+    {
+      "id": 10,
+      "name": "FDS3_tendon_r"
+    },
+    {
+      "id": 11,
+      "name": "FDS2_tendon_r"
+    },
+    {
+      "id": 12,
+      "name": "FDP5_tendon_r"
+    },
+    {
+      "id": 13,
+      "name": "FDP4_tendon_r"
+    },
+    {
+      "id": 14,
+      "name": "FDP3_tendon_r"
+    },
+    {
+      "id": 15,
+      "name": "FDP2_tendon_r"
+    },
+    {
+      "id": 16,
+      "name": "EDC5_tendon_r"
+    },
+    {
+      "id": 17,
+      "name": "EDC4_tendon_r"
+    },
+    {
+      "id": 18,
+      "name": "EDC3_tendon_r"
+    },
+    {
+      "id": 19,
+      "name": "EDC2_tendon_r"
+    },
+    {
+      "id": 20,
+      "name": "EDM_tendon_r"
+    },
+    {
+      "id": 21,
+      "name": "EIP_tendon_r"
+    },
+    {
+      "id": 22,
+      "name": "EPL_tendon_r"
+    },
+    {
+      "id": 23,
+      "name": "EPB_tendon_r"
+    },
+    {
+      "id": 24,
+      "name": "FPL_tendon_r"
+    },
+    {
+      "id": 25,
+      "name": "APL_tendon_r"
+    },
+    {
+      "id": 26,
+      "name": "OP_tendon_r"
+    },
+    {
+      "id": 27,
+      "name": "RI2_tendon_r"
+    },
+    {
+      "id": 28,
+      "name": "LU_RB2_tendon_r"
+    },
+    {
+      "id": 29,
+      "name": "UI_UB2_tendon_r"
+    },
+    {
+      "id": 30,
+      "name": "RI3_tendon_r"
+    },
+    {
+      "id": 31,
+      "name": "LU_RB3_tendon_r"
+    },
+    {
+      "id": 32,
+      "name": "UI_UB3_tendon_r"
+    },
+    {
+      "id": 33,
+      "name": "RI4_tendon_r"
+    },
+    {
+      "id": 34,
+      "name": "LU_RB4_tendon_r"
+    },
+    {
+      "id": 35,
+      "name": "UI_UB4_tendon_r"
+    },
+    {
+      "id": 36,
+      "name": "RI5_tendon_r"
+    },
+    {
+      "id": 37,
+      "name": "LU_RB5_tendon_r"
+    },
+    {
+      "id": 38,
+      "name": "UI_UB5_tendon_r"
+    }
+  ],
+  "sites": [
+    {
+      "id": 0,
+      "name": "THtip_r_target",
+      "body_id": 0,
+      "is_fingertip": false
+    },
+    {
+      "id": 1,
+      "name": "IFtip_r_target",
+      "body_id": 0,
+      "is_fingertip": false
+    },
+    {
+      "id": 2,
+      "name": "MFtip_r_target",
+      "body_id": 0,
+      "is_fingertip": false
+    },
+    {
+      "id": 3,
+      "name": "RFtip_r_target",
+      "body_id": 0,
+      "is_fingertip": false
+    },
+    {
+      "id": 4,
+      "name": "LFtip_r_target",
+      "body_id": 0,
+      "is_fingertip": false
+    },
+    {
+      "id": 5,
+      "name": "arm_root_attach_r",
+      "body_id": 1,
+      "is_fingertip": false
+    },
+    {
+      "id": 6,
+      "name": "DELT1_DELT1-P4_r",
+      "body_id": 2,
+      "is_fingertip": false
+    },
+    {
+      "id": 7,
+      "name": "PECM1_PECM1-P3_r",
+      "body_id": 2,
+      "is_fingertip": false
+    },
+    {
+      "id": 8,
+      "name": "PECM1_PECM1-P4_r",
+      "body_id": 2,
+      "is_fingertip": false
+    },
+    {
+      "id": 9,
+      "name": "Clavicle_marker_r",
+      "body_id": 2,
+      "is_fingertip": false
+    },
+    {
+      "id": 10,
+      "name": "Deltoid2_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 11,
+      "name": "Delt3_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 12,
+      "name": "INFSP_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 13,
+      "name": "TMIN_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 14,
+      "name": "TRIlongglen_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 15,
+      "name": "s_glenohum_s_glenohum-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 16,
+      "name": "m_glenohum_m_glenohum-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 17,
+      "name": "i_glenohum_i_glenohum-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 18,
+      "name": "coracohum_coracohum-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 19,
+      "name": "DELT1_DELT1-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 20,
+      "name": "DELT2_DELT2-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 21,
+      "name": "DELT2_DELT2-P4_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 22,
+      "name": "Deltoid2_ellipsoid_DELT2_2_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 23,
+      "name": "DELT3_DELT3-P1_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 24,
+      "name": "DELT3_DELT3-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 25,
+      "name": "Delt3_torus_DELT3_1_sidesite_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 26,
+      "name": "SUPSP_SUPSP-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 27,
+      "name": "SUPSP_SUPSP-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 28,
+      "name": "INFSP_INFSP-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 29,
+      "name": "INFSP_INFSP-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 30,
+      "name": "SUBSC_SUBSC-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 31,
+      "name": "SUBSC_SUBSC-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 32,
+      "name": "TMIN_TMIN-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 33,
+      "name": "TMIN_TMIN-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 34,
+      "name": "TMAJ_TMAJ-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 35,
+      "name": "TMAJ_TMAJ-P4_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 36,
+      "name": "LAT1_LAT1-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 37,
+      "name": "LAT2_LAT2-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 38,
+      "name": "LAT3_LAT3-P3_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 39,
+      "name": "CORB_CORB-P1_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 40,
+      "name": "CORB_CORB-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 41,
+      "name": "TRIlong_TRIlong-P1_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 42,
+      "name": "BIClong_BIClong-P1_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 43,
+      "name": "BIClong_BIClong-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 44,
+      "name": "BICshort_BICshort-P1_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 45,
+      "name": "BICshort_BICshort-P2_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 46,
+      "name": "Shoulder_marker_r",
+      "body_id": 4,
+      "is_fingertip": false
+    },
+    {
+      "id": 47,
+      "name": "Elbow_PT_ECRL_site_ECRL_side_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 48,
+      "name": "Elbow_PT_FCU_site_FCU_side_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 49,
+      "name": "ECRL-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 50,
+      "name": "ECRB-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 51,
+      "name": "ECU-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 52,
+      "name": "FCR-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 53,
+      "name": "FCU-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 54,
+      "name": "PL-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 55,
+      "name": "PT-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 56,
+      "name": "FDS5-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 57,
+      "name": "FDS4-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 58,
+      "name": "EDC5-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 59,
+      "name": "EDC4-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 60,
+      "name": "EDC3-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 61,
+      "name": "EDC2-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 62,
+      "name": "EDM-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 63,
+      "name": "DELT1hh_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 64,
+      "name": "delt3hum_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 65,
+      "name": "infsp_new_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 66,
+      "name": "TMINhum_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 67,
+      "name": "TMAJ_LAThum_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 68,
+      "name": "PEC12hum_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 69,
+      "name": "PEC1hh_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 70,
+      "name": "PEC3hum_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 71,
+      "name": "LAT_TMAJhh_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 72,
+      "name": "Elbow_BIC_BRD_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 73,
+      "name": "TRIlonghh_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 74,
+      "name": "ANC_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 75,
+      "name": "BIClong_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 76,
+      "name": "CORBhum_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 77,
+      "name": "Elbow_PT_ECRL_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 78,
+      "name": "s_glenohum_s_glenohum-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 79,
+      "name": "LIGhh_s_ellipsoid_s_glenohum_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 80,
+      "name": "m_glenohum_m_glenohum-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 81,
+      "name": "LIGhh_mi_ellipsoid_m_glenohum_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 82,
+      "name": "i_glenohum_i_glenohum-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 83,
+      "name": "LIGhh_mi_ellipsoid_i_glenohum_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 84,
+      "name": "coracohum_coracohum-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 85,
+      "name": "LIGhh_s_ellipsoid_coracohum_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 86,
+      "name": "DELT1_DELT1-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 87,
+      "name": "DELT1_DELT1-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 88,
+      "name": "DELT1hh_ellipsoid_DELT1_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 89,
+      "name": "DELT2_DELT2-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 90,
+      "name": "DELT2_DELT2-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 91,
+      "name": "delt2hum_cylinder_DELT2_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 92,
+      "name": "DELT3_DELT3-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 93,
+      "name": "delt3hum_ellipsoid_DELT3_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 94,
+      "name": "SUPSP_SUPSP-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 95,
+      "name": "SUPSP_ellipsoid_SUPSP_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 96,
+      "name": "INFSP_INFSP-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 97,
+      "name": "infsp_new_cylinder_INFSP_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 98,
+      "name": "SUBSC_SUBSC-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 99,
+      "name": "SUBSCAP_ellipsoid_SUBSC_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 100,
+      "name": "TMIN_TMIN-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 101,
+      "name": "INFSP_and_TMIN_hum_head_ellipsoid_TMIN_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 102,
+      "name": "TMAJ_TMAJ-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 103,
+      "name": "TMAJ_TMAJ-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 104,
+      "name": "LAT_TMAJ2hh_sphere_TMAJ_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 105,
+      "name": "TMAJ_LAThum_cylinder_TMAJ_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 106,
+      "name": "PECM1_PECM1-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 107,
+      "name": "PECM1_PECM1-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 108,
+      "name": "PEC1hh_ellipsoid_PECM1_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 109,
+      "name": "PECM2_PECM2-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 110,
+      "name": "PECM2_PECM2-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 111,
+      "name": "PEC12hum_cylinder_PECM2_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 112,
+      "name": "PECM3_PECM3-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 113,
+      "name": "PECM3_PECM3-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 114,
+      "name": "PEC23hh_sphere_PECM3_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 115,
+      "name": "LAT1_LAT1-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 116,
+      "name": "LAT1_LAT1-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 117,
+      "name": "LAT_TMAJ2hh_sphere_LAT1_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 118,
+      "name": "TMAJ_LAThum_cylinder_LAT1_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 119,
+      "name": "LAT2_LAT2-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 120,
+      "name": "LAT2_LAT2-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 121,
+      "name": "LAT_TMAJ2hh_sphere_LAT2_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 122,
+      "name": "TMAJ_LAThum_cylinder_LAT2_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 123,
+      "name": "LAT3_LAT3-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 124,
+      "name": "LAT3_LAT3-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 125,
+      "name": "LAT_TMAJ2hh_sphere_LAT3_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 126,
+      "name": "TMAJ_LAThum_cylinder_LAT3_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 127,
+      "name": "CORB_CORB-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 128,
+      "name": "CORBhum_cylinder_CORB_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 129,
+      "name": "TMAJ_LAT_PEC_CORBhh_sphere_CORB_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 130,
+      "name": "TRIlong_TRIlong-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 131,
+      "name": "TRIlong_TRIlong-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 132,
+      "name": "TRIlong_TRIlong-P4_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 133,
+      "name": "TRI_cylinder_TRIlong_4_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 134,
+      "name": "TRIlonghh_ellipsoid_TRIlong_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 135,
+      "name": "TRIlong_TRIlong-P1b_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 136,
+      "name": "TRIlat_TRIlat-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 137,
+      "name": "TRIlat_TRIlat-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 138,
+      "name": "TRIlat_TRIlat-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 139,
+      "name": "TRIlat_TRIlat-P4_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 140,
+      "name": "TRI_cylinder_TRIlat_4_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 141,
+      "name": "TRImed_TRImed-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 142,
+      "name": "TRImed_TRImed-P2_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 143,
+      "name": "TRImed_TRImed-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 144,
+      "name": "TRImed_TRImed-P4_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 145,
+      "name": "TRI_cylinder_TRImed_4_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 146,
+      "name": "ANC_ANC-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 147,
+      "name": "ANC_ellipsoid_ANC_1_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 148,
+      "name": "BIClong_BIClong-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 149,
+      "name": "BIClong_BIClong-P4_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 150,
+      "name": "BIClong_BIClong-P5_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 151,
+      "name": "BIClong_BIClong-P6_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 152,
+      "name": "BIClong_BIClong-P7_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 153,
+      "name": "BIClong_BIClong-P8_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 154,
+      "name": "Elbow_BIC_BRD_ellipsoid_BIClong_7_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 155,
+      "name": "BIClong_ellipsoid_BIClong_2_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 156,
+      "name": "BICshort_BICshort-P3_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 157,
+      "name": "BICshort_BICshort-P4_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 158,
+      "name": "BICshort_BICshort-P5_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 159,
+      "name": "Elbow_BIC_BRD_ellipsoid_BICshort_5_sidesite_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 160,
+      "name": "BRA_BRA-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 161,
+      "name": "BRD_BRD-P1_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 162,
+      "name": "TRI_site_BRA_side_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 163,
+      "name": "Bicep_marker_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 164,
+      "name": "Elbow_Lateral_marker_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 165,
+      "name": "Elbow_Medial_marker_r",
+      "body_id": 8,
+      "is_fingertip": false
+    },
+    {
+      "id": 166,
+      "name": "ECU-P2_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 167,
+      "name": "ECU-P3_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 168,
+      "name": "ECU-P4_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 169,
+      "name": "PT-P2_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 170,
+      "name": "PT-P3_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 171,
+      "name": "PQ-P2_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 172,
+      "name": "FDS3-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 173,
+      "name": "FDS2-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 174,
+      "name": "FDP5-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 175,
+      "name": "FDP4-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 176,
+      "name": "FDP3-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 177,
+      "name": "FDP2-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 178,
+      "name": "EDM-P2_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 179,
+      "name": "EDM-P3_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 180,
+      "name": "EIP-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 181,
+      "name": "EIP-P2_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 182,
+      "name": "EPL-P1_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 183,
+      "name": "PQ2_site_PQ_side_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 184,
+      "name": "TRIlong_TRIlong-P5_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 185,
+      "name": "TRIlat_TRIlat-P5_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 186,
+      "name": "TRImed_TRImed-P5_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 187,
+      "name": "ANC_ANC-P2_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 188,
+      "name": "SUP_SUP-P3_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 189,
+      "name": "BRA_BRA-P4_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 190,
+      "name": "Ulna_marker_r",
+      "body_id": 9,
+      "is_fingertip": false
+    },
+    {
+      "id": 191,
+      "name": "ECRL-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 192,
+      "name": "ECRL-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 193,
+      "name": "ECRB-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 194,
+      "name": "ECRB-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 195,
+      "name": "ECU-P5_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 196,
+      "name": "FCR-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 197,
+      "name": "FCU-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 198,
+      "name": "FCU-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 199,
+      "name": "PL-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 200,
+      "name": "PT-P5_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 201,
+      "name": "PT-P4_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 202,
+      "name": "PQ-P1_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 203,
+      "name": "FDS5-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 204,
+      "name": "FDS4-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 205,
+      "name": "FDS3-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 206,
+      "name": "FDS2-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 207,
+      "name": "FDP5-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 208,
+      "name": "FDP4-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 209,
+      "name": "FDP3-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 210,
+      "name": "FDP2-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 211,
+      "name": "EDC5-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 212,
+      "name": "EDC5-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 213,
+      "name": "EDC4-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 214,
+      "name": "EDC4-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 215,
+      "name": "EDC3-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 216,
+      "name": "EDC3-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 217,
+      "name": "EDC2-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 218,
+      "name": "EDC2-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 219,
+      "name": "EDM-P4_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 220,
+      "name": "EIP-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 221,
+      "name": "EPL-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 222,
+      "name": "EPL-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 223,
+      "name": "EPL-P4_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 224,
+      "name": "EPL-P5_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 225,
+      "name": "EPB-P1_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 226,
+      "name": "EPB-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 227,
+      "name": "EPB-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 228,
+      "name": "EPB-P4_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 229,
+      "name": "FPL-P1_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 230,
+      "name": "FPL-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 231,
+      "name": "FPL-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 232,
+      "name": "FPL-P4_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 233,
+      "name": "APL-P1_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 234,
+      "name": "APL-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 235,
+      "name": "APL-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 236,
+      "name": "APL-P4_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 237,
+      "name": "APL-P5_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 238,
+      "name": "ECU_torus_site_ECU_side_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 239,
+      "name": "SUP_sidesite_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 240,
+      "name": "ECU_sidesite_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 241,
+      "name": "SUP_SUP-P1_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 242,
+      "name": "SUP_SUP-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 243,
+      "name": "SUP_cylinder_SUP_2_sidesite_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 244,
+      "name": "BIClong_BIClong-P10_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 245,
+      "name": "BIClong_BIClong-P11_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 246,
+      "name": "BICshort_BICshort-P6_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 247,
+      "name": "BICshort_BICshort-P7_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 248,
+      "name": "BRD_BRD-P2_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 249,
+      "name": "BRD_BRD-P3_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 250,
+      "name": "Forearm_marker_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 251,
+      "name": "Radius_marker_r",
+      "body_id": 10,
+      "is_fingertip": false
+    },
+    {
+      "id": 252,
+      "name": "ExtensorEllipse_ellipsoid_site_EIP_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 253,
+      "name": "PL_ellipsoid_site_PL_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 254,
+      "name": "FDS_ellipsoid_site_FDS5_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 255,
+      "name": "FDS_ellipsoid_site_FDS4_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 256,
+      "name": "FDS_ellipsoid_site_FDS3_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 257,
+      "name": "FDS_ellipsoid_site_FDS2_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 258,
+      "name": "FDP_ellipsoid_site_FDP5_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 259,
+      "name": "FDP_ellipsoid_site_FDP4_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 260,
+      "name": "FDP_ellipsoid_site_FDP3_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 261,
+      "name": "FDP_ellipsoid_site_FDP2_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 262,
+      "name": "EDM_ellipsoid_site_EDM_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 263,
+      "name": "FPL_ellipsoid_site_FPL_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 264,
+      "name": "ECRL_torus_site_ECRL_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 265,
+      "name": "ECRB_torus_site_ECRB_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 266,
+      "name": "FCR_torus_site_FCR_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 267,
+      "name": "EDCL_torus_site_EDC5_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 268,
+      "name": "EDCR_torus_site_EDC4_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 269,
+      "name": "EDCM_torus_site_EDC3_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 270,
+      "name": "EDCI_torus_site_EDC2_side_r",
+      "body_id": 11,
+      "is_fingertip": false
+    },
+    {
+      "id": 271,
+      "name": "FCU-P4_r",
+      "body_id": 13,
+      "is_fingertip": false
+    },
+    {
+      "id": 272,
+      "name": "PL-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 273,
+      "name": "FDS5-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 274,
+      "name": "FDS4-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 275,
+      "name": "FDS3-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 276,
+      "name": "FDS2-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 277,
+      "name": "FDP5-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 278,
+      "name": "FDP4-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 279,
+      "name": "FDP3-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 280,
+      "name": "FDP2-P3_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 281,
+      "name": "EPL-P6_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 282,
+      "name": "EPB-P5_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 283,
+      "name": "FPL-P5_r",
+      "body_id": 15,
+      "is_fingertip": false
+    },
+    {
+      "id": 284,
+      "name": "EPL-P7_r",
+      "body_id": 16,
+      "is_fingertip": false
+    },
+    {
+      "id": 285,
+      "name": "OP-P1_r",
+      "body_id": 16,
+      "is_fingertip": false
+    },
+    {
+      "id": 286,
+      "name": "Trpzm_site_FPL_side_r",
+      "body_id": 16,
+      "is_fingertip": false
+    },
+    {
+      "id": 287,
+      "name": "Trpzm_site_OP_side_r",
+      "body_id": 16,
+      "is_fingertip": false
+    },
+    {
+      "id": 288,
+      "name": "S_grasp_r",
+      "body_id": 16,
+      "is_fingertip": false
+    },
+    {
+      "id": 289,
+      "name": "EPL-P8_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 290,
+      "name": "EPL-P9_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 291,
+      "name": "EPB-P6_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 292,
+      "name": "EPB-P7_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 293,
+      "name": "FPL-P7_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 294,
+      "name": "FPL-P8_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 295,
+      "name": "APL-P6_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 296,
+      "name": "APL-P7_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 297,
+      "name": "APL-P8_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 298,
+      "name": "OP-P2_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 299,
+      "name": "MPthumb_site_EPB_side_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 300,
+      "name": "MPthumb_site_FPL_side_r",
+      "body_id": 17,
+      "is_fingertip": false
+    },
+    {
+      "id": 301,
+      "name": "EPL-P10_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 302,
+      "name": "EPL-P11_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 303,
+      "name": "EPB-P8_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 304,
+      "name": "FPL-P9_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 305,
+      "name": "FPL-P10_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 306,
+      "name": "IPthumb_site_EPL_side_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 307,
+      "name": "IPthumb_site_FPL_side_r",
+      "body_id": 18,
+      "is_fingertip": false
+    },
+    {
+      "id": 308,
+      "name": "EPL-P12_r",
+      "body_id": 19,
+      "is_fingertip": false
+    },
+    {
+      "id": 309,
+      "name": "FPL-P11_r",
+      "body_id": 19,
+      "is_fingertip": false
+    },
+    {
+      "id": 310,
+      "name": "THtip_r",
+      "body_id": 19,
+      "is_fingertip": true
+    },
+    {
+      "id": 311,
+      "name": "APL_torus_site_APL_side_r",
+      "body_id": 21,
+      "is_fingertip": false
+    },
+    {
+      "id": 312,
+      "name": "ECRL-P4_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 313,
+      "name": "FCR-P3_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 314,
+      "name": "FDS2-P4_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 315,
+      "name": "FDS2-P5_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 316,
+      "name": "FDP2-P4_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 317,
+      "name": "FDP2-P5_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 318,
+      "name": "EDC2-P4_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 319,
+      "name": "EIP-P4_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 320,
+      "name": "EIP-P5_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 321,
+      "name": "RI2-P1_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 322,
+      "name": "RI2-P2_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 323,
+      "name": "LU_RB2-P1_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 324,
+      "name": "LU_RB2-P2_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 325,
+      "name": "UI_UB2-P1_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 326,
+      "name": "UI_UB2-P2_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 327,
+      "name": "2ndmcp_ellipsoid_site_FDS2_side_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 328,
+      "name": "2ndmcp_ellipsoid_site_FDP2_side_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 329,
+      "name": "2ndmcp_ellipsoid_site_EDC2_side_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 330,
+      "name": "2ndmcp_ellipsoid_site_EIP_side_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 331,
+      "name": "2ndmcp_ellipsoid_site_RI2_side_r",
+      "body_id": 22,
+      "is_fingertip": false
+    },
+    {
+      "id": 332,
+      "name": "FDS2-P6_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 333,
+      "name": "FDS2-P7_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 334,
+      "name": "FDP2-P6_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 335,
+      "name": "FDP2-P7_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 336,
+      "name": "EDC2-P5_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 337,
+      "name": "EDC2-P6_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 338,
+      "name": "EIP-P6_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 339,
+      "name": "EIP-P7_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 340,
+      "name": "RI2-P3_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 341,
+      "name": "LU_RB2-P3_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 342,
+      "name": "LU_RB2-P4_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 343,
+      "name": "UI_UB2-P3_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 344,
+      "name": "UI_UB2-P4_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 345,
+      "name": "Secondpm_site_EDC2_side_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 346,
+      "name": "Secondpm_site_EIP_side_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 347,
+      "name": "Secondpm_site_LU_RB2_side_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 348,
+      "name": "Secondpm_site_UI_UB2_side_r",
+      "body_id": 23,
+      "is_fingertip": false
+    },
+    {
+      "id": 349,
+      "name": "EIP-P8_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 350,
+      "name": "EIP-P9_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 351,
+      "name": "FDS2-P8_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 352,
+      "name": "FDP2-P8_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 353,
+      "name": "FDP2-P9_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 354,
+      "name": "EDC2-P7_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 355,
+      "name": "EDC2-P8_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 356,
+      "name": "LU_RB2-P5_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 357,
+      "name": "LU_RB2-P6_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 358,
+      "name": "UI_UB2-P5_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 359,
+      "name": "UI_UB2-P6_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 360,
+      "name": "Secondmd_site_EDC2_side_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 361,
+      "name": "Secondmd_site_EIP_side_r",
+      "body_id": 24,
+      "is_fingertip": false
+    },
+    {
+      "id": 362,
+      "name": "FDP2-P10_r",
+      "body_id": 25,
+      "is_fingertip": false
+    },
+    {
+      "id": 363,
+      "name": "EDC2-P9_r",
+      "body_id": 25,
+      "is_fingertip": false
+    },
+    {
+      "id": 364,
+      "name": "EIP-P10_r",
+      "body_id": 25,
+      "is_fingertip": false
+    },
+    {
+      "id": 365,
+      "name": "EIP-P11_r",
+      "body_id": 25,
+      "is_fingertip": false
+    },
+    {
+      "id": 366,
+      "name": "IFtip_r",
+      "body_id": 25,
+      "is_fingertip": true
+    },
+    {
+      "id": 367,
+      "name": "ECRB-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 368,
+      "name": "PL-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 369,
+      "name": "FDS4-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 370,
+      "name": "FDS3-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 371,
+      "name": "FDS3-P5_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 372,
+      "name": "FDP4-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 373,
+      "name": "FDP3-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 374,
+      "name": "FDP3-P5_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 375,
+      "name": "EDC3-P4_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 376,
+      "name": "RI3-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 377,
+      "name": "RI3-P2_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 378,
+      "name": "LU_RB3-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 379,
+      "name": "LU_RB3-P2_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 380,
+      "name": "UI_UB3-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 381,
+      "name": "UI_UB3-P2_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 382,
+      "name": "RI4-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 383,
+      "name": "LU_RB4-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 384,
+      "name": "UI_UB4-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 385,
+      "name": "RI5-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 386,
+      "name": "LU_RB5-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 387,
+      "name": "UI_UB5-P1_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 388,
+      "name": "3rdmcp_ellipsoid_site_FDS3_side_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 389,
+      "name": "3rdmcp_ellipsoid_site_FDP3_side_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 390,
+      "name": "3rdmcp_ellipsoid_site_EDC3_side_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 391,
+      "name": "3rdmcp_ellipsoid_site_LU_RB3_side_r",
+      "body_id": 26,
+      "is_fingertip": false
+    },
+    {
+      "id": 392,
+      "name": "FDS3-P6_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 393,
+      "name": "FDS3-P7_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 394,
+      "name": "FDP3-P6_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 395,
+      "name": "FDP3-P7_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 396,
+      "name": "EDC3-P5_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 397,
+      "name": "EDC3-P6_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 398,
+      "name": "RI3-P3_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 399,
+      "name": "LU_RB3-P3_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 400,
+      "name": "LU_RB3-P4_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 401,
+      "name": "UI_UB3-P3_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 402,
+      "name": "UI_UB3-P4_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 403,
+      "name": "Thirdpm_site_EDC3_side_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 404,
+      "name": "Thirdpm_site_LU_RB3_side_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 405,
+      "name": "Thirdpm_site_UI_UB3_side_r",
+      "body_id": 27,
+      "is_fingertip": false
+    },
+    {
+      "id": 406,
+      "name": "FDS3-P8_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 407,
+      "name": "FDP3-P8_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 408,
+      "name": "FDP3-P9_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 409,
+      "name": "EDC3-P7_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 410,
+      "name": "EDC3-P8_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 411,
+      "name": "LU_RB3-P5_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 412,
+      "name": "UI_UB3-P5_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 413,
+      "name": "Thirdmd_site_EDC3_side_r",
+      "body_id": 28,
+      "is_fingertip": false
+    },
+    {
+      "id": 414,
+      "name": "FDP3-P10_r",
+      "body_id": 29,
+      "is_fingertip": false
+    },
+    {
+      "id": 415,
+      "name": "EDC3-P9_r",
+      "body_id": 29,
+      "is_fingertip": false
+    },
+    {
+      "id": 416,
+      "name": "MFtip_r",
+      "body_id": 29,
+      "is_fingertip": true
+    },
+    {
+      "id": 417,
+      "name": "FDS5-P4_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 418,
+      "name": "FDS4-P5_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 419,
+      "name": "FDP5-P4_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 420,
+      "name": "FDP4-P5_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 421,
+      "name": "EDC4-P4_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 422,
+      "name": "RI4-P2_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 423,
+      "name": "LU_RB4-P2_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 424,
+      "name": "UI_UB4-P2_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 425,
+      "name": "4thmcp_ellipsoid_site_FDS4_side_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 426,
+      "name": "4thmcp_ellipsoid_site_FDP4_side_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 427,
+      "name": "4thmcp_ellipsoid_site_EDC4_side_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 428,
+      "name": "4thmcp_ellipsoid_site_UI_UB4_side_r",
+      "body_id": 30,
+      "is_fingertip": false
+    },
+    {
+      "id": 429,
+      "name": "FDS4-P6_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 430,
+      "name": "FDS4-P7_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 431,
+      "name": "FDP4-P6_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 432,
+      "name": "FDP4-P7_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 433,
+      "name": "EDC4-P5_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 434,
+      "name": "EDC4-P6_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 435,
+      "name": "RI4-P3_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 436,
+      "name": "LU_RB4-P3_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 437,
+      "name": "LU_RB4-P4_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 438,
+      "name": "UI_UB4-P3_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 439,
+      "name": "UI_UB4-P4_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 440,
+      "name": "Fourthpm_site_EDC4_side_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 441,
+      "name": "Fourthpm_site_UI_UB4_side_r",
+      "body_id": 31,
+      "is_fingertip": false
+    },
+    {
+      "id": 442,
+      "name": "FDS4-P8_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 443,
+      "name": "FDP4-P8_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 444,
+      "name": "FDP4-P9_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 445,
+      "name": "EDC4-P7_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 446,
+      "name": "EDC4-P8_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 447,
+      "name": "LU_RB4-P5_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 448,
+      "name": "UI_UB4-P5_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 449,
+      "name": "Fourthmd_site_EDC4_side_r",
+      "body_id": 32,
+      "is_fingertip": false
+    },
+    {
+      "id": 450,
+      "name": "FDP4-P10_r",
+      "body_id": 33,
+      "is_fingertip": false
+    },
+    {
+      "id": 451,
+      "name": "EDC4-P9_r",
+      "body_id": 33,
+      "is_fingertip": false
+    },
+    {
+      "id": 452,
+      "name": "RFtip_r",
+      "body_id": 33,
+      "is_fingertip": true
+    },
+    {
+      "id": 453,
+      "name": "ECU-P6_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 454,
+      "name": "FCU-P5_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 455,
+      "name": "FDS5-P5_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 456,
+      "name": "FDP5-P5_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 457,
+      "name": "EDC5-P4_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 458,
+      "name": "EDM-P5_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 459,
+      "name": "EDM-P6_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 460,
+      "name": "RI5-P2_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 461,
+      "name": "LU_RB5-P2_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 462,
+      "name": "UI_UB5-P2_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 463,
+      "name": "5thmcp_ellipsoid_site_FDS5_side_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 464,
+      "name": "5thmcp_ellipsoid_site_FDP5_side_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 465,
+      "name": "5thmcp_ellipsoid_site_EDC5_side_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 466,
+      "name": "5thmcp_ellipsoid_site_LU_RB5_side_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 467,
+      "name": "5thmcp_ellipsoid_site_UI_UB5_side_r",
+      "body_id": 34,
+      "is_fingertip": false
+    },
+    {
+      "id": 468,
+      "name": "EDM-P7_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 469,
+      "name": "FDS5-P6_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 470,
+      "name": "FDS5-P7_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 471,
+      "name": "FDP5-P6_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 472,
+      "name": "FDP5-P7_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 473,
+      "name": "EDC5-P5_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 474,
+      "name": "EDC5-P6_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 475,
+      "name": "RI5-P3_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 476,
+      "name": "LU_RB5-P3_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 477,
+      "name": "LU_RB5-P4_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 478,
+      "name": "UI_UB5-P3_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 479,
+      "name": "UI_UB5-P4_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 480,
+      "name": "Fifthpm_site_EDC5_side_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 481,
+      "name": "Fifthpm_site_LU_RB5_side_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 482,
+      "name": "Fifthpm_site_UI_UB5_side_r",
+      "body_id": 35,
+      "is_fingertip": false
+    },
+    {
+      "id": 483,
+      "name": "FDS5-P8_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 484,
+      "name": "FDP5-P8_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 485,
+      "name": "FDP5-P9_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 486,
+      "name": "EDC5-P7_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 487,
+      "name": "EDC5-P8_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 488,
+      "name": "LU_RB5-P5_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 489,
+      "name": "UI_UB5-P5_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 490,
+      "name": "Fifthmd_site_EDC5_side_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 491,
+      "name": "EDM-P8_r",
+      "body_id": 36,
+      "is_fingertip": false
+    },
+    {
+      "id": 492,
+      "name": "FDP5-P10_r",
+      "body_id": 37,
+      "is_fingertip": false
+    },
+    {
+      "id": 493,
+      "name": "EDC5-P9_r",
+      "body_id": 37,
+      "is_fingertip": false
+    },
+    {
+      "id": 494,
+      "name": "EDM-P9_r",
+      "body_id": 37,
+      "is_fingertip": false
+    },
+    {
+      "id": 495,
+      "name": "LFtip_r",
+      "body_id": 37,
+      "is_fingertip": true
+    }
+  ],
+  "sensors": [],
+  "muscles": [
+    {
+      "id": 0,
+      "name": "ECRL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        0,
+        -1
+      ],
+      "activation_address": 0,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 1,
+      "name": "ECRB_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        1,
+        -1
+      ],
+      "activation_address": 1,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ECU_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        2,
+        -1
+      ],
+      "activation_address": 2,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 3,
+      "name": "FCR_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        3,
+        -1
+      ],
+      "activation_address": 3,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 4,
+      "name": "FCU_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        4,
+        -1
+      ],
+      "activation_address": 4,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 5,
+      "name": "PL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        5,
+        -1
+      ],
+      "activation_address": 5,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 6,
+      "name": "PT_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        6,
+        -1
+      ],
+      "activation_address": 6,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 7,
+      "name": "PQ_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        7,
+        -1
+      ],
+      "activation_address": 7,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 8,
+      "name": "FDS5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        8,
+        -1
+      ],
+      "activation_address": 8,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 9,
+      "name": "FDS4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        9,
+        -1
+      ],
+      "activation_address": 9,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 10,
+      "name": "FDS3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        10,
+        -1
+      ],
+      "activation_address": 10,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 11,
+      "name": "FDS2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        11,
+        -1
+      ],
+      "activation_address": 11,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 12,
+      "name": "FDP5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        12,
+        -1
+      ],
+      "activation_address": 12,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 13,
+      "name": "FDP4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        13,
+        -1
+      ],
+      "activation_address": 13,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 14,
+      "name": "FDP3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        14,
+        -1
+      ],
+      "activation_address": 14,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 15,
+      "name": "FDP2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        15,
+        -1
+      ],
+      "activation_address": 15,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 16,
+      "name": "EDC5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        16,
+        -1
+      ],
+      "activation_address": 16,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 17,
+      "name": "EDC4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        17,
+        -1
+      ],
+      "activation_address": 17,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 18,
+      "name": "EDC3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        18,
+        -1
+      ],
+      "activation_address": 18,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 19,
+      "name": "EDC2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        19,
+        -1
+      ],
+      "activation_address": 19,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 20,
+      "name": "EDM_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        20,
+        -1
+      ],
+      "activation_address": 20,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 21,
+      "name": "EIP_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        21,
+        -1
+      ],
+      "activation_address": 21,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 22,
+      "name": "EPL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        22,
+        -1
+      ],
+      "activation_address": 22,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 23,
+      "name": "EPB_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        23,
+        -1
+      ],
+      "activation_address": 23,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 24,
+      "name": "FPL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        24,
+        -1
+      ],
+      "activation_address": 24,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 25,
+      "name": "APL_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        25,
+        -1
+      ],
+      "activation_address": 25,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 26,
+      "name": "OP_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        26,
+        -1
+      ],
+      "activation_address": 26,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 27,
+      "name": "RI2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        27,
+        -1
+      ],
+      "activation_address": 27,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 28,
+      "name": "LU_RB2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        28,
+        -1
+      ],
+      "activation_address": 28,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 29,
+      "name": "UI_UB2_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        29,
+        -1
+      ],
+      "activation_address": 29,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 30,
+      "name": "RI3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        30,
+        -1
+      ],
+      "activation_address": 30,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 31,
+      "name": "LU_RB3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        31,
+        -1
+      ],
+      "activation_address": 31,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 32,
+      "name": "UI_UB3_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        32,
+        -1
+      ],
+      "activation_address": 32,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 33,
+      "name": "RI4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        33,
+        -1
+      ],
+      "activation_address": 33,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 34,
+      "name": "LU_RB4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        34,
+        -1
+      ],
+      "activation_address": 34,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 35,
+      "name": "UI_UB4_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        35,
+        -1
+      ],
+      "activation_address": 35,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 36,
+      "name": "RI5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        36,
+        -1
+      ],
+      "activation_address": 36,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 37,
+      "name": "LU_RB5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        37,
+        -1
+      ],
+      "activation_address": 37,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 38,
+      "name": "UI_UB5_r",
+      "is_muscle": true,
+      "dynamics_type": "mjDYN_MUSCLE",
+      "gain_type": "mjGAIN_MUSCLE",
+      "transmission_type": "mjTRN_TENDON",
+      "transmission_ids": [
+        38,
+        -1
+      ],
+      "activation_address": 38,
+      "activation_dimension": 1,
+      "control_limited": true,
+      "control_range": [
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "fingertips": [
+    {
+      "id": 310,
+      "name": "THtip_r",
+      "body_id": 19,
+      "is_fingertip": true
+    },
+    {
+      "id": 366,
+      "name": "IFtip_r",
+      "body_id": 25,
+      "is_fingertip": true
+    },
+    {
+      "id": 416,
+      "name": "MFtip_r",
+      "body_id": 29,
+      "is_fingertip": true
+    },
+    {
+      "id": 452,
+      "name": "RFtip_r",
+      "body_id": 33,
+      "is_fingertip": true
+    },
+    {
+      "id": 495,
+      "name": "LFtip_r",
+      "body_id": 37,
+      "is_fingertip": true
+    }
+  ],
+  "provenance": {
+    "env_id": "myoHandPoseFixed-v0",
+    "backend": "cpu",
+    "versions": {
+      "myosuite": "3.0.0",
+      "myo-sim": "0.2.3",
+      "mujoco": "3.16.0",
+      "numpy": "2.5.4"
+    },
+    "model_source": "https://github.com/MyoHub/myo_sim",
+    "model_recipe": "hand_pose",
+    "biomechanical_modifications": [],
+    "seed": 0,
+    "substeps": 1
+  }
+}

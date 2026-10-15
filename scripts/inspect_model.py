@@ -10,6 +10,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/simulation.yaml")
     parser.add_argument("--output", help="Export the complete inventory to this JSON path")
+    parser.add_argument("--names-output", help="Export every anatomical name and ID as Markdown")
     parser.add_argument(
         "--list",
         choices=(
@@ -52,6 +53,9 @@ def main() -> None:
         if args.output:
             sim.identifiers.export(args.output, metadata=sim.provenance)
             result["exported_inventory"] = args.output
+        if args.names_output:
+            sim.identifiers.export_names(args.names_output)
+            result["exported_names"] = args.names_output
         print(json.dumps(result, indent=2, allow_nan=False, default=lambda value: value.tolist()))
 
 
