@@ -4,7 +4,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
-.pytest_tmp/
+.pytest_tmp*/
 .ruff_cache/
 build/
 dist/
@@ -14,3 +14,31 @@ outputs/*
 htmlcov/
 MUJOCO_LOG.TXT
 .DS_Store
+
+# Reference implementations and downloaded datasets used only for benchmarking.
+external/
+data/benchmarks/
+
+# Local research guides and internal working notes.
+*.[pP][dD][fF]
+lessons/
+
+# Agent instructions and local assistant configuration, at any depth.
+*[Aa][Gg][Ee][Nn][Tt]*.[mM][dD]
+[Cc][Ll][Aa][Uu][Dd][Ee]*.[mM][dD]
+[Cc][Oo][Dd][Ee][Xx]*.[mM][dD]
+[Gg][Ee][Mm][Ii][Nn][Ii]*.[mM][dD]
+[Cc][Oo][Pp][Ii][Ll][Oo][Tt]*.[mM][dD]
+.agents/
+.claude/
+.codex/
+.github/instructions/
+.github/prompts/
+.github/copilot-instructions.md
+
+# Local credentials and editor state.
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
