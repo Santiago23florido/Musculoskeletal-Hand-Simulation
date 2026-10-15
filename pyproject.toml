@@ -25,7 +25,7 @@ packages = ["src/hand_sim"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--basetemp=.pytest_cache/tmp"
+addopts = "--basetemp=.pytest_tmp"
 markers = ["graphics: requires an explicitly enabled graphical display"]
 
 [tool.ruff]

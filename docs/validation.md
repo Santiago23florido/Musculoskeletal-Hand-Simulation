@@ -77,3 +77,7 @@ Remove-Item Env:HAND_SIM_TEST_GRAPHICS
 The GitHub Actions workflow repeats headless checks on Windows and Ubuntu after
 pushes and pull requests. Its remotely reported status is separate from the local
 results recorded here.
+
+Test temporary files use the top-level ignored `.pytest_tmp` directory, which
+pytest creates on a clean checkout. It does not depend on a pre-existing cache
+directory or on writable system temporary directories.
