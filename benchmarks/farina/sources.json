@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-10-16",
+  "adapt_decomp": {
+    "repository": "https://github.com/imendezguerra/adapt_decomp",
+    "commit": "a8f53736e297962670276bc123c137050b7056b6",
+    "legacy_commit_for_tutorial": "8ffeb66ebd30bab9b5167a3fc485c2330a81da0f",
+    "version_note": "main contains a 2026 rewrite; use the legacy commit for the original tutorial",
+    "license": "MIT",
+    "paper_doi": "10.1088/1741-2552/ad5ebf",
+    "paper_pdf": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/875e0afe-7025-4350-aee2-6feee0672b71/content",
+    "tutorial_doi": "10.5281/zenodo.22880910",
+    "tutorial_archive_md5": "6cb1f995648de5615c566fc03f24df64",
+    "fdsi_data_doi": "10.5281/zenodo.22882346",
+    "fdsi_outputs_doi": "10.5281/zenodo.22882323",
+    "role": "external comparison baseline; never imported by hand_sim"
+  },
+  "harmonica": {
+    "paper": "https://arxiv.org/html/2406.19581v2",
+    "paper_version": "v2, 2026-05-09",
+    "repository_as_printed_in_paper": "https://github.com/AlexKClarke/harmonica_2026",
+    "repository_access": "HTTP 404 from GitHub API; git clone also fails",
+    "author_public_repositories_checked": "https://api.github.com/users/AlexKClarke/repos?per_page=100",
+    "status": "unavailable; no replacement implementation or reproduction claimed"
+  },
+  "fdsi_weeks_1_2": {
+    "checked_on": "2026-10-18",
+    "reference_commit": "a8f53736e297962670276bc123c137050b7056b6",
+    "reference_notebook": "notebooks/fdsi_benchmark/05_comparison_sv_loss_pareto_roa.ipynb",
+    "data": {
+      "doi": "10.5281/zenodo.22882346",
+      "filename": "adapt_decomp-fdsi_benchmark-data.zip",
+      "size_bytes": 10346978220,
+      "checksum": "md5:1b146ef935f2bc04a615aa92542e350a"
+    },
+    "outputs": {
+      "doi": "10.5281/zenodo.22882323",
+      "filename": "adapt_decomp-fdsi_benchmark-outputs.zip",
+      "size_bytes": 10749335726,
+      "checksum": "md5:75e86229423b8e432391125f7e311908"
+    },
+    "evaluation": "Recompute the four fixed-learning-rate comparators from cached spikes, including the calibration window; no adaptation or fitting rerun",
+    "report": "../../docs/benchmarks/fdsi_weeks_1_2.md"
+  }
+}
