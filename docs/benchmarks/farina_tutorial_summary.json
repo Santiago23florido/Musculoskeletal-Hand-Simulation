@@ -1,0 +1,124 @@
+{
+  "status": "tutorial_execution_only; full paper reproduction requires all original data",
+  "executed_at_utc": "2026-10-16T16:34:12.776759+00:00",
+  "reference_commit": "8ffeb66ebd30bab9b5167a3fc485c2330a81da0f",
+  "python": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.7.0+cpu",
+  "threads": 4,
+  "seed": 0,
+  "dependencies": {
+    "numpy": "1.26.4",
+    "scipy": "1.15.2",
+    "h5py": "3.16.0",
+    "torch": "2.7.0"
+  },
+  "data_doi": "10.5281/zenodo.22880910",
+  "fs_hz": 2048,
+  "samples": 389120,
+  "channels": 320,
+  "output_units": 18,
+  "calibration_samples": 61440,
+  "calibration_provenance": "provided MATLAB result, not recomputed",
+  "preprocess": false,
+  "dc_centering": "legacy Data uses the full-recording mean even with preprocess=False",
+  "spike_tolerance_ms": 2,
+  "alignment": "independent scores freeze unit identities and lags from MATLAB calibration",
+  "expected_notebook_whole_recording_roa_pct": {
+    "fixed": {
+      "mean": 44.31,
+      "std": 22.74,
+      "median": 39.37
+    },
+    "adapted": {
+      "mean": 90.25,
+      "std": 19.93,
+      "median": 98.58
+    }
+  },
+  "methods": {
+    "fixed": {
+      "config": {
+        "fs": 2048,
+        "device": "cpu",
+        "lowcut": 20,
+        "highcut": 500,
+        "powerline": true,
+        "powerline_freq": 50,
+        "ext_fact": 3,
+        "batch_ms": 100,
+        "adapt_wh": false,
+        "adapt_sv": false,
+        "adapt_sd": false,
+        "compute_loss": false,
+        "save_params": false,
+        "wh_learning_rate": 0.007,
+        "sv_learning_rate": 0.003,
+        "sv_epochs": 1,
+        "sv_tol": 0.0001,
+        "contrast_fun": "logcosh",
+        "cov_alpha": 0.1,
+        "spike_height_mult": 3,
+        "spike_prev_weight": 5,
+        "spike_dist_ms": 10,
+        "spike_dist": 20
+      },
+      "wall_seconds_including_initialization": 26.031833500019275,
+      "upstream_batch_time_ms_median": 4.896759986877441,
+      "upstream_batch_time_ms_p95": 9.501373767852783,
+      "notebook_roa_pct": {
+        "mean": 37.721033030796455,
+        "std": 18.13690159220279,
+        "median": 37.02995153207919
+      },
+      "difference_from_notebook_percentage_points": {
+        "mean": -6.588966969203547,
+        "std": -4.603098407797209,
+        "median": -2.340048467920809
+      },
+      "notebook_match_within_0_1_percentage_point": false
+    },
+    "adapted": {
+      "config": {
+        "fs": 2048,
+        "device": "cpu",
+        "lowcut": 20,
+        "highcut": 500,
+        "powerline": true,
+        "powerline_freq": 50,
+        "ext_fact": 3,
+        "batch_ms": 100,
+        "adapt_wh": true,
+        "adapt_sv": true,
+        "adapt_sd": true,
+        "compute_loss": false,
+        "save_params": false,
+        "wh_learning_rate": 0.007,
+        "sv_learning_rate": 0.003,
+        "sv_epochs": 1,
+        "sv_tol": 0.0001,
+        "contrast_fun": "logcosh",
+        "cov_alpha": 0.1,
+        "spike_height_mult": 3,
+        "spike_prev_weight": 5,
+        "spike_dist_ms": 10,
+        "spike_dist": 20
+      },
+      "wall_seconds_including_initialization": 93.77439310000045,
+      "upstream_batch_time_ms_median": 39.35050964355469,
+      "upstream_batch_time_ms_p95": 61.541785049438474,
+      "notebook_roa_pct": {
+        "mean": 90.24972135917719,
+        "std": 19.930947602296325,
+        "median": 98.58385889449704
+      },
+      "difference_from_notebook_percentage_points": {
+        "mean": -0.00027864082281325864,
+        "std": 0.0009476022963248454,
+        "median": 0.0038588944970427974
+      },
+      "notebook_match_within_0_1_percentage_point": true
+    }
+  },
+  "hdf5_attributes": {}
+}
