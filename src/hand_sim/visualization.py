@@ -16,9 +16,13 @@ if TYPE_CHECKING:
 
 def hand_camera(sim: HandSimulation) -> mujoco.MjvCamera:
     """Frame the moving hand from native joint anchors and upstream fingertip sites."""
-    points = np.concatenate(
-        (sim.data.xanchor, sim.data.site_xpos[list(sim.identifiers.fingertip_ids)])
-    )
+    tips = sim.data.site_xpos[list(sim.identifiers.fingertip_ids)]
+    center = tips.mean(axis=0)
+    # The official recipe also carries a fixed upper-arm scaffold. Frame the
+    # moving hand using nearby anchors rather than the distant forearm root.
+    radius = max(0.10, float(np.linalg.norm(tips - center, axis=1).max()) * 2)
+    nearby = sim.data.xanchor[np.linalg.norm(sim.data.xanchor - center, axis=1) < radius]
+    points = np.concatenate((nearby, tips))
     low, high = points.min(axis=0), points.max(axis=0)
     camera = mujoco.MjvCamera()
     mujoco.mjv_defaultCamera(camera)

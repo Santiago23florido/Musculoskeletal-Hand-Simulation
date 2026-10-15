@@ -1,5 +1,12 @@
 # Musculoskeletal Hand Simulation
 
+![Official MyoHand bones and muscle-tendon paths rendered in MuJoCo, with 23 joint DOFs, 39 muscle actuators and five fingertips](docs/images/myohand-overview.png)
+
+[![Validate physical simulation](https://github.com/Santiago23florido/Musculoskeletal-Hand-Simulation/actions/workflows/validate.yml/badge.svg)](https://github.com/Santiago23florido/Musculoskeletal-Hand-Simulation/actions/workflows/validate.yml)
+![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB)
+![MuJoCo 3.16.0](https://img.shields.io/badge/MuJoCo-3.16.0-55d9cf)
+![MyoSuite 3.0.0](https://img.shields.io/badge/MyoSuite-3.0.0-ff7b80)
+
 A small, independent Python foundation for loading and observing the **official
 MyoSuite MyoHand model** in MuJoCo. Windows native is the primary development and
 validated runtime; Ubuntu under WSL2 is also supported.
@@ -9,6 +16,24 @@ force laws, activation dynamics and contact parameters. This repository adds
 anatomical identification, physical-state access, NumPy debugging archives and a
 standard MuJoCo viewer. It contains no research controller, training algorithm,
 EMG synthesis or experimental task definition.
+
+## Research direction
+
+The long-term aim is **robust identification of motor unit action potentials
+(MUAPs) from EMG during hand movement**, including movement-related variability.
+This repository establishes the reproducible musculoskeletal simulation and
+anatomical observations needed to support that independent research direction.
+The MUAP-identification methodology will be defined separately; the current
+implementation provides physical state and geometry without generating EMG,
+identifying MUAPs or claiming robustness results.
+
+![Physical measurements from a 200-step native simulation: excitation, activation, actuator forces, joint coordinates and fingertip displacement](docs/images/physical-observations.png)
+
+Both figures come from the actual pinned model and a constant-excitation smoke
+check. The geometry, muscle-tendon paths and plotted quantities are simulation
+outputs. Regenerate the images on a desktop with OpenGL using
+`uv run --locked python scripts/render_readme_assets.py`. The script changes only
+rendering options (lighting and offscreen resolution); it preserves biomechanics.
 
 ## Install on Windows (PowerShell)
 

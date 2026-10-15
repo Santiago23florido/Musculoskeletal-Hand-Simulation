@@ -152,7 +152,8 @@ class ModelIdentifiers:
             "# Loaded MyoHand anatomical names",
             "",
             "Generated from the installed official model using `scripts/inspect_model.py`.",
-            "Detailed indices, limits and provenance: [model_inventory.json](model_inventory.json).",
+            "Detailed indices, limits and provenance: "
+            "[model_inventory.json](model_inventory.json).",
             "Regenerate both files with:",
             "",
             "```powershell",

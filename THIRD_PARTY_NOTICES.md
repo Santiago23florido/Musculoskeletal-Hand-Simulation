@@ -23,3 +23,9 @@ their installed license files remain authoritative.
 
 See [docs/references.md](docs/references.md) and [CITATION.cff](CITATION.cff) for
 scientific citations and the distinction between the upstream model and this code.
+
+The README figures in `docs/images` are generated from the installed upstream
+model and physical observations using `scripts/render_readme_assets.py`. The
+anatomical assets retain the upstream model attribution; the rendering script is
+independently developed here. These figures do not depict measured human EMG or
+validated MUAP-identification results.
