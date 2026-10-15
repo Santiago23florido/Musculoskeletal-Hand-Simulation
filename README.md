@@ -168,6 +168,8 @@ MuJoCo fixtures exercise free/ball joint metadata, nonempty sensors and contacts
 they never replace the physical hand. The graphics test is skipped unless explicitly
 enabled. Tests keep temporary files under `.pytest_cache/tmp` to avoid system-temp
 permission conflicts on Windows.
+The [local validation record](docs/validation.md) documents 47 passing tests on
+Windows with graphics enabled and the separately checked headless WSL2 path.
 
 ## Ubuntu under WSL2 (alternative)
 
