@@ -1,0 +1,13 @@
+{
+  "spike_bit_agreement": 1.0,
+  "spike_disagreements": 0,
+  "max_roa_difference": 0.0,
+  "timing": {
+    "median_batch_ms": 2.6971499901264906,
+    "p95_batch_ms": 12.417115009156937,
+    "total_batch_seconds": 6.115025800594594,
+    "factor_seconds": 0.0027314999606460333,
+    "whitening_precompute_seconds": 25.899045400030445,
+    "latency_scope": "cached W0*x and causal encoder factors; not live end-to-end latency"
+  }
+}
