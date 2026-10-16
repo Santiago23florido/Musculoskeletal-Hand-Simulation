@@ -1,0 +1,94 @@
+{
+  "status": "no-go",
+  "acceptance_sha256": "21782f7ed64fb2c41a1d578288e66c015958fbb95681f988fbf521741a7ab636",
+  "summary_sha256": "a2a82e600abcead1c7181279f6997883c6b7471eeec1ce99f215b183a122be3c",
+  "per_unit_sha256": "616fe3b85cdc0d4ebf124311e60fd4b3f3163c64a39486c17fcb256fb8b1c25b",
+  "checks": {
+    "triangular-ramp5s": {
+      "delta_pp": 2.822405181690641,
+      "minimum_pp": 5,
+      "passed": false
+    },
+    "triangular-ramp10s": {
+      "delta_pp": 0.7229915127353195,
+      "minimum_pp": 5,
+      "passed": false
+    },
+    "staircase": {
+      "delta_pp": 0.13264038170946435,
+      "minimum_pp": 0,
+      "passed": true
+    },
+    "final_phase": {
+      "delta_pp": -0.11968545799897479,
+      "minimum_pp": 0,
+      "passed": false
+    },
+    "final_tracked_units": {
+      "delta": -10,
+      "minimum": 0,
+      "passed": false
+    },
+    "global_mean": {
+      "delta_pp": 0.801186810666465,
+      "passed": true,
+      "requirement": "strictly >0"
+    },
+    "unseen_15dB": {
+      "delta_pp": 1.0960256398139592,
+      "passed": true,
+      "requirement": ">=0"
+    }
+  },
+  "unit_changes": {
+    "improved_instances": 355,
+    "worsened_instances": 142,
+    "unchanged_instances": 94,
+    "gained_final_90": 2,
+    "lost_final_90": 12
+  },
+  "by_condition": {
+    "staircase": {
+      "instances": 119,
+      "pareto_mean_pct": 91.60603643194463,
+      "hybrid_mean_pct": 91.73867681365411,
+      "pareto_ge_90_pct": 83.19327731092437,
+      "hybrid_ge_90_pct": 84.03361344537815
+    },
+    "triangular-ramp10s": {
+      "instances": 119,
+      "pareto_mean_pct": 77.135287542155,
+      "hybrid_mean_pct": 77.85827905489032,
+      "pareto_ge_90_pct": 44.537815126050425,
+      "hybrid_ge_90_pct": 43.69747899159664
+    },
+    "triangular-ramp20s": {
+      "instances": 115,
+      "pareto_mean_pct": 81.88957044449121,
+      "hybrid_mean_pct": 82.06740586510823,
+      "pareto_ge_90_pct": 66.95652173913044,
+      "hybrid_ge_90_pct": 66.95652173913044
+    },
+    "triangular-ramp40s": {
+      "instances": 117,
+      "pareto_mean_pct": 88.41515860263102,
+      "hybrid_mean_pct": 88.49822791296795,
+      "pareto_ge_90_pct": 79.48717948717949,
+      "hybrid_ge_90_pct": 80.34188034188034
+    },
+    "triangular-ramp5s": {
+      "instances": 121,
+      "pareto_mean_pct": 65.80980984573496,
+      "hybrid_mean_pct": 68.6322150274256,
+      "pareto_ge_90_pct": 19.00826446280992,
+      "hybrid_ge_90_pct": 22.31404958677686
+    }
+  },
+  "by_snr_instance_counts": {
+    "15": 50,
+    "20": 95,
+    "25": 183,
+    "30": 263
+  },
+  "interpretation": "Exploratory transfer to held-out subjects; not a fresh blind data set."
+}
