@@ -1,0 +1,8 @@
+{
+  "batch_boundary": 300,
+  "prefix_samples": 61200,
+  "spike_disagreements": 0,
+  "source_disagreements": 0,
+  "scope": "head causality at batch boundaries; original offline Pareto preprocessing retained",
+  "model": "random nonzero numerical probe, not a selected candidate"
+}
