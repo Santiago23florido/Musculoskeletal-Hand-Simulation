@@ -1,0 +1,219 @@
+{
+  "status": "no-go",
+  "protocol_sha256": "c29b6f7728b89b6b437b69ce1a8a539da44bcd45845f9040cd69afd63e6e7a6c",
+  "locked_sha256": "8973f79d95f6a002aad3a66a55be3a8d05e008da55a3716bbad9477d2d007739",
+  "scope": "80 records; outer subjects sub-02..05; same units for every method",
+  "interpretation": "Exploratory grouped transfer; original P1 outcomes had previously been seen",
+  "summaries": {
+    "hybrid": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 81.68964485106596,
+      "median_roa_pct": 95.6561922365989,
+      "pct_units_roa_ge_90": 59.22165820642979,
+      "by_snr": {
+        "15": 82.9605404847347,
+        "20": 85.89832769585541,
+        "25": 80.95329487152586,
+        "30": 80.44014825151237
+      },
+      "by_condition": {
+        "staircase": 91.7386768136541,
+        "triangular-ramp40s": 88.49822791296795,
+        "triangular-ramp20s": 82.06740586510826,
+        "triangular-ramp10s": 77.85827905489032,
+        "triangular-ramp5s": 68.6322150274256
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 81.68964485106596,
+      "mean_first_hold_roa": 0.9290996351399617,
+      "mean_ramp_roa": 0.8033681969258658,
+      "mean_last_hold_roa": 0.8786871888505259,
+      "end_units_roa_ge_90": 501,
+      "mean_precision": 0.9111515381029881,
+      "mean_recall": 0.8426654134916158,
+      "mean_f1": 0.8702458289397955,
+      "by_subject": {
+        "sub-02": 79.44041054332502,
+        "sub-03": 82.61012509104125,
+        "sub-04": 88.40035900221443,
+        "sub-05": 77.64859707125792
+      }
+    },
+    "pareto": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 80.8884580403995,
+      "median_roa_pct": 95.2932657494569,
+      "pct_units_roa_ge_90": 58.37563451776649,
+      "by_snr": {
+        "15": 81.86451484492073,
+        "20": 85.13025687291052,
+        "25": 80.13324222754702,
+        "30": 79.69617957818429
+      },
+      "by_condition": {
+        "staircase": 91.60603643194463,
+        "triangular-ramp40s": 88.41515860263105,
+        "triangular-ramp20s": 81.88957044449121,
+        "triangular-ramp10s": 77.135287542155,
+        "triangular-ramp5s": 65.80980984573496
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 80.8884580403995,
+      "mean_first_hold_roa": 0.9222772480164098,
+      "mean_ramp_roa": 0.7945059262407389,
+      "mean_last_hold_roa": 0.8798840434305156,
+      "end_units_roa_ge_90": 511,
+      "mean_precision": 0.9147099695643086,
+      "mean_recall": 0.831555558807194,
+      "mean_f1": 0.864291417876762,
+      "by_subject": {
+        "sub-02": 78.63666733530866,
+        "sub-03": 81.76942073511955,
+        "sub-04": 87.65256762672922,
+        "sub-05": 76.84516138816953
+      }
+    },
+    "seed0": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 81.71693121129962,
+      "median_roa_pct": 95.70405727923628,
+      "pct_units_roa_ge_90": 59.390862944162436,
+      "by_snr": {
+        "15": 83.00763846723056,
+        "20": 85.92954120029287,
+        "25": 80.97368826323273,
+        "30": 80.46704584151004
+      },
+      "by_condition": {
+        "staircase": 91.74679821982764,
+        "triangular-ramp40s": 88.51052254848777,
+        "triangular-ramp20s": 82.07361774282444,
+        "triangular-ramp10s": 77.89445524656367,
+        "triangular-ramp5s": 68.70413227090603
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 81.71693121129962,
+      "mean_first_hold_roa": 0.929152226312815,
+      "mean_ramp_roa": 0.8037007743657326,
+      "mean_last_hold_roa": 0.8785433755541802,
+      "end_units_roa_ge_90": 501,
+      "mean_precision": 0.9110718256775763,
+      "mean_recall": 0.8430319953839666,
+      "mean_f1": 0.8704270043263267,
+      "by_subject": {
+        "sub-02": 79.47055696969733,
+        "sub-03": 82.65616591514008,
+        "sub-04": 88.39700486747284,
+        "sub-05": 77.67953920924923
+      }
+    },
+    "seed1": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 81.66488622000814,
+      "median_roa_pct": 95.59902200488997,
+      "pct_units_roa_ge_90": 59.22165820642979,
+      "by_snr": {
+        "15": 82.9244358802255,
+        "20": 85.87298905178699,
+        "25": 80.93276700423982,
+        "30": 80.41481232060033
+      },
+      "by_condition": {
+        "staircase": 91.73012888210418,
+        "triangular-ramp40s": 88.48567073722762,
+        "triangular-ramp20s": 82.04922614275418,
+        "triangular-ramp10s": 77.83495340724681,
+        "triangular-ramp5s": 68.57205356131972
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 81.66488622000814,
+      "mean_first_hold_roa": 0.9290187521201391,
+      "mean_ramp_roa": 0.8030745589414859,
+      "mean_last_hold_roa": 0.8787361902000727,
+      "end_units_roa_ge_90": 499,
+      "mean_precision": 0.9113164344776856,
+      "mean_recall": 0.842267716948362,
+      "mean_f1": 0.8700779238780947,
+      "by_subject": {
+        "sub-02": 79.4165897923188,
+        "sub-03": 82.5631272605152,
+        "sub-04": 88.40394342938548,
+        "sub-05": 77.62104545285501
+      }
+    }
+  },
+  "gates": {
+    "triangular-ramp5s": {
+      "delta_pp": 2.822405181690641,
+      "minimum_pp": 5,
+      "passed": false
+    },
+    "triangular-ramp10s": {
+      "delta_pp": 0.7229915127353195,
+      "minimum_pp": 5,
+      "passed": false
+    },
+    "staircase": {
+      "delta_pp": 0.13264038170946435,
+      "minimum_pp": 0,
+      "passed": true
+    },
+    "final_phase": {
+      "delta_pp": -0.11968545799897479,
+      "minimum_pp": 0,
+      "passed": false
+    },
+    "final_tracked_units": {
+      "delta": -10,
+      "minimum": 0,
+      "passed": false
+    }
+  },
+  "statistics": [
+    {
+      "condition": "staircase",
+      "mean_delta_pp": 0.13264038170948053,
+      "wilcoxon_unit_p": 0.004713934777035453,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        0.07310723145432771,
+        0.20677600278193498
+      ],
+      "wilcoxon_holm_p": 0.004713934777035453
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "mean_delta_pp": 0.7229915127353097,
+      "wilcoxon_unit_p": 1.3963458562784861e-08,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        0.6063491452057937,
+        0.8542141762060149
+      ],
+      "wilcoxon_holm_p": 2.7926917125569722e-08
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "mean_delta_pp": 2.8224051816906566,
+      "wilcoxon_unit_p": 3.6472891539601074e-19,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        2.6232931224985596,
+        2.9477182556643933
+      ],
+      "wilcoxon_holm_p": 1.0941867461880321e-18
+    }
+  ],
+  "zero_residual_audit": {
+    "recordings": 100,
+    "spike_disagreements": 0
+  },
+  "unseen_training_selection_conditions": [
+    "15dB",
+    "ramp5s",
+    "ramp20s",
+    "outer subject"
+  ],
+  "timing_scope": "head on cached adaptive sources, not live end-to-end latency"
+}

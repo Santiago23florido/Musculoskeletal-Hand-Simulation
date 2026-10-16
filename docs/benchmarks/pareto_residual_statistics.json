@@ -1,0 +1,17 @@
+{
+  "global_mean_delta_pp": 0.8011868106664525,
+  "subject_cluster_bootstrap_95_ci_pp": [
+    0.7659681051096503,
+    0.8300847002634943
+  ],
+  "clusters": 4,
+  "resamples": 2000,
+  "seed": 2027,
+  "by_subject_delta_pp": {
+    "sub-02": 0.8037432080163393,
+    "sub-03": 0.8407043559216943,
+    "sub-04": 0.7477913754851951,
+    "sub-05": 0.8034356830883835
+  },
+  "note": "Exploratory four-subject CV; folds share training subjects; interval is not population-level confirmation."
+}

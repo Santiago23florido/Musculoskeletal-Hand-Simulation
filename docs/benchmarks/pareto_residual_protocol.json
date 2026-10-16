@@ -1,0 +1,115 @@
+{
+  "registered_at_utc": "2026-10-18T17:13:44.490160+00:00",
+  "spec": {
+    "seeds": [
+      0,
+      1
+    ],
+    "epochs": 5,
+    "learning_rate": 0.003,
+    "weight_decay": 0.01,
+    "training_conditions": [
+      "staircase",
+      "triangular-ramp40s",
+      "triangular-ramp10s"
+    ],
+    "training_snrs": [
+      30,
+      20
+    ],
+    "validation_snrs": [
+      25
+    ],
+    "validation_conditions": [
+      "staircase",
+      "triangular-ramp40s",
+      "triangular-ramp10s"
+    ],
+    "feature_scaling": "within-record calibration; no fitted global normalizer",
+    "loss": "0.1 contrast + waveform + 0.2 duplicates + 0.1 displacement + 0.02 size + 0.01 smooth",
+    "selection": "label-free validation only; initial zero head is eligible",
+    "deployment": "mean coefficients of both seeds, never best test seed",
+    "labels_used": false,
+    "additional_minimum_validation_improvement_fraction": 0.005,
+    "maximum_validation_condition_proxy_regression": 0.01
+  },
+  "folds": {
+    "sub-02": {
+      "training": [
+        "sub-01",
+        "sub-04",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-03"
+      ],
+      "test": [
+        "sub-02"
+      ]
+    },
+    "sub-03": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-04"
+      ],
+      "test": [
+        "sub-03"
+      ]
+    },
+    "sub-04": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-03"
+      ],
+      "validation": [
+        "sub-05"
+      ],
+      "test": [
+        "sub-04"
+      ]
+    },
+    "sub-05": {
+      "training": [
+        "sub-01",
+        "sub-03",
+        "sub-04"
+      ],
+      "validation": [
+        "sub-02"
+      ],
+      "test": [
+        "sub-05"
+      ]
+    }
+  },
+  "source_sha256": {
+    "common.py": "b1ec856e213f0eedac253b58bf8b7a79ae7a67fa16630a6462f96864385f0938",
+    "data.py": "0cc540c50b983b08f3ab34eb567d00366c7bf8421880886fd482c8a630a6434c",
+    "detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27",
+    "evaluate.py": "a9778f8b067f0bfffd211c87e84d3f4ae550cafd2ec34f56e9081d76f9bd6f9a",
+    "experiment.py": "34d5b7d05a2e4447722f3c5da56b80ec7250b496127f40c039eae7c81c43c739",
+    "model.py": "6cdb01df6914ff9a76e11717aec30fe0f6eb5eebb22d51f234ebbf4defd87665",
+    "replay.py": "83aa473b6989f94e5db6e3409e3351602781d0859a0bcf2c1eda5c05c430d5aa",
+    "report.py": "fd9e378dc4d871e9a2692d7ca642cfee6b9e6c92d8f7b939eb5766a9437bcea6",
+    "run.py": "476ad47339cc3241706e9df40beb91b051d9bb26ee2448bdd3367cad0aa7461b",
+    "test_residual.py": "09daa058bc58cee9f00bf96c9ef3310d052fe52db7113a6cd80ee4ff441e09f0",
+    "__init__.py": "309ce1195c870bd759cf208a5f47f63bf88447686252f1ca26fb10721e89564f"
+  },
+  "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+  "evaluation": "80 outer-subject records; compare to SAME 80 Pareto records",
+  "unseen_during_weight_fit_and_selection": "outer subject, 15dB, ramp5s and ramp20s",
+  "prior_exposure": "All original P1 outcomes were previously examined. This is exploratory grouped validation, not a fresh blind confirmatory test.",
+  "baseline_tuning": "sub-01 was the published Pareto tuning subject and stays in training",
+  "success": {
+    "ramp5s_delta_pp": 5,
+    "ramp10s_delta_pp": 5,
+    "staircase_delta_pp": 0,
+    "final_phase_delta_pp": 0,
+    "final_tracked_unit_delta": 0
+  }
+}

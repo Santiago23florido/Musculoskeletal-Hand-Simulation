@@ -1,0 +1,10 @@
+{
+  "declared_at_utc": "2026-10-18T17:30:44.041297+00:00",
+  "protocol_sha256": "c29b6f7728b89b6b437b69ce1a8a539da44bcd45845f9040cd69afd63e6e7a6c",
+  "requirements": {
+    "global_mean_delta_pp_strictly_greater_than": 0,
+    "unseen_15dB_delta_pp_at_least": 0
+  },
+  "note": "Additional user success conditions; no change to training, validation or model selection.",
+  "code_sha256": "891411e38c0a634ba6ddfd793a0e202073da6f7c0198bcac3315fb6272f57631"
+}
