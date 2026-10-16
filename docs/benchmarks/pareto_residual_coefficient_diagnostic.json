@@ -1,0 +1,10 @@
+{
+  "record": "sub-02/ramp5s/30dB",
+  "scope": "one fixed held-out record; explanatory diagnostic, not used to select models",
+  "mean_signed_coefficient": -0.05111733824014664,
+  "fraction_negative": 0.6970821935651947,
+  "mean_abs_coefficient": 0.1032521203160286,
+  "moving_mean": -0.052461251616477966,
+  "static_mean": -0.02973319962620735,
+  "reference_posture_mean": -0.02975030243396759
+}
