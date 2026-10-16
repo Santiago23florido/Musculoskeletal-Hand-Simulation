@@ -1,0 +1,3 @@
+# Preserve the existing benchmark numerical stack; add the guide's mixed model.
+-r ../farina/requirements-fdsi.in
+statsmodels

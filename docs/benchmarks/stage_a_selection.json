@@ -1,0 +1,135 @@
+{
+  "frozen_at_utc": "2026-10-18T16:23:32.287918+00:00",
+  "candidates": [
+    {
+      "run": "pilot_cov128",
+      "epoch": 1,
+      "checkpoint_sha256": "ecef4c242388057f5b408e4f7a246180eced855c75ac3ad54cec368f0f49d9a2",
+      "common_validation": {
+        "loss": 2.7127829199390754,
+        "whitening_loss": 18842.721030099052,
+        "contrast": 8.284906417131424
+      },
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      }
+    },
+    {
+      "run": "full_fifo_squared",
+      "epoch": 8,
+      "checkpoint_sha256": "1f5c00c9be053ca9bf46d2e2174e675c3a805225c3899be78b2bcdf0ca4545ed",
+      "common_validation": {
+        "loss": 2.5962161081177846,
+        "whitening_loss": 17188.501682826452,
+        "contrast": 8.773536601236888
+      },
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      }
+    },
+    {
+      "run": "balanced_gru",
+      "epoch": 7,
+      "checkpoint_sha256": "91f49caa9fe4240425f37710d4a2794e4d3bc7f96486cc6ad61ec7e0e869093b",
+      "common_validation": {
+        "loss": 2.6898358150252273,
+        "whitening_loss": 18188.479745047433,
+        "contrast": 8.709528399365288
+      },
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      }
+    },
+    {
+      "run": "balanced_mlp",
+      "epoch": 5,
+      "checkpoint_sha256": "fe12eed85cc137265657d1dfaeb67f3c176cf3a77e2035c8a0013b8710bc248b",
+      "common_validation": {
+        "loss": 2.6588261473391737,
+        "whitening_loss": 18515.90806252616,
+        "contrast": 8.071928965193885
+      },
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "mlp"
+      }
+    },
+    {
+      "run": "state3_gru",
+      "epoch": 8,
+      "checkpoint_sha256": "ccac637f1bc42bfc8a18b2ca91707450d9e292d0fd6e1efc04e06d9aec47b38d",
+      "common_validation": {
+        "loss": 2.6035241473998343,
+        "whitening_loss": 17188.597590855188,
+        "contrast": 8.846377300364631
+      },
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 3,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      }
+    }
+  ],
+  "selected": {
+    "run": "full_fifo_squared",
+    "epoch": 8,
+    "checkpoint_sha256": "1f5c00c9be053ca9bf46d2e2174e675c3a805225c3899be78b2bcdf0ca4545ed",
+    "common_validation": {
+      "loss": 2.5962161081177846,
+      "whitening_loss": 17188.501682826452,
+      "contrast": 8.773536601236888
+    },
+    "spec": {
+      "dimension": 1000,
+      "features": 122,
+      "state_dim": 1,
+      "hidden": 16,
+      "bases": 6,
+      "rank": 3,
+      "bound": 0.8,
+      "encoder": "gru"
+    }
+  },
+  "checkpoint_sha256": "1f5c00c9be053ca9bf46d2e2174e675c3a805225c3899be78b2bcdf0ca4545ed",
+  "post_calibration_ground_truth_used": false,
+  "validation": "sub-01, ramp10s, 30dB; within P1 adjustment pool",
+  "objective": "0.0001 * normalized squared KL + 0.1 * squared contrast + smoothness",
+  "primary_inference": "reference SV/SD with reference first-order whitening/SV coupling",
+  "ablations": [
+    "same network without coupling",
+    "identity correction with reference SV/SD"
+  ],
+  "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf"
+}

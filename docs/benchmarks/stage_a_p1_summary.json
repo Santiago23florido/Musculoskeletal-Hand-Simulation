@@ -1,0 +1,720 @@
+{
+  "status": "no-go",
+  "executed_at_utc": "2026-10-18T16:44:45.754708+00:00",
+  "plan": {
+    "checkpoint": "outputs\\stage_a\\selected.pt",
+    "checkpoint_sha256": "1f5c00c9be053ca9bf46d2e2174e675c3a805225c3899be78b2bcdf0ca4545ed",
+    "epoch": 8,
+    "selection_loss": 17188.589163643974,
+    "subjects": [
+      "sub-01",
+      "sub-02",
+      "sub-03",
+      "sub-04",
+      "sub-05"
+    ],
+    "conditions": [
+      "staircase",
+      "triangular-ramp40s",
+      "triangular-ramp20s",
+      "triangular-ramp10s",
+      "triangular-ramp5s"
+    ],
+    "snrs": [
+      30,
+      25,
+      20,
+      15
+    ],
+    "methods": {
+      "stage_a": {
+        "coupling": true
+      },
+      "stage_a_no_coupling": {
+        "coupling": false
+      },
+      "identity_sv_sd": {
+        "coupling": true
+      }
+    },
+    "checkpoint_selection_used_evaluation_truth": false,
+    "primary_method": "stage_a",
+    "threads": 2,
+    "ablations": [
+      "stage_a_no_coupling",
+      "identity_sv_sd"
+    ],
+    "protocol": "P1: full recording, 2ms tolerance, authors' global lag +/-40ms",
+    "inference_code_sha256": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+    "evaluator_code_sha256": "9cef11bd0ce99a4e33be88c475138190a963def7cd85a5758275812b1b02bab7",
+    "partitions": [
+      {
+        "name": "p1_sub01",
+        "plan_sha256": "fb1f1f6f1bdf0626bc5a9e27f0341135119ca60cda66137515e115ffbf5b7d66",
+        "evaluator_code_sha256": "9cef11bd0ce99a4e33be88c475138190a963def7cd85a5758275812b1b02bab7",
+        "record_sha256": {
+          "sub-01_FDSI_staircase_snr15dB.json": "17f89dc0eb408e2640eaeed84c83800a33b94f2597384156a99afe8cc0123cf4",
+          "sub-01_FDSI_staircase_snr20dB.json": "a9264cd79ea01216ea1f361539fd1c9d59b3af8de118b9c6f88f8be1e6e95603",
+          "sub-01_FDSI_staircase_snr25dB.json": "818edc0f03d1e12915d326c92654f8d2da6ecc75b4deee95d6a87e06a5522dbb",
+          "sub-01_FDSI_staircase_snr30dB.json": "259ed12ae4775f49e6b601bdc28160bc4c79ab3f22866a7072a55eb517cbff6e",
+          "sub-01_FDSI_triangular-ramp10s_snr15dB.json": "29133bcb13300c5023a66415ad46abc2e09189b243b5e171a5d879f6c4111a1e",
+          "sub-01_FDSI_triangular-ramp10s_snr20dB.json": "8ea5372d094fa5c6017c3844f83d7439f1a4beafef17ff3d30cce51a61a5664c",
+          "sub-01_FDSI_triangular-ramp10s_snr25dB.json": "b00682d29799a7e50c5a0811f17596f5823c26a5cbecade66a2a60d80fede79c",
+          "sub-01_FDSI_triangular-ramp10s_snr30dB.json": "31bde3957afded026602f08856f1b61a7acd97a8faaf5671f0a8a8f2ea2d6640",
+          "sub-01_FDSI_triangular-ramp20s_snr15dB.json": "7b0d09096dd5ae183d31f7444da8b86a00c21879fd376367ce8e945fac84f334",
+          "sub-01_FDSI_triangular-ramp20s_snr20dB.json": "e2dfeb2acb7955b9cd7886d9d27eb287b8d0cae7a64bf48f5b1d416404e28d77",
+          "sub-01_FDSI_triangular-ramp20s_snr25dB.json": "178abb48b3683a8628b58be61e9cf6f7403e81453f13d3f2101aab22a1fdcd44",
+          "sub-01_FDSI_triangular-ramp20s_snr30dB.json": "c67300b3d737cd072b80d61917266e0fbd9bcd8ff036da7b2150fbdfedb57fc7",
+          "sub-01_FDSI_triangular-ramp40s_snr15dB.json": "8f2435f1bfffdd9e8c84be05cf0c94c30e4dfba918622a4ab68fd0e0bef3b210",
+          "sub-01_FDSI_triangular-ramp40s_snr20dB.json": "b7653dc608755fba42a4639c7fd04f02e809088590a34db84ad22db08fbdfb23",
+          "sub-01_FDSI_triangular-ramp40s_snr25dB.json": "64df0ee5be3e2a9623716740ba27171baed9d81930303dc71814feedc207b281",
+          "sub-01_FDSI_triangular-ramp40s_snr30dB.json": "9780034908183e81b4f3d3e30dc0818379539d04c7f6050712ec3539d3e46344",
+          "sub-01_FDSI_triangular-ramp5s_snr15dB.json": "3022e5a35129676d012ca2b4d2d8708d8b3eb5738f493eaacc15cfc672f460b4",
+          "sub-01_FDSI_triangular-ramp5s_snr20dB.json": "189add9afb1054e34291b0d70f77020caa4747be4fcdecc474a64447df21c1b2",
+          "sub-01_FDSI_triangular-ramp5s_snr25dB.json": "e715b3509e20ed88426ebb5366310b622a018af2e5bea8a4fb03c3830a7d1e0d",
+          "sub-01_FDSI_triangular-ramp5s_snr30dB.json": "5f008c4547d3dab503666c8e7716a423a992378d4a482ec393bc63e613e927f2"
+        }
+      },
+      {
+        "name": "p1_sub02",
+        "plan_sha256": "d79f0d81cad5763272c5ea8fdba8b715271f538152276de8fb669836dc16043a",
+        "evaluator_code_sha256": "9cef11bd0ce99a4e33be88c475138190a963def7cd85a5758275812b1b02bab7",
+        "record_sha256": {
+          "sub-02_FDSI_staircase_snr15dB.json": "ff4b82c2b90b974e5060ac5f57f836bcd679bb8ba110ddf64855ca4bc65736f8",
+          "sub-02_FDSI_staircase_snr20dB.json": "06d592bd0a2f0cb1b0954cee3bda0af1d5d9273fc11301001a6680a15c09f7cd",
+          "sub-02_FDSI_staircase_snr25dB.json": "61f885b5a5ce7693e366091abe3b577b966da9f64eb5dbf901f1df3f927dc840",
+          "sub-02_FDSI_staircase_snr30dB.json": "9f4812c372231c89218087840825a54cdb8998df66fa380c5408b4bde94607f0",
+          "sub-02_FDSI_triangular-ramp10s_snr15dB.json": "263459fdf0f2426f45c20f7f6e9bc1538048b282d8b6d421e1bb4aa991c549e0",
+          "sub-02_FDSI_triangular-ramp10s_snr20dB.json": "04d70a1f7d265c42f529a95de34bb73d3f69eda78ada8dfa8c4fec79dfe18988",
+          "sub-02_FDSI_triangular-ramp10s_snr25dB.json": "b46716059176467f5d4ab02def55508dab9d340241410009c82c081a4c5e7638",
+          "sub-02_FDSI_triangular-ramp10s_snr30dB.json": "14e8da9aa1d1262a87944e5e4a0164abdaad40a49bf4401fa472de9b74c20d23",
+          "sub-02_FDSI_triangular-ramp20s_snr15dB.json": "001106ca3cf99a5f7fc0236891049ad045eb554a5b23b00e7436c8d01c3b7ccb",
+          "sub-02_FDSI_triangular-ramp20s_snr20dB.json": "048315d488c4b9927d9db76e3c0b2f837dd93a544fda37954242f6cac257dea2",
+          "sub-02_FDSI_triangular-ramp20s_snr25dB.json": "2907f83828eaeee895b0cdc75d4f22c07e86a2e44f5ae61fcb5509abe6794dc7",
+          "sub-02_FDSI_triangular-ramp20s_snr30dB.json": "3504d14b7cff2fdbd79938dc094a0187cdf81fb7a57b577bf42f9847c98126ed",
+          "sub-02_FDSI_triangular-ramp40s_snr15dB.json": "4256f50178bdc60f6d1e48c18433f985651c1d5e093fc01d50e1f1a9da9bb7fa",
+          "sub-02_FDSI_triangular-ramp40s_snr20dB.json": "3a2efb638676848ef148d49a3f72d95ac8976248e19727b218a911d166cf6de6",
+          "sub-02_FDSI_triangular-ramp40s_snr25dB.json": "9ba9809fdd8fa527a2fa3653af365a7d616ca2df38bf7459047c30f674bdb31e",
+          "sub-02_FDSI_triangular-ramp40s_snr30dB.json": "632faf939b7e42cc2d14b73d04ea15817d395e04b061439fc0fa8b74a953989e",
+          "sub-02_FDSI_triangular-ramp5s_snr15dB.json": "7f052b67cbc196f2dcdfb421827a423bce0f4c7c417a1164298e8265b33181f7",
+          "sub-02_FDSI_triangular-ramp5s_snr20dB.json": "1fd587615622455075140050ca4c662c580e5651319144d113152685bc13d4e1",
+          "sub-02_FDSI_triangular-ramp5s_snr25dB.json": "bdd14f8cb52f626cde572bce4e79a23b2d5f78f32f5ac63aae7e52be920ca338",
+          "sub-02_FDSI_triangular-ramp5s_snr30dB.json": "fa46758dece4918c6e084d42368e0d22deb867dc2aa6c8abe966af7404fedea2"
+        }
+      },
+      {
+        "name": "p1_sub03",
+        "plan_sha256": "4ee8ac105610dd07ee99d8b36d2f8ed93a990cde140d81ce95629e5ca85b562d",
+        "evaluator_code_sha256": "9cef11bd0ce99a4e33be88c475138190a963def7cd85a5758275812b1b02bab7",
+        "record_sha256": {
+          "sub-03_FDSI_staircase_snr15dB.json": "b974a759ce58c49bd55ca9351f36d5cc985e8acdf78c845e453e42b94c127331",
+          "sub-03_FDSI_staircase_snr20dB.json": "d616d530ab45a7387750bde9cbec89edb947cfb6a39376af759668ce6e020157",
+          "sub-03_FDSI_staircase_snr25dB.json": "0f4733fa829f6554e50258feb4c68b75dd64b682a82d2bb1d913b34e95d073ad",
+          "sub-03_FDSI_staircase_snr30dB.json": "2f74108053d6ca53d90525b84c4d8fdb974cd01148e8aeb86cb8e81e071dd8fd",
+          "sub-03_FDSI_triangular-ramp10s_snr15dB.json": "60e74536874a54e78ce27defea9cf8f3c52a0e7f1af4a223a3dd88758d406324",
+          "sub-03_FDSI_triangular-ramp10s_snr20dB.json": "e4cc5031f988def5e449c22f03e251b09a94303a654a4fdb0ef70dbbc9d13b52",
+          "sub-03_FDSI_triangular-ramp10s_snr25dB.json": "3bf71f91b3de10432529dc9089ae5456f3be89232830d9a0e2874f16cc7a5955",
+          "sub-03_FDSI_triangular-ramp10s_snr30dB.json": "d0820bb97e60b6eaf516330f5086e8f2770e4981b22d3da09a5d7c38671a6749",
+          "sub-03_FDSI_triangular-ramp20s_snr15dB.json": "e68cd68b269c8960be19481346a1680ee9b2680771989ee462734faff0a53b9a",
+          "sub-03_FDSI_triangular-ramp20s_snr20dB.json": "1bb064e28a73aed3932c49b1a0449a9a19d9ad279a0a61a92442ddb7411c41af",
+          "sub-03_FDSI_triangular-ramp20s_snr25dB.json": "36886e955a2f3df2d7a6395b83d559a20885dd4091fa254e4e51e3e3e281a321",
+          "sub-03_FDSI_triangular-ramp20s_snr30dB.json": "7e04b98f9dfb1f8cbba7e67d2b0a7371feaa2c2b790c9c66b3c7363b9f1222a0",
+          "sub-03_FDSI_triangular-ramp40s_snr15dB.json": "3c57928ee47ae04a1eaf5f7bd1355a1c7d330a264731891168d76380ad2e3a06",
+          "sub-03_FDSI_triangular-ramp40s_snr20dB.json": "385e2cf076411a74a6d0e5d3e78289808444c1494d42fc59c9831978470374e4",
+          "sub-03_FDSI_triangular-ramp40s_snr25dB.json": "abea3a6bc5c17a50896c575beeece86dfef2036cb7ae87c1b6386fc7cfd25f7c",
+          "sub-03_FDSI_triangular-ramp40s_snr30dB.json": "ecbd0d4e9ed639ce398bf4be35572352a9ccbf35ffc59cb35e60fa7987011b7c",
+          "sub-03_FDSI_triangular-ramp5s_snr15dB.json": "d42472cb1e7dd98b4d061b884c1084936b85e81963ec25eaab14ebb7f0b16a05",
+          "sub-03_FDSI_triangular-ramp5s_snr20dB.json": "eb40efe4928d48f60a9967786d333de7f15f394cf95246cb3d506565814e5f1e",
+          "sub-03_FDSI_triangular-ramp5s_snr25dB.json": "bb42c0ff63ebc58860eff1e64d58fa6cddbdd0421be393c070f7d9239d4ea8ef",
+          "sub-03_FDSI_triangular-ramp5s_snr30dB.json": "5e83b60626924301191d342a0bea8c1158a47feb13de0c9da4edca020256a270"
+        }
+      },
+      {
+        "name": "p1_sub04",
+        "plan_sha256": "fad0fa1d186e2342aefb49bd8cacd3274cf6677181079823d8cb8ae70f7b7c6e",
+        "evaluator_code_sha256": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+        "record_sha256": {
+          "sub-04_FDSI_staircase_snr15dB.json": "280f633d98649a05c44351fdb14df005857f992733fc61fd2d15ccd1d539ddfe",
+          "sub-04_FDSI_staircase_snr20dB.json": "0295d6984c92745254c511351d7bd292296a12b8ebe64a4a19b90234e861568b",
+          "sub-04_FDSI_staircase_snr25dB.json": "0dfea6feb8733a4f9123877810ac283ea2504aa59ab20ae7cd1c2438b8511873",
+          "sub-04_FDSI_staircase_snr30dB.json": "b5f54c286d89ae4c1b0e320a0e738421297673c672c0343ba2eae8ff856e8beb",
+          "sub-04_FDSI_triangular-ramp10s_snr15dB.json": "10a865d8dbc2f00d85f86fdcf157d467496ea418f33e720892837e0db3990317",
+          "sub-04_FDSI_triangular-ramp10s_snr20dB.json": "ed2616dec6abb33305aca5870e1ca55c4df86d28cf8302f6354654b35e4b67c4",
+          "sub-04_FDSI_triangular-ramp10s_snr25dB.json": "f5698f462a3f3f7c9164cc78031e8dad6902dd66959777fc931b0f9b6cce645f",
+          "sub-04_FDSI_triangular-ramp10s_snr30dB.json": "0bab6a76fb55942c03613ad22ec0a80e28e528980a65bbf661436c5259911df6",
+          "sub-04_FDSI_triangular-ramp20s_snr15dB.json": "c81f1c867f85b6e9103cef95055c2acafdd7f109385c3b54538402090ea72043",
+          "sub-04_FDSI_triangular-ramp20s_snr20dB.json": "344eeb0072b83d2c3f144e3b514dcb7a9d043d114d58eec618f9156d2e0ecc58",
+          "sub-04_FDSI_triangular-ramp20s_snr25dB.json": "e279f2c4c97d37f4ed4ca014823d1efc31feae72182b0c24b564bf0ca800e258",
+          "sub-04_FDSI_triangular-ramp20s_snr30dB.json": "f93200b70adae2faac25e85bc59472cb13b31f0aaa870b92451bf4b23e745304",
+          "sub-04_FDSI_triangular-ramp40s_snr15dB.json": "f2cbe4eac03b199660b1c4eb2d2d3df61ec1c98357187407745a71c6028e4d6c",
+          "sub-04_FDSI_triangular-ramp40s_snr20dB.json": "6de2b732551be6a1511cb25aa7f8ecc4de8f9985150cb221d2cdf781d15c70b2",
+          "sub-04_FDSI_triangular-ramp40s_snr25dB.json": "b0ae8fa3b0284d5bb6b5c73f2312c075b397002f148547d7765c7038b8cc22c0",
+          "sub-04_FDSI_triangular-ramp40s_snr30dB.json": "aca52c028bf2ae83499bdb45a027f2665331062f6512291db8ca87d58c755e3e",
+          "sub-04_FDSI_triangular-ramp5s_snr15dB.json": "7656078ba3cd3f2d0031232ca97707354b3f1b3c784b5e2bc67c495132557fb9",
+          "sub-04_FDSI_triangular-ramp5s_snr20dB.json": "7305f84f1e87e235959c2cc61e25a65880206009fdf778ef5e8d2b3348b8ac4e",
+          "sub-04_FDSI_triangular-ramp5s_snr25dB.json": "16632e752c4a0919be9eb873f917fb334137d1ddd80bf107ab7a136067445d33",
+          "sub-04_FDSI_triangular-ramp5s_snr30dB.json": "0c7f5ab1da0b7bd360c9d4a4330638c515e05c73cc33d3edf3f909fbda430fd3"
+        }
+      },
+      {
+        "name": "p1_sub05",
+        "plan_sha256": "9bad2f9d56078c6c4ff18387b73ffba200e732b4a55f309403f84643a23dc118",
+        "evaluator_code_sha256": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+        "record_sha256": {
+          "sub-05_FDSI_staircase_snr15dB.json": "519daa7a23dcb513dacd4e9123fc2451517bc4995223dd7cecddbdaac0df884e",
+          "sub-05_FDSI_staircase_snr20dB.json": "fdfe17fddf76f9074836ffcf874a161556d51e36ec9276f5fb21db934d8ef69b",
+          "sub-05_FDSI_staircase_snr25dB.json": "7af6622f34a02f4163c1defcf62ab8463aaf646b0de9eb1ec14a9acb170f2cbd",
+          "sub-05_FDSI_staircase_snr30dB.json": "d97306cacf370976f79a237d33f94204f4781eaa5815188f5b3f58c331cc9bb8",
+          "sub-05_FDSI_triangular-ramp10s_snr15dB.json": "07599c0fcfae6685c8362e17134561020ea7355f2098945a1daa98bbb43ee109",
+          "sub-05_FDSI_triangular-ramp10s_snr20dB.json": "f7c9df851ffbe7c4ab11e493fac49ce938135538a2d7e95fa612a7730a7f08a7",
+          "sub-05_FDSI_triangular-ramp10s_snr25dB.json": "ec84a247fbc8eb50393186776bb4db7d1802d4f3b3a644f0fdc45a6e0f27b367",
+          "sub-05_FDSI_triangular-ramp10s_snr30dB.json": "7f40646825801a71ecfd9f0d0b929aa338487ab6e728d13744b38eed67e73303",
+          "sub-05_FDSI_triangular-ramp20s_snr15dB.json": "9f8716f63d7d74fd0f3072d4943c6d2d8b8fa4f52617268acbf45fbcc9f4c5f3",
+          "sub-05_FDSI_triangular-ramp20s_snr20dB.json": "64fd69b142fe6af463da505ebeeb7f70ff75a267ec8f26ec1ada15157fd38495",
+          "sub-05_FDSI_triangular-ramp20s_snr25dB.json": "966c20c4e99d7634af6932db11d04de2bfcee861f89af9de4762fbeaa471e816",
+          "sub-05_FDSI_triangular-ramp20s_snr30dB.json": "cf98fc6b356111693488cbe40569ec7d7f9e4d32553f13d4298062ecb08dbc5c",
+          "sub-05_FDSI_triangular-ramp40s_snr15dB.json": "de92f3fc574098ad18b85c89f2041ea374454fecdfd3f34ae1d966f01e79be3a",
+          "sub-05_FDSI_triangular-ramp40s_snr20dB.json": "ece8932e8c7bd1275e9b0a1604e645ba60e670a0be3aaf2bc335858ed8532a2e",
+          "sub-05_FDSI_triangular-ramp40s_snr25dB.json": "db7f86fcb703ea91c6c02a4ff6bed9ea28f6c7d48c6ce91665574a5eaeeb4885",
+          "sub-05_FDSI_triangular-ramp40s_snr30dB.json": "2bfe9e81f666ebba3c5c83e94670bb2407227a44cc2974099664ecef65a01113",
+          "sub-05_FDSI_triangular-ramp5s_snr15dB.json": "266565d014a795f73106fd0be0a1e8d9724a5d8914b3d18abeda268ab3881c58",
+          "sub-05_FDSI_triangular-ramp5s_snr20dB.json": "f0779a0f3b8529544594141757ebf262714324956195ed388da0b52427fafa8a",
+          "sub-05_FDSI_triangular-ramp5s_snr25dB.json": "3bf7bf4a067b5dfb4088f709a1cc7ef8c17d45751fd9c74ad5584b8cbc6eb057",
+          "sub-05_FDSI_triangular-ramp5s_snr30dB.json": "16a5129ac3939dea6c10ff11d9b196b2487c361ba474eb7712054bb8aa83e294"
+        }
+      }
+    ],
+    "selection_sha256": "e3e762327f197e98fe8ea4aab33890f71f6e65709a2b6cf9eaa98caea8c21c5b",
+    "evaluation_core_sha256": "3d768e7ebe7bc26849195159804e0124028ac28ee5ebc65c3bb7fb5b2e842763",
+    "execution_source_sha256": {
+      "data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+      "model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+      "inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22"
+    },
+    "reporter_code_sha256": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13"
+  },
+  "complete_p1": true,
+  "summaries": {
+    "identity_sv_sd": {
+      "recordings": 100,
+      "unit_instances": 768,
+      "mean_roa_pct": 57.23410840247441,
+      "median_roa_pct": 59.76938082069532,
+      "pct_units_roa_ge_90": 22.786458333333336,
+      "by_snr": {
+        "15": 69.3931020317488,
+        "20": 66.97324105230908,
+        "25": 56.400901896398494,
+        "30": 51.505628746566536
+      },
+      "by_condition": {
+        "staircase": 62.29972197891986,
+        "triangular-ramp40s": 62.5740730083588,
+        "triangular-ramp20s": 57.760294250973786,
+        "triangular-ramp10s": 50.66620706437891,
+        "triangular-ramp5s": 52.92506557875283
+      },
+      "trained_subject_mean_roa_pct": 49.30809204485238,
+      "unseen_subject_mean_roa_pct": 59.60788995120385,
+      "mean_precision": 0.7066135734721083,
+      "mean_recall": 0.6567790058856046,
+      "mean_f1": 0.6752267616172332,
+      "end_units_roa_ge_90": 252,
+      "mean_sil": 0.8181117346587902,
+      "mean_first_hold_roa": 0.9237175655776468,
+      "mean_ramp_roa": 0.5563480550779932,
+      "mean_last_hold_roa": 0.4235830203793795,
+      "recall_threshold_curve": [
+        {
+          "threshold": 0.0,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.05,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.1,
+          "fraction": 0.9986979166666666
+        },
+        {
+          "threshold": 0.15000000000000002,
+          "fraction": 0.9713541666666666
+        },
+        {
+          "threshold": 0.2,
+          "fraction": 0.9309895833333334
+        },
+        {
+          "threshold": 0.25,
+          "fraction": 0.8984375
+        },
+        {
+          "threshold": 0.30000000000000004,
+          "fraction": 0.8567708333333334
+        },
+        {
+          "threshold": 0.35000000000000003,
+          "fraction": 0.8203125
+        },
+        {
+          "threshold": 0.4,
+          "fraction": 0.7903645833333334
+        },
+        {
+          "threshold": 0.45,
+          "fraction": 0.7447916666666666
+        },
+        {
+          "threshold": 0.5,
+          "fraction": 0.6979166666666666
+        },
+        {
+          "threshold": 0.55,
+          "fraction": 0.6419270833333334
+        },
+        {
+          "threshold": 0.6000000000000001,
+          "fraction": 0.6002604166666666
+        },
+        {
+          "threshold": 0.65,
+          "fraction": 0.5403645833333334
+        },
+        {
+          "threshold": 0.7000000000000001,
+          "fraction": 0.4752604166666667
+        },
+        {
+          "threshold": 0.75,
+          "fraction": 0.4401041666666667
+        },
+        {
+          "threshold": 0.8,
+          "fraction": 0.3828125
+        },
+        {
+          "threshold": 0.8500000000000001,
+          "fraction": 0.3307291666666667
+        },
+        {
+          "threshold": 0.9,
+          "fraction": 0.2786458333333333
+        },
+        {
+          "threshold": 0.9500000000000001,
+          "fraction": 0.19401041666666666
+        },
+        {
+          "threshold": 1.0,
+          "fraction": 0.0
+        }
+      ]
+    },
+    "pareto": {
+      "recordings": 100,
+      "unit_instances": 768,
+      "mean_roa_pct": 79.24564747045908,
+      "median_roa_pct": 95.02655864039087,
+      "pct_units_roa_ge_90": 57.682291666666664,
+      "by_snr": {
+        "15": 81.24693063763934,
+        "20": 82.73645499654575,
+        "25": 78.21824832847707,
+        "30": 78.21883221476301
+      },
+      "by_condition": {
+        "staircase": 91.64171309480803,
+        "triangular-ramp40s": 87.45272893404707,
+        "triangular-ramp20s": 81.02396749585225,
+        "triangular-ramp10s": 72.05966108099638,
+        "triangular-ramp5s": 64.17195385379134
+      },
+      "trained_subject_mean_roa_pct": 73.76033082167491,
+      "unseen_subject_mean_roa_pct": 80.8884580403995,
+      "mean_precision": 0.8993870828726033,
+      "mean_recall": 0.8156305835815273,
+      "mean_f1": 0.848580961269651,
+      "end_units_roa_ge_90": 650,
+      "mean_sil": 0.9245610188227147,
+      "mean_first_hold_roa": 0.9204626916102439,
+      "mean_ramp_roa": 0.7770667984851181,
+      "mean_last_hold_roa": 0.8616933014918408,
+      "recall_threshold_curve": [
+        {
+          "threshold": 0.0,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.05,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.1,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.15000000000000002,
+          "fraction": 0.9739583333333334
+        },
+        {
+          "threshold": 0.2,
+          "fraction": 0.9583333333333334
+        },
+        {
+          "threshold": 0.25,
+          "fraction": 0.94140625
+        },
+        {
+          "threshold": 0.30000000000000004,
+          "fraction": 0.9322916666666666
+        },
+        {
+          "threshold": 0.35000000000000003,
+          "fraction": 0.91796875
+        },
+        {
+          "threshold": 0.4,
+          "fraction": 0.89453125
+        },
+        {
+          "threshold": 0.45,
+          "fraction": 0.8736979166666666
+        },
+        {
+          "threshold": 0.5,
+          "fraction": 0.8580729166666666
+        },
+        {
+          "threshold": 0.55,
+          "fraction": 0.8359375
+        },
+        {
+          "threshold": 0.6000000000000001,
+          "fraction": 0.8151041666666666
+        },
+        {
+          "threshold": 0.65,
+          "fraction": 0.78515625
+        },
+        {
+          "threshold": 0.7000000000000001,
+          "fraction": 0.7513020833333334
+        },
+        {
+          "threshold": 0.75,
+          "fraction": 0.7161458333333334
+        },
+        {
+          "threshold": 0.8,
+          "fraction": 0.6744791666666666
+        },
+        {
+          "threshold": 0.8500000000000001,
+          "fraction": 0.6510416666666666
+        },
+        {
+          "threshold": 0.9,
+          "fraction": 0.5963541666666666
+        },
+        {
+          "threshold": 0.9500000000000001,
+          "fraction": 0.515625
+        },
+        {
+          "threshold": 1.0,
+          "fraction": 0.0
+        }
+      ]
+    },
+    "stage_a": {
+      "recordings": 100,
+      "unit_instances": 768,
+      "mean_roa_pct": 57.83306756142043,
+      "median_roa_pct": 59.93934676613992,
+      "pct_units_roa_ge_90": 22.786458333333336,
+      "by_snr": {
+        "15": 69.87575293813852,
+        "20": 67.04823705825343,
+        "25": 57.20663995466301,
+        "30": 52.181659677575496
+      },
+      "by_condition": {
+        "staircase": 63.02020345370233,
+        "triangular-ramp40s": 64.06067835545055,
+        "triangular-ramp20s": 57.15572576638179,
+        "triangular-ramp10s": 51.323221018409726,
+        "triangular-ramp5s": 53.61946766492418
+      },
+      "trained_subject_mean_roa_pct": 51.564101807532715,
+      "unseen_subject_mean_roa_pct": 59.71057507146801,
+      "mean_precision": 0.7142712032010277,
+      "mean_recall": 0.6618349801364197,
+      "mean_f1": 0.6814165437253225,
+      "end_units_roa_ge_90": 263,
+      "mean_sil": 0.8210301003806914,
+      "mean_first_hold_roa": 0.9238036704790464,
+      "mean_ramp_roa": 0.562437035223524,
+      "mean_last_hold_roa": 0.4349812223525442,
+      "recall_threshold_curve": [
+        {
+          "threshold": 0.0,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.05,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.1,
+          "fraction": 0.9986979166666666
+        },
+        {
+          "threshold": 0.15000000000000002,
+          "fraction": 0.9752604166666666
+        },
+        {
+          "threshold": 0.2,
+          "fraction": 0.9375
+        },
+        {
+          "threshold": 0.25,
+          "fraction": 0.9010416666666666
+        },
+        {
+          "threshold": 0.30000000000000004,
+          "fraction": 0.8645833333333334
+        },
+        {
+          "threshold": 0.35000000000000003,
+          "fraction": 0.828125
+        },
+        {
+          "threshold": 0.4,
+          "fraction": 0.7955729166666666
+        },
+        {
+          "threshold": 0.45,
+          "fraction": 0.7447916666666666
+        },
+        {
+          "threshold": 0.5,
+          "fraction": 0.6953125
+        },
+        {
+          "threshold": 0.55,
+          "fraction": 0.6510416666666666
+        },
+        {
+          "threshold": 0.6000000000000001,
+          "fraction": 0.6158854166666666
+        },
+        {
+          "threshold": 0.65,
+          "fraction": 0.5572916666666666
+        },
+        {
+          "threshold": 0.7000000000000001,
+          "fraction": 0.4921875
+        },
+        {
+          "threshold": 0.75,
+          "fraction": 0.4453125
+        },
+        {
+          "threshold": 0.8,
+          "fraction": 0.3841145833333333
+        },
+        {
+          "threshold": 0.8500000000000001,
+          "fraction": 0.3333333333333333
+        },
+        {
+          "threshold": 0.9,
+          "fraction": 0.2825520833333333
+        },
+        {
+          "threshold": 0.9500000000000001,
+          "fraction": 0.19140625
+        },
+        {
+          "threshold": 1.0,
+          "fraction": 0.0
+        }
+      ]
+    },
+    "stage_a_no_coupling": {
+      "recordings": 100,
+      "unit_instances": 768,
+      "mean_roa_pct": 57.82018589261389,
+      "median_roa_pct": 59.69457532418796,
+      "pct_units_roa_ge_90": 23.4375,
+      "by_snr": {
+        "15": 69.71197888494399,
+        "20": 67.11677824014001,
+        "25": 56.65155292167549,
+        "30": 52.55858985795152
+      },
+      "by_condition": {
+        "staircase": 63.245578459712505,
+        "triangular-ramp40s": 64.07048399180492,
+        "triangular-ramp20s": 56.843326535581575,
+        "triangular-ramp10s": 51.28282899095217,
+        "triangular-ramp5s": 53.66122207828923
+      },
+      "trained_subject_mean_roa_pct": 51.52939997770834,
+      "unseen_subject_mean_roa_pct": 59.704228374742975,
+      "mean_precision": 0.7136304871670744,
+      "mean_recall": 0.6615250401473577,
+      "mean_f1": 0.6810456979101133,
+      "end_units_roa_ge_90": 260,
+      "mean_sil": 0.820919335160094,
+      "mean_first_hold_roa": 0.9238431637523868,
+      "mean_ramp_roa": 0.562348074724019,
+      "mean_last_hold_roa": 0.43514189228661654,
+      "recall_threshold_curve": [
+        {
+          "threshold": 0.0,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.05,
+          "fraction": 1.0
+        },
+        {
+          "threshold": 0.1,
+          "fraction": 0.9986979166666666
+        },
+        {
+          "threshold": 0.15000000000000002,
+          "fraction": 0.9765625
+        },
+        {
+          "threshold": 0.2,
+          "fraction": 0.9361979166666666
+        },
+        {
+          "threshold": 0.25,
+          "fraction": 0.9036458333333334
+        },
+        {
+          "threshold": 0.30000000000000004,
+          "fraction": 0.8606770833333334
+        },
+        {
+          "threshold": 0.35000000000000003,
+          "fraction": 0.8307291666666666
+        },
+        {
+          "threshold": 0.4,
+          "fraction": 0.7942708333333334
+        },
+        {
+          "threshold": 0.45,
+          "fraction": 0.7447916666666666
+        },
+        {
+          "threshold": 0.5,
+          "fraction": 0.69140625
+        },
+        {
+          "threshold": 0.55,
+          "fraction": 0.6471354166666666
+        },
+        {
+          "threshold": 0.6000000000000001,
+          "fraction": 0.6106770833333334
+        },
+        {
+          "threshold": 0.65,
+          "fraction": 0.5559895833333334
+        },
+        {
+          "threshold": 0.7000000000000001,
+          "fraction": 0.4934895833333333
+        },
+        {
+          "threshold": 0.75,
+          "fraction": 0.4505208333333333
+        },
+        {
+          "threshold": 0.8,
+          "fraction": 0.3919270833333333
+        },
+        {
+          "threshold": 0.8500000000000001,
+          "fraction": 0.3359375
+        },
+        {
+          "threshold": 0.9,
+          "fraction": 0.2825520833333333
+        },
+        {
+          "threshold": 0.9500000000000001,
+          "fraction": 0.19270833333333334
+        },
+        {
+          "threshold": 1.0,
+          "fraction": 0.0
+        }
+      ]
+    }
+  },
+  "go_no_go": {
+    "triangular-ramp5s": {
+      "mean_roa_pct": 53.61946766492418,
+      "pareto_roa_pct": 64.17195385379134,
+      "delta_pp": -10.552486188867157,
+      "required_delta_pp": 5,
+      "passed": false
+    },
+    "triangular-ramp10s": {
+      "mean_roa_pct": 51.323221018409726,
+      "pareto_roa_pct": 72.05966108099638,
+      "delta_pp": -20.736440062586652,
+      "required_delta_pp": 5,
+      "passed": false
+    },
+    "staircase": {
+      "mean_roa_pct": 63.02020345370233,
+      "pareto_roa_pct": 91.64171309480803,
+      "delta_pp": -28.621509641105696,
+      "required_delta_pp": 0,
+      "passed": false
+    }
+  },
+  "statistics": [
+    {
+      "condition": "staircase",
+      "mean_delta_pp": -28.6215096411057,
+      "wilcoxon_unit_p": 8.446022718600053e-22,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -32.268806334241766,
+        -22.477086647862762
+      ],
+      "wilcoxon_holm_p": 2.533806815580016e-21
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "mean_delta_pp": -20.736440062586652,
+      "wilcoxon_unit_p": 2.417852812073876e-18,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -27.15660984780207,
+        -13.793306500997987
+      ],
+      "wilcoxon_holm_p": 4.835705624147752e-18
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "mean_delta_pp": -10.552486188867155,
+      "wilcoxon_unit_p": 6.74025699952563e-07,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -14.275093282741802,
+        -6.271528610398182
+      ],
+      "wilcoxon_holm_p": 6.74025699952563e-07
+    }
+  ],
+  "elapsed_seconds": 3.2960490999976173,
+  "timing_scope": "offline W0 projection and original detector/SV loops; not live latency"
+}

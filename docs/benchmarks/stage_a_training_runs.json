@@ -1,0 +1,1117 @@
+{
+  "pilot_cov128": {
+    "executed_at_utc": "2026-10-18T16:11:38.129893+00:00",
+    "protocol": {
+      "name": "pilot_cov128",
+      "seed": 0,
+      "epochs": 3,
+      "samples": 128,
+      "learning_rate": 0.001,
+      "contrast_weight": 0.01,
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      },
+      "training": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp40s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "51ddec89c3d39509785d75d1b7ee7a938731695f86c79da05d8df6bff10bc7d2",
+          "raw_signal_sha256": "f8599c96d9dd81e95d44c42649e033ef8dbe69bfd58d84084150887070cecd8a",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 25.899045400030445,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        },
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp5s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "a7eee3f925729c82121417c3d9427684ee117d2924391a9964a462e9959f7d6e",
+          "raw_signal_sha256": "c36c137eae639111d74b80bc2cd93c4c4cc595ee1f507ad95bbacc3979d8a4e9",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 18.94994330004556,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "validation": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp10s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "027e97a189cda45ece500d5e191ed281b7b31ab6c89f881c25de4e2166fb9281",
+          "raw_signal_sha256": "8cd0d5ef9faa6d2022c1923be8bf87fbe58edd262b553ce910859c9b5df50052",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 31.804151099990122,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "labels_used": false,
+      "selection": "minimum label-free loss on sub-01 ramp10s, 30 dB",
+      "parent_checkpoint": null,
+      "parent_sha256": null,
+      "code_sha256": {
+        "common.py": "70b52cae6f2b121e0eec66396c8ea392b02815c71271d2a4f8a5a3228e851552",
+        "data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+        "evaluate.py": "38849516ce426f66b25ef0abe9c8e76c7d53e137f775947a8e8435cac39f3e9d",
+        "inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+        "model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+        "run_stage_a.py": "74c7d8b07fdaf34188d1a3a588caa2b73d620ddefeb8ea7c8f20da81a215eb2b",
+        "test_stage_a.py": "7125553ed0ee0413c7dbd5992bd0d03bf1f091fdeee30beb0690aea5567b2bd9",
+        "train.py": "2154950bba33f187141f14eea48d8fcf71eb036865b7138b03ae4aa4229656d9",
+        "__init__.py": "0da24c29c8b6907fcff61cd70960dbd3ad66f7aeb488ee39fa4ee0612a12e885"
+      },
+      "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+      "approximations": [
+        "KL ridge before correction, not after",
+        "BPTT truncated at 32 100-ms batches; loss every fourth batch",
+        "SV held at calibration during training; original updates retained at inference",
+        "log-cosh trusted peaks from detached calibration-centroid detection",
+        "FIFO evenly subsampled"
+      ]
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "training": null,
+        "validation": {
+          "loss": 0.08796235632949642,
+          "kl_change_per_dimension": 0.0,
+          "contrast": 8.79095452598163
+        },
+        "elapsed_seconds": 1.2472006999887526
+      },
+      {
+        "epoch": 1,
+        "training": {
+          "loss": 0.09150137359808598,
+          "kl_change_per_dimension": 0.00030010379319083443,
+          "contrast": 9.117541896445411
+        },
+        "validation": {
+          "loss": 0.0838158438647432,
+          "kl_change_per_dimension": 0.00094650377351562,
+          "contrast": 8.284906417131424
+        },
+        "elapsed_seconds": 5.602868799993303
+      },
+      {
+        "epoch": 2,
+        "training": {
+          "loss": 0.07661782494480056,
+          "kl_change_per_dimension": 0.0007870395789991237,
+          "contrast": 7.581630166087832
+        },
+        "validation": {
+          "loss": 0.08864391348989946,
+          "kl_change_per_dimension": 0.00025868533748507616,
+          "contrast": 8.837087277855192
+        },
+        "elapsed_seconds": 9.863410699996166
+      },
+      {
+        "epoch": 3,
+        "training": {
+          "loss": 0.07623782105344747,
+          "kl_change_per_dimension": 5.391273436572419e-07,
+          "contrast": 7.622164283479963
+        },
+        "validation": {
+          "loss": 0.08908187172242574,
+          "kl_change_per_dimension": 0.0001334435669053034,
+          "contrast": 8.892949772732598
+        },
+        "elapsed_seconds": 14.042530100035947
+      }
+    ]
+  },
+  "full_fifo_squared": {
+    "executed_at_utc": "2026-10-18T16:18:06.287638+00:00",
+    "protocol": {
+      "name": "full_fifo_squared",
+      "seed": 0,
+      "epochs": 8,
+      "samples": 2000,
+      "learning_rate": 0.001,
+      "contrast_weight": 0.01,
+      "loss_mode": "squared",
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      },
+      "training": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp40s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "51ddec89c3d39509785d75d1b7ee7a938731695f86c79da05d8df6bff10bc7d2",
+          "raw_signal_sha256": "f8599c96d9dd81e95d44c42649e033ef8dbe69bfd58d84084150887070cecd8a",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 25.899045400030445,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        },
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp5s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "a7eee3f925729c82121417c3d9427684ee117d2924391a9964a462e9959f7d6e",
+          "raw_signal_sha256": "c36c137eae639111d74b80bc2cd93c4c4cc595ee1f507ad95bbacc3979d8a4e9",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 18.94994330004556,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "validation": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp10s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "027e97a189cda45ece500d5e191ed281b7b31ab6c89f881c25de4e2166fb9281",
+          "raw_signal_sha256": "8cd0d5ef9faa6d2022c1923be8bf87fbe58edd262b553ce910859c9b5df50052",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 31.804151099990122,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "labels_used": false,
+      "selection": "minimum label-free loss on sub-01 ramp10s, 30 dB",
+      "parent_checkpoint": null,
+      "parent_sha256": null,
+      "code_sha256": {
+        "common.py": "70b52cae6f2b121e0eec66396c8ea392b02815c71271d2a4f8a5a3228e851552",
+        "data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+        "evaluate.py": "38849516ce426f66b25ef0abe9c8e76c7d53e137f775947a8e8435cac39f3e9d",
+        "inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+        "model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+        "objectives.py": "39f0a0a1204fe049a78d9a57ef251c52c9317f2e904a46f20755e40be22de332",
+        "run_stage_a.py": "b0aebeaffd82e72a673e56577b00838ec7433611163def29a29c36e5b43b12c3",
+        "test_stage_a.py": "7125553ed0ee0413c7dbd5992bd0d03bf1f091fdeee30beb0690aea5567b2bd9",
+        "train.py": "f79f7e250bcaf5307959a8a9ef8896d65fde3bca5aad01615eba9a091b20cf26",
+        "__init__.py": "0da24c29c8b6907fcff61cd70960dbd3ad66f7aeb488ee39fa4ee0612a12e885"
+      },
+      "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+      "approximations": [
+        "KL ridge before correction, not after",
+        "BPTT truncated at 32 100-ms batches; loss every fourth batch",
+        "SV held at calibration during training; original updates retained at inference",
+        "log-cosh trusted peaks from detached calibration-centroid detection",
+        "full 2000-sample FIFO"
+      ]
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "training": null,
+        "validation": {
+          "loss": 18589.010469709123,
+          "whitening_loss": 18588.922087533134,
+          "contrast": 8.790954564298902
+        },
+        "elapsed_seconds": 4.231875700003002
+      },
+      {
+        "epoch": 1,
+        "training": {
+          "loss": 16670.036224910193,
+          "whitening_loss": 16669.943283626013,
+          "contrast": 9.301627729620252
+        },
+        "validation": {
+          "loss": 17716.46686880929,
+          "whitening_loss": 17716.38000815255,
+          "contrast": 8.765276593821389
+        },
+        "elapsed_seconds": 18.64356840000255
+      },
+      {
+        "epoch": 2,
+        "training": {
+          "loss": 15996.131136757987,
+          "whitening_loss": 15996.03922871181,
+          "contrast": 9.21918118425778
+        },
+        "validation": {
+          "loss": 17438.9754486084,
+          "whitening_loss": 17438.887634277344,
+          "contrast": 8.77272835799626
+        },
+        "elapsed_seconds": 46.607215099968016
+      },
+      {
+        "epoch": 3,
+        "training": {
+          "loss": 15778.014137813023,
+          "whitening_loss": 15777.921250479561,
+          "contrast": 9.283630890505654
+        },
+        "validation": {
+          "loss": 17289.16213117327,
+          "whitening_loss": 17289.073704310827,
+          "contrast": 8.85783303635461
+        },
+        "elapsed_seconds": 74.36264810001012
+      },
+      {
+        "epoch": 4,
+        "training": {
+          "loss": 15705.941524505615,
+          "whitening_loss": 15705.84827041626,
+          "contrast": 9.353763316358839
+        },
+        "validation": {
+          "loss": 17213.29198237828,
+          "whitening_loss": 17213.20308140346,
+          "contrast": 8.931675476687294
+        },
+        "elapsed_seconds": 100.26155090000248
+      },
+      {
+        "epoch": 5,
+        "training": {
+          "loss": 15656.125319344657,
+          "whitening_loss": 15656.030409676689,
+          "contrast": 9.492463363068444
+        },
+        "validation": {
+          "loss": 17211.447600228446,
+          "whitening_loss": 17211.358767918176,
+          "contrast": 8.85814711025783
+        },
+        "elapsed_seconds": 128.81081330002053
+      },
+      {
+        "epoch": 6,
+        "training": {
+          "loss": 15635.052383422852,
+          "whitening_loss": 15634.957587650844,
+          "contrast": 9.450217651469368
+        },
+        "validation": {
+          "loss": 17200.84072440011,
+          "whitening_loss": 17200.752374921525,
+          "contrast": 8.786106603486198
+        },
+        "elapsed_seconds": 161.70531340001617
+      },
+      {
+        "epoch": 7,
+        "training": {
+          "loss": 15623.823516845703,
+          "whitening_loss": 15623.728969573975,
+          "contrast": 9.482267775705882
+        },
+        "validation": {
+          "loss": 17201.390549795968,
+          "whitening_loss": 17201.302362714494,
+          "contrast": 8.780717985970634
+        },
+        "elapsed_seconds": 185.13909080001758
+      },
+      {
+        "epoch": 8,
+        "training": {
+          "loss": 15618.009369986397,
+          "whitening_loss": 15617.915044512067,
+          "contrast": 9.46716794371605
+        },
+        "validation": {
+          "loss": 17188.589163643974,
+          "whitening_loss": 17188.501682826452,
+          "contrast": 8.773537014211927
+        },
+        "elapsed_seconds": 211.73079180001514
+      }
+    ]
+  },
+  "balanced_gru": {
+    "executed_at_utc": "2026-10-18T16:21:56.897191+00:00",
+    "protocol": {
+      "name": "balanced_gru",
+      "seed": 0,
+      "epochs": 10,
+      "samples": 2000,
+      "learning_rate": 0.001,
+      "contrast_weight": 0.1,
+      "whitening_weight": 0.0001,
+      "validation_objective": {
+        "whitening_weight": 0.0001,
+        "contrast_weight": 0.1
+      },
+      "threads": 2,
+      "loss_mode": "squared",
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      },
+      "training": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp40s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "51ddec89c3d39509785d75d1b7ee7a938731695f86c79da05d8df6bff10bc7d2",
+          "raw_signal_sha256": "f8599c96d9dd81e95d44c42649e033ef8dbe69bfd58d84084150887070cecd8a",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 25.899045400030445,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        },
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp5s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "a7eee3f925729c82121417c3d9427684ee117d2924391a9964a462e9959f7d6e",
+          "raw_signal_sha256": "c36c137eae639111d74b80bc2cd93c4c4cc595ee1f507ad95bbacc3979d8a4e9",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 18.94994330004556,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "validation": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp10s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "027e97a189cda45ece500d5e191ed281b7b31ab6c89f881c25de4e2166fb9281",
+          "raw_signal_sha256": "8cd0d5ef9faa6d2022c1923be8bf87fbe58edd262b553ce910859c9b5df50052",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 31.804151099990122,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "labels_used": false,
+      "selection": "minimum label-free loss on sub-01 ramp10s, 30 dB",
+      "parent_checkpoint": null,
+      "parent_sha256": null,
+      "code_sha256": {
+        "common.py": "70b52cae6f2b121e0eec66396c8ea392b02815c71271d2a4f8a5a3228e851552",
+        "data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+        "evaluate.py": "38849516ce426f66b25ef0abe9c8e76c7d53e137f775947a8e8435cac39f3e9d",
+        "inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+        "model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+        "objectives.py": "39f0a0a1204fe049a78d9a57ef251c52c9317f2e904a46f20755e40be22de332",
+        "run_stage_a.py": "6f4e9f6109bcfe8fb7dc9d0e14bfc76a0a7ba049624dc9f51c1fec24c999e4fa",
+        "selection.py": "0b6ebdda277819a41f7b6fdd9cf6b996c01e4b469fe3a963e00590e3cb579b69",
+        "test_stage_a.py": "5d40a02bf22e0ec0cd913033d473245d040e0f2e61149a254fa946a693c2165e",
+        "train.py": "bc82e32c7d0b29944199a4daeca59c7e7cccc2961d50e513431bc7c838367c98",
+        "__init__.py": "0da24c29c8b6907fcff61cd70960dbd3ad66f7aeb488ee39fa4ee0612a12e885"
+      },
+      "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+      "approximations": [
+        "KL ridge before correction, not after",
+        "BPTT truncated at 32 100-ms batches; loss every fourth batch",
+        "SV held at calibration during training; original updates retained at inference",
+        "log-cosh trusted peaks from detached calibration-centroid detection",
+        "full 2000-sample FIFO"
+      ]
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "training": null,
+        "validation": {
+          "loss": 2.7380404844880104,
+          "whitening_loss": 18588.922087533134,
+          "contrast": 8.79095452598163
+        },
+        "elapsed_seconds": 1.7905078999465331
+      },
+      {
+        "epoch": 1,
+        "training": {
+          "loss": 2.6138026166175092,
+          "whitening_loss": 16986.05309132167,
+          "contrast": 9.151506317513329
+        },
+        "validation": {
+          "loss": 2.709811949304172,
+          "whitening_loss": 18778.58642578125,
+          "contrast": 8.319073059729167
+        },
+        "elapsed_seconds": 31.931278799951542
+      },
+      {
+        "epoch": 2,
+        "training": {
+          "loss": 2.47029772400856,
+          "whitening_loss": 17034.55207988194,
+          "contrast": 7.6680165486676355
+        },
+        "validation": {
+          "loss": 2.732767236552068,
+          "whitening_loss": 18432.712117876326,
+          "contrast": 8.89455765911511
+        },
+        "elapsed_seconds": 52.718828599958215
+      },
+      {
+        "epoch": 3,
+        "training": {
+          "loss": 2.4327648920672282,
+          "whitening_loss": 16812.31576047625,
+          "contrast": 7.514997226851327
+        },
+        "validation": {
+          "loss": 2.727313214114734,
+          "whitening_loss": 18464.100437709265,
+          "contrast": 8.808737827198845
+        },
+        "elapsed_seconds": 80.13276199996471
+      },
+      {
+        "epoch": 4,
+        "training": {
+          "loss": 2.424859259277582,
+          "whitening_loss": 16744.38395200457,
+          "contrast": 7.503969716174262
+        },
+        "validation": {
+          "loss": 2.714408613741398,
+          "whitening_loss": 18291.52652958461,
+          "contrast": 8.852284444229943
+        },
+        "elapsed_seconds": 106.5700578999822
+      },
+      {
+        "epoch": 5,
+        "training": {
+          "loss": 2.3975719830819537,
+          "whitening_loss": 16659.610875810897,
+          "contrast": 7.315875845296042
+        },
+        "validation": {
+          "loss": 2.719523350042956,
+          "whitening_loss": 18241.000894818986,
+          "contrast": 8.953964774097715
+        },
+        "elapsed_seconds": 144.22062819998246
+      },
+      {
+        "epoch": 6,
+        "training": {
+          "loss": 2.394086521651064,
+          "whitening_loss": 16624.96380342756,
+          "contrast": 7.315678123916898
+        },
+        "validation": {
+          "loss": 2.699625263256686,
+          "whitening_loss": 18200.92593928746,
+          "contrast": 8.795036447899681
+        },
+        "elapsed_seconds": 179.89572789997328
+      },
+      {
+        "epoch": 7,
+        "training": {
+          "loss": 2.386401044470923,
+          "whitening_loss": 16590.71524974278,
+          "contrast": 7.273048332759312
+        },
+        "validation": {
+          "loss": 2.6898358150252273,
+          "whitening_loss": 18188.479745047433,
+          "contrast": 8.709528399365288
+        },
+        "elapsed_seconds": 189.78166749997763
+      },
+      {
+        "epoch": 8,
+        "training": {
+          "loss": 2.3793153134839877,
+          "whitening_loss": 16568.773646218437,
+          "contrast": 7.2241029271057675
+        },
+        "validation": {
+          "loss": 2.6982749067246914,
+          "whitening_loss": 18166.189859662736,
+          "contrast": 8.816237249544688
+        },
+        "elapsed_seconds": 202.30012489994988
+      },
+      {
+        "epoch": 9,
+        "training": {
+          "loss": 2.3733135738543103,
+          "whitening_loss": 16543.401632581437,
+          "contrast": 7.189415437834604
+        },
+        "validation": {
+          "loss": 2.717435345053673,
+          "whitening_loss": 18102.931126185827,
+          "contrast": 9.07099387049675
+        },
+        "elapsed_seconds": 225.59278719994472
+      },
+      {
+        "epoch": 10,
+        "training": {
+          "loss": 2.3707711340061257,
+          "whitening_loss": 16441.706534794397,
+          "contrast": 7.265606909990311
+        },
+        "validation": {
+          "loss": 2.7047858775726388,
+          "whitening_loss": 18062.520086015975,
+          "contrast": 8.984709028686796
+        },
+        "elapsed_seconds": 250.4956797999912
+      }
+    ]
+  },
+  "balanced_mlp": {
+    "executed_at_utc": "2026-10-18T16:21:41.821756+00:00",
+    "protocol": {
+      "name": "balanced_mlp",
+      "seed": 0,
+      "epochs": 10,
+      "samples": 2000,
+      "learning_rate": 0.001,
+      "contrast_weight": 0.1,
+      "whitening_weight": 0.0001,
+      "validation_objective": {
+        "whitening_weight": 0.0001,
+        "contrast_weight": 0.1
+      },
+      "threads": 2,
+      "loss_mode": "squared",
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 1,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "mlp"
+      },
+      "training": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp40s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "51ddec89c3d39509785d75d1b7ee7a938731695f86c79da05d8df6bff10bc7d2",
+          "raw_signal_sha256": "f8599c96d9dd81e95d44c42649e033ef8dbe69bfd58d84084150887070cecd8a",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 25.899045400030445,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        },
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp5s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "a7eee3f925729c82121417c3d9427684ee117d2924391a9964a462e9959f7d6e",
+          "raw_signal_sha256": "c36c137eae639111d74b80bc2cd93c4c4cc595ee1f507ad95bbacc3979d8a4e9",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 18.94994330004556,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "validation": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp10s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "027e97a189cda45ece500d5e191ed281b7b31ab6c89f881c25de4e2166fb9281",
+          "raw_signal_sha256": "8cd0d5ef9faa6d2022c1923be8bf87fbe58edd262b553ce910859c9b5df50052",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 31.804151099990122,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "labels_used": false,
+      "selection": "minimum label-free loss on sub-01 ramp10s, 30 dB",
+      "parent_checkpoint": null,
+      "parent_sha256": null,
+      "code_sha256": {
+        "common.py": "70b52cae6f2b121e0eec66396c8ea392b02815c71271d2a4f8a5a3228e851552",
+        "data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+        "evaluate.py": "38849516ce426f66b25ef0abe9c8e76c7d53e137f775947a8e8435cac39f3e9d",
+        "inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+        "model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+        "objectives.py": "39f0a0a1204fe049a78d9a57ef251c52c9317f2e904a46f20755e40be22de332",
+        "run_stage_a.py": "6f4e9f6109bcfe8fb7dc9d0e14bfc76a0a7ba049624dc9f51c1fec24c999e4fa",
+        "selection.py": "0b6ebdda277819a41f7b6fdd9cf6b996c01e4b469fe3a963e00590e3cb579b69",
+        "test_stage_a.py": "5d40a02bf22e0ec0cd913033d473245d040e0f2e61149a254fa946a693c2165e",
+        "train.py": "bc82e32c7d0b29944199a4daeca59c7e7cccc2961d50e513431bc7c838367c98",
+        "__init__.py": "0da24c29c8b6907fcff61cd70960dbd3ad66f7aeb488ee39fa4ee0612a12e885"
+      },
+      "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+      "approximations": [
+        "KL ridge before correction, not after",
+        "BPTT truncated at 32 100-ms batches; loss every fourth batch",
+        "SV held at calibration during training; original updates retained at inference",
+        "log-cosh trusted peaks from detached calibration-centroid detection",
+        "full 2000-sample FIFO"
+      ]
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "training": null,
+        "validation": {
+          "loss": 2.7382653462035313,
+          "whitening_loss": 18588.922087533134,
+          "contrast": 8.79095452598163
+        },
+        "elapsed_seconds": 1.6999695000122301
+      },
+      {
+        "epoch": 1,
+        "training": {
+          "loss": 2.6022346445492337,
+          "whitening_loss": 16989.969703129358,
+          "contrast": 9.031419153724398
+        },
+        "validation": {
+          "loss": 2.698051725647279,
+          "whitening_loss": 18791.486597333635,
+          "contrast": 8.187642391238894
+        },
+        "elapsed_seconds": 31.28606219997164
+      },
+      {
+        "epoch": 2,
+        "training": {
+          "loss": 2.4696309534566745,
+          "whitening_loss": 17044.148689814978,
+          "contrast": 7.651269861630031
+        },
+        "validation": {
+          "loss": 2.7053845934569836,
+          "whitening_loss": 18471.140048435755,
+          "contrast": 8.582042621714729
+        },
+        "elapsed_seconds": 49.91771599999629
+      },
+      {
+        "epoch": 3,
+        "training": {
+          "loss": 2.434540450040783,
+          "whitening_loss": 16816.345060076033,
+          "contrast": 7.5284251400402615
+        },
+        "validation": {
+          "loss": 2.7231505598340715,
+          "whitening_loss": 18486.099475315637,
+          "contrast": 8.744459130934306
+        },
+        "elapsed_seconds": 78.44820460001938
+      },
+      {
+        "epoch": 4,
+        "training": {
+          "loss": 2.4193957655557563,
+          "whitening_loss": 16801.622764587402,
+          "contrast": 7.391599863767624
+        },
+        "validation": {
+          "loss": 2.7030602730810642,
+          "whitening_loss": 18284.50420161656,
+          "contrast": 8.745468544108528
+        },
+        "elapsed_seconds": 99.56281390000368
+      },
+      {
+        "epoch": 5,
+        "training": {
+          "loss": 2.469632222184113,
+          "whitening_loss": 16661.677484784806,
+          "contrast": 8.034181458609444
+        },
+        "validation": {
+          "loss": 2.6588261473391737,
+          "whitening_loss": 18515.90806252616,
+          "contrast": 8.071928965193885
+        },
+        "elapsed_seconds": 134.0752409999841
+      },
+      {
+        "epoch": 6,
+        "training": {
+          "loss": 2.456482629158667,
+          "whitening_loss": 16918.535379137313,
+          "contrast": 7.645775390522821
+        },
+        "validation": {
+          "loss": 2.6957589936043536,
+          "whitening_loss": 18477.12428501674,
+          "contrast": 8.480153564895902
+        },
+        "elapsed_seconds": 169.23951420001686
+      },
+      {
+        "epoch": 7,
+        "training": {
+          "loss": 2.408561613942896,
+          "whitening_loss": 16797.09103175572,
+          "contrast": 7.288293417010989
+        },
+        "validation": {
+          "loss": 2.7071273497172763,
+          "whitening_loss": 18345.20492880685,
+          "contrast": 8.72583275607654
+        },
+        "elapsed_seconds": 186.13025039999047
+      },
+      {
+        "epoch": 8,
+        "training": {
+          "loss": 2.387319488716977,
+          "whitening_loss": 16695.442241123743,
+          "contrast": 7.177516669034958
+        },
+        "validation": {
+          "loss": 2.727906328226839,
+          "whitening_loss": 18298.52605874198,
+          "contrast": 8.980173873049873
+        },
+        "elapsed_seconds": 193.3809194000205
+      },
+      {
+        "epoch": 9,
+        "training": {
+          "loss": 2.3761848009058406,
+          "whitening_loss": 16666.043305533272,
+          "contrast": 7.0954346145902365
+        },
+        "validation": {
+          "loss": 2.7241698929241727,
+          "whitening_loss": 18273.874708993095,
+          "contrast": 8.967167296579905
+        },
+        "elapsed_seconds": 216.02413199999137
+      },
+      {
+        "epoch": 10,
+        "training": {
+          "loss": 2.377018614006894,
+          "whitening_loss": 16620.612280709403,
+          "contrast": 7.148892189775195
+        },
+        "validation": {
+          "loss": 2.721266252121755,
+          "whitening_loss": 18251.58970751081,
+          "contrast": 8.960741089923042
+        },
+        "elapsed_seconds": 234.9993474999792
+      }
+    ]
+  },
+  "state3_gru": {
+    "executed_at_utc": "2026-10-18T16:22:16.870299+00:00",
+    "protocol": {
+      "name": "state3_gru",
+      "seed": 0,
+      "epochs": 8,
+      "samples": 2000,
+      "learning_rate": 0.001,
+      "contrast_weight": 0.01,
+      "whitening_weight": 1.0,
+      "validation_objective": {
+        "whitening_weight": 0.0001,
+        "contrast_weight": 0.1
+      },
+      "threads": 2,
+      "loss_mode": "squared",
+      "spec": {
+        "dimension": 1000,
+        "features": 122,
+        "state_dim": 3,
+        "hidden": 16,
+        "bases": 6,
+        "rank": 3,
+        "bound": 0.8,
+        "encoder": "gru"
+      },
+      "training": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp40s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "51ddec89c3d39509785d75d1b7ee7a938731695f86c79da05d8df6bff10bc7d2",
+          "raw_signal_sha256": "f8599c96d9dd81e95d44c42649e033ef8dbe69bfd58d84084150887070cecd8a",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 25.899045400030445,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        },
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp5s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "a7eee3f925729c82121417c3d9427684ee117d2924391a9964a462e9959f7d6e",
+          "raw_signal_sha256": "c36c137eae639111d74b80bc2cd93c4c4cc595ee1f507ad95bbacc3979d8a4e9",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 18.94994330004556,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "validation": [
+        {
+          "subject": "sub-01",
+          "condition": "triangular-ramp10s",
+          "snr_db": 30,
+          "samples": 184320,
+          "dimension": 1000,
+          "batch_size": 204,
+          "batch_count": 904,
+          "features": 122,
+          "calibration_sha256": "027e97a189cda45ece500d5e191ed281b7b31ab6c89f881c25de4e2166fb9281",
+          "raw_signal_sha256": "8cd0d5ef9faa6d2022c1923be8bf87fbe58edd262b553ce910859c9b5df50052",
+          "preparation_sha256": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+          "elapsed_seconds": 31.804151099990122,
+          "centering": "reference offline Data and per-batch centering; first 10 samples padded",
+          "labels_loaded": false
+        }
+      ],
+      "labels_used": false,
+      "selection": "minimum label-free loss on sub-01 ramp10s, 30 dB",
+      "parent_checkpoint": null,
+      "parent_sha256": null,
+      "code_sha256": {
+        "common.py": "70b52cae6f2b121e0eec66396c8ea392b02815c71271d2a4f8a5a3228e851552",
+        "data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+        "evaluate.py": "38849516ce426f66b25ef0abe9c8e76c7d53e137f775947a8e8435cac39f3e9d",
+        "inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+        "model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+        "objectives.py": "39f0a0a1204fe049a78d9a57ef251c52c9317f2e904a46f20755e40be22de332",
+        "run_stage_a.py": "6f4e9f6109bcfe8fb7dc9d0e14bfc76a0a7ba049624dc9f51c1fec24c999e4fa",
+        "selection.py": "0b6ebdda277819a41f7b6fdd9cf6b996c01e4b469fe3a963e00590e3cb579b69",
+        "test_stage_a.py": "5d40a02bf22e0ec0cd913033d473245d040e0f2e61149a254fa946a693c2165e",
+        "train.py": "bc82e32c7d0b29944199a4daeca59c7e7cccc2961d50e513431bc7c838367c98",
+        "__init__.py": "0da24c29c8b6907fcff61cd70960dbd3ad66f7aeb488ee39fa4ee0612a12e885"
+      },
+      "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+      "approximations": [
+        "KL ridge before correction, not after",
+        "BPTT truncated at 32 100-ms batches; loss every fourth batch",
+        "SV held at calibration during training; original updates retained at inference",
+        "log-cosh trusted peaks from detached calibration-centroid detection",
+        "full 2000-sample FIFO"
+      ]
+    },
+    "epochs": [
+      {
+        "epoch": 0,
+        "training": null,
+        "validation": {
+          "loss": 2.7380337959953716,
+          "whitening_loss": 18588.922087533134,
+          "contrast": 8.79095452598163
+        },
+        "elapsed_seconds": 8.968373199983034
+      },
+      {
+        "epoch": 1,
+        "training": {
+          "loss": 16637.7688696725,
+          "whitening_loss": 16637.676426478796,
+          "contrast": 9.251589472804751
+        },
+        "validation": {
+          "loss": 2.658889206924609,
+          "whitening_loss": 17676.971366882324,
+          "contrast": 8.911583828074592
+        },
+        "elapsed_seconds": 51.182967700005975
+      },
+      {
+        "epoch": 2,
+        "training": {
+          "loss": 15947.819577898297,
+          "whitening_loss": 15947.726747785297,
+          "contrast": 9.302476159163884
+        },
+        "validation": {
+          "loss": 2.6182307127330984,
+          "whitening_loss": 17421.506006513322,
+          "contrast": 8.760424848113741
+        },
+        "elapsed_seconds": 71.49781109998003
+      },
+      {
+        "epoch": 3,
+        "training": {
+          "loss": 15778.352396283832,
+          "whitening_loss": 15778.259781428746,
+          "contrast": 9.291029248918806
+        },
+        "validation": {
+          "loss": 2.6052009128034115,
+          "whitening_loss": 17328.33166394915,
+          "contrast": 8.723306958164487
+        },
+        "elapsed_seconds": 80.8808497999562
+      },
+      {
+        "epoch": 4,
+        "training": {
+          "loss": 15724.008178710938,
+          "whitening_loss": 15723.915664672852,
+          "contrast": 9.26991223863193
+        },
+        "validation": {
+          "loss": 2.622203483113221,
+          "whitening_loss": 17233.588147844588,
+          "contrast": 8.98821832026754
+        },
+        "elapsed_seconds": 105.69676059996709
+      },
+      {
+        "epoch": 5,
+        "training": {
+          "loss": 15665.611910683769,
+          "whitening_loss": 15665.518458230155,
+          "contrast": 9.337315346513476
+        },
+        "validation": {
+          "loss": 2.6135746049029485,
+          "whitening_loss": 17195.972873142786,
+          "contrast": 8.939509140593666
+        },
+        "elapsed_seconds": 134.07865300000412
+      },
+      {
+        "epoch": 6,
+        "training": {
+          "loss": 15635.667022705078,
+          "whitening_loss": 15635.573045458112,
+          "contrast": 9.386986681393214
+        },
+        "validation": {
+          "loss": 2.6057546181338176,
+          "whitening_loss": 17193.577091762,
+          "contrast": 8.8636882518019
+        },
+        "elapsed_seconds": 141.76453869999386
+      },
+      {
+        "epoch": 7,
+        "training": {
+          "loss": 15619.235519954136,
+          "whitening_loss": 15619.141637529645,
+          "contrast": 9.41912607210023
+        },
+        "validation": {
+          "loss": 2.6116168727832183,
+          "whitening_loss": 17219.15494319371,
+          "contrast": 8.896723836660385
+        },
+        "elapsed_seconds": 149.6865157999564
+      },
+      {
+        "epoch": 8,
+        "training": {
+          "loss": 15609.288386753627,
+          "whitening_loss": 15609.194229670933,
+          "contrast": 9.433666378259659
+        },
+        "validation": {
+          "loss": 2.6035241473998343,
+          "whitening_loss": 17188.597590855188,
+          "contrast": 8.846377300364631
+        },
+        "elapsed_seconds": 157.31417579995468
+      }
+    ]
+  }
+}
