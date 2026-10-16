@@ -1,0 +1,209 @@
+{
+  "formula": "roa_pct ~ C(method, Treatment(reference='pareto')) * C(condition, Treatment(reference='staircase'))",
+  "groups": "subject",
+  "random_intercepts": "subject and recording nested within subject",
+  "reml": true,
+  "observations": 3072,
+  "subjects": 5,
+  "recordings": 100,
+  "statsmodels_version": "0.15.0",
+  "per_unit_sha256": "e404f62d3f69ac5c27f11404c472d815fb0cf8701c0aaabf8f3eb418f03e14a1",
+  "code_sha256": "a8463bfa8c36164477e3ddcb4811739332e83aa33013bd960d3197d3a5a831ad",
+  "note": "Gaussian approximation to bounded RoA; only five subject clusters. Repeated methods share units; the guide's random structure does not include a unit intercept. Subject-cluster bootstrap is reported separately.",
+  "status": "converged",
+  "fixed_effects_pp": {
+    "Intercept": 94.70189412122413,
+    "C(method, Treatment(reference='pareto'))[T.identity_sv_sd]": -29.341991115888227,
+    "C(method, Treatment(reference='pareto'))[T.stage_a]": -28.62150964110579,
+    "C(method, Treatment(reference='pareto'))[T.stage_a_no_coupling]": -28.396134635095567,
+    "C(condition, Treatment(reference='staircase'))[T.triangular-ramp10s]": -19.671430398955096,
+    "C(condition, Treatment(reference='staircase'))[T.triangular-ramp20s]": -11.45542828479064,
+    "C(condition, Treatment(reference='staircase'))[T.triangular-ramp40s]": -4.589719453187188,
+    "C(condition, Treatment(reference='staircase'))[T.triangular-ramp5s]": -27.553691675543686,
+    "C(method, Treatment(reference='pareto'))[T.identity_sv_sd]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp10s]": 7.948537099270759,
+    "C(method, Treatment(reference='pareto'))[T.stage_a]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp10s]": 7.8850695785191345,
+    "C(method, Treatment(reference='pareto'))[T.stage_a_no_coupling]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp10s]": 7.619302545051362,
+    "C(method, Treatment(reference='pareto'))[T.identity_sv_sd]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp20s]": 6.078317871009776,
+    "C(method, Treatment(reference='pareto'))[T.stage_a]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp20s]": 4.753267911635334,
+    "C(method, Treatment(reference='pareto'))[T.stage_a_no_coupling]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp20s]": 4.215493674824916,
+    "C(method, Treatment(reference='pareto'))[T.identity_sv_sd]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp40s]": 4.463335190199944,
+    "C(method, Treatment(reference='pareto'))[T.stage_a]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp40s]": 5.2294590625092745,
+    "C(method, Treatment(reference='pareto'))[T.stage_a_no_coupling]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp40s]": 5.013889692853413,
+    "C(method, Treatment(reference='pareto'))[T.identity_sv_sd]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp5s]": 18.09510284084974,
+    "C(method, Treatment(reference='pareto'))[T.stage_a]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp5s]": 18.069023452238667,
+    "C(method, Treatment(reference='pareto'))[T.stage_a_no_coupling]:C(condition, Treatment(reference='staircase'))[T.triangular-ramp5s]": 17.885402859593484
+  },
+  "subject_variance": 34.636165331163355,
+  "recording_variance": 62.3098251607124,
+  "residual_variance": 777.2601262060906,
+  "log_likelihood": -14596.239854253616,
+  "contrasts": [
+    {
+      "condition": "staircase",
+      "method": "stage_a",
+      "comparator": "pareto",
+      "delta_pp": -28.62150964110579,
+      "standard_error_pp": 3.1668853655900264,
+      "normal_95_ci_pp": [
+        -34.82860495766224,
+        -22.414414324549337
+      ]
+    },
+    {
+      "condition": "staircase",
+      "method": "stage_a_no_coupling",
+      "comparator": "pareto",
+      "delta_pp": -28.396134635095567,
+      "standard_error_pp": 3.166885365590026,
+      "normal_95_ci_pp": [
+        -34.60322995165202,
+        -22.189039318539116
+      ]
+    },
+    {
+      "condition": "staircase",
+      "method": "identity_sv_sd",
+      "comparator": "pareto",
+      "delta_pp": -29.341991115888227,
+      "standard_error_pp": 3.166885365590024,
+      "normal_95_ci_pp": [
+        -35.549086432444675,
+        -23.13489579933178
+      ]
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "method": "stage_a",
+      "comparator": "pareto",
+      "delta_pp": -23.392050578596514,
+      "standard_error_pp": 3.177150823194557,
+      "normal_95_ci_pp": [
+        -29.619266192057847,
+        -17.16483496513518
+      ]
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "method": "stage_a_no_coupling",
+      "comparator": "pareto",
+      "delta_pp": -23.382244942242153,
+      "standard_error_pp": 3.1771508231945575,
+      "normal_95_ci_pp": [
+        -29.609460555703485,
+        -17.15502932878082
+      ]
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "method": "identity_sv_sd",
+      "comparator": "pareto",
+      "delta_pp": -24.878655925688285,
+      "standard_error_pp": 3.1771508231945575,
+      "normal_95_ci_pp": [
+        -31.105871539149618,
+        -18.651440312226953
+      ]
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "method": "stage_a",
+      "comparator": "pareto",
+      "delta_pp": -23.868241729470455,
+      "standard_error_pp": 3.2300188588102197,
+      "normal_95_ci_pp": [
+        -30.199078692738485,
+        -17.537404766202425
+      ]
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "method": "stage_a_no_coupling",
+      "comparator": "pareto",
+      "delta_pp": -24.18064096027065,
+      "standard_error_pp": 3.2300188588102188,
+      "normal_95_ci_pp": [
+        -30.511477923538678,
+        -17.849803997002624
+      ]
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "method": "identity_sv_sd",
+      "comparator": "pareto",
+      "delta_pp": -23.26367324487845,
+      "standard_error_pp": 3.2300188588102197,
+      "normal_95_ci_pp": [
+        -29.59451020814648,
+        -16.93283628161042
+      ]
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "method": "stage_a",
+      "comparator": "pareto",
+      "delta_pp": -20.736440062586652,
+      "standard_error_pp": 3.166885365590025,
+      "normal_95_ci_pp": [
+        -26.9435353791431,
+        -14.529344746030203
+      ]
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "method": "stage_a_no_coupling",
+      "comparator": "pareto",
+      "delta_pp": -20.776832090044206,
+      "standard_error_pp": 3.166885365590026,
+      "normal_95_ci_pp": [
+        -26.983927406600657,
+        -14.569736773487755
+      ]
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "method": "identity_sv_sd",
+      "comparator": "pareto",
+      "delta_pp": -21.39345401661747,
+      "standard_error_pp": 3.166885365590026,
+      "normal_95_ci_pp": [
+        -27.60054933317392,
+        -15.186358700061017
+      ]
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "method": "stage_a",
+      "comparator": "pareto",
+      "delta_pp": -10.552486188867121,
+      "standard_error_pp": 3.1668853655900246,
+      "normal_95_ci_pp": [
+        -16.75958150542357,
+        -4.345390872310673
+      ]
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "method": "stage_a_no_coupling",
+      "comparator": "pareto",
+      "delta_pp": -10.510731775502084,
+      "standard_error_pp": 3.166885365590025,
+      "normal_95_ci_pp": [
+        -16.717827092058535,
+        -4.303636458945634
+      ]
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "method": "identity_sv_sd",
+      "comparator": "pareto",
+      "delta_pp": -11.246888275038486,
+      "standard_error_pp": 3.166885365590025,
+      "normal_95_ci_pp": [
+        -17.453983591594934,
+        -5.039792958482037
+      ]
+    }
+  ],
+  "warnings": [],
+  "elapsed_seconds": 0.27845919999526814
+}
