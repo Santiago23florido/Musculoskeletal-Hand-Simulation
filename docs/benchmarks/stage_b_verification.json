@@ -1,0 +1,18 @@
+{
+  "status": "no-go",
+  "source_guard": true,
+  "cuda_training_runs": 8,
+  "selected_checkpoints": 16,
+  "sealed_predictions": 320,
+  "scored_records": 80,
+  "per_unit_rows": 2955,
+  "baseline_rows": 591,
+  "maximum_baseline_metric_difference": 0.0,
+  "models_and_manifest_hashes_valid": true,
+  "freeze_prediction_scoring_chronology_valid": true,
+  "copied_reports_match": true,
+  "old_experiments_unchanged": true,
+  "local_markdown_links_valid": true,
+  "morph_parameters": 3137,
+  "observer_parameters": 10537
+}

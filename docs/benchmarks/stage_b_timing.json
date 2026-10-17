@@ -1,0 +1,2882 @@
+[
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.323499991092831,
+        "p95_core_batch_ms": 11.798430007183924,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.081600011792034,
+        "p95_core_batch_ms": 11.33482001023367,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.192500041332096,
+        "p95_core_batch_ms": 11.86180997174233,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 7.767500006593764,
+        "p95_core_batch_ms": 11.421060026623309,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "d3c23590e1b96f089d8e877e099bf4a9f123a950c47e7a3fbe2ac5e3876e34e4",
+      "moca_b": "cced645777cdf5d89fdad2b44457daae2425d4b35a2846432d359511f7366ddb",
+      "moca_b_fifo": "9f63d91225bd0b2041f91f9839f5d73f707f2c453195d3f4ce43175a0425e3ef",
+      "static_analytic": "0f0231e884c3b7cf31b7361f7c1c738c125358a0dd229586d498c472e6a31f77"
+    },
+    "morph_table_calibration_seconds": 1.827636900008656,
+    "prepared_sha256": "840ae119c66a18656353632491273262220106b7d987f775fcd531444ed750b5",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:41:16.423315+00:00",
+    "elapsed_seconds": 43.72285630000988,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.949399983976036,
+        "p95_core_batch_ms": 12.46011000475846,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.743399986997247,
+        "p95_core_batch_ms": 12.071239977376534,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.74289998319,
+        "p95_core_batch_ms": 12.359100027242675,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.461099991109222,
+        "p95_core_batch_ms": 11.955670022871345,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "3cf9b5dcc4a097fd09dbeb74aa86e6cf567a1bbd99ca441462af1b38ce960a2c",
+      "moca_b": "6d03054f887c02e965cfc9199f411f401a1d4ad777aaa53c1b0ff004f7188316",
+      "moca_b_fifo": "091ee17b2b15bb80c44af2f348a3309c9811385bbd5e18de4a25246c89988757",
+      "static_analytic": "c89e1e63e628e06096dd381e4a1d9c719b40e6ebd9310e76c6f384d4cc921294"
+    },
+    "morph_table_calibration_seconds": 2.8806977000203915,
+    "prepared_sha256": "006806233fc681b4ff3e358aa525d4d96be7ca0ddb1c736255e49186391772b7",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:40:32.699587+00:00",
+    "elapsed_seconds": 48.35002730000997,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.55790001899004,
+        "p95_core_batch_ms": 13.376780017279085,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.309999994002283,
+        "p95_core_batch_ms": 13.378799997735767,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.219200001098216,
+        "p95_core_batch_ms": 13.252849981654435,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.168799966573715,
+        "p95_core_batch_ms": 13.167199993040413,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "38b896fcb9ece066ac4b401c99c8e74e15cdc86fc5bd3560d263d65f1e8c2113",
+      "moca_b": "9243283c2892f50f48b8a1fbfb455cba71d4c3533971e509ebc39f150645084e",
+      "moca_b_fifo": "130038c22c5b74e349df58b5c0dddf28b2c4e5d0bb83c0ec1aee60e45fc0870e",
+      "static_analytic": "4148d6a67a45caf29dbf270e938a0614bb72b103cfcc742699ce1a1e86b294b6"
+    },
+    "morph_table_calibration_seconds": 3.77740179997636,
+    "prepared_sha256": "d3d44325726601ef9784c8c33152ece3ee89ac68eb58ec5f9af35148df8def9b",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:39:44.348559+00:00",
+    "elapsed_seconds": 53.347794400004204,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.676699992269278,
+        "p95_core_batch_ms": 14.727210020646448,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.39780001156032,
+        "p95_core_batch_ms": 14.754939993144944,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.241999989375472,
+        "p95_core_batch_ms": 14.808540017111225,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.374600009527057,
+        "p95_core_batch_ms": 15.132129972334951,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "f4222aa9150bf1ad67970a011a4d78bfbcd7acf33eed0c9867962018fc8f9000",
+      "moca_b": "db5a383f81806b8b3e4d0763671752b2d4d78303480508d4b82f458351128b72",
+      "moca_b_fifo": "dd0127bc26196e1d614a0316b9730de20b03360c4d58dc85ed34a2a31a5d5a20",
+      "static_analytic": "1e20aab3a043afc677bd67929beb9aea4c7cbe264a9dfdeb035ce353d5f5d77d"
+    },
+    "morph_table_calibration_seconds": 4.904638200008776,
+    "prepared_sha256": "c7d334413bf1e4ea237ec4d61a17e0cfb5293271213dfb9501c4922d6fca1c8d",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:38:50.999666+00:00",
+    "elapsed_seconds": 60.32006060000276,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.342299974989146,
+        "p95_core_batch_ms": 20.55596498830708,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.006400007521734,
+        "p95_core_batch_ms": 21.170209982665227,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.252750002313405,
+        "p95_core_batch_ms": 21.22052997001446,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.505650017876178,
+        "p95_core_batch_ms": 17.949950025649738,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "553610c68b7d797f43c7fc82d1ec48912cfb4cde61188a7abbe20f1305945b26",
+      "moca_b": "1c7accc4275a0e39538b1848da429d94d0f7e270617647edc9fe41fd8259e2d0",
+      "moca_b_fifo": "d476b14cc0491807b6fa0aa054f65138efe385d0b1ef138086805420757f5ecf",
+      "static_analytic": "64ab238e8c6c1e52e1e56037085356e027dec5b8cf9de93103587f31275dfc0f"
+    },
+    "morph_table_calibration_seconds": 2.934420300007332,
+    "prepared_sha256": "ca923450171e13ca7ce945ae502433ce08cc3fad5d3008b429112c72a5218114",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:52:42.985619+00:00",
+    "elapsed_seconds": 48.760720899968874,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.33795000007376,
+        "p95_core_batch_ms": 21.65388500725382,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.66695000231266,
+        "p95_core_batch_ms": 22.58894002588931,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.8662999777589,
+        "p95_core_batch_ms": 25.969924990204152,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.88475000183098,
+        "p95_core_batch_ms": 25.474190028035064,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "74942e30f9860be11eab21132d0a6d007cbd6f08e6de115285bdc7c59468e154",
+      "moca_b": "c140c8349289d4ebd4c2e46cfc391b735a79ba4cc46153033d957049a208bbb4",
+      "moca_b_fifo": "abeed17f1da402fdbc13aa270c10fd07840899f960ffbac58b86381e7fc48d90",
+      "static_analytic": "00ab2ac7b1e872171d42d7fe3533e19299d55b3192996f3bc88f8b6da51c91cb"
+    },
+    "morph_table_calibration_seconds": 4.228309899976011,
+    "prepared_sha256": "bbe3afa7499aef16589d99a637afbc9c42a1cc684c052a04a9be7f0c48abba3f",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:51:54.222646+00:00",
+    "elapsed_seconds": 56.33178929996211,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.688050020486116,
+        "p95_core_batch_ms": 13.42648002319038,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.978449990740046,
+        "p95_core_batch_ms": 16.135764998034574,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 14.572150044841692,
+        "p95_core_batch_ms": 26.351494979462583,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 13.908249995438382,
+        "p95_core_batch_ms": 22.275135020026926,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "25c03e6d1a06640114e0ae61cc4295f91875265980ef84dae735816f17bcd962",
+      "moca_b": "c59a69667a9b79801a0ba5fed6f907153a07b5d498b8d66e639ce014991d4925",
+      "moca_b_fifo": "d40a712058852936088c4c0c4aa2b26f80dd42405c3335cdb7f4752c61678e0f",
+      "static_analytic": "54cf43cc35f7b62774f89ab959c04640394c0987e594eb35b84975840819b536"
+    },
+    "morph_table_calibration_seconds": 4.296698399994057,
+    "prepared_sha256": "c542f4633a2c9276b33721cd8b6dfba3c06298a32400f429e6708c191d5f871b",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:57.889633+00:00",
+    "elapsed_seconds": 52.46163620002335,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 15.680049982620403,
+        "p95_core_batch_ms": 27.40856503078248,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 14.9494000361301,
+        "p95_core_batch_ms": 31.69027003168593,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.648200026480481,
+        "p95_core_batch_ms": 14.804990022093982,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.006199987605214,
+        "p95_core_batch_ms": 15.452885004924607,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "d37c7c9e8a6181841e06e349d52a722b6a418e0a09033c1b5da06e52d58a1171",
+      "moca_b": "1fa015bee66c43df5c1d297b02e2ec9f37d3c44d98496d351bba85e8b0572062",
+      "moca_b_fifo": "b8961444a3f759ffad87611daeb6ee7f226407db93839f9b6929bd8f1ad31009",
+      "static_analytic": "7543ce01836e627cf978a7343470e3ca814f6de73185046da6bf038fc7e5b086"
+    },
+    "morph_table_calibration_seconds": 8.946853399975225,
+    "prepared_sha256": "871fcb92fc3a803c03a66b37592e071651fc9fd18a3e2c882396ee0a46b7dcb5",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:05.427044+00:00",
+    "elapsed_seconds": 61.95030520000728,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.955299996770918,
+        "p95_core_batch_ms": 19.057939961203363,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.807200014824048,
+        "p95_core_batch_ms": 18.62825501884799,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.836950008524582,
+        "p95_core_batch_ms": 17.81201998528558,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.747950000222772,
+        "p95_core_batch_ms": 19.331154983956363,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "aaf6a713098a53f67db9644ff1d61500638d2640a2dec795cf19b1f35104a28c",
+      "moca_b": "18e301d3005ebc31fac92e6510fb1930208eccac403d71c6da42648b7244eed2",
+      "moca_b_fifo": "636fa9b1acc5975f819f74f0bd844d38b17d7dc71168b69e0c0f21c109cbfaa3",
+      "static_analytic": "af1cb32e72e047e9ef4d28b8d0f550d173d20241115a4e555670385e32658cb0"
+    },
+    "morph_table_calibration_seconds": 2.964177699992433,
+    "prepared_sha256": "760962082692cec7d32e85e3cf8f3b5ae2fbd48964d66b1c818b8fb95a3ef02e",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:49:03.475361+00:00",
+    "elapsed_seconds": 46.46427580004092,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.966700025368482,
+        "p95_core_batch_ms": 22.286650002934035,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.19820001279004,
+        "p95_core_batch_ms": 24.09414002031552,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.937149974983186,
+        "p95_core_batch_ms": 21.50325495749712,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.480949993710965,
+        "p95_core_batch_ms": 19.49634003394749,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e7addaab03748b5fa9208b4015a2c96a6b65a90e83a72706de463357628d48aa",
+      "moca_b": "d67f3874a048d0e7c643d4836926ef7d702596eb52a67b87d6345884b853385f",
+      "moca_b_fifo": "98a3fb4e625d586658c1c67fe142e6e156c7deeb771c78a01d39754eab3175b6",
+      "static_analytic": "b50df7216dd3a611e3b22d5b7eea9470cb09e3e757dc21a592d1977ddaadd6d0"
+    },
+    "morph_table_calibration_seconds": 2.8594466999638826,
+    "prepared_sha256": "b66cc8d20aeefbea190caa96b71cc3aa0d74d319adc811caeab257e4326867e5",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:48:17.008656+00:00",
+    "elapsed_seconds": 50.47971039998811,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 13.08260002406314,
+        "p95_core_batch_ms": 23.38553499721456,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 14.20945001882501,
+        "p95_core_batch_ms": 26.847825001459565,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.207149982918054,
+        "p95_core_batch_ms": 25.183360007940788,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 13.16474998020567,
+        "p95_core_batch_ms": 24.079284979961773,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "c0a64f7773efadfed44204dedb113ea9091402d89a93085080742ea41ae0e965",
+      "moca_b": "ec45273a7ad40e02a8e2fcb2fb5acbe80b0e349b97ab4c9a396b2d5de9243b51",
+      "moca_b_fifo": "bae4a651399ad76d5d9be20b021d9ee7a3d7562e7d9a0fdc1c871159b889b296",
+      "static_analytic": "136398c4bb5dd30490d8e9314edf5036608bb86e22c6a690f8a75a954d0405db"
+    },
+    "morph_table_calibration_seconds": 6.1215280999895185,
+    "prepared_sha256": "ccdc198e081d430504da95c1b33b4a69bee844f29195e3e13f98ad486b485dbf",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:47:26.527230+00:00",
+    "elapsed_seconds": 62.017529400007334,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 15.27005000389181,
+        "p95_core_batch_ms": 27.124545015976754,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 15.593750023981556,
+        "p95_core_batch_ms": 26.99249001161661,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 15.185700001893565,
+        "p95_core_batch_ms": 24.95939998480025,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 14.787399966735393,
+        "p95_core_batch_ms": 28.499590029241517,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "3514c15cc3be8e8cc0012ac7224676a15c20557afc2208b1b1b3bbcb26805f36",
+      "moca_b": "742c6c164afc7f59588924d2f6e7f3dd4975281f16448be6ef5f3588a968dd21",
+      "moca_b_fifo": "3ab8d0105ff17ad7f94e45aa4c7f062bac135a6dad31e4cd7790a933a811a052",
+      "static_analytic": "725c9b9d043ebdba12f69c718e3751c32e7c2d6a7378b06f4ef18b561631b3e5"
+    },
+    "morph_table_calibration_seconds": 10.177111299999524,
+    "prepared_sha256": "5807ba261ac56db79322a0eaa30e0caeccf7f26759cce2bb8c31c33c22a0cc5a",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:46:24.505988+00:00",
+    "elapsed_seconds": 73.83495529997163,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.81484998576343,
+        "p95_core_batch_ms": 16.69673998840153,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.43190000928007,
+        "p95_core_batch_ms": 17.06609002430923,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.52165002329275,
+        "p95_core_batch_ms": 19.102970024687234,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.497550003696233,
+        "p95_core_batch_ms": 22.47237003757618,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "ff6ce37c55354aa9eb95d6b8e8ee113e350eb783a059710fe57b12b22ff16e13",
+      "moca_b": "ac5007ca0b6f5cb6c41a24c69f5f1c58a2cb173b8e7b4291fa2785abbc65333a",
+      "moca_b_fifo": "d2af1502d1f05c235bf177f13848d2dd73b5ddd38388794f008bd2d88ac64094",
+      "static_analytic": "58de7f1a25264486c6edbf1ebf36e2b4d3ec28de4d845f465b7cb8fa1d8ed6bd"
+    },
+    "morph_table_calibration_seconds": 1.791888099978678,
+    "prepared_sha256": "2d07e9e716f18923b294c10da3a941b69a7d65c832604bd5d61e6a7dc5fbf126",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:45:10.669393+00:00",
+    "elapsed_seconds": 44.7071345000295,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.946250018198043,
+        "p95_core_batch_ms": 12.791919999290254,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.695700017502531,
+        "p95_core_batch_ms": 24.665980009012852,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.005050015635788,
+        "p95_core_batch_ms": 24.73427000513763,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.189000000944361,
+        "p95_core_batch_ms": 22.864150031818994,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "5cf69801d0caada12cc1cc01c3e40e4048d2a3b9eb979ad57f5308658d45f208",
+      "moca_b": "8ffe09c8d661ff93906cacee7b42cfa6596694b4a151b5dd29945238b5c54c53",
+      "moca_b_fifo": "2939ea7a01e4d7c8e14e2122fa461abb5fb05b91df2afd05e62073209f8e5568",
+      "static_analytic": "c477e78ba917faf5c7efcb40f097832f8b3174128516f46683245ed1bcfad556"
+    },
+    "morph_table_calibration_seconds": 3.8809630000032485,
+    "prepared_sha256": "a244f3d3b019e09a38c687dd69186612fbd025ef0ebe92d10dae7a70544d477e",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:44:25.958983+00:00",
+    "elapsed_seconds": 50.927883099997416,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 14.457999990554526,
+        "p95_core_batch_ms": 23.091960002784607,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 13.8714499771595,
+        "p95_core_batch_ms": 25.2983450249303,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.831399963237345,
+        "p95_core_batch_ms": 26.26672504411544,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 14.84195000375621,
+        "p95_core_batch_ms": 25.043935028952525,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "ad3e4eb35737255163bc67099f444ccc19d710f93b01244875d3c028d0c32179",
+      "moca_b": "e63b35cca5159fbfc0c4e8e1e21691b8eaa3d15f66cd108ed1aa5c853f6713fa",
+      "moca_b_fifo": "fbeeeef32880385e1869b9514711b4843710adc5c8e55e7fe1be81ef6d186a95",
+      "static_analytic": "d16f78dca0089cabfe4e68cebf43f073face709702327257cc0247089c41a288"
+    },
+    "morph_table_calibration_seconds": 7.85938239999814,
+    "prepared_sha256": "2d791ead9b474dbeb62d242a315d3fedc3b73dae8b40cfd783c1dc972d69a390",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:43:35.029709+00:00",
+    "elapsed_seconds": 66.46916719997535,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 16.133600031025708,
+        "p95_core_batch_ms": 29.015225017792524,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 15.620750025846064,
+        "p95_core_batch_ms": 28.79562499001622,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 15.181950002443045,
+        "p95_core_batch_ms": 30.777485022554153,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 14.934050006559119,
+        "p95_core_batch_ms": 29.34323502704498,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "63cce8c7b3e94939cdb28a157c76fffc1df93662fa845abba925e357a343109a",
+      "moca_b": "868cea3ce48b0b4575902deb12b38c905e1a57a07376bd9001bd28e4ea9e174c",
+      "moca_b_fifo": "8edc180bd46ec95157521c2dcf8ab8c73ad0d0bbba3844131169b362622f6b37",
+      "static_analytic": "a6a1a60bb1e0d1ec4ca2bab7e8a170f8ef040488dc3790177883aa2218d73e61"
+    },
+    "morph_table_calibration_seconds": 6.314076400012709,
+    "prepared_sha256": "bde659bd8098a04fc7b17d519c932de846c6c7e805bd7aaeca59cb5b6cde5815",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:42:28.559257+00:00",
+    "elapsed_seconds": 72.13415940001141,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.524050023173913,
+        "p95_core_batch_ms": 17.38279499986673,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.267199988244101,
+        "p95_core_batch_ms": 14.530105015728601,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.337750030681491,
+        "p95_core_batch_ms": 18.93438997503835,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.173950005788356,
+        "p95_core_batch_ms": 16.362294953432862,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "da28f8fcfb2320a4c790dae79c549a6fc372031ef48734f5e174be98ab370d0a",
+      "moca_b": "af4504a506479e395375dd51fe9f84bb1781eef1ceb365cea0315110b210aa15",
+      "moca_b_fifo": "e21e1461e3fea547de79bbcf0f69ebbfb7d6e81be824a13a6cfa354c59e74727",
+      "static_analytic": "073e32bf2d8e29bd527088beb68ce6e1125a02f8c40b254edf02c3da65d5a892"
+    },
+    "morph_table_calibration_seconds": 2.2992561999708414,
+    "prepared_sha256": "3c222995c7961180d7d17d5b691767309c3f6315647aff3156e06a24b7338892",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:56:22.706789+00:00",
+    "elapsed_seconds": 39.91342080000322,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.042900015832856,
+        "p95_core_batch_ms": 18.00194504321552,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.66815001447685,
+        "p95_core_batch_ms": 17.51222499588037,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.656749956775457,
+        "p95_core_batch_ms": 16.1311099975137,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.303350030677393,
+        "p95_core_batch_ms": 15.880475009907965,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "6d9cb91bc7f90ea16f6c504946926b9c417eab0e7d630304b66674fc905b351f",
+      "moca_b": "bf0886e97f7ae761cd45a948312ee1d88f2711d9cb461434916a7523b1dff98f",
+      "moca_b_fifo": "46cb07fe428855dfcafe349f4a55e35d2155c6e20c3a4a6578b7148b8d46b33a",
+      "static_analytic": "b694063e143ce37a9d5919ada8a65c487539c08c8a4add5c77f2815a5910e7bc"
+    },
+    "morph_table_calibration_seconds": 3.466545299976133,
+    "prepared_sha256": "bbc817b8d069c0237e8b3e53993bc09933dd9933068242539609c587e54c2480",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:55:42.792005+00:00",
+    "elapsed_seconds": 42.335553399985656,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 14.496399991912767,
+        "p95_core_batch_ms": 26.513579982565716,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.692700023762882,
+        "p95_core_batch_ms": 21.413214976200823,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.016199994832277,
+        "p95_core_batch_ms": 22.686690019327205,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.244149995036423,
+        "p95_core_batch_ms": 20.35092496953435,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "2335a0c020f633016d6f612db922948c0afea733ce0bd104c235ad2ed0ac2e95",
+      "moca_b": "0dcb973c1a2a80675035e83f27d74e1e78f5e7f054aabfc21917dd285a5db18a",
+      "moca_b_fifo": "9af50ad6413584b688dcb57864d5d7619290f5cac69a5a98fe135429119f5cfd",
+      "static_analytic": "b2791c8046cbe5619f7047640d20c0aff7f904a2d76f145914104bcbb63cfeb4"
+    },
+    "morph_table_calibration_seconds": 7.795440700021572,
+    "prepared_sha256": "026d70548a0a5a2dde795bbda512de74b2871115e92f52183a1cca03d479648f",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:55:00.455659+00:00",
+    "elapsed_seconds": 60.43407010001829,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 16.018150025047362,
+        "p95_core_batch_ms": 29.869309978676018,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 15.723499993328005,
+        "p95_core_batch_ms": 29.316820035455727,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 15.91315004043281,
+        "p95_core_batch_ms": 30.346730002202076,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 16.048750025220215,
+        "p95_core_batch_ms": 31.3773300149478,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "50c844a14e1e3edcf1309f2ecee8afa25fc2f0bbb105e0115dd98e2823727448",
+      "moca_b": "4cf9cd24e4ea2ed9c54e0b24041a4d0cc8c519e496ebe3a9e3e7463ea8580288",
+      "moca_b_fifo": "56037f73a7a3b68fd635a7343075372eb37c51da77ec467968203b0018c4826d",
+      "static_analytic": "1e01917fe574ac17ac09795746e5a29a39e40b9ce00f00c6659f941d78df8a9a"
+    },
+    "morph_table_calibration_seconds": 8.382047199993394,
+    "prepared_sha256": "10a1bb568ecec68d48b42745e321e8e54f35ac107ce70cf097c92639fdc7f2ce",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:54:00.018534+00:00",
+    "elapsed_seconds": 77.03048489999492,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.206200029235333,
+        "p95_core_batch_ms": 11.441059969365595,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.031399978790432,
+        "p95_core_batch_ms": 11.322199972346425,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.034200000111014,
+        "p95_core_batch_ms": 10.784499975852667,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 7.6840000110678375,
+        "p95_core_batch_ms": 10.404030000790954,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "f3c28d1d831bba643bcd8563c360c1095e2727c92faccabcd188f01d09d4c2ca",
+      "moca_b": "30fb954b98cdb3e3ea8c4a28eb2b9ec5d2c61f2bb04dbd43695ba24e6d3019cb",
+      "moca_b_fifo": "edc4d05e48294552e0ed338083960789032ab419e038dc97b5a96352453f51b6",
+      "static_analytic": "5544e9d4779d406025e7de79826891e6e07b32270a539f0877ce6d2291679b61"
+    },
+    "morph_table_calibration_seconds": 1.7512274000328034,
+    "prepared_sha256": "4335ee06bd5c60db22a051f62c02dc472d2603bd6cd7517abea593edb1d8021c",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:41:13.082812+00:00",
+    "elapsed_seconds": 42.82667050004238,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.18610004009679,
+        "p95_core_batch_ms": 12.2857500158716,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.662600012030452,
+        "p95_core_batch_ms": 12.03379999496974,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.060300013516098,
+        "p95_core_batch_ms": 12.439149973215535,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.78450000891462,
+        "p95_core_batch_ms": 12.064689962426199,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "612c59ec286d812690cd1e3be1b5e2e6bfbf1cbb5f0eeab4384bdce33323e402",
+      "moca_b": "9c77ac7e9f5fdd572cfd66ba4bcd1f69d9d00d61414365a21fde9d58c8066ab9",
+      "moca_b_fifo": "f0d110a45c427608ccd2bb4b1902644c88bbe80b31d6f08f005f562e99e593a9",
+      "static_analytic": "b9113f0688d203e3bf06b1d9514184df2aa37fd30b67d45769d1836a01be5b02"
+    },
+    "morph_table_calibration_seconds": 2.9745621999609284,
+    "prepared_sha256": "457cb8280a437fb253aa1ee7b7a3598181820dbe74e5e9e7c0eee1cca81ae35c",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:40:30.254573+00:00",
+    "elapsed_seconds": 49.24092720000772,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.822200004942715,
+        "p95_core_batch_ms": 11.573730001691729,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.647100010421127,
+        "p95_core_batch_ms": 11.506849981378764,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.411399961914867,
+        "p95_core_batch_ms": 11.4249300386291,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.724099956452847,
+        "p95_core_batch_ms": 12.12303002248518,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "91630832f0ed3da8edbd6440a54ae2a339a72b07b8240637e5bebe869d6fd761",
+      "moca_b": "bacb44dea4a6ad9d056ad08b15067b8cfe16b0385828726bb3a69c022bf76bc9",
+      "moca_b_fifo": "6a5dc4dd99334ccaef538207de579718d3db14728810c06c4acb889b3ebe77fb",
+      "static_analytic": "60b65f8fcb18c8b55e4fef7339dd3858ff81180c34824b4d34a17e42fde11b0b"
+    },
+    "morph_table_calibration_seconds": 2.817553000000771,
+    "prepared_sha256": "a84b7bcae4675d36018240f51e4c5287cade4f1ee4a23df6ce0831d6d0f401f0",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:39:41.013295+00:00",
+    "elapsed_seconds": 47.94076249998761,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.01249999878928,
+        "p95_core_batch_ms": 12.745510006789116,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.071499982383102,
+        "p95_core_batch_ms": 12.023229990154505,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.30729997344315,
+        "p95_core_batch_ms": 12.548430002061648,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.19769995380193,
+        "p95_core_batch_ms": 12.304879992734639,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "edc0707262dd5e24b0a839376ceb686f0d02943c76debd8319d100503f99d2a5",
+      "moca_b": "b12872944be70b8c1119a740b12507470a69144a8226caf73637cf2598407b78",
+      "moca_b_fifo": "6f87084bf264a6cc05410be9762c2075e5b0f7bd806f267e7244c76f59027ce7",
+      "static_analytic": "d609144307fe8829bba80c2f5c91363c3ae9af1088e6d09852442274bc80e447"
+    },
+    "morph_table_calibration_seconds": 3.5749816999887116,
+    "prepared_sha256": "010df4190b1e6c8d41c660341e2428f7de5ed9ea15fac5bc53b40f12bb36794a",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:38:53.071181+00:00",
+    "elapsed_seconds": 51.757091899984516,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.686099994927645,
+        "p95_core_batch_ms": 20.82295996660832,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.39049997436814,
+        "p95_core_batch_ms": 17.234839976299554,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.016749991336837,
+        "p95_core_batch_ms": 16.879545000847425,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.120549995917827,
+        "p95_core_batch_ms": 18.91844500205479,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "a3d380ba093d42e113583dc170beea11a98f1af0d516328bc79b7351393e540d",
+      "moca_b": "ca56bfa16ac972c4353c72b1e94520ff9eb42fc35835a0dd1e25c689f7303425",
+      "moca_b_fifo": "948f48084bf15502fd78b8b662fc1fa07763b390aeb22342f4818c626e3aac74",
+      "static_analytic": "2ef8e8a5d909e0f81ff46783fdb10512c92dfce0336a2238fc9779a0bb7cf018"
+    },
+    "morph_table_calibration_seconds": 2.836485999985598,
+    "prepared_sha256": "f6cc21b77ec195e2769c4265244769c44abe45782112046a79da61489708cd54",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:51:16.146153+00:00",
+    "elapsed_seconds": 44.524333200010005,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.342699951957911,
+        "p95_core_batch_ms": 12.585104969912209,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.688650006661192,
+        "p95_core_batch_ms": 11.436190010863355,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.580899972002953,
+        "p95_core_batch_ms": 11.457765000523068,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.76529999752529,
+        "p95_core_batch_ms": 16.873255043174137,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e40f0bd23754e8d9554b16630912c1cdf6758ea861be254b43964e9fa59ed298",
+      "moca_b": "0cbee11baf282c4a1cff47d38de863942859d4937babcba38397f0f3b01260a9",
+      "moca_b_fifo": "2f2544baa0c25dcee49eecc93e538882da3f349aea2eedf86cbd468416205c40",
+      "static_analytic": "de32df1ef0a2664eac63eace7498ce43814cbfcb572eac5b7ffcaa3f2fb6f225"
+    },
+    "morph_table_calibration_seconds": 3.238493299984839,
+    "prepared_sha256": "e8c4e40d7fdc7700840e2056db985822e6000a3414643da7e94487c66e84140b",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:31.620732+00:00",
+    "elapsed_seconds": 37.616645200003404,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.83649998367764,
+        "p95_core_batch_ms": 21.330920007312656,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.702299980446696,
+        "p95_core_batch_ms": 27.395309996791152,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.269999988144264,
+        "p95_core_batch_ms": 25.28417997527866,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.726249972824007,
+        "p95_core_batch_ms": 12.518240002100354,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "8cd98b92cbe41a31986dc33250415f13c1b45e1dc9335d14b06cf9297fb7e500",
+      "moca_b": "8b26508c414c63bdeef59b4d1ec3faee3dc6331cf3b9fe908f3872f4df675e29",
+      "moca_b_fifo": "ed426cef2f94d238b3bc3b9c50fb4cd90d2bf67031f9e35fa37be487d7727e01",
+      "static_analytic": "b336f3b0cd814d1d0f42787f2175aac40b2c7e43f56bbe83ffa67e379ae9fe5e"
+    },
+    "morph_table_calibration_seconds": 4.528226199967321,
+    "prepared_sha256": "51588007f9f5a77e8f350561b3d143759466e69ad031c8eceab6b79b1511c27f",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:49:54.002932+00:00",
+    "elapsed_seconds": 50.641023300006054,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 13.670299958903342,
+        "p95_core_batch_ms": 23.230250019696538,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 13.32120003644377,
+        "p95_core_batch_ms": 22.357805015053593,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.171049969969317,
+        "p95_core_batch_ms": 25.105414987774562,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.56775003275834,
+        "p95_core_batch_ms": 22.52404500322881,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "a77dad46dba47491dc8abfe2ddfc74531e101f67a1017a68b5702b3bb0bf318a",
+      "moca_b": "b7237ea52fdbdbe2af5c195e82474d44dbf6901df63d5afe8eebccc93d93b84a",
+      "moca_b_fifo": "4587d4ea971ffec1dba35c7d497d2676caa54998b97f8abc71d22e59202c27f1",
+      "static_analytic": "f6a99c8367be53e8bd29ace00c964ee3a24c8b5bcfbb6adfed3e0de34e5f69f9"
+    },
+    "morph_table_calibration_seconds": 6.027321700006723,
+    "prepared_sha256": "f47ef48f695d0d38c75520fb77a97c6c7ea203ddf9871b0d0122faf05361d604",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:49:03.358884+00:00",
+    "elapsed_seconds": 59.87896840000758,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.039949982659891,
+        "p95_core_batch_ms": 19.10700497392099,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.667349997675046,
+        "p95_core_batch_ms": 17.686389992013567,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.851049999473616,
+        "p95_core_batch_ms": 18.90758498921058,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.570600017672405,
+        "p95_core_batch_ms": 18.655305021093216,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "c9b847be547522805b5c2eb64704f4a7dee58dc0f9b0de251c2ce9fe849e8b88",
+      "moca_b": "7e5dbd86bb7b5c481018c290f3d8be6fe267c4a07e02bd8512c2f9d755889ae6",
+      "moca_b_fifo": "26e4c2c22eb178386fbd8d4cbc6375c9b301893f2685241f04fad0865df83ffb",
+      "static_analytic": "ee1c6009eb1f0571475bd75b50ee17cf2f5818839af812e7a406d3bbf6bb14b4"
+    },
+    "morph_table_calibration_seconds": 2.8919954000157304,
+    "prepared_sha256": "266b5202906f7b6da3f14698fd7f235f7b9f2ddbc71b3a360336f8f71c727048",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:48:03.478304+00:00",
+    "elapsed_seconds": 45.344041299948,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.195799976121634,
+        "p95_core_batch_ms": 21.973195028840532,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.547550035174936,
+        "p95_core_batch_ms": 21.45490000548304,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.987450019456446,
+        "p95_core_batch_ms": 21.1042400158476,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.883350012591109,
+        "p95_core_batch_ms": 21.253984980285153,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "dd2aaf5b700d057568a2515b1ba1d486dcd7006461e35bb683f6b24b05c5ea29",
+      "moca_b": "4903b870a6e83dbe32e087e12670f076072a9553be6b623c0b9e7adf60320cd0",
+      "moca_b_fifo": "91bad75e421da37a55278c424eef8a2bbc9486f94aa572ab79d4a7a3de2fad9f",
+      "static_analytic": "45699d4480c4e552275aecd7e8ac02ef7dc7ad8c91fdfc8b6b0406e2be33d9aa"
+    },
+    "morph_table_calibration_seconds": 4.058203399996273,
+    "prepared_sha256": "f604b8d69fb63d4e72d71b728c36c3fee7f15bd8271dbd996de7eeca588aa5a4",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:47:18.132991+00:00",
+    "elapsed_seconds": 50.395247900043614,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.837199970614165,
+        "p95_core_batch_ms": 21.188989980146253,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.360349977621809,
+        "p95_core_batch_ms": 19.954064986086447,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.59790002182126,
+        "p95_core_batch_ms": 20.380499999737363,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.035550007363781,
+        "p95_core_batch_ms": 22.161789998062844,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "d252015487c28769aaabe861d5a9c4178e7b451d1010402bec95645d0fe10e14",
+      "moca_b": "56e0e69f9d921e6e9eaabf711d572a06577f473651cf1d8dd8d8f63c85c583df",
+      "moca_b_fifo": "184f27a22e755f4741c6a078bbaa1ebb3dd7ce56289e9728187c3cc70a90a0fd",
+      "static_analytic": "fbf2c655c826348727b542cc9ff60e40dddc1264d83f09ba2fe9eefe0b5e55e6"
+    },
+    "morph_table_calibration_seconds": 4.022922699979972,
+    "prepared_sha256": "414217c4cbc5b9978218fd1b73060c661f97c29cf7426b2ca8060f40104a25e6",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:46:27.734976+00:00",
+    "elapsed_seconds": 50.10854559997097,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 13.5551999846939,
+        "p95_core_batch_ms": 27.02280501544009,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.743200029945001,
+        "p95_core_batch_ms": 25.441320001846147,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.142799998400733,
+        "p95_core_batch_ms": 22.13536997733171,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.518549988977611,
+        "p95_core_batch_ms": 23.638810016564083,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "8f20a95955bb3a427ea089515ea9ce4e33c430cb89f77954875c408432dedd1c",
+      "moca_b": "a6e21885960f9bb28541046d0cb6dfe757eb17568b9dec7a231fbbcb5412aff3",
+      "moca_b_fifo": "9124dfc683306aed96ac8731878efe6cfc1c252368b4174c52c924e627a9768e",
+      "static_analytic": "fe62b7dfb64bc04798be3ae689d9f7f859452f35d6d440faef3c7b8cc47fdb35"
+    },
+    "morph_table_calibration_seconds": 6.833876900025643,
+    "prepared_sha256": "0cf3d537c8a91c2e998cd39acce2eef55e72a7e0131b5384da12f8dd150d9d97",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:45:37.620554+00:00",
+    "elapsed_seconds": 59.73040589998709,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.381499993149191,
+        "p95_core_batch_ms": 21.35476504045073,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.97644999390468,
+        "p95_core_batch_ms": 19.252894984674626,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.755199997220188,
+        "p95_core_batch_ms": 19.158595032058656,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.165899999672547,
+        "p95_core_batch_ms": 22.395029963809062,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "f62b8004a6149d465ac5da8313cd15cbbd211f12dd3c5d95eb8c2e68cc08cbd7",
+      "moca_b": "c9834b26771a382c74b8922af40c8ce6eccbf1e3205f2f625557939b8d3c0c80",
+      "moca_b_fifo": "67785fcd4bee54b7e7986939a7d08387f39db6b8ce1084c9e038c8d094d79ef2",
+      "static_analytic": "34217640ebcd55992a5b423f608b084a2a6732d0e34c031e95cb8dee72012bde"
+    },
+    "morph_table_calibration_seconds": 3.5660688999923877,
+    "prepared_sha256": "a04866b0db77438ca2956c9044aa808c69b61b77ae03ee47cccab3bf73ef0997",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:44:37.885858+00:00",
+    "elapsed_seconds": 49.11291309999069,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.872149974806234,
+        "p95_core_batch_ms": 22.704495003563345,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.73344999551773,
+        "p95_core_batch_ms": 20.88946997246238,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.606650019530207,
+        "p95_core_batch_ms": 21.510855018277645,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.996600023237988,
+        "p95_core_batch_ms": 14.186040044296533,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "5f36cbcfdda8a5371e8b5b0a642fa85c226d7c98e524faf0ec838902e29c0980",
+      "moca_b": "eca4c65b5cd06f89f2cefb754c2342fc809ed23dc343cd443c23ef00a1ef5891",
+      "moca_b_fifo": "84d712c641fd3d43d19e7fb4f699477236ac90e3bc5f227105a41b9fe35e0da4",
+      "static_analytic": "f6f5f3202f333a4c7442c3b32bb63903b1ebdbf939a222f95f1f8ca1378cf0cf"
+    },
+    "morph_table_calibration_seconds": 4.336807599989697,
+    "prepared_sha256": "01c2ef1713c51ec7430d3cfdb689d24e198040b587e583fcf4e60e1731f45b4a",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:43:48.770734+00:00",
+    "elapsed_seconds": 49.34406659996603,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.408749996917322,
+        "p95_core_batch_ms": 21.9229750044178,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.145900003612041,
+        "p95_core_batch_ms": 22.864734989707355,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.512450000736862,
+        "p95_core_batch_ms": 19.518374968902208,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.51595002738759,
+        "p95_core_batch_ms": 20.214275014586743,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e2429576c56a1d122cfac38183138ad8298340b0eafdcf79a6b3f303c042f262",
+      "moca_b": "7adb75e17d34dbb7b40e59d2b26ac3c3b8098ff53ea84e50ff9099f7d3d1eaaf",
+      "moca_b_fifo": "62ca6997de49e7799c795ce2243d34677308352d19dc5ba698437d80490d4853",
+      "static_analytic": "d98429e29b050d47d12f181014ff68d41f36ecbe23a003e68f86c1914fce0582"
+    },
+    "morph_table_calibration_seconds": 4.5731218999717385,
+    "prepared_sha256": "425c8c61917d1cd0545a991cb531f8098a369687d1026dbc5c0740d426049963",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:42:59.425226+00:00",
+    "elapsed_seconds": 51.34548109996831,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.727050004992634,
+        "p95_core_batch_ms": 21.74024001287761,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.350150005659088,
+        "p95_core_batch_ms": 21.68544496817048,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.39444999373518,
+        "p95_core_batch_ms": 25.53001498745287,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.791650002123788,
+        "p95_core_batch_ms": 23.361274990020313,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "47af82c255d68a8dbdebc203e2678176c6e2e732db0ac7dbc6e6d5053bc06a6c",
+      "moca_b": "016f44ee08e6661733b6916d95584960e8e9fd536e7a8404a871ac51565d6fe1",
+      "moca_b_fifo": "05e0fca40055092e5913ceef71e478e7c768d339f2a46de6e6787e7ce9a63708",
+      "static_analytic": "3eca150b3c1bf82e6390b13b932592fde744e4448e62ba562b95c574c3b56367"
+    },
+    "morph_table_calibration_seconds": 4.367693400010467,
+    "prepared_sha256": "3803359551b9e7d5621b0739f5f1695040690dc3028c9e129a55801fa930713d",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:42:08.078364+00:00",
+    "elapsed_seconds": 54.99451529997168,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.963399952743202,
+        "p95_core_batch_ms": 20.22789004258811,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.802050015423447,
+        "p95_core_batch_ms": 17.821309994906184,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.413949999725446,
+        "p95_core_batch_ms": 17.279590026009828,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.017249976750463,
+        "p95_core_batch_ms": 15.989849955076345,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "2e94d5b483713775dfb9ee45182f7ace9c170b481e2583a423c3842b6ebcd245",
+      "moca_b": "d3926daf48983097698b3acb5e9525e13e70ad2b9754c214dc487f3917ce259b",
+      "moca_b_fifo": "8ce6c45156740841a8c91ac76cfc364ddbc96fe6e99b1759697106088e11dd8a",
+      "static_analytic": "843c3bffe9d8758d871c0a5a8ae160115ed1b647f1b848d44fb5537f104f779f"
+    },
+    "morph_table_calibration_seconds": 3.481179400056135,
+    "prepared_sha256": "94665edf36954f724f14ee6e2b14cbbdac6ff46f12317f75d9f485242538edcc",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:54:48.997334+00:00",
+    "elapsed_seconds": 42.99969379999675,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.90619997214526,
+        "p95_core_batch_ms": 23.299474976374732,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.859150002943352,
+        "p95_core_batch_ms": 21.561860002111633,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.221949971513823,
+        "p95_core_batch_ms": 21.54710998293011,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.121149989776313,
+        "p95_core_batch_ms": 22.564984971540973,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "3904189a82dadff811a3bf5816bca7b1a9f0148afa0c9a4bed7b0fb11683c0f1",
+      "moca_b": "4e89651ee08baefa56f415c7a9f2ab661590d8a330b10aab689f71683a6083f7",
+      "moca_b_fifo": "5f2b4dbe1191221133297e2ded8d13c9a9c51cfaa9e5533613a4d336eb5424ff",
+      "static_analytic": "543a700ff94142ed412534404ba4959402b998099e2fa6ed5ceae02a5ce25e3d"
+    },
+    "morph_table_calibration_seconds": 4.290984800027218,
+    "prepared_sha256": "a548eece49e7911a15701230854656e3d720e5623ab535b17e77e915338b1363",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:54:05.996142+00:00",
+    "elapsed_seconds": 51.49737880000612,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 13.834099983796477,
+        "p95_core_batch_ms": 25.954169989563507,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 13.136150024365634,
+        "p95_core_batch_ms": 28.20103502599521,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.182650010799989,
+        "p95_core_batch_ms": 27.12552001758013,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.43790001515299,
+        "p95_core_batch_ms": 25.67337499931454,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "556cf0acdf1ff6ad3653d5a92e626644678c476450aa5b8b490a93433f9de223",
+      "moca_b": "5a09ab69c7b8e1452b9f69cb3af8a8ed2f30f625625920d21f8aea437cd63f60",
+      "moca_b_fifo": "500e792f5b81bab63a93f39fe759359e234a7e810fc2abc5a5540749d257fc37",
+      "static_analytic": "bd4eb1599bb176e6ad243b4e6064a050467ea493675815caaaf025d9f478490a"
+    },
+    "morph_table_calibration_seconds": 5.415620699990541,
+    "prepared_sha256": "387845cffafea162496a61b7cf871256133bcdfaef1439f0aa7aa160bdc0ec57",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:53:14.497499+00:00",
+    "elapsed_seconds": 59.497143600019626,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.720750004518777,
+        "p95_core_batch_ms": 23.719785007415318,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.365200003841892,
+        "p95_core_batch_ms": 22.07516502239741,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.523300003726035,
+        "p95_core_batch_ms": 22.019935026764866,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 14.476949989330024,
+        "p95_core_batch_ms": 21.649849993991662,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "c6fe9bf43e3fb50e7e38a9a9fe9cb5094fa866466dc4f20a53badd39553a8ae3",
+      "moca_b": "6e345611fff21bfe7d6e1b99e237f971f1c3f58c2eb5b5e0992260ddbf34544a",
+      "moca_b_fifo": "e5414a8ce77e52da85a84d36ffdf667a8f964649e7f4533c61f4a0846c65a130",
+      "static_analytic": "19545d536fbe4840e05e67884c08c5d829ab9034ad448626fb2254a2a37604c1"
+    },
+    "morph_table_calibration_seconds": 5.345957899990026,
+    "prepared_sha256": "5eaebaf27a3d4908a3d3fa9c79e9e1229691a031b75a0f61d05e30cf579e412f",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:52:14.998881+00:00",
+    "elapsed_seconds": 58.849481699988246,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 7.7120999922044575,
+        "p95_core_batch_ms": 11.208529997384176,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 7.339400006458163,
+        "p95_core_batch_ms": 9.707540017552672,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 7.384800002910197,
+        "p95_core_batch_ms": 10.002629994414747,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 6.895200000144541,
+        "p95_core_batch_ms": 9.512450010515748,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "beb9b43910f9bffd0f24f7d97bd40fc4f4e4e8440306cdd0067232a53812388a",
+      "moca_b": "1b17f9b350c4b5c617f62147964db3aed8232b3135c0af936ed94567bafb2f3a",
+      "moca_b_fifo": "db8b67cbda458cb01917bd348beba7a08e3c9d93efb5f7028c5a2c6629307f56",
+      "static_analytic": "b42547a9950e9ca0b3b94e64424b83922831dbedfac26f3a1d94eda0c365f2fa"
+    },
+    "morph_table_calibration_seconds": 1.2591939000412822,
+    "prepared_sha256": "9832dc8429a072f77990775bea6e6929c5f8347b4fb93f712f71af888083e286",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:41:19.838448+00:00",
+    "elapsed_seconds": 38.76719679997768,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.702000021003187,
+        "p95_core_batch_ms": 12.011290004011242,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.537899993825704,
+        "p95_core_batch_ms": 11.826450005173683,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.317300002090633,
+        "p95_core_batch_ms": 11.328419978963211,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 7.933399989269674,
+        "p95_core_batch_ms": 11.28252998460084,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "671be9eff27d04fb668db9d99bbad9b2ffb82da97cc3a0329145c50d727a4ae6",
+      "moca_b": "d31d397cd511a7dfbf0195797bfb30b0bb6b6d9276f7675227e4091c34c3ff52",
+      "moca_b_fifo": "b57fd165af4e7c987e6146817cf7ac2168a8ebdf944b1e22952be15ef627c7d6",
+      "static_analytic": "077fbb19ef4680ef6cb5b9335dc781a65eabadc8bfe5a2691f72a55bf680a0f3"
+    },
+    "morph_table_calibration_seconds": 2.1478711999952793,
+    "prepared_sha256": "f8ac48af17bffba793aaeddcc2b603860106d121c347046e4a398fd7488ed98f",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:40:41.069480+00:00",
+    "elapsed_seconds": 45.29598429996986,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.402399999089539,
+        "p95_core_batch_ms": 12.839139963034539,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.051900007762015,
+        "p95_core_batch_ms": 12.399119982728735,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.966900000814348,
+        "p95_core_batch_ms": 12.079789995914325,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.919799991417676,
+        "p95_core_batch_ms": 12.116449984023347,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "5ad8b99be1fb06140e2d57c4eb12b0c4ce58abbd489032dd7fb29095d8d1eb00",
+      "moca_b": "a1146fb1f107f76c0fdfa19a8641d7a8c9225710b6f1b5c4cf811ff3218a29f4",
+      "moca_b_fifo": "97b32c0020be52a1fa2a51d2c957adfad0669eba6a33c3dffb46b4c4f7eb3380",
+      "static_analytic": "7acea151bc62c52166a2e4b85f4da54051303a585cbfbc3a7db37df1cfe6e8ce"
+    },
+    "morph_table_calibration_seconds": 3.5220929000061005,
+    "prepared_sha256": "aa186694794859dbce3f04674b12438cc2549053bede5bb5f40f635a16b5825d",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:39:55.771776+00:00",
+    "elapsed_seconds": 51.140755700005684,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.345800033770502,
+        "p95_core_batch_ms": 12.831550015835091,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.300500038079917,
+        "p95_core_batch_ms": 12.59404001175426,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.280300000682473,
+        "p95_core_batch_ms": 12.340910005150363,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.069600026123226,
+        "p95_core_batch_ms": 12.051450012950227,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "76da4c6c9149ddf149e43e2b5168abd4d47ef0a31883517526f24aa6fc68aed0",
+      "moca_b": "7a1fbe237079afa6406475e8da09a2120bee0deffafb59f085b1e89f2b2b7479",
+      "moca_b_fifo": "9318b640ea40ec4879c13c814c7951fc1edf59de3c7d25e1e14c784a958e5d4a",
+      "static_analytic": "7f411ccdb5eced0cdcd27be98bff12fa434a42e58436f620f04a7cb060daf0ef"
+    },
+    "morph_table_calibration_seconds": 3.905521399981808,
+    "prepared_sha256": "f4fae7d0c91ee055f76c8c7d600e8e629eb05673d563aa12798562b0735b85c5",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:39:04.630396+00:00",
+    "elapsed_seconds": 52.57234050001716,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.146850013872609,
+        "p95_core_batch_ms": 12.624709965893995,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.38664999557659,
+        "p95_core_batch_ms": 18.18860499770375,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.550000017043203,
+        "p95_core_batch_ms": 18.337650000466965,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.82385000679642,
+        "p95_core_batch_ms": 15.270240016980084,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "ca5d62124498259b0b451c22fb7ac6b296dd9af6e401ecbb955feafaef9bf315",
+      "moca_b": "d74104f686f9e4457346d5158f5a5bafd343f349fad6da55e69b8047650f1844",
+      "moca_b_fifo": "c94112e356aa370979750052664624067b8dd1256029d79912ba3b1fd8ed340d",
+      "static_analytic": "38224f557e9aa0189b1ddcf95d2e5a24551b310eda434b42d16a3ea0c38748a8"
+    },
+    "morph_table_calibration_seconds": 1.1584100000327453,
+    "prepared_sha256": "7c070a0469fb6398342c95a711b9b89f39ec1a623ab232bb2462b3ae485f91ba",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:57.392629+00:00",
+    "elapsed_seconds": 37.52315639995504,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.931449963711202,
+        "p95_core_batch_ms": 13.320590034709307,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.70805000886321,
+        "p95_core_batch_ms": 11.695664975559337,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.204649988329038,
+        "p95_core_batch_ms": 10.806190012954174,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 7.833099982235581,
+        "p95_core_batch_ms": 10.773509979480878,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "7b5dc5aefc0eacbed07d502aa245a074b540bccf76f28b53905f1bc84fe37ba6",
+      "moca_b": "901bf3d23cf7a6b34b998d8695142da1e25477a5b8f81cc8e8658eb9d815dc04",
+      "moca_b_fifo": "1fed30a1fd90107bc5b84f476ce802a045c0972207ecfe1d9d98ef59a3699403",
+      "static_analytic": "f8a0a413937a5e099a8755d60e6d42d3399c43e6347cc58a5b181244b9f1779d"
+    },
+    "morph_table_calibration_seconds": 2.514691899996251,
+    "prepared_sha256": "2b89377e12dab63725a9159ec88735f55495c774fb32efbbe4d158200c979fc2",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:19.868575+00:00",
+    "elapsed_seconds": 33.80075950000901,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.83219999074936,
+        "p95_core_batch_ms": 20.505105008487586,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.74759997613728,
+        "p95_core_batch_ms": 21.468805029871866,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.634950020583346,
+        "p95_core_batch_ms": 25.17696002614684,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.680600011255592,
+        "p95_core_batch_ms": 23.056719987653192,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "4d412264ba04cd389ed2aedc42b1efaf6a91542a3a52b2c59d6dbd24ed8bb27b",
+      "moca_b": "f8d7b23f737d8316a819f0d4be2ace7db931f0b17307903e746f75a6ab71a536",
+      "moca_b_fifo": "c88e0df9f6ba535de96e0635bc95489feae589afb19118ddb635f97139cf0782",
+      "static_analytic": "3da96cdd30e96e1e6c2d1d124f758a92c51c66f1cb4761f3045fee897bd8e2d3"
+    },
+    "morph_table_calibration_seconds": 5.128475300036371,
+    "prepared_sha256": "453f893d7efd0a740e4b525384f98bd3a8ddb02829518f053b224fb07b6aa702",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:49:46.066114+00:00",
+    "elapsed_seconds": 54.17452180001419,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 13.5677499929443,
+        "p95_core_batch_ms": 21.181765003711917,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 13.746650016400963,
+        "p95_core_batch_ms": 23.160225010360588,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.682949997019023,
+        "p95_core_batch_ms": 24.356920010177415,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 13.50790000287816,
+        "p95_core_batch_ms": 26.081780029926446,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "70d541df52fd6d49a6260d49392f4ea26367d4b49b435517bf175155f1edac75",
+      "moca_b": "2045280b669541180dea478bbe4a2b18c0d0cb4099b16637527d9a015d9069fb",
+      "moca_b_fifo": "df76fa45c74946a0ae87a06727e8e969560e8cd4edfff6b12522f16420c3dcb1",
+      "static_analytic": "8108127573908f0251709c2d208df08eb24f3f28f17c7ed5e36044e33b949e00"
+    },
+    "morph_table_calibration_seconds": 5.913419799995609,
+    "prepared_sha256": "eccde82e844d4f7dac47198b19e7853c71fe551b21465b81cf80e595c9875ef2",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:48:51.890593+00:00",
+    "elapsed_seconds": 61.31237719999626,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.678799979155883,
+        "p95_core_batch_ms": 18.99453500227536,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.558849997119978,
+        "p95_core_batch_ms": 17.429815014474997,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.680999995907769,
+        "p95_core_batch_ms": 15.684689997578971,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.178250009426847,
+        "p95_core_batch_ms": 16.00522997032385,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "16bd360a777c33254080260bb4b9682be32769108b5073db47da30ee969b24c4",
+      "moca_b": "f2a77137358e607317d9e7ade155448bfbc6860956b657128d7cd757e0fa5633",
+      "moca_b_fifo": "638945336cffde31d97415abb9fcb4f34e622cf3d8a96de32d912227a374f3f6",
+      "static_analytic": "6c89c2b64c14d5e6a6e5e1bed3d90e534f759f29d3b2d168ce10d258edcebafb"
+    },
+    "morph_table_calibration_seconds": 1.7721392000094056,
+    "prepared_sha256": "c94d43802d98e4ad7c1bc6d40edd11028f579a96886d0bc5b8cc6a6c3ccbb5c6",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:47:50.577260+00:00",
+    "elapsed_seconds": 39.14326440001605,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.110549977980554,
+        "p95_core_batch_ms": 18.01500999717973,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.162799997488037,
+        "p95_core_batch_ms": 18.82285999308805,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.534600034588948,
+        "p95_core_batch_ms": 20.77669000718742,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.639249998144805,
+        "p95_core_batch_ms": 19.219029980013126,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "0df3006ee0839f6838a0223b6187e67bdf34bdb2b89d6cd60db1af4657c95f4a",
+      "moca_b": "b62d77faefdb910f9375248ac0a549312dcb7fd4b98b0b85bbcb92f035412375",
+      "moca_b_fifo": "8bce41aa890b1f3a28da2cfff911aa15a7646aebb3e700f53c6cd9ed1ccfbb99",
+      "static_analytic": "de20e6a9651afb4ed23d3c06d31f53e022c0bfe12f4f4911afcff4c5ac7f9bf9"
+    },
+    "morph_table_calibration_seconds": 2.528970899991691,
+    "prepared_sha256": "044b151f5ee5adf7cc0c917b69bb6386e13f9121989677f7eaa49b2584b3f6e2",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:47:11.432987+00:00",
+    "elapsed_seconds": 43.94426149997162,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.673299974063411,
+        "p95_core_batch_ms": 20.68450000078883,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.36530001531355,
+        "p95_core_batch_ms": 19.361349995597266,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.896499996306375,
+        "p95_core_batch_ms": 21.25998500559942,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.309699999401346,
+        "p95_core_batch_ms": 23.063145019114,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "4d870c6876295ed9c65e3f6da0ffd79932090fa0ac3463e1ec0565cca2068187",
+      "moca_b": "a4192613fdc913bd215c4737bcd6edbde57c8820661dd63ea4f6b9b0e9b36f6f",
+      "moca_b_fifo": "cbe79ac0a997baa8557e59b949bf9ba67f55d2a085679367323cd2383b26393a",
+      "static_analytic": "a5ca58c41c13aedaa1a44bb15e5d6deed9503fd5b057b61c2b1b9e9fc9f2134a"
+    },
+    "morph_table_calibration_seconds": 4.446093899954576,
+    "prepared_sha256": "6c46d1a9abc6f3b401904a677bfa8338790433f8fc259471f42bb4ccaaa85b42",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:46:27.487346+00:00",
+    "elapsed_seconds": 51.282005999994,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 13.94329997128807,
+        "p95_core_batch_ms": 27.543545025400814,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 13.071800000034273,
+        "p95_core_batch_ms": 25.099835003493336,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.65364998835139,
+        "p95_core_batch_ms": 23.48180002300067,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.771100020268932,
+        "p95_core_batch_ms": 22.995899987290603,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "f771ee6d18af0c5b5058e1f1acf4369867288bdee2475865f3007c59924465fa",
+      "moca_b": "878b40be94fb4e087730741dd9471c08cf077a313571d39cac0c4d178ee8fb54",
+      "moca_b_fifo": "a2eca5f5498679fea4a0207ae98fbb0d60be8ba0f16c9ee171817d782a1e2f60",
+      "static_analytic": "db6d8e5e0077fc4eaa8204a4fa1cece7eaf4fc93bdc9d712abd6e45da4b88853"
+    },
+    "morph_table_calibration_seconds": 7.112903500034008,
+    "prepared_sha256": "dd55c40b527cead40ce485a50e7e40434c70823a0bd4403a8bd8ffd4dbc4d57a",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:45:36.202727+00:00",
+    "elapsed_seconds": 61.50169250002364,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.093799995956942,
+        "p95_core_batch_ms": 18.79481003852561,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.583650011336431,
+        "p95_core_batch_ms": 17.471289992681697,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.68090002425015,
+        "p95_core_batch_ms": 17.062930014799335,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.983500000089407,
+        "p95_core_batch_ms": 18.929090021993034,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "f56b301bfb544608349cf333b2af8ec4b15fb1cf1a41f2bef5f0fa9f83524cdb",
+      "moca_b": "38948743395675136a3edbde9c6404944242aebad6230e8f22171feb1840c447",
+      "moca_b_fifo": "79b53c952b1ef0ece4bdfe64fdfb5d729a82613e0737f9789e3f1bea0d104249",
+      "static_analytic": "730f0fd2c92f5a2925ae293b8b968a4aaa3a8596a7f09079b6231b158e447dc5"
+    },
+    "morph_table_calibration_seconds": 1.8933515999815427,
+    "prepared_sha256": "b1180b46cba56def3319f9821e0ebbcfb2d2fb3768f92c04fd85b89b3ac55886",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:44:34.699545+00:00",
+    "elapsed_seconds": 40.87311430001864,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.942849999992177,
+        "p95_core_batch_ms": 19.63974998216144,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.622849997365847,
+        "p95_core_batch_ms": 20.762730017304413,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.341799974208698,
+        "p95_core_batch_ms": 16.71489003347233,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.62139997864142,
+        "p95_core_batch_ms": 19.17205996869592,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "37817df03836c8d8d9c2010f09ce20ede21493f6e2c88968ed7c51aa6dd65034",
+      "moca_b": "929f412539e2fe30fbe7a654473e5e0a1bb6eed07f48ccb0e007bd42a3868be2",
+      "moca_b_fifo": "282746b51e68eacfbe1e1364b0ae4cec6f9e193d9bc6eab2abdf2ea9d49d5aae",
+      "static_analytic": "99d33e030ed782a65b81d996e3c3f31d67c1c3c70309d47971732c9b75c72f55"
+    },
+    "morph_table_calibration_seconds": 3.0046555000008084,
+    "prepared_sha256": "0f15ea04c0c263291fcb44de4f581ef5287c34dbf280ff18137615b44e84645f",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:43:53.823865+00:00",
+    "elapsed_seconds": 44.24307550000958,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.728849960491061,
+        "p95_core_batch_ms": 21.66812499053775,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.675949994241819,
+        "p95_core_batch_ms": 21.862140038865615,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.158149998867884,
+        "p95_core_batch_ms": 21.497975033707917,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.57495001098141,
+        "p95_core_batch_ms": 22.72872503090183,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "4a0eb81f0b69398523a7089a07113ec5417def9294df1825ea5a3e56f5a1fc2c",
+      "moca_b": "782568857c5adc85b1af82e32c6c8de56c7cf9b3cde29c80073428e05016a35c",
+      "moca_b_fifo": "50dd04e56dedc2bac1cb1c44b76c349f2d1a5c11730fdb9f0c68de1b6b79fc80",
+      "static_analytic": "7654adb6bb7ac3e2267f93bba4157cdb0a2ce195b0324403ba186c780a44aad9"
+    },
+    "morph_table_calibration_seconds": 4.502997400006279,
+    "prepared_sha256": "29d3c07a3769281d0fd68bb31c2d2b2be7cab961cbfb21bf42963913a18f3808",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:43:09.579211+00:00",
+    "elapsed_seconds": 53.0536380999838,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.677799997618422,
+        "p95_core_batch_ms": 22.886495004058816,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.243700010003522,
+        "p95_core_batch_ms": 22.316065029008307,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.905149993253872,
+        "p95_core_batch_ms": 24.270885015721408,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.768049997044727,
+        "p95_core_batch_ms": 24.49569996679199,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "740c873dd6da706dac7cbe48e7ea65182f9f7a115584b79646910d9afc542e61",
+      "moca_b": "a0f38aea6a3ea6c2413181b2f6c77777fa7b30bc73fb9ca2110a112c2dfb47ad",
+      "moca_b_fifo": "02fd572d0df117b0b460f47da8717244c5d6fdff2d27e9fe820d8eba0f3b497e",
+      "static_analytic": "973bd2679aaf18906ca1573bd94079763c15a472b2e294ff27cd03c2c6f7c2d2"
+    },
+    "morph_table_calibration_seconds": 5.311875100014731,
+    "prepared_sha256": "76f25b6e11ee22a853954468509a24c998fbcd15b984c6d31a20af9d8a79e6d6",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:42:16.523210+00:00",
+    "elapsed_seconds": 56.683940000017174,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.712600003695115,
+        "p95_core_batch_ms": 18.406454977230165,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.303500002715737,
+        "p95_core_batch_ms": 19.659910007612766,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.787849994609132,
+        "p95_core_batch_ms": 18.778484978247423,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.94504997995682,
+        "p95_core_batch_ms": 17.649124987656236,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e8608892788e3dececa73aed4780bf42e43d1c87a100e75a0f43dfb953253fab",
+      "moca_b": "c6d36a757492145c2b235c7daf3782fb9de24fd91f1c0169fa0d4f93fb2343cc",
+      "moca_b_fifo": "9c3236edeaee189099a41b48a7507cfb45f5c5f8ced7df44bbef61b8d122df47",
+      "static_analytic": "f5f1b4963d3d4ef219837d8e4eb5002e8235ecc9d4e3e8654284ec70e2d5cef2"
+    },
+    "morph_table_calibration_seconds": 1.6929002999677323,
+    "prepared_sha256": "36e5bdc3e9d02e7811a276261dd4a467e051a1d5ae42e0baebb3bce803eb11b5",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:54:22.095448+00:00",
+    "elapsed_seconds": 40.655262499989476,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.50909998593852,
+        "p95_core_batch_ms": 20.945570021285654,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.781450004084036,
+        "p95_core_batch_ms": 20.77464501198843,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.579399997368455,
+        "p95_core_batch_ms": 22.28317001427057,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.662000025855377,
+        "p95_core_batch_ms": 17.58657500322441,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e3b81ed6250e844077dfd51de42e8a814df0056b4d49c682152ec5c47d5a8503",
+      "moca_b": "179a7ef0e3f8a0777c70929da25339c3572416a90a9ad11faecd901fb844b309",
+      "moca_b_fifo": "bde8629244e71e0935c023f85f1b0329c4e57e614b02a017a38112e66cb5866d",
+      "static_analytic": "b76a77d9f9020c9153089315f36e6d1244e39474da962ab0d5e530b453608eb6"
+    },
+    "morph_table_calibration_seconds": 2.90917990001617,
+    "prepared_sha256": "ef9e269d8996eed4a9832a98c86a1c792ab185eb462313fc6f450ee59e7cf970",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:53:41.438387+00:00",
+    "elapsed_seconds": 44.83920099999523,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 14.281149982707575,
+        "p95_core_batch_ms": 21.29677997436374,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 14.577099995221943,
+        "p95_core_batch_ms": 24.8986749880714,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.137550035025924,
+        "p95_core_batch_ms": 26.331064992700696,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 13.757199980318546,
+        "p95_core_batch_ms": 29.95291500701568,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "dc7a10e63744e9a30c9f31722653fd7e63821a1c5c6d945d5553efb282622c84",
+      "moca_b": "dbee8265afe8b757ae0941dc88509fa7df28c91db12a0a27cc521753532dd038",
+      "moca_b_fifo": "49b970cd39b5b10c140087e50a4ccd3cffa68f9d6174ee4c5399830f26d68e19",
+      "static_analytic": "f3c41e6953f6ff1e3445927038e8890574e6f0245dab92964b052441e447a7e8"
+    },
+    "morph_table_calibration_seconds": 5.781594100000802,
+    "prepared_sha256": "0dcadb9664d75308e1c06db48eb9992d0c30e7cc6cef1c8ea5fdb7ad083f5a56",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:52:56.597995+00:00",
+    "elapsed_seconds": 62.69121439999435,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.444549996871501,
+        "p95_core_batch_ms": 23.119504985515924,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.35564996022731,
+        "p95_core_batch_ms": 21.76566499110776,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.257850001333281,
+        "p95_core_batch_ms": 22.992689986131147,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.281799979973584,
+        "p95_core_batch_ms": 23.1143050070386,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "58f6257f7f7a077967916335e4071bccd75da60fab2fb5ea3b739aa5b6d96409",
+      "moca_b": "f2bef315d2bc3a313242e731d42481a4bb864f569ada2155e4ea399cb7bcb102",
+      "moca_b_fifo": "77948e6ae4feb88606a715f5130f492799e18c4a7a57271ee684af70101dde0e",
+      "static_analytic": "b5931429ca782bf50501f73a685273a3f06265c5069304646ddd20306f800bca"
+    },
+    "morph_table_calibration_seconds": 5.588967299961951,
+    "prepared_sha256": "a5af3c6b467cea54e8239d55f37645f2e76c1f3f2137d8838231d4cb4e6b25e3",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:51:53.903759+00:00",
+    "elapsed_seconds": 56.50905190000776,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.439700002782047,
+        "p95_core_batch_ms": 11.241540015907958,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 7.981000002473593,
+        "p95_core_batch_ms": 10.906629968667403,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.660800045821816,
+        "p95_core_batch_ms": 18.377080006757737,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.9163000122644,
+        "p95_core_batch_ms": 17.829020018689334,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "4c30d238dddebe10eb37763bb905f7a1fd629bc980f17ee6ede4d3c38434236d",
+      "moca_b": "31d1eb14cb60e21be8d7790494a2c1a63be8b2cc98734b8d7ef594bfb76fe7b3",
+      "moca_b_fifo": "c333b5a2fd4e80f6832580b5114aafe20cc1ab5d43dc32bdf071f44f681b355c",
+      "static_analytic": "8dfc19453a189c632f3eedee51a5aadbeb1cd9e08ddfea1c32deb6976eb2d9b0"
+    },
+    "morph_table_calibration_seconds": 1.7432282000081614,
+    "prepared_sha256": "2b1460daa8d4db6d69b4a9ae83ce1f3641c40652d1cba56bc6fc645324ace8ff",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:41:46.290796+00:00",
+    "elapsed_seconds": 50.13871349999681,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.6007000063546,
+        "p95_core_batch_ms": 11.764099996071309,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 7.994999992661178,
+        "p95_core_batch_ms": 11.531659995671362,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.050900010857731,
+        "p95_core_batch_ms": 11.31171002634801,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 7.690300000831485,
+        "p95_core_batch_ms": 10.662609996506943,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "aafca5dcc957e7baee137c2c8a83582cdb3be7b62d2ca64816c74bd7040ddee7",
+      "moca_b": "614c1de44487254cd45fd2f6822f1fd491e2087f49a35bd4d00e1cf87610e207",
+      "moca_b_fifo": "88d8a7795874fce4c71be31d244f60ea0a44712708763ea1e18ec925b423388b",
+      "static_analytic": "0900c9dc495b2e43e6988650ee9a2ae42a1cb1b8f67d8c295c9ed3b8f6b9780e"
+    },
+    "morph_table_calibration_seconds": 1.818260799976997,
+    "prepared_sha256": "a2cc041e7d2ae71efad32d6c95da675cff75f1d35feb631b156758a8c4a02dae",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:40:56.151350+00:00",
+    "elapsed_seconds": 43.39675970003009,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.869500005152076,
+        "p95_core_batch_ms": 13.284819957334548,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.120100003201514,
+        "p95_core_batch_ms": 12.3684799997136,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.278100042138249,
+        "p95_core_batch_ms": 12.331980012822896,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.321000019554049,
+        "p95_core_batch_ms": 13.148790010018272,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "db1c0b4dc7a53d5c48d8a01d8e382a09d0106c326de4af002cdf67466058199c",
+      "moca_b": "1b108ed2f8854df6e2a6caa34299d6767c3e37482915e5fd520d871e18810e56",
+      "moca_b_fifo": "46ad6e9eeecca0d7fa5ee68250e6c2b19e57541a5a25c7567ae44eb4a66a30ef",
+      "static_analytic": "e9a1b89d289f6a7dcb1f5be4c3a0cc92452978da5189a5b0ff51c0f33d249a43"
+    },
+    "morph_table_calibration_seconds": 3.721195699996315,
+    "prepared_sha256": "0d422d372f906bd43747ea97a91dbe14063ab081abbeff1956489b045382f09a",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:40:12.752753+00:00",
+    "elapsed_seconds": 52.9465769000235,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.196000046562403,
+        "p95_core_batch_ms": 13.6832200048957,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.786300011910498,
+        "p95_core_batch_ms": 13.072420028038323,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.686900011729449,
+        "p95_core_batch_ms": 12.564820004627109,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.730899997521192,
+        "p95_core_batch_ms": 13.340530032292008,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e33327542762cda13b98d152985f4962221f9ab84ed2795fc442f59a611e9c83",
+      "moca_b": "5ec78804f5eaa77cdfabe951b65a9662c9f08bc889ada2a7d19eea62cce3ac32",
+      "moca_b_fifo": "8e99b1c400eab7130edc25ec68a3fe9400e009d8e03f86088fb1c790bd695a64",
+      "static_analytic": "1924ac1dc13c34b8690f659654fadd5cc57d98c72ddf3044362ccc15d959dd6d"
+    },
+    "morph_table_calibration_seconds": 4.902524700039066,
+    "prepared_sha256": "7737cda27df403c7ea23d73ea045f4f60209439293f3225fef6d2761fdbd9516",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:39:19.805148+00:00",
+    "elapsed_seconds": 57.1062029999448,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.12829999672249,
+        "p95_core_batch_ms": 16.36208002746569,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.509299987461418,
+        "p95_core_batch_ms": 19.13610000337938,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.170149995246902,
+        "p95_core_batch_ms": 18.208429985679665,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.993900021072477,
+        "p95_core_batch_ms": 18.53530998632777,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "fa7aac339cef8dd6e5baeab8c90b8e687e03453d5b6e7ce39bcc4755dc48a02a",
+      "moca_b": "5bd1a137615406aae7db99a2de01fca2d92bcf46670851a54c1bbf4724454f59",
+      "moca_b_fifo": "a77aec9142ce6931b82191238b297e75967a352a81a83f4e76cdb1ff19d4fd7e",
+      "static_analytic": "719913f4830fbbcf63c4277513919b611c96c69bff9d7170c97d3776f24bedfb"
+    },
+    "morph_table_calibration_seconds": 2.438019399996847,
+    "prepared_sha256": "443e423e0d8e39e39e6e38646eec67a5fc5ec55471a8b380ad93952033fb84ea",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:51:36.300388+00:00",
+    "elapsed_seconds": 43.04568000003928,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 8.137599972542375,
+        "p95_core_batch_ms": 11.272229961468835,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.401399991475046,
+        "p95_core_batch_ms": 16.782920021796595,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.26909999200143,
+        "p95_core_batch_ms": 19.20843502739443,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.55489998543635,
+        "p95_core_batch_ms": 16.947290021926154,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "efdb792e01996565554b1512bbddb708a70075b00781189e70be4137e98e740a",
+      "moca_b": "ab4b34431fd8602d52e02f9cbb2ef6d29ee78616060d6c5472e2c33d56ebce22",
+      "moca_b_fifo": "ca042914a39cf8306ebbe2313a11c6f4f628d3efff4e89e311f3cf309da61d1b",
+      "static_analytic": "5df9a9acbc9abea60309a0541f0cbad30bfdd775c315eeb22424c5a62c1d9526"
+    },
+    "morph_table_calibration_seconds": 1.6382035000133328,
+    "prepared_sha256": "586312e012c18378478c51fee4ce3d9fe50cac21f2eb39af3317bdf30603655e",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:53.252852+00:00",
+    "elapsed_seconds": 39.24709709995659,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.468950000358745,
+        "p95_core_batch_ms": 19.039505033288147,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 9.27479998790659,
+        "p95_core_batch_ms": 13.125090015819294,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 9.227049973560497,
+        "p95_core_batch_ms": 12.095145013881847,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.53325001662597,
+        "p95_core_batch_ms": 11.261250008828938,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "8c5133cfce296212658186ab86a1948646909eba30a5b813f56de17df0c18202",
+      "moca_b": "7c28afa7e7ef9d7d3e1c2cf97f8fb4251c7eb5c976e06c0c33bee3c255fe5721",
+      "moca_b_fifo": "54197ced918b07d2fedd0685ccdc4c713ccffaa26294ce422f0f143079f86962",
+      "static_analytic": "8a82527c3b228a8a9bf54d57c60cd92ece173e12f61ff4f0ec6dfc2de5d52968"
+    },
+    "morph_table_calibration_seconds": 5.000931499991566,
+    "prepared_sha256": "7409d1734e016506049cd58a52bb7340464116f43d2374d883233c13849fa2f9",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:50:14.004802+00:00",
+    "elapsed_seconds": 41.03114870004356,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 14.140300016151741,
+        "p95_core_batch_ms": 25.250885004061246,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 13.161300012143329,
+        "p95_core_batch_ms": 22.36137497238815,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 13.512799981981516,
+        "p95_core_batch_ms": 21.86539998801888,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 13.721149996854365,
+        "p95_core_batch_ms": 29.660359970876012,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "ee49cf65db234f9c168af58df28d8980d0a458a79e00521c11c24a6fe63433db",
+      "moca_b": "c525fab6ceb9a0126943673b54a9ce7b1febacc9b369f419301afbc49aaa560f",
+      "moca_b_fifo": "3d4c393218f27addf056df547af4e6bc36135a07a13e9d3d98a0982dffac77c4",
+      "static_analytic": "dc50b4123391d4bb6837f4f20d5f68d91943014ffa07eb3e5dad53bb2cd23986"
+    },
+    "morph_table_calibration_seconds": 7.2683170000091195,
+    "prepared_sha256": "c88288e105fd10c9f59bfddcac391a807204d2bf1b9896a23f7b6edae4fe31a5",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:49:32.971284+00:00",
+    "elapsed_seconds": 63.640391600027215,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.484049998922274,
+        "p95_core_batch_ms": 18.423114970210005,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.663549997843802,
+        "p95_core_batch_ms": 17.27825500129256,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.610699973767623,
+        "p95_core_batch_ms": 18.37024998385459,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.326449981424958,
+        "p95_core_batch_ms": 17.855285003315654,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "6283ca48564da2dcb9e23260cedc9717b5f6ce6e055673623b6deaa021f09e44",
+      "moca_b": "8f146f4d1c386262a0f0fb56e40e73b408a2b825dd9592962a96ba26b01a6360",
+      "moca_b_fifo": "0d52f19dd35296f77f70d15257d5c2716e45b39ae51d2e85948fd2fb338d013a",
+      "static_analytic": "c5b17502e7d48be9d9777665357591c7dd8833b1d0605f99a51bc936ff84ec65"
+    },
+    "morph_table_calibration_seconds": 2.265800900000613,
+    "prepared_sha256": "814f3ff93581f9f2504f08de0b6baaedbc1013bcf0cbfb0efecee8bd1c4321ab",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:48:29.330036+00:00",
+    "elapsed_seconds": 44.09692500001984,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.14825000311248,
+        "p95_core_batch_ms": 20.293324958765876,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.173299990128726,
+        "p95_core_batch_ms": 20.057674986310285,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.295200016116723,
+        "p95_core_batch_ms": 16.173379987594654,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.167350003030151,
+        "p95_core_batch_ms": 17.209855013061297,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "a2bc430ccd4d1a4a1a05ef64d6a5f835f9632434a1ea50a3dc4800926281d786",
+      "moca_b": "c4e995981bc29b88b124573e5333baa3eda38a93a983bdfbb2898ebc73a9ddc7",
+      "moca_b_fifo": "adec1dcea87954d2af990a9b72d4fd976dba258cf4dbf328dd8bc94f77179cdc",
+      "static_analytic": "599dfd45dad371b6e229272449f006e6b57954e84ff3eb0b61c281cd9a20d3a3"
+    },
+    "morph_table_calibration_seconds": 2.5043047000071965,
+    "prepared_sha256": "f47d6a9eb046daaaaa07d0210d20d8db9083ef203d35d42147ce490239523c74",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:47:45.231683+00:00",
+    "elapsed_seconds": 43.36950660002185,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.662250006338581,
+        "p95_core_batch_ms": 24.088224978186183,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.671149986796081,
+        "p95_core_batch_ms": 22.005634987726797,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 11.747950018616393,
+        "p95_core_batch_ms": 22.31528001721016,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 11.991050007054582,
+        "p95_core_batch_ms": 23.303905039210804,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "dac8aecd5619a81d6e8289cb44d67f35a81c38e7313ea601b12fc125002de43d",
+      "moca_b": "e658585842e9e2f2573417a1cbee631349a9721b172f154e6d9955a052719484",
+      "moca_b_fifo": "2c858d547951151e941517029c3b0ac5f7ae48b355c2b056c4ecac77068a414c",
+      "static_analytic": "ed0d317c2b51a6bb530396d79c3062b3a83c54718369e0252cdf4210f4622fbf"
+    },
+    "morph_table_calibration_seconds": 4.431968199962284,
+    "prepared_sha256": "d8c20d40f8c8ff625c9972844424a21e6f9d0576668fe888ec31569d22301e6d",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:47:01.861352+00:00",
+    "elapsed_seconds": 53.467100300011225,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.4350999831222,
+        "p95_core_batch_ms": 22.20243502815719,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.813599994638935,
+        "p95_core_batch_ms": 24.184069974580776,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.850400002207607,
+        "p95_core_batch_ms": 22.303169989027037,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.353099999018013,
+        "p95_core_batch_ms": 22.43253000197,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "d6d03facdf6e434d566b1a493e5af09fb7ed2e02968c259c7e13dc1ed898f1bf",
+      "moca_b": "873195e989ca3fe09b8c5501171be5f5de4d23b641f0b8edf553179795acd2f2",
+      "moca_b_fifo": "29ed2806609db371bc3ae4f8a7c1a955624e5f678f51bbb213c154c33fa6de7f",
+      "static_analytic": "8522a1cc507532a9db89ba57630729be2aaf3e00b6c8342e31ff1c0699ca1a64"
+    },
+    "morph_table_calibration_seconds": 6.437501500011422,
+    "prepared_sha256": "b164870776b84cde5eaf92527d510e413df39d404cc4207234b521fac2088b7b",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:46:08.391975+00:00",
+    "elapsed_seconds": 57.864131700014696,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 11.718049994669855,
+        "p95_core_batch_ms": 21.018110000295557,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.696750007104129,
+        "p95_core_batch_ms": 23.731860009138465,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.662950022378936,
+        "p95_core_batch_ms": 22.170925041427825,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.867849992588162,
+        "p95_core_batch_ms": 19.51890497584827,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "dbc3283300fb6205668aa1f0058a43c93051dc92d9aaaac1adef90b3675bb701",
+      "moca_b": "feda176e837b9ca634aaa1d4911218199bb36bb9b41614c8f54e623be143245c",
+      "moca_b_fifo": "bcacace2c53582a302a754119e926f0d6a8334e7363983eb354515ca791ffd40",
+      "static_analytic": "d73399452d014359a6cd6a577d45669697163012daea69eaf4f657ea56df86b0"
+    },
+    "morph_table_calibration_seconds": 2.1302852000226267,
+    "prepared_sha256": "57c0dbc70c9ba337ef2985f495fb7cdf887f3a114cf977c76b1a859563adbd30",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:45:10.525980+00:00",
+    "elapsed_seconds": 46.99757789995056,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.63125002454035,
+        "p95_core_batch_ms": 17.36605499172582,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.518499999307096,
+        "p95_core_batch_ms": 19.94091499655041,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.52765001077205,
+        "p95_core_batch_ms": 18.78918001311831,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 10.121500032255426,
+        "p95_core_batch_ms": 17.798904990195293,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "decd74fa59910221f4fd0ccf52581e3c777a923adc6f2c791d9bd0fabff52449",
+      "moca_b": "4c10b41e63158629c79c67aaa0533886a0ac7e029edc05a580339870540efbf6",
+      "moca_b_fifo": "b409f1cd1f633311a52f1c621dd148f7d4b7857a4fd7c8b80cbec86276020398",
+      "static_analytic": "8bfc2e77f3e266f3deb67b168f10b5c46c7777d613d3df3dcf05919b8b24c9e6"
+    },
+    "morph_table_calibration_seconds": 1.808304300007876,
+    "prepared_sha256": "c42b41ae91ef8ebf115672af02ba0ab89e3315b47bf2fc018488f661f3b88ec6",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:44:23.526852+00:00",
+    "elapsed_seconds": 42.19602819997817,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.625299976207316,
+        "p95_core_batch_ms": 24.728770021465603,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.329499993938953,
+        "p95_core_batch_ms": 23.82630999491084,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.631050019990653,
+        "p95_core_batch_ms": 22.44810502743348,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.288600002648309,
+        "p95_core_batch_ms": 20.24223500338848,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "d5cde75a4443a29b69406c2508069b7e399edd3d750934987d62405318033378",
+      "moca_b": "6caa1bd5c2bb12d06258f001d1a716664af4683f6e93626daa896fa0406fe293",
+      "moca_b_fifo": "9c96b9b7096a4464917f9c2a61231c05295a52f60b49432bd11a4e760508316e",
+      "static_analytic": "d7ea220bdddf8be25de9bd84eb7200b4d8eae71ded24ae093955a277946f44d5"
+    },
+    "morph_table_calibration_seconds": 5.481323800049722,
+    "prepared_sha256": "dfccd4266c2755bf488a650cefcf4577361263b3baa339437ff62c4c732d5361",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:43:41.329629+00:00",
+    "elapsed_seconds": 56.64717190002557,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.639950029551983,
+        "p95_core_batch_ms": 24.160670011769977,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 12.183600018033758,
+        "p95_core_batch_ms": 25.557100027799546,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.374799989629537,
+        "p95_core_batch_ms": 24.10524501174217,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.165049993200228,
+        "p95_core_batch_ms": 24.682954984018544,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "592279cc9cc9919db359d6a5d29f52e803ab1b7916f9068596ac971eb56f02fa",
+      "moca_b": "675aaf38161c7ee8d3bb751c0067131fe2c2df5275a272e790b28e9161bbc3d9",
+      "moca_b_fifo": "ac5db12559eb0af3f4b1fce499fa4c1934c35a7e472786b32dfe5653d5c1970e",
+      "static_analytic": "dc25bda2aa4de3598a29b20d711ba888672624295bcb2f59351a8098c6b29383"
+    },
+    "morph_table_calibration_seconds": 6.050597299996298,
+    "prepared_sha256": "ca807ade5c36d08c23b3a44f55adbf9e541adcb4f74869da5be165fa52f03487",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:42:44.680420+00:00",
+    "elapsed_seconds": 58.38815469999099,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 9.221699991030619,
+        "p95_core_batch_ms": 17.16762002324685,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 8.936750004068017,
+        "p95_core_batch_ms": 16.224025035626244,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 8.802550000837073,
+        "p95_core_batch_ms": 15.207140022539528,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 8.094249991700053,
+        "p95_core_batch_ms": 14.21889498888049,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "ea33dd5154f313f8b5ee6a363166232af3399ca59db60d38b0fdb7785a83cd86",
+      "moca_b": "30b5a95bab66f5e70a307e16f83e1448371135047f0921de136c72f4c74eecff",
+      "moca_b_fifo": "06afba4a528069f1b6d76964de3adb7aa9e827abf510d36aa0c51cd9f6fc3fde",
+      "static_analytic": "70770c6e0236e995cfa9013eabbac90e4629360230e19c32899778d4ccb62e11"
+    },
+    "morph_table_calibration_seconds": 1.7758633999619633,
+    "prepared_sha256": "0eeb0b653878a6ebd0c5e2d382b1721d7f54581f4df72ebf62d36ac5b13596da",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:55:04.185925+00:00",
+    "elapsed_seconds": 36.65476820000913,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 10.788500017952174,
+        "p95_core_batch_ms": 21.717004996025935,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 10.468399996170774,
+        "p95_core_batch_ms": 20.44929999974556,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 10.919049993390217,
+        "p95_core_batch_ms": 22.28983496897852,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 9.896549978293478,
+        "p95_core_batch_ms": 19.54305997351183,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "e21cc6a23cd1d006afa77d4d6c302ccc266752f35ae4d2074d48ccbc646d2732",
+      "moca_b": "36e055edf1d78ae08ea0e98972fb25c8547cdb05e14acc654c8e8e112261970d",
+      "moca_b_fifo": "009cc81f6cebeb86bda650498049592cc98d23a5c7a42dab558aa61b8fd19133",
+      "static_analytic": "2ee58d423056fc6c639aef0aadd350facb19cf7cf7049028d103c60c394eb40b"
+    },
+    "morph_table_calibration_seconds": 2.6555766999954358,
+    "prepared_sha256": "b07d0e08f2a2011b2f3a1ad170f161e20ce188b7c5b8174b1e23344b49d836cc",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:54:27.525794+00:00",
+    "elapsed_seconds": 46.36043180001434,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 12.817950017051771,
+        "p95_core_batch_ms": 28.21245495870243,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 11.934649985050783,
+        "p95_core_batch_ms": 25.303325027925883,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 12.070899974787608,
+        "p95_core_batch_ms": 22.61647999403067,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 12.019499990856275,
+        "p95_core_batch_ms": 23.198974991100837,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "a79678ea4660028f5f13b2df384102ab4e504a1504f45f3d996ca68173e3ccef",
+      "moca_b": "48df4fd14ddfb55d3d196e370cd60ac8ae407c89926f636ea2a2b69aedc35cc5",
+      "moca_b_fifo": "f4b3a17df622bc2fda17ee23ebe3d64e19e833f1a37fb634e991f99481a4d09c",
+      "static_analytic": "93b44770b4b0695c1193a1111b60ccb5b6283f045182e377109abca50a7e6eec"
+    },
+    "morph_table_calibration_seconds": 6.776239499973599,
+    "prepared_sha256": "97d1887a84bf58537e480c25189c95ecd4bf22b83dbc9cd523667af87ac14add",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:53:41.164787+00:00",
+    "elapsed_seconds": 59.17256689997157,
+    "outer_true_spikes_loaded": false
+  },
+  {
+    "methods": {
+      "moca_k": {
+        "median_core_batch_ms": 14.132549957139418,
+        "p95_core_batch_ms": 24.819535014103153,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b": {
+        "median_core_batch_ms": 14.904799987562,
+        "p95_core_batch_ms": 22.49947996751871,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "moca_b_fifo": {
+        "median_core_batch_ms": 15.282450040103868,
+        "p95_core_batch_ms": 25.230150026618492,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      },
+      "static_analytic": {
+        "median_core_batch_ms": 13.989250001031905,
+        "p95_core_batch_ms": 29.619189983350136,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "prediction_sha256": {
+      "moca_k": "0931f3d7fb4577f435cf5674d3a9c57b6b5979a86cf223c82f164480668376e1",
+      "moca_b": "15ad2bc1f986b25491decef2742dc8424a1dd5ccd0339e22f9f2a8d52220f08a",
+      "moca_b_fifo": "ddcd8d182ec7d23bd2846a8e3f43db124c2991a33b42d22e876a4f4bb509854d",
+      "static_analytic": "f24ad32e90b1af244df4acb978cb85efb231e805bd6b9b3b0673dc0ecfb8e7fa"
+    },
+    "morph_table_calibration_seconds": 6.247620199981611,
+    "prepared_sha256": "fd41386a518812e7b5992d7b2735a9461622e16b9ea486d68be6ea797746a586",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "completed_at_utc": "2026-10-19T08:52:41.990308+00:00",
+    "elapsed_seconds": 65.6887622999493,
+    "outer_true_spikes_loaded": false
+  }
+]

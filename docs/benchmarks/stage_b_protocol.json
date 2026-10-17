@@ -1,0 +1,154 @@
+{
+  "registered_at_utc": "2026-10-19T08:31:47.317964+00:00",
+  "spec": {
+    "seeds": [
+      0,
+      1
+    ],
+    "training_device": "cuda",
+    "training_precision": "float32; no AMP; TF32 disabled",
+    "training_determinism": "seeded CUDA/CPU; deterministic algorithms; cuBLAS :4096:8",
+    "inference_device": "cpu",
+    "morph_epochs": 20,
+    "state_epochs": 30,
+    "morph_batch_size": 16,
+    "morph_learning_rate": 0.001,
+    "state_learning_rate": 0.003,
+    "weight_decay": 0.001,
+    "morph_channels": 8,
+    "morph_relative_bound": 2.0,
+    "blind_features": 120,
+    "blind_hidden": 24,
+    "state_dimension": 1,
+    "pca_dimension": 512,
+    "interpolation_knots": 129,
+    "online_shrinkage_ablation": 0.0,
+    "fifo_batches": 10,
+    "covariance_shrinkage": 0.5,
+    "covariance_ridge": 0.001,
+    "template_samples": 64,
+    "calibration_seconds": 5,
+    "training_conditions": [
+      "staircase",
+      "triangular-ramp40s",
+      "triangular-ramp10s"
+    ],
+    "training_snrs": [
+      30,
+      20
+    ],
+    "validation_snrs": [
+      25
+    ],
+    "supervised_targets": "clean EMG GT-triggered averages by pose; estimated, not generator truth",
+    "morph_loss": "normalized waveform error + 0.1 normalized temporal derivative error + size prior",
+    "state_loss": "angle MSE + 0.1 derivative MSE; random circular training sequence start",
+    "calibration_input_noise_fraction": 0.03,
+    "state_input_noise_std": 0.02,
+    "selection": "validation waveform objective for morph; validation angle MSE for blind observer",
+    "deployment": "mean templates of both seeds; same morph weights in K and B",
+    "primary_method": "moca_b",
+    "kinematic_variant": "moca_k",
+    "control": "static_analytic",
+    "neural_parameters_use_subject_or_unit_ids": false,
+    "optional_peel_off": false,
+    "test_time_gradient_updates": false,
+    "success": {
+      "overall_mean_roa_pct": 85,
+      "ramp5s_mean_roa_pct": 80,
+      "units_roa_ge_90_pct": 70,
+      "cpu_batch_ms": 22,
+      "maximum_degradation_8_to_40_degrees_per_second_pp": 10
+    },
+    "incomplete_tests": [
+      "independent new data",
+      "1s and 2.5s true-generator ramps",
+      "full raw-stream CPU latency including preprocessing/features"
+    ]
+  },
+  "source_sha256": {
+    "benchmarks\\pareto_residual\\common.py": "b1ec856e213f0eedac253b58bf8b7a79ae7a67fa16630a6462f96864385f0938",
+    "benchmarks\\pareto_residual\\detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27",
+    "benchmarks\\stage_a\\common.py": "f47aad4ce27f524ac068f4b1a84e0ffa3f189703789bd0ff58f4f0d8e3570a0c",
+    "benchmarks\\stage_a\\data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+    "benchmarks\\stage_a\\evaluate.py": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+    "benchmarks\\stage_b\\__init__.py": "b9ebf76ee13ab2c30630bf2bae8682142bb98936b70f9fe5d1e6066fa1cf201f",
+    "benchmarks\\stage_b\\audit.py": "344fc9924d574572ab359f8c1a32d1b9b9a4f0fd8043b89624fa7d6edbc12955",
+    "benchmarks\\stage_b\\common.py": "9fe7232ede0fd2da099af5db760d2227d0e4329ad69cd261607b39c9e23ccfab",
+    "benchmarks\\stage_b\\data.py": "d07e2546862369739ee6f66593116aa6acbc6e89ccaad7ab570ec1ce1ba112ba",
+    "benchmarks\\stage_b\\evaluate.py": "aaa9018d06b22c1ad7fdd775020a3dc3dbe5c1cfc7068553600fbbc9c6f5c807",
+    "benchmarks\\stage_b\\experiment.py": "829bfb32c8f2f5b00f29bde7f67a82a1345f2f4d645a27c426b66c8e1193d383",
+    "benchmarks\\stage_b\\inference.py": "188e703cc4859d804a84e9d3d67354c791cede5516f50efbc213a81a1e15ba97",
+    "benchmarks\\stage_b\\model.py": "a1d1d7a8b42a43b0bcccc4a1ab93dfd92379af0b7415c8711daf27656b0f8c53",
+    "benchmarks\\stage_b\\report.py": "7b0dcf77aae0b15c97a21c1199574850adb4f02f0c1477248c46729e7746a1b3",
+    "benchmarks\\stage_b\\run.py": "0c0729c6dce22100397c749825a14c99c421e41f20a888a20dc571947b89e8e3",
+    "benchmarks\\stage_b\\test_stage_b.py": "f6d2312af3921a82a828587242328be761c71e9e481f959ebc058ad27354d73c"
+  },
+  "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+  "folds": {
+    "sub-02": {
+      "training": [
+        "sub-01",
+        "sub-04",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-03"
+      ],
+      "test": [
+        "sub-02"
+      ]
+    },
+    "sub-03": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-04"
+      ],
+      "test": [
+        "sub-03"
+      ]
+    },
+    "sub-04": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-03"
+      ],
+      "validation": [
+        "sub-05"
+      ],
+      "test": [
+        "sub-04"
+      ]
+    },
+    "sub-05": {
+      "training": [
+        "sub-01",
+        "sub-03",
+        "sub-04"
+      ],
+      "validation": [
+        "sub-02"
+      ],
+      "test": [
+        "sub-05"
+      ]
+    }
+  },
+  "prior_exposure": "All P1 outcomes were previously seen; this is exploratory grouped transfer",
+  "pilot": "Analytic controls on sub-01 training data only, before registration",
+  "supervision_change": "Uses training/validation true firings; unlike label-free Stage A",
+  "test": "80 outer records, same 591 calibrated instances and original Pareto scorer",
+  "deviations_from_guide": [
+    "PCA512 covariance approximation, with captured calibration variance reported",
+    "129-knot frozen morph table precomputed from calibration; interpolated online",
+    "Estimated MUAP supervision; no original generator MUAP arrays were distributed",
+    "K state is directly observed angle, B is a trained causal scalar GRU observer",
+    "Supervised waveform branch; no full EMG reconstruction/spike-BCE fine-tuning",
+    "Faster true-generator conditions and raw-stream timing remain untested"
+  ]
+}

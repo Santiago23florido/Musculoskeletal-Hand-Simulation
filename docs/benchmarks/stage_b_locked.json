@@ -1,0 +1,134 @@
+{
+  "frozen_at_utc": "2026-10-19T08:37:22.453919+00:00",
+  "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+  "models": {
+    "sub-02": {
+      "0": {
+        "completed_at_utc": "2026-10-19T08:34:23.397938+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "d772ebcc84c38f6f4e37d39d1698c3668e764352e0663aa3cfabc225333f4a15",
+        "observer_sha256": "7f07d1be895b4d9525e57cc2e3ae6801cdb85e1a47e766b59fc554b417c90a3b",
+        "training_pairs": 1413,
+        "validation_pairs": 198,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 208636416,
+        "elapsed_seconds": 37.37873299996136
+      },
+      "1": {
+        "completed_at_utc": "2026-10-19T08:35:26.720076+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "ec783dcb6b1c6fe67352364476bc25148e88cd4d19614921811051c6352a9285",
+        "observer_sha256": "b3937fbe1d1d45a68afa675e12f9bc361b077cf12942080a697f59a2c738b4a9",
+        "training_pairs": 1413,
+        "validation_pairs": 198,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 208636416,
+        "elapsed_seconds": 33.97062800003914
+      }
+    },
+    "sub-03": {
+      "0": {
+        "completed_at_utc": "2026-10-19T08:35:04.942108+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "7b11dfb898a2f87fde70d411713c3dcdeb8cbf1e5d58c3382d8e61f9770ab0d4",
+        "observer_sha256": "20bb78405d24bab14c4b78310eeacadbc431980595109740155a1eb3e88c1b85",
+        "training_pairs": 1593,
+        "validation_pairs": 225,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 218232832,
+        "elapsed_seconds": 41.521345699962694
+      },
+      "1": {
+        "completed_at_utc": "2026-10-19T08:35:49.385528+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "4b28054b939d7402e0383199c27b2437e0e522c3db154344110b557bd8e66e30",
+        "observer_sha256": "1c5d2cae836570c1dad4e24e2287077e3fe792b5a0f79d9178fb9c0500bf7d27",
+        "training_pairs": 1593,
+        "validation_pairs": 225,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 218232832,
+        "elapsed_seconds": 37.95693330001086
+      }
+    },
+    "sub-04": {
+      "0": {
+        "completed_at_utc": "2026-10-19T08:36:12.725635+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "98b2964a15f8152d9085c08d218210f1006167c42f332e55d9ff01b5a9c2ffec",
+        "observer_sha256": "1a829a6a451f7822c19487a7019f2c88ef29d2f7a4f0ca59913c68c2d0952dd9",
+        "training_pairs": 1656,
+        "validation_pairs": 252,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 222841344,
+        "elapsed_seconds": 39.37988690001657
+      },
+      "1": {
+        "completed_at_utc": "2026-10-19T08:36:57.748242+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "3c2c2c4a8d200fcf9149ddfb41b1f5866937944159e2836bf8d65ff55ae05cb0",
+        "observer_sha256": "5133614e6084edcd2eda0fe91fc80d834bfc2c9c31226b90f73efb8fd6e9ae01",
+        "training_pairs": 1656,
+        "validation_pairs": 252,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 222841344,
+        "elapsed_seconds": 38.21489790000487
+      }
+    },
+    "sub-05": {
+      "0": {
+        "completed_at_utc": "2026-10-19T08:36:31.141987+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "6daac419f2883b817fac44063c6a206cf7c4cabf8e4c0cb7ef14685c425e544a",
+        "observer_sha256": "9bedc4e6eb7ce937e60b74623aa17ce7c9d1d11b318066fe33476aee12e2fd59",
+        "training_pairs": 1476,
+        "validation_pairs": 297,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 215928320,
+        "elapsed_seconds": 34.56597429997055
+      },
+      "1": {
+        "completed_at_utc": "2026-10-19T08:37:12.529500+00:00",
+        "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+        "morph_sha256": "709545321b9a0bac009e9d14df3922da5de49693cdf7318448437fdc62052f86",
+        "observer_sha256": "51eb8fc12018ddcc8aa904c385aa8077b8d5175b9ab84500a3fb32047fda71a8",
+        "training_pairs": 1476,
+        "validation_pairs": 297,
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch_version": "2.7.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90701,
+        "peak_gpu_memory_bytes": 215928320,
+        "elapsed_seconds": 34.43156450003153
+      }
+    }
+  }
+}

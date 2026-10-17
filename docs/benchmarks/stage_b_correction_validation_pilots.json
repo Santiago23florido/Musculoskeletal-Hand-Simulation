@@ -1,0 +1,1378 @@
+{
+  "stage_b_separation": {
+    "validation_stop.json": {
+      "status": "stopped_before_outer_inference",
+      "reason": "Validation source risk selects identity over refined CNN on the first completed folds; geometric parameterization follows",
+      "completed_runs": [
+        "folds\\sub-02\\seed0",
+        "folds\\sub-03\\seed0",
+        "folds\\sub-03\\seed1",
+        "folds\\sub-05\\seed0"
+      ],
+      "outer_predictions_generated": false,
+      "weights_promoted": false
+    },
+    "gradient_pilot.json": {
+      "scope": "one training state only; discarded weights; tests gradient alignment not generalization",
+      "values": [
+        {
+          "step": 0,
+          "source": 1.1101837158203125,
+          "angular": 0.7302510738372803,
+          "waveform": 0.33404844999313354
+        },
+        {
+          "step": 1,
+          "source": 1.1053552627563477,
+          "angular": 0.7290308475494385,
+          "waveform": 0.33441218733787537
+        },
+        {
+          "step": 2,
+          "source": 1.1003448963165283,
+          "angular": 0.7289183139801025,
+          "waveform": 0.33510488271713257
+        },
+        {
+          "step": 3,
+          "source": 1.0948060750961304,
+          "angular": 0.7297376394271851,
+          "waveform": 0.33536872267723083
+        },
+        {
+          "step": 4,
+          "source": 1.0885577201843262,
+          "angular": 0.7315847873687744,
+          "waveform": 0.33562126755714417
+        },
+        {
+          "step": 5,
+          "source": 1.0814934968948364,
+          "angular": 0.7345061302185059,
+          "waveform": 0.3360785245895386
+        },
+        {
+          "step": 6,
+          "source": 1.0736479759216309,
+          "angular": 0.7384853363037109,
+          "waveform": 0.33688288927078247
+        },
+        {
+          "step": 7,
+          "source": 1.0652214288711548,
+          "angular": 0.7434351444244385,
+          "waveform": 0.33817940950393677
+        },
+        {
+          "step": 8,
+          "source": 1.056525707244873,
+          "angular": 0.749205470085144,
+          "waveform": 0.3401329219341278
+        },
+        {
+          "step": 9,
+          "source": 1.0478923320770264,
+          "angular": 0.7556107044219971,
+          "waveform": 0.3429233729839325
+        },
+        {
+          "step": 10,
+          "source": 1.0395958423614502,
+          "angular": 0.7624552249908447,
+          "waveform": 0.3467350900173187
+        },
+        {
+          "step": 11,
+          "source": 1.0318200588226318,
+          "angular": 0.7695510983467102,
+          "waveform": 0.35174360871315
+        },
+        {
+          "step": 12,
+          "source": 1.0246572494506836,
+          "angular": 0.7767282128334045,
+          "waveform": 0.35810044407844543
+        }
+      ]
+    },
+    "projected_gradient_pilot.json": {
+      "scope": "one training state only; discarded weights; revised coercive loss",
+      "values": [
+        {
+          "step": 0,
+          "source": 1.1101837158203125,
+          "projected": 1.8138657808303833,
+          "angular": 0.7302510738372803,
+          "waveform": 0.33404844999313354
+        },
+        {
+          "step": 1,
+          "source": 1.109957218170166,
+          "projected": 1.763037085533142,
+          "angular": 0.7257692813873291,
+          "waveform": 0.33452221751213074
+        },
+        {
+          "step": 2,
+          "source": 1.109678030014038,
+          "projected": 1.7351146936416626,
+          "angular": 0.7231905460357666,
+          "waveform": 0.33575382828712463
+        },
+        {
+          "step": 3,
+          "source": 1.1092888116836548,
+          "projected": 1.7169138193130493,
+          "angular": 0.7213572859764099,
+          "waveform": 0.3367871344089508
+        },
+        {
+          "step": 4,
+          "source": 1.108720064163208,
+          "projected": 1.702086091041565,
+          "angular": 0.719749391078949,
+          "waveform": 0.3387332558631897
+        },
+        {
+          "step": 5,
+          "source": 1.1078909635543823,
+          "projected": 1.6868230104446411,
+          "angular": 0.7180203795433044,
+          "waveform": 0.34169134497642517
+        },
+        {
+          "step": 6,
+          "source": 1.1066948175430298,
+          "projected": 1.670130968093872,
+          "angular": 0.7160962224006653,
+          "waveform": 0.3448156714439392
+        },
+        {
+          "step": 7,
+          "source": 1.1050965785980225,
+          "projected": 1.6530044078826904,
+          "angular": 0.7141158580780029,
+          "waveform": 0.34724509716033936
+        },
+        {
+          "step": 8,
+          "source": 1.1031484603881836,
+          "projected": 1.6364071369171143,
+          "angular": 0.7121895551681519,
+          "waveform": 0.3489772379398346
+        },
+        {
+          "step": 9,
+          "source": 1.1010018587112427,
+          "projected": 1.6213690042495728,
+          "angular": 0.7104192972183228,
+          "waveform": 0.3506341278553009
+        },
+        {
+          "step": 10,
+          "source": 1.098867654800415,
+          "projected": 1.6085261106491089,
+          "angular": 0.7088569402694702,
+          "waveform": 0.35289904475212097
+        },
+        {
+          "step": 11,
+          "source": 1.0968902111053467,
+          "projected": 1.5973438024520874,
+          "angular": 0.7074291706085205,
+          "waveform": 0.35577699542045593
+        },
+        {
+          "step": 12,
+          "source": 1.0950535535812378,
+          "projected": 1.5868198871612549,
+          "angular": 0.7060424089431763,
+          "waveform": 0.3588123023509979
+        }
+      ]
+    },
+    "mvdr_oracle_pilot.json": {
+      "scope": "TRAIN sub-01 staircase 30 dB only; estimated-template MVDR oracle, not deployable",
+      "roa_pct": 96.24722702639028,
+      "timing": {
+        "median_core_batch_ms": 10.243199998512864,
+        "p95_core_batch_ms": 27.86805998766793,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    "histories": {
+      "folds\\sub-02\\seed0\\history.json": [
+        {
+          "epoch": -1,
+          "validation": {
+            "source": 0.7150661679680901,
+            "projected": 1.316299519830882,
+            "angular": 0.5105356700492628,
+            "waveform": 0.5928946585780142
+          }
+        },
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.8622128914928797,
+            "projected": 1.5466210167817396,
+            "angular": 0.5678048636576142,
+            "waveform": 0.2502657841288983
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.8531570588097428,
+            "projected": 1.055881230442813,
+            "angular": 0.5233308417026443,
+            "waveform": 0.32774110525996997
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 0.9688855706892833,
+            "projected": 0.9241528547923974,
+            "angular": 0.5221320276308541,
+            "waveform": 0.3105057054434461
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 1.1200991818173365,
+            "projected": 0.8278008840150304,
+            "angular": 0.5135375441926898,
+            "waveform": 0.2987753763380978
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 1.2421843935594414,
+            "projected": 0.7641218762957689,
+            "angular": 0.49956077939332133,
+            "waveform": 0.2915398424321955
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 1.2202900959310508,
+            "projected": 0.7551278180696748,
+            "angular": 0.49316410825710105,
+            "waveform": 0.29356731088700316
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 1.2685792226005683,
+            "projected": 0.7583262757068933,
+            "angular": 0.4979696734385057,
+            "waveform": 0.29497097944370426
+          }
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "source": 1.249648974813295,
+            "projected": 0.7400454963849048,
+            "angular": 0.48840829639723804,
+            "waveform": 0.29895613116748404
+          }
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "source": 1.2210342034020207,
+            "projected": 0.746499708505592,
+            "angular": 0.4892745279904568,
+            "waveform": 0.29857995430703715
+          }
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "source": 1.2341933328319679,
+            "projected": 0.7489318007020035,
+            "angular": 0.4912300702899393,
+            "waveform": 0.2976746510225113
+          }
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "source": 1.211715397396774,
+            "projected": 0.7439552965489301,
+            "angular": 0.48708069595423614,
+            "waveform": 0.2983261849919353
+          }
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "source": 1.2280032126740976,
+            "projected": 0.7439488452492338,
+            "angular": 0.48788005143705043,
+            "waveform": 0.29986404576762155
+          }
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "source": 1.2465248788246002,
+            "projected": 0.7515037214816219,
+            "angular": 0.49227849973572624,
+            "waveform": 0.30176248962078434
+          }
+        },
+        {
+          "epoch": 13,
+          "validation": {
+            "source": 1.2069672556838604,
+            "projected": 0.7562913972922046,
+            "angular": 0.49019627167720986,
+            "waveform": 0.3013053122117664
+          }
+        },
+        {
+          "epoch": 14,
+          "validation": {
+            "source": 1.224553490791357,
+            "projected": 0.7501921102856145,
+            "angular": 0.4894049953330647,
+            "waveform": 0.2992582108185749
+          }
+        },
+        {
+          "epoch": 15,
+          "validation": {
+            "source": 1.2442125550499468,
+            "projected": 0.7365849965600052,
+            "angular": 0.4857151345773177,
+            "waveform": 0.30233537686066797
+          }
+        },
+        {
+          "epoch": 16,
+          "validation": {
+            "source": 1.2123359462076968,
+            "projected": 0.7448525604876605,
+            "angular": 0.48630659959532996,
+            "waveform": 0.3026174766510123
+          }
+        },
+        {
+          "epoch": 17,
+          "validation": {
+            "source": 1.2797562481478006,
+            "projected": 0.7393781140898213,
+            "angular": 0.4885847448098539,
+            "waveform": 0.3033793019224899
+          }
+        },
+        {
+          "epoch": 18,
+          "validation": {
+            "source": 1.2448987922433652,
+            "projected": 0.743701352013482,
+            "angular": 0.4874363038877044,
+            "waveform": 0.3063180215957791
+          }
+        },
+        {
+          "epoch": 19,
+          "validation": {
+            "source": 1.2232890615258554,
+            "projected": 0.7387041193668289,
+            "angular": 0.48456370017745276,
+            "waveform": 0.3014586381614208
+          }
+        },
+        {
+          "epoch": 20,
+          "validation": {
+            "source": 1.2522124496448521,
+            "projected": 0.7441181173980839,
+            "angular": 0.4891408760138232,
+            "waveform": 0.30401610236878346
+          }
+        }
+      ],
+      "folds\\sub-03\\seed0\\history.json": [
+        {
+          "epoch": -1,
+          "validation": {
+            "source": 0.7324194238583247,
+            "projected": 1.3501216437419254,
+            "angular": 0.5133400387234158,
+            "waveform": 0.5614128956860966
+          }
+        },
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.8762475561433368,
+            "projected": 1.5442433765861723,
+            "angular": 0.5661604650815328,
+            "waveform": 0.2301551972826322
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.8765657181209988,
+            "projected": 1.061528704630004,
+            "angular": 0.5232561246554057,
+            "waveform": 0.30830354031589297
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 0.9678549634085761,
+            "projected": 0.937488991883066,
+            "angular": 0.5188744666841295,
+            "waveform": 0.286245633661747
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 1.1004964033762614,
+            "projected": 0.8348945435550478,
+            "angular": 0.5084591682751973,
+            "waveform": 0.2751508683297369
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 1.2076396911011802,
+            "projected": 0.7720460733440188,
+            "angular": 0.4951457566685147,
+            "waveform": 0.2668879849712054
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 1.2111687514517042,
+            "projected": 0.7568790561623043,
+            "angular": 0.48883894946840073,
+            "waveform": 0.2674540790584352
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 1.234343286289109,
+            "projected": 0.7583599457475874,
+            "angular": 0.4902945695983039,
+            "waveform": 0.27352137827210954
+          }
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "source": 1.1983277141385609,
+            "projected": 0.7495604376660453,
+            "angular": 0.48393550660875106,
+            "waveform": 0.2744996350010236
+          }
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "source": 1.214863939086596,
+            "projected": 0.7456114718649123,
+            "angular": 0.48366609149509004,
+            "waveform": 0.2742160389820735
+          }
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "source": 1.2028667171133889,
+            "projected": 0.7594580519861646,
+            "angular": 0.48712320592668323,
+            "waveform": 0.2782724810971154
+          }
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "source": 1.1660398193862702,
+            "projected": 0.7548396127091513,
+            "angular": 0.48311445554097493,
+            "waveform": 0.2748026790552669
+          }
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "source": 1.1975122845835156,
+            "projected": 0.7463547395335304,
+            "angular": 0.48241319047080145,
+            "waveform": 0.27564525809552937
+          }
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "source": 1.2210222451554404,
+            "projected": 0.7426869310935338,
+            "angular": 0.48311807288063896,
+            "waveform": 0.278571785291036
+          }
+        },
+        {
+          "epoch": 13,
+          "validation": {
+            "source": 1.2077811507383982,
+            "projected": 0.7428859427902433,
+            "angular": 0.4824240114953783,
+            "waveform": 0.27416203127966987
+          }
+        },
+        {
+          "epoch": 14,
+          "validation": {
+            "source": 1.2028213619523578,
+            "projected": 0.7376350749863518,
+            "angular": 0.4793822725613912,
+            "waveform": 0.2710558275050587
+          }
+        },
+        {
+          "epoch": 15,
+          "validation": {
+            "source": 1.2030908754799101,
+            "projected": 0.7357297194666332,
+            "angular": 0.47864008161756727,
+            "waveform": 0.27193572954999073
+          }
+        },
+        {
+          "epoch": 16,
+          "validation": {
+            "source": 1.1868204245964686,
+            "projected": 0.7413478928142124,
+            "angular": 0.4805737466282315,
+            "waveform": 0.2718514464630021
+          }
+        },
+        {
+          "epoch": 17,
+          "validation": {
+            "source": 1.2364227477047178,
+            "projected": 0.7447847875621584,
+            "angular": 0.48352627992630004,
+            "waveform": 0.2796218093567424
+          }
+        },
+        {
+          "epoch": 18,
+          "validation": {
+            "source": 1.2186941949526469,
+            "projected": 0.7369407980309592,
+            "angular": 0.4803787369198269,
+            "waveform": 0.2794320006834136
+          }
+        },
+        {
+          "epoch": 19,
+          "validation": {
+            "source": 1.194300231999821,
+            "projected": 0.7348830182022519,
+            "angular": 0.4779243461290995,
+            "waveform": 0.2736294509967168
+          }
+        },
+        {
+          "epoch": 20,
+          "validation": {
+            "source": 1.212501313553916,
+            "projected": 0.7541685569286346,
+            "angular": 0.48611385027567544,
+            "waveform": 0.2807305926746792
+          }
+        }
+      ],
+      "folds\\sub-03\\seed1\\history.json": [
+        {
+          "epoch": -1,
+          "validation": {
+            "source": 0.7324194238583247,
+            "projected": 1.3501216437419254,
+            "angular": 0.5133400387234158,
+            "waveform": 0.5614128956860966
+          }
+        },
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.8805940535995695,
+            "projected": 1.5887678723202812,
+            "angular": 0.5692957954936557,
+            "waveform": 0.23282137562831243
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.8757334851556354,
+            "projected": 1.0695696622133255,
+            "angular": 0.5215181106991238,
+            "waveform": 0.2949982658690876
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 0.9818128485149807,
+            "projected": 0.9498735868930817,
+            "angular": 0.5211609080102708,
+            "waveform": 0.2790503895613882
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 1.1483260900444454,
+            "projected": 0.8363068336248398,
+            "angular": 0.5119356558057997,
+            "waveform": 0.27364640133248436
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 1.2418210589223437,
+            "projected": 0.7776137983136707,
+            "angular": 0.4979289028379652,
+            "waveform": 0.27118218580881753
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 1.2075257847044203,
+            "projected": 0.7636538309521145,
+            "angular": 0.4897763747639126,
+            "waveform": 0.27053969591856003
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 1.2528243696689605,
+            "projected": 0.7502848233116998,
+            "angular": 0.4887349608209398,
+            "waveform": 0.2744539839691586
+          }
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "source": 1.21888402806388,
+            "projected": 0.7549507164292866,
+            "angular": 0.4880875908003913,
+            "waveform": 0.27823538551727933
+          }
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "source": 1.229532059232394,
+            "projected": 0.7421052067147361,
+            "angular": 0.48352172666125826,
+            "waveform": 0.2727090831928783
+          }
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "source": 1.237576294210222,
+            "projected": 0.7399886479642657,
+            "angular": 0.48479281425476073,
+            "waveform": 0.27350479311413234
+          }
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "source": 1.270709338121944,
+            "projected": 0.7407633246978124,
+            "angular": 0.48696270227432253,
+            "waveform": 0.276572939256827
+          }
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "source": 1.2046294728252622,
+            "projected": 0.7367665637201734,
+            "angular": 0.4821359962887234,
+            "waveform": 0.26734939518902034
+          }
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "source": 1.216679027279218,
+            "projected": 0.7411494606733322,
+            "angular": 0.4845969886249966,
+            "waveform": 0.26988662120368745
+          }
+        },
+        {
+          "epoch": 13,
+          "validation": {
+            "source": 1.2174686303403643,
+            "projected": 0.7341395585404502,
+            "angular": 0.4811928884188334,
+            "waveform": 0.27364220400651296
+          }
+        },
+        {
+          "epoch": 14,
+          "validation": {
+            "source": 1.2361348129643335,
+            "projected": 0.7364893180794186,
+            "angular": 0.4838037954436408,
+            "waveform": 0.27060743543836807
+          }
+        },
+        {
+          "epoch": 15,
+          "validation": {
+            "source": 1.2031136153141657,
+            "projected": 0.7328620566924413,
+            "angular": 0.4789196983973185,
+            "waveform": 0.2696889693207211
+          }
+        },
+        {
+          "epoch": 16,
+          "validation": {
+            "source": 1.196643383834097,
+            "projected": 0.7360922494199541,
+            "angular": 0.4810268685552809,
+            "waveform": 0.26940471036566627
+          }
+        },
+        {
+          "epoch": 17,
+          "validation": {
+            "source": 1.2546066337161594,
+            "projected": 0.7449917910496394,
+            "angular": 0.4879838530222575,
+            "waveform": 0.27266246249278386
+          }
+        },
+        {
+          "epoch": 18,
+          "validation": {
+            "source": 1.2053174563911226,
+            "projected": 0.7419426266352336,
+            "angular": 0.4823228851954142,
+            "waveform": 0.26896648950046964
+          }
+        },
+        {
+          "epoch": 19,
+          "validation": {
+            "source": 1.244554543627633,
+            "projected": 0.7293627813789579,
+            "angular": 0.4808470172352261,
+            "waveform": 0.27251988331476845
+          }
+        },
+        {
+          "epoch": 20,
+          "validation": {
+            "source": 1.2136171697907978,
+            "projected": 0.7287068915367126,
+            "angular": 0.478632865746816,
+            "waveform": 0.26910069863001507
+          }
+        }
+      ],
+      "folds\\sub-05\\seed0\\history.json": [
+        {
+          "epoch": -1,
+          "validation": {
+            "source": 0.817146259325522,
+            "projected": 1.4033697491844093,
+            "angular": 0.5727466541508632,
+            "waveform": 0.6745508487276758
+          }
+        },
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.9210835228162984,
+            "projected": 1.5731644787973025,
+            "angular": 0.6041422440146758,
+            "waveform": 0.31600816302026563
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.9845760194741515,
+            "projected": 1.1171898453524618,
+            "angular": 0.5792635960209651,
+            "waveform": 0.4152124794544997
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 1.101723314485566,
+            "projected": 1.0014638917815404,
+            "angular": 0.5755738738409999,
+            "waveform": 0.38951737210405396
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 1.265774740213497,
+            "projected": 0.8952342950133764,
+            "angular": 0.564196461980993,
+            "waveform": 0.3705274102964787
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 1.3653942916529749,
+            "projected": 0.8423425936538362,
+            "angular": 0.553393668999977,
+            "waveform": 0.3626533596453442
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 1.4139104897927757,
+            "projected": 0.8307577093141247,
+            "angular": 0.5519889589110609,
+            "waveform": 0.36663149605796796
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 1.44930905359562,
+            "projected": 0.8172060410783748,
+            "angular": 0.5491264717346088,
+            "waveform": 0.3623085540502962
+          }
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "source": 1.4033663113811603,
+            "projected": 0.8174816625387179,
+            "angular": 0.5459511318190732,
+            "waveform": 0.3640420937327423
+          }
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "source": 1.4554082742744825,
+            "projected": 0.8090098776700922,
+            "angular": 0.546368020351487,
+            "waveform": 0.36724834736148115
+          }
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "source": 1.4328283565714703,
+            "projected": 0.817468293487825,
+            "angular": 0.5482112807456894,
+            "waveform": 0.36647404160864827
+          }
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "source": 1.4311665405930092,
+            "projected": 0.8087856255797826,
+            "angular": 0.5451498069747128,
+            "waveform": 0.3698259467378209
+          }
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "source": 1.484798963724162,
+            "projected": 0.7985490739646585,
+            "angular": 0.5441780939246669,
+            "waveform": 0.36874902343709864
+          }
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "source": 1.4585658821594032,
+            "projected": 0.8118085038882715,
+            "angular": 0.5482082453239646,
+            "waveform": 0.3711129845643686
+          }
+        },
+        {
+          "epoch": 13,
+          "validation": {
+            "source": 1.4114718128635426,
+            "projected": 0.8062565109444788,
+            "angular": 0.5432972446435228,
+            "waveform": 0.3657339557453438
+          }
+        },
+        {
+          "epoch": 14,
+          "validation": {
+            "source": 1.4580745405520654,
+            "projected": 0.8036335401663475,
+            "angular": 0.5446917482899496,
+            "waveform": 0.37135878707021974
+          }
+        },
+        {
+          "epoch": 15,
+          "validation": {
+            "source": 1.4716040018431666,
+            "projected": 0.8044145225174097,
+            "angular": 0.5454446438587073,
+            "waveform": 0.3712832998446744
+          }
+        },
+        {
+          "epoch": 16,
+          "validation": {
+            "source": 1.4423010595117756,
+            "projected": 0.801708286709657,
+            "angular": 0.5431351240235146,
+            "waveform": 0.3695116627597648
+          }
+        },
+        {
+          "epoch": 17,
+          "validation": {
+            "source": 1.478252303369519,
+            "projected": 0.8095749904611697,
+            "angular": 0.5474641130428122,
+            "waveform": 0.370559575506533
+          }
+        },
+        {
+          "epoch": 18,
+          "validation": {
+            "source": 1.4709828578261814,
+            "projected": 0.8085215430869799,
+            "angular": 0.5468947030478455,
+            "waveform": 0.36992127955060217
+          }
+        },
+        {
+          "epoch": 19,
+          "validation": {
+            "source": 1.4035376930477643,
+            "projected": 0.8207463232254741,
+            "angular": 0.5473884406314554,
+            "waveform": 0.36948745241169173
+          }
+        },
+        {
+          "epoch": 20,
+          "validation": {
+            "source": 1.5058318840634541,
+            "projected": 0.7969852505809931,
+            "angular": 0.5443565321691108,
+            "waveform": 0.37165293518943016
+          }
+        }
+      ],
+      "folds\\sub-05\\seed1\\history.json": [
+        {
+          "epoch": -1,
+          "validation": {
+            "source": 0.817146259325522,
+            "projected": 1.4033697491844093,
+            "angular": 0.5727466541508632,
+            "waveform": 0.6745508487276758
+          }
+        },
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.9592223644557626,
+            "projected": 1.7043645332256954,
+            "angular": 0.6276985539330376,
+            "waveform": 0.3127385729591453
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.9970112373230835,
+            "projected": 1.116592953803162,
+            "angular": 0.5833793427004959,
+            "waveform": 0.4213127279121065
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 1.0889764961971578,
+            "projected": 1.035428044721735,
+            "angular": 0.5828137498110633,
+            "waveform": 0.3942724605802735
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 1.25578064233165,
+            "projected": 0.9266469924136845,
+            "angular": 0.5754573802755336,
+            "waveform": 0.37338202893232253
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 1.377300840586123,
+            "projected": 0.8542851597973795,
+            "angular": 0.5597324941294763,
+            "waveform": 0.3641417034045614
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 1.4465840671600316,
+            "projected": 0.8209359299153189,
+            "angular": 0.5506904582784633,
+            "waveform": 0.3566597256596241
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 1.4508290797572345,
+            "projected": 0.8193317202205208,
+            "angular": 0.5497542792297774,
+            "waveform": 0.3581087935703371
+          }
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "source": 1.5167291278790946,
+            "projected": 0.8100153035186357,
+            "angular": 0.550407704680857,
+            "waveform": 0.36522999277921636
+          }
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "source": 1.4887362280076601,
+            "projected": 0.8137939834735209,
+            "angular": 0.550152290951122,
+            "waveform": 0.3676653530461218
+          }
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "source": 1.4570660772247346,
+            "projected": 0.8133729504114048,
+            "angular": 0.5494063807657672,
+            "waveform": 0.36310943258731854
+          }
+        }
+      ]
+    }
+  },
+  "stage_b_geometry": {
+    "validation_stop.json": {
+      "status": "unpromoted_validation_pilot",
+      "reason": "Projection-dominant objective did not improve validation source risk over identity; source-dominant six-epoch pilot reduced source risk but did not validate event detection; direct event likelihood is evaluated next",
+      "completed_runs": [
+        "folds\\sub-02\\seed0"
+      ],
+      "outer_predictions_generated": false
+    },
+    "source_dominant_pilot.json": {
+      "scope": "train/validation fold02 only; no outer predictions; discarded pilot weights",
+      "history": [
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.7150661679680901,
+            "projected": 1.316299519830882,
+            "angular": 0.5105356700492628,
+            "waveform": 0.5928946585780142
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.6795771883593665,
+            "projected": 1.400369030508128,
+            "angular": 0.4943243090552513,
+            "waveform": 0.6654256561752221
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 0.6663958058513776,
+            "projected": 1.6111922759299326,
+            "angular": 0.4925918256995654,
+            "waveform": 0.7724060605684615
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 0.659960390266144,
+            "projected": 1.750422853562567,
+            "angular": 0.4922280278470781,
+            "waveform": 0.8770077487246858
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 0.6550598581782495,
+            "projected": 1.8377457378488598,
+            "angular": 0.49061363363506816,
+            "waveform": 0.9812681627732636
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 0.6512459242961022,
+            "projected": 1.9354154108600183,
+            "angular": 0.4900481499204732,
+            "waveform": 1.0832282017653037
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 0.649819134010209,
+            "projected": 1.9947219906431255,
+            "angular": 0.49014145165982875,
+            "waveform": 1.1507541332958322
+          }
+        }
+      ]
+    },
+    "histories": {
+      "folds\\sub-02\\seed0\\history.json": [
+        {
+          "epoch": 0,
+          "validation": {
+            "source": 0.7150661679680901,
+            "projected": 1.316299519830882,
+            "angular": 0.5105356700492628,
+            "waveform": 0.5928946585780142
+          }
+        },
+        {
+          "epoch": 1,
+          "validation": {
+            "source": 0.9082009351313717,
+            "projected": 0.9142856512105826,
+            "angular": 0.5074949941851876,
+            "waveform": 0.4249984807513579
+          }
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "source": 0.996144301399137,
+            "projected": 0.8357488793706653,
+            "angular": 0.5057147741317749,
+            "waveform": 0.3784351226393924
+          }
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "source": 1.0395661992858154,
+            "projected": 0.802900983453399,
+            "angular": 0.5041171408662892,
+            "waveform": 0.35990544512040085
+          }
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "source": 1.049634653247065,
+            "projected": 0.7863273186364559,
+            "angular": 0.5012878766565612,
+            "waveform": 0.3565252588290458
+          }
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "source": 1.075320223891976,
+            "projected": 0.7733225110504363,
+            "angular": 0.5002338967540048,
+            "waveform": 0.3508616905621808
+          }
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "source": 1.0891236835206397,
+            "projected": 0.765512230721387,
+            "angular": 0.4988582423239043,
+            "waveform": 0.3461878210343797
+          }
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "source": 1.1061162656229553,
+            "projected": 0.7589155929257171,
+            "angular": 0.4976755350527137,
+            "waveform": 0.3438667217363613
+          }
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "source": 1.1199801867131634,
+            "projected": 0.7549417535162936,
+            "angular": 0.4975832261220373,
+            "waveform": 0.34234081908608927
+          }
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "source": 1.140299355705278,
+            "projected": 0.7508607013809561,
+            "angular": 0.4976661762203833,
+            "waveform": 0.3382693272121627
+          }
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "source": 1.1489140277333332,
+            "projected": 0.7475348735096479,
+            "angular": 0.49637448968309344,
+            "waveform": 0.3413000718474087
+          }
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "source": 1.1532647263145808,
+            "projected": 0.7473609461025759,
+            "angular": 0.4963424846981511,
+            "waveform": 0.34417827747235397
+          }
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "source": 1.1639014570926778,
+            "projected": 0.7438591526764812,
+            "angular": 0.49618199497762355,
+            "waveform": 0.34170021212687995
+          }
+        },
+        {
+          "epoch": 13,
+          "validation": {
+            "source": 1.1601664771260036,
+            "projected": 0.7466263967481527,
+            "angular": 0.4963565682521974,
+            "waveform": 0.3475006651697737
+          }
+        },
+        {
+          "epoch": 14,
+          "validation": {
+            "source": 1.1687511012635448,
+            "projected": 0.7431646674269378,
+            "angular": 0.49510166229623737,
+            "waveform": 0.34690919046224367
+          }
+        },
+        {
+          "epoch": 15,
+          "validation": {
+            "source": 1.1794254524313441,
+            "projected": 0.7395098642869429,
+            "angular": 0.4948869254251923,
+            "waveform": 0.3449349081463585
+          }
+        },
+        {
+          "epoch": 16,
+          "validation": {
+            "source": 1.1789102181039675,
+            "projected": 0.7393438019084208,
+            "angular": 0.4950941138797336,
+            "waveform": 0.34740759592239906
+          }
+        },
+        {
+          "epoch": 17,
+          "validation": {
+            "source": 1.1948999791509576,
+            "projected": 0.7372593491366415,
+            "angular": 0.4957204560438792,
+            "waveform": 0.3426301023273757
+          }
+        },
+        {
+          "epoch": 18,
+          "validation": {
+            "source": 1.2040183424121804,
+            "projected": 0.7369597810837958,
+            "angular": 0.49608404919354604,
+            "waveform": 0.34085164661284045
+          }
+        },
+        {
+          "epoch": 19,
+          "validation": {
+            "source": 1.193881322074719,
+            "projected": 0.7363168624314395,
+            "angular": 0.49475000904063987,
+            "waveform": 0.3466188001700423
+          }
+        },
+        {
+          "epoch": 20,
+          "validation": {
+            "source": 1.1938224368248924,
+            "projected": 0.7359020523350648,
+            "angular": 0.4940568299004526,
+            "waveform": 0.34910565496168355
+          }
+        }
+      ]
+    }
+  }
+}

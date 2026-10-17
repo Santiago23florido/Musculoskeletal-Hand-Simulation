@@ -1,0 +1,8 @@
+{
+  "scope": "sub-01 training record; causal batches after original offline preprocessing",
+  "blind_spikes_and_sources_ignore_all_true_angles": true,
+  "future_perturbation_preserves_prefix": true,
+  "prefix_samples": 20400,
+  "maximum_interpolation_relative_error": 1.48687622640864e-05,
+  "original_post_calibration_true_spikes_loaded": false
+}

@@ -1,0 +1,43 @@
+{
+  "scope": "post-hoc two-record diagnostic of frozen outer-sub-02 models; no tuning",
+  "targets": "estimated clean-EMG GT-triggered averages; not original generator MUAPs",
+  "interpretation": "Waveform error and projected central-template error weight different directions. These two records diagnose a mismatch; they do not establish its unique cause.",
+  "records": [
+    {
+      "subject": "sub-01",
+      "condition": "staircase",
+      "snr_db": 30,
+      "phase": "training",
+      "pairs": 126,
+      "learned_waveform_nmse": 0.32160308957099915,
+      "static_waveform_nmse": 0.659393846988678,
+      "learned_projected_nmse": 1.181807279586792,
+      "static_projected_nmse": 0.9397234916687012,
+      "learned_projected_cosine": 0.37948745489120483,
+      "static_projected_cosine": 0.4125215411186218,
+      "roa_pct": {
+        "k": 35.474761306876665,
+        "b": 34.91691973336329,
+        "static": 48.037459238179444
+      }
+    },
+    {
+      "subject": "sub-03",
+      "condition": "staircase",
+      "snr_db": 25,
+      "phase": "validation",
+      "pairs": 63,
+      "learned_waveform_nmse": 0.21659576892852783,
+      "static_waveform_nmse": 0.5465387105941772,
+      "learned_projected_nmse": 1.0852910280227661,
+      "static_projected_nmse": 0.8846917748451233,
+      "learned_projected_cosine": 0.42327365279197693,
+      "static_projected_cosine": 0.48655787110328674,
+      "roa_pct": {
+        "k": 43.35972513923057,
+        "b": 43.68968313567981,
+        "static": 60.925928553821386
+      }
+    }
+  ]
+}

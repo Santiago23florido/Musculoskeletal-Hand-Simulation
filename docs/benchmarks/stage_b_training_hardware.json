@@ -1,0 +1,21 @@
+{
+  "python": "3.12.14",
+  "torch": "2.7.0+cu126",
+  "cuda_build": "12.6",
+  "cudnn": 90701,
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "gpu_memory_bytes": 8585216000,
+  "compute_capability": [
+    8,
+    9
+  ],
+  "nvidia_smi": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 596.08",
+  "inference_environment": ".venv-benchmarks (PyTorch 2.7.0+cpu)",
+  "training_environment": ".venv-stage-b-gpu (PyTorch 2.7.0+cu126)",
+  "precision": "float32; no AMP or TF32",
+  "seeded": true,
+  "cpu_attempt_preserved": "outputs/stage_b_main/aborted_cpu_v1",
+  "inference_cpu": "Intel Core Ultra 7 155H; 16 cores, 22 logical processors",
+  "inference_torch_threads_per_process": 2,
+  "inference_concurrent_subject_processes": 4
+}
