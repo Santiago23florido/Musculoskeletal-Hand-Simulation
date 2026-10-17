@@ -1,0 +1,119 @@
+{
+  "analysis_code_sha256": "5c6d07cc58f22007ef4635c89523228b1757b254fc9ebd0b2775261b62aad01d",
+  "per_unit_sha256": "908664d93a1701af7e3290a72392d72078c69058f75265de53987a5c9ccc5ccb",
+  "comparisons": {
+    "rescue_minus_pareto": {
+      "mean_delta_pp": 0.5281475560985577,
+      "by_subject_delta_pp": {
+        "sub-02": 0.4613470185801114,
+        "sub-03": 0.501736197519246,
+        "sub-04": 0.6412997156496324,
+        "sub-05": 0.541256909678606
+      },
+      "subject_cluster_bootstrap_95_ci_pp": [
+        0.47787195913223735,
+        0.6015777912586762
+      ]
+    },
+    "rescue_minus_previous": {
+      "mean_delta_pp": -0.2730392545678948,
+      "by_subject_delta_pp": {
+        "sub-02": -0.34239618943622835,
+        "sub-03": -0.33896815840244887,
+        "sub-04": -0.10649165983556241,
+        "sub-05": -0.2621787734097771
+      },
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -0.34084466468699487,
+        -0.1726580478892147
+      ]
+    },
+    "protected_minus_previous": {
+      "mean_delta_pp": -0.01900639905478818,
+      "by_subject_delta_pp": {
+        "sub-02": -0.04160582812876288,
+        "sub-03": -0.008016190721180044,
+        "sub-04": -0.019468370336618825,
+        "sub-05": -0.0013204604132562795
+      },
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -0.034348505010044245,
+        -0.004761321821494882
+      ]
+    },
+    "physical_minus_protected": {
+      "mean_delta_pp": -0.17226241791356087,
+      "by_subject_delta_pp": {
+        "sub-02": -0.20231296387516123,
+        "sub-03": -0.11805628298941337,
+        "sub-04": -0.17434805856876814,
+        "sub-05": -0.18929699505928696
+      },
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -0.19706689994476378,
+        -0.1351345358828762
+      ]
+    },
+    "rescue_minus_physical": {
+      "mean_delta_pp": -0.08177043759954579,
+      "by_subject_delta_pp": {
+        "sub-02": -0.09847739743230421,
+        "sub-03": -0.21289568469185544,
+        "sub-04": 0.08732476906982455,
+        "sub-05": -0.07156131793723389
+      },
+      "subject_cluster_bootstrap_95_ci_pp": [
+        -0.17901415841506263,
+        0.02738723060818101
+      ]
+    },
+    "previous_minus_constant": {
+      "mean_delta_pp": 0.8775076910192569,
+      "by_subject_delta_pp": {
+        "sub-02": 0.8037432080163398,
+        "sub-03": 0.8407043559216949,
+        "sub-04": 1.11154653910219,
+        "sub-05": 0.8034356830883829
+      },
+      "subject_cluster_bootstrap_95_ci_pp": [
+        0.8036082440981143,
+        1.0272974769109147
+      ]
+    }
+  },
+  "recovery_increment": {
+    "added_events": 6792,
+    "net_true_positives": 2082,
+    "net_false_positives": 4710
+  },
+  "recovery_increment_by_condition": {
+    "staircase": {
+      "added_events": 140,
+      "net_true_positives": 7,
+      "net_false_positives": 133
+    },
+    "triangular-ramp10s": {
+      "added_events": 1962,
+      "net_true_positives": 529,
+      "net_false_positives": 1433
+    },
+    "triangular-ramp20s": {
+      "added_events": 528,
+      "net_true_positives": 93,
+      "net_false_positives": 435
+    },
+    "triangular-ramp40s": {
+      "added_events": 126,
+      "net_true_positives": 11,
+      "net_false_positives": 115
+    },
+    "triangular-ramp5s": {
+      "added_events": 4036,
+      "net_true_positives": 1442,
+      "net_false_positives": 2594
+    }
+  },
+  "alignment_caveat": "Net TP/FP increments use each method's official whole-record alignment; they do not independently label individual added events.",
+  "statistical_caveat": "Only four subject clusters, overlapping training folds and previously seen data; bootstrap intervals are descriptive, not independent population confirmation.",
+  "selection_used": false
+}
