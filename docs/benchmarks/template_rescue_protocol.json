@@ -1,0 +1,157 @@
+{
+  "registered_at_utc": "2026-10-18T18:06:38.254682+00:00",
+  "spec": {
+    "methods": [
+      "pareto",
+      "previous",
+      "constant",
+      "protected",
+      "physical",
+      "rescue"
+    ],
+    "primary": "rescue",
+    "constants": [
+      0.0,
+      -0.075,
+      -0.15,
+      0.075,
+      0.15
+    ],
+    "constant_selection": "minimum label-free validation objective, zero eligible; no test RoA",
+    "constant_minimum_improvement_fraction": 0.005,
+    "constant_maximum_condition_proxy_regression": 0.01,
+    "validation_conditions": [
+      "staircase",
+      "triangular-ramp40s",
+      "triangular-ramp10s"
+    ],
+    "validation_snr_db": 25,
+    "spatial_covariance_ridge_fraction": 0.05,
+    "template_gram_ridge": 0.1,
+    "template_slope_ridge_pseudocount": 20,
+    "template_relative_morph_bound": 0.5,
+    "physical_residual_rms_bound": 0.25,
+    "minimum_template_cosine": 0.05,
+    "calibration_cosine_quantile": 0.1,
+    "recovery_silence_seconds": 0.25,
+    "reference_posture_tolerance_normalized": 0.025,
+    "reference_speed_tolerance_normalized": 0.1,
+    "envelope_ramp_normalized": 0.1,
+    "post_calibration_true_spikes_used_for_fit": false,
+    "new_neural_training": false,
+    "seeds": "deterministic analytic update; previous fixed two-seed ensemble reused",
+    "success": {
+      "ramp5s_delta_pp": 5,
+      "ramp10s_delta_pp": 5,
+      "staircase_delta_pp": 0,
+      "final_phase_delta_pp": 0,
+      "final_tracked_unit_delta": 0,
+      "global_mean_delta_pp_strictly_greater_than": 0,
+      "snr15_delta_pp": 0
+    }
+  },
+  "source_sha256": {
+    "benchmarks\\pareto_residual\\__init__.py": "309ce1195c870bd759cf208a5f47f63bf88447686252f1ca26fb10721e89564f",
+    "benchmarks\\pareto_residual\\common.py": "b1ec856e213f0eedac253b58bf8b7a79ae7a67fa16630a6462f96864385f0938",
+    "benchmarks\\pareto_residual\\data.py": "0cc540c50b983b08f3ab34eb567d00366c7bf8421880886fd482c8a630a6434c",
+    "benchmarks\\pareto_residual\\detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27",
+    "benchmarks\\pareto_residual\\evaluate.py": "a9778f8b067f0bfffd211c87e84d3f4ae550cafd2ec34f56e9081d76f9bd6f9a",
+    "benchmarks\\pareto_residual\\experiment.py": "34d5b7d05a2e4447722f3c5da56b80ec7250b496127f40c039eae7c81c43c739",
+    "benchmarks\\pareto_residual\\model.py": "6cdb01df6914ff9a76e11717aec30fe0f6eb5eebb22d51f234ebbf4defd87665",
+    "benchmarks\\pareto_residual\\replay.py": "83aa473b6989f94e5db6e3409e3351602781d0859a0bcf2c1eda5c05c430d5aa",
+    "benchmarks\\pareto_residual\\report.py": "fd9e378dc4d871e9a2692d7ca642cfee6b9e6c92d8f7b939eb5766a9437bcea6",
+    "benchmarks\\pareto_residual\\run.py": "476ad47339cc3241706e9df40beb91b051d9bb26ee2448bdd3367cad0aa7461b",
+    "benchmarks\\pareto_residual\\test_residual.py": "09daa058bc58cee9f00bf96c9ef3310d052fe52db7113a6cd80ee4ff441e09f0",
+    "benchmarks\\stage_a\\__init__.py": "0da24c29c8b6907fcff61cd70960dbd3ad66f7aeb488ee39fa4ee0612a12e885",
+    "benchmarks\\stage_a\\common.py": "f47aad4ce27f524ac068f4b1a84e0ffa3f189703789bd0ff58f4f0d8e3570a0c",
+    "benchmarks\\stage_a\\data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+    "benchmarks\\stage_a\\evaluate.py": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+    "benchmarks\\stage_a\\inference.py": "5e759c9ad1b784094776e6cb74fa148fc11de6b1a388fde1e190ff6a2dbfed22",
+    "benchmarks\\stage_a\\merge.py": "77abbebc82421931ebe8e58103cd818f8c3682c3d4ed37cf8eb25f142c47d5ff",
+    "benchmarks\\stage_a\\model.py": "4c0f6ac4cce1a56163707c73c9cb4ddbb95c0e7a266bee149cf2f32afeeaa7cb",
+    "benchmarks\\stage_a\\objectives.py": "39f0a0a1204fe049a78d9a57ef251c52c9317f2e904a46f20755e40be22de332",
+    "benchmarks\\stage_a\\report.py": "6cd058d8d49a42552917cb75c79ceb5a8db2fae63ee37b5119ee0aa6a2858a83",
+    "benchmarks\\stage_a\\run_stage_a.py": "1b573d64fb6f3e744932464239561a9501ba51a8ebf1e14a136efe88df6cbbc6",
+    "benchmarks\\stage_a\\selection.py": "0b6ebdda277819a41f7b6fdd9cf6b996c01e4b469fe3a963e00590e3cb579b69",
+    "benchmarks\\stage_a\\statistics.py": "a8463bfa8c36164477e3ddcb4811739332e83aa33013bd960d3197d3a5a831ad",
+    "benchmarks\\stage_a\\test_stage_a.py": "fb021d62882a0f246c766f15b63b07539745ef9c5b071946cdaa177b55308ac2",
+    "benchmarks\\stage_a\\train.py": "a6822a2e79547fb90f78374b0dcb2b62c3a7ca85a3e2c66a9520339066b982a2",
+    "benchmarks\\template_rescue\\__init__.py": "80cb9d652966d36d4e287c8767e00e076e0be8c215ff20df31d9d7ba649311c0",
+    "benchmarks\\template_rescue\\audit.py": "4cd459b009bd8677829984be5cd47858c0d301f252705f4875335719ee7e190e",
+    "benchmarks\\template_rescue\\common.py": "f28d07401e3da2101dca85ffed1beae1dfdf252e6274b6ea7296f2269784446e",
+    "benchmarks\\template_rescue\\data.py": "29305f90d41c71d58d01164c8c09d7d691d8234a20917ac1c6beccfe13c18db1",
+    "benchmarks\\template_rescue\\evaluate.py": "01f5dd904f99eb2a27243bab6d9162b9a312f34888a19ffb2004bf786aa28bfb",
+    "benchmarks\\template_rescue\\experiment.py": "6d23931ab3a50b2e9194cb0d933565915dd1c69590d8ee6e5e1779330a8d50dc",
+    "benchmarks\\template_rescue\\physics.py": "4aec52d2925f222e4afb4221b51e52cf8e316a3b38c015243447407532910167",
+    "benchmarks\\template_rescue\\replay.py": "52dff6a0551c0a2853db2628f60186b89c77f7f30327249734ca4b03bea65033",
+    "benchmarks\\template_rescue\\report.py": "9361a49bbdf61875abe40ec1094cefa61c186ae9d28f88811824bcc2d337c4c9",
+    "benchmarks\\template_rescue\\run.py": "59551f0d1d8338de35aead19c6526d89a08c19459ce58de4fe5e4c22c86e3bec",
+    "benchmarks\\template_rescue\\test_rescue.py": "f145524c71b5b0635d85170772ab9df906e16d09c528d6f59e6a59ff05c3a715"
+  },
+  "previous_lock_sha256": "8973f79d95f6a002aad3a66a55be3a8d05e008da55a3716bbad9477d2d007739",
+  "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+  "folds": {
+    "sub-02": {
+      "training": [
+        "sub-01",
+        "sub-04",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-03"
+      ],
+      "test": [
+        "sub-02"
+      ]
+    },
+    "sub-03": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-04"
+      ],
+      "test": [
+        "sub-03"
+      ]
+    },
+    "sub-04": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-03"
+      ],
+      "validation": [
+        "sub-05"
+      ],
+      "test": [
+        "sub-04"
+      ]
+    },
+    "sub-05": {
+      "training": [
+        "sub-01",
+        "sub-03",
+        "sub-04"
+      ],
+      "validation": [
+        "sub-02"
+      ],
+      "test": [
+        "sub-05"
+      ]
+    }
+  },
+  "scope": "80 records, 591 calibrated instances; same comparator and scoring",
+  "interpretation": "Exploratory: all original P1 records and outcomes were previously examined",
+  "untested": "new independent data, real EMG, other generators, blind kinematics, full MoCA",
+  "missing_from_constant_selection": [
+    "outer subject",
+    "15dB",
+    "ramp5s",
+    "ramp20s"
+  ],
+  "physical_training": "online ridge sufficient statistics from past trusted predictions only"
+}

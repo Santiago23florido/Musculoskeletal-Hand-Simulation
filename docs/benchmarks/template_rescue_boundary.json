@@ -1,0 +1,64 @@
+{
+  "analysis_code_sha256": "5c6d07cc58f22007ef4635c89523228b1757b254fc9ebd0b2775261b62aad01d",
+  "changed_final_phase_instances": 5,
+  "records": [
+    {
+      "record": "sub-02_FDSI_triangular-ramp10s_snr25dB",
+      "changed_samples_in_final_window": 1,
+      "max_offset_from_phase_start_samples": 67,
+      "contexts": [
+        {
+          "batch": 853,
+          "q": 0.0005452740588225424,
+          "speed": -0.3880908191204071,
+          "envelope": 0.0,
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp10s_snr30dB",
+      "changed_samples_in_final_window": 1,
+      "max_offset_from_phase_start_samples": 8,
+      "contexts": [
+        {
+          "batch": 853,
+          "q": 0.0005452740588225424,
+          "speed": -0.3880908191204071,
+          "envelope": 0.0,
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp5s_snr30dB",
+      "changed_samples_in_final_window": 2,
+      "max_offset_from_phase_start_samples": 109,
+      "contexts": [
+        {
+          "batch": 853,
+          "q": 0.0010906013194471598,
+          "speed": -0.7762195467948914,
+          "envelope": 0.0,
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp5s_snr15dB",
+      "changed_samples_in_final_window": 1,
+      "max_offset_from_phase_start_samples": 79,
+      "contexts": [
+        {
+          "batch": 853,
+          "q": 0.0010906013194471598,
+          "speed": -0.7762195467948914,
+          "envelope": 0.0,
+          "fallback": false
+        }
+      ]
+    }
+  ],
+  "selection_used": false,
+  "interpretation": "Post-hoc boundary diagnosis; no threshold or model changes"
+}
