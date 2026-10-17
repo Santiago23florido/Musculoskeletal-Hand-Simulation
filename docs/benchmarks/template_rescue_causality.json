@@ -1,0 +1,13 @@
+{
+  "record": "sub-01/triangular-ramp10s/30dB",
+  "boundary_samples": 24480,
+  "unchanged_prefix_checks": {
+    "delta": true,
+    "template_sources": true,
+    "evidence": true,
+    "candidates": true,
+    "rescued_spikes": true
+  },
+  "scope": "100ms batch causality AFTER supplied offline preprocessing and initial calibration",
+  "labels_loaded": false
+}
