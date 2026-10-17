@@ -1,0 +1,885 @@
+{
+  "scope": "descriptive post-scoring analysis of frozen predictions; no parameter selection",
+  "summary_sha256": "0d5ad2b040bc4ec8ff5483112d400fd861ea2f2cac69a93bcd6be47140893dbf",
+  "comparisons": [
+    {
+      "method": "moca_b",
+      "reference": "pareto",
+      "mean_delta_pp": -43.63041514685321,
+      "median_delta_pp": -50.13690708433197,
+      "improved_instances": 43,
+      "worsened_instances": 548,
+      "unchanged_instances": 0,
+      "by_subject": {
+        "sub-02": -41.93090681655556,
+        "sub-03": -42.179076965718,
+        "sub-04": -47.60908493232809,
+        "sub-05": -43.813665064941816
+      },
+      "phase_delta_pp": {
+        "first_hold_roa": -15.265859363719272,
+        "ramp_roa": -49.81119446152572,
+        "last_hold_roa": 9.327326028623734
+      }
+    },
+    {
+      "method": "moca_b",
+      "reference": "moca_k",
+      "mean_delta_pp": 0.29078570781763463,
+      "median_delta_pp": 0.039047860830038195,
+      "improved_instances": 297,
+      "worsened_instances": 281,
+      "unchanged_instances": 13,
+      "by_subject": {
+        "sub-02": 0.783095840885885,
+        "sub-03": -0.6580559902290181,
+        "sub-04": 1.660252941337521,
+        "sub-05": -0.5485634312164948
+      },
+      "phase_delta_pp": {
+        "first_hold_roa": 0.8181676994369712,
+        "ramp_roa": 0.23622091199076994,
+        "last_hold_roa": -0.0941154256082619
+      }
+    },
+    {
+      "method": "moca_b",
+      "reference": "moca_b_fifo",
+      "mean_delta_pp": 11.150715648806827,
+      "median_delta_pp": 10.669559567733822,
+      "improved_instances": 588,
+      "worsened_instances": 3,
+      "unchanged_instances": 0,
+      "by_subject": {
+        "sub-02": 11.660536576747672,
+        "sub-03": 11.771068443635516,
+        "sub-04": 10.73995038416089,
+        "sub-05": 10.206892313664252
+      },
+      "phase_delta_pp": {
+        "first_hold_roa": 7.464580196914655,
+        "ramp_roa": 10.949012979508655,
+        "last_hold_roa": 17.784706818180275
+      }
+    },
+    {
+      "method": "moca_b",
+      "reference": "static_analytic",
+      "mean_delta_pp": -8.297422892439887,
+      "median_delta_pp": -5.328915781407489,
+      "improved_instances": 38,
+      "worsened_instances": 553,
+      "unchanged_instances": 0,
+      "by_subject": {
+        "sub-02": -7.063013166323937,
+        "sub-03": -10.255442910834857,
+        "sub-04": -10.317904571074308,
+        "sub-05": -6.016227536022967
+      },
+      "phase_delta_pp": {
+        "first_hold_roa": -0.6380596403868596,
+        "ramp_roa": -9.647484215624516,
+        "last_hold_roa": -0.18789241026601988
+      }
+    }
+  ],
+  "condition_noise_cells": [
+    {
+      "condition": "staircase",
+      "snr_db": 30,
+      "mean_roa_pct": {
+        "pareto": 91.76764008261574,
+        "moca_k": 35.57241583687048,
+        "moca_b": 35.56642662012036,
+        "moca_b_fifo": 22.26647333603797,
+        "static_analytic": 46.9017968618938
+      }
+    },
+    {
+      "condition": "staircase",
+      "snr_db": 25,
+      "mean_roa_pct": {
+        "pareto": 88.24818722914523,
+        "moca_k": 36.155513740707356,
+        "moca_b": 36.223716481977,
+        "moca_b_fifo": 23.56911504306328,
+        "static_analytic": 49.17881884673965
+      }
+    },
+    {
+      "condition": "staircase",
+      "snr_db": 20,
+      "mean_roa_pct": {
+        "pareto": 97.62766683622026,
+        "moca_k": 41.75948487858109,
+        "moca_b": 42.45150160799257,
+        "moca_b_fifo": 27.986290357663357,
+        "static_analytic": 56.13204953175585
+      }
+    },
+    {
+      "condition": "staircase",
+      "snr_db": 15,
+      "mean_roa_pct": {
+        "pareto": 90.79453340491435,
+        "moca_k": 44.69885096159121,
+        "moca_b": 45.51031617641044,
+        "moca_b_fifo": 31.728808259251057,
+        "static_analytic": 61.31987445359426
+      }
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "snr_db": 30,
+      "mean_roa_pct": {
+        "pareto": 87.97877462511194,
+        "moca_k": 39.81239238722897,
+        "moca_b": 39.6293682031982,
+        "moca_b_fifo": 26.79508240973545,
+        "static_analytic": 48.953603511492254
+      }
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "snr_db": 25,
+      "mean_roa_pct": {
+        "pareto": 86.29998341234749,
+        "moca_k": 41.810868333527566,
+        "moca_b": 41.49415620069915,
+        "moca_b_fifo": 27.56987537200819,
+        "static_analytic": 50.920635248043425
+      }
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "snr_db": 20,
+      "mean_roa_pct": {
+        "pareto": 93.53596684923228,
+        "moca_k": 45.77786674953293,
+        "moca_b": 46.0666358596152,
+        "moca_b_fifo": 30.42034489814042,
+        "static_analytic": 56.657326958851115
+      }
+    },
+    {
+      "condition": "triangular-ramp40s",
+      "snr_db": 15,
+      "mean_roa_pct": {
+        "pareto": 88.73732942348538,
+        "moca_k": 47.67131636869236,
+        "moca_b": 48.29023220622234,
+        "moca_b_fifo": 32.54496995132515,
+        "static_analytic": 56.29667115808849
+      }
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "snr_db": 30,
+      "mean_roa_pct": {
+        "pareto": 82.38168293425399,
+        "moca_k": 35.773233135158,
+        "moca_b": 36.39980507339306,
+        "moca_b_fifo": 25.845829101967073,
+        "static_analytic": 43.92085968628088
+      }
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "snr_db": 25,
+      "mean_roa_pct": {
+        "pareto": 80.9243222495078,
+        "moca_k": 37.024045566094586,
+        "moca_b": 37.537728906917316,
+        "moca_b_fifo": 27.07780374895206,
+        "static_analytic": 45.49937551041607
+      }
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "snr_db": 20,
+      "mean_roa_pct": {
+        "pareto": 83.01772581168402,
+        "moca_k": 40.46275226047034,
+        "moca_b": 40.61009465530784,
+        "moca_b_fifo": 29.03100509257093,
+        "static_analytic": 52.10714788846336
+      }
+    },
+    {
+      "condition": "triangular-ramp20s",
+      "snr_db": 15,
+      "mean_roa_pct": {
+        "pareto": 80.95121916318048,
+        "moca_k": 43.70039148044722,
+        "moca_b": 43.79650430635543,
+        "moca_b_fifo": 32.631026015375326,
+        "static_analytic": 52.112605822096526
+      }
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "snr_db": 30,
+      "mean_roa_pct": {
+        "pareto": 73.37358352226667,
+        "moca_k": 32.24823057126282,
+        "moca_b": 32.463119547027055,
+        "moca_b_fifo": 23.61374193473677,
+        "static_analytic": 37.52843644753078
+      }
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "snr_db": 25,
+      "mean_roa_pct": {
+        "pareto": 79.37893805079054,
+        "moca_k": 34.364120837098135,
+        "moca_b": 34.818763929691826,
+        "moca_b_fifo": 25.68672308306134,
+        "static_analytic": 41.50941239257226
+      }
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "snr_db": 20,
+      "mean_roa_pct": {
+        "pareto": 82.5305226196879,
+        "moca_k": 37.74580012108139,
+        "moca_b": 38.465631837212094,
+        "moca_b_fifo": 27.688721749073398,
+        "static_analytic": 44.698577848181934
+      }
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "snr_db": 15,
+      "mean_roa_pct": {
+        "pareto": 77.88954840452001,
+        "moca_k": 40.25014675935619,
+        "moca_b": 40.922692947978014,
+        "moca_b_fifo": 29.13509669641102,
+        "static_analytic": 47.091460353797274
+      }
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "snr_db": 30,
+      "mean_roa_pct": {
+        "pareto": 63.29176748316093,
+        "moca_k": 31.901404267759244,
+        "moca_b": 32.2728660881838,
+        "moca_b_fifo": 24.482248644815463,
+        "static_analytic": 36.96076594028218
+      }
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "snr_db": 25,
+      "mean_roa_pct": {
+        "pareto": 66.73873765064283,
+        "moca_k": 32.60706347350313,
+        "moca_b": 32.92809725351874,
+        "moca_b_fifo": 24.785905376223695,
+        "static_analytic": 38.412726225522405
+      }
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "snr_db": 20,
+      "mean_roa_pct": {
+        "pareto": 68.22174252980491,
+        "moca_k": 36.960708759918695,
+        "moca_b": 37.63646156939856,
+        "moca_b_fifo": 28.474504777949093,
+        "static_analytic": 43.94574201961447
+      }
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "snr_db": 15,
+      "mean_roa_pct": {
+        "pareto": 70.94994382850344,
+        "moca_k": 36.95854482185291,
+        "moca_b": 37.75135867007032,
+        "moca_b_fifo": 26.969538752298682,
+        "static_analytic": 44.70237991248049
+      }
+    }
+  ],
+  "state": [
+    {
+      "record": "sub-02_FDSI_staircase_snr15dB",
+      "subject": "sub-02",
+      "condition": "staircase",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.7553396295931036
+    },
+    {
+      "record": "sub-02_FDSI_staircase_snr20dB",
+      "subject": "sub-02",
+      "condition": "staircase",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.6037140983943607
+    },
+    {
+      "record": "sub-02_FDSI_staircase_snr25dB",
+      "subject": "sub-02",
+      "condition": "staircase",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.4979739038691813
+    },
+    {
+      "record": "sub-02_FDSI_staircase_snr30dB",
+      "subject": "sub-02",
+      "condition": "staircase",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.5107015501192236
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp10s_snr15dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp10s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 3.710332664688317
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp10s_snr20dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp10s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 3.6754771212646857
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp10s_snr25dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp10s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 3.518373718448386
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp10s_snr30dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp10s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 3.4186179396920524
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp20s_snr15dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp20s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.675790756003073
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp20s_snr20dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp20s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.5631954199174385
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp20s_snr25dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp20s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.5286476978912975
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp20s_snr30dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp20s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.5531582560264203
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp40s_snr15dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp40s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.6811976210671267
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp40s_snr20dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp40s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.6711494395609314
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp40s_snr25dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp40s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.7303743669352687
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp40s_snr30dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp40s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.85286188075598
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp5s_snr15dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp5s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 5.503993007733229
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp5s_snr20dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp5s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 5.239994817005835
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp5s_snr25dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp5s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 5.123147093834309
+    },
+    {
+      "record": "sub-02_FDSI_triangular-ramp5s_snr30dB",
+      "subject": "sub-02",
+      "condition": "triangular-ramp5s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 4.981077942572869
+    },
+    {
+      "record": "sub-03_FDSI_staircase_snr15dB",
+      "subject": "sub-03",
+      "condition": "staircase",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.1732241561167815
+    },
+    {
+      "record": "sub-03_FDSI_staircase_snr20dB",
+      "subject": "sub-03",
+      "condition": "staircase",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.212389108599335
+    },
+    {
+      "record": "sub-03_FDSI_staircase_snr25dB",
+      "subject": "sub-03",
+      "condition": "staircase",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.227257914573298
+    },
+    {
+      "record": "sub-03_FDSI_staircase_snr30dB",
+      "subject": "sub-03",
+      "condition": "staircase",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.2061558351793624
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp10s_snr15dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp10s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 3.0797970745060823
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp10s_snr20dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp10s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 3.18765371763695
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp10s_snr25dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp10s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 3.2082280377304984
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp10s_snr30dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp10s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 3.26305338864986
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp20s_snr15dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp20s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.280256623754534
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp20s_snr20dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp20s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.3670942211441837
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp20s_snr25dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp20s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.4818381001048104
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp20s_snr30dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp20s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.410384699948734
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp40s_snr15dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp40s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.338130272755718
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp40s_snr20dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp40s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.2434235759503682
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp40s_snr25dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp40s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.2725206515540743
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp40s_snr30dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp40s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.2400651675946355
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp5s_snr15dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp5s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 5.302998949255606
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp5s_snr20dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp5s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 5.12426364292216
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp5s_snr25dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp5s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 5.098106335472281
+    },
+    {
+      "record": "sub-03_FDSI_triangular-ramp5s_snr30dB",
+      "subject": "sub-03",
+      "condition": "triangular-ramp5s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 5.041146965325272
+    },
+    {
+      "record": "sub-04_FDSI_staircase_snr15dB",
+      "subject": "sub-04",
+      "condition": "staircase",
+      "snr_db": 15,
+      "angle_rmse_degrees": 4.069295829603517
+    },
+    {
+      "record": "sub-04_FDSI_staircase_snr20dB",
+      "subject": "sub-04",
+      "condition": "staircase",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.8812156932332753
+    },
+    {
+      "record": "sub-04_FDSI_staircase_snr25dB",
+      "subject": "sub-04",
+      "condition": "staircase",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.701911980272038
+    },
+    {
+      "record": "sub-04_FDSI_staircase_snr30dB",
+      "subject": "sub-04",
+      "condition": "staircase",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.513160016512066
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp10s_snr15dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp10s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 4.5650285040040215
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp10s_snr20dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp10s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 4.084986826331852
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp10s_snr25dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp10s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 4.064846147926493
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp10s_snr30dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp10s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 3.8733738155330166
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp20s_snr15dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp20s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 3.8188922360556505
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp20s_snr20dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp20s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 3.3005993587207567
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp20s_snr25dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp20s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 3.1429931324513722
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp20s_snr30dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp20s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 3.085568486962136
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp40s_snr15dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp40s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 3.499678579280783
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp40s_snr20dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp40s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.972276087930361
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp40s_snr25dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp40s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.6907785332308674
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp40s_snr30dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp40s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.672186321185692
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp5s_snr15dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp5s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 7.04711812069887
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp5s_snr20dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp5s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 6.457075644930135
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp5s_snr25dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp5s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 6.12953911275758
+    },
+    {
+      "record": "sub-04_FDSI_triangular-ramp5s_snr30dB",
+      "subject": "sub-04",
+      "condition": "triangular-ramp5s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 5.9755982806948165
+    },
+    {
+      "record": "sub-05_FDSI_staircase_snr15dB",
+      "subject": "sub-05",
+      "condition": "staircase",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.0402823026948536
+    },
+    {
+      "record": "sub-05_FDSI_staircase_snr20dB",
+      "subject": "sub-05",
+      "condition": "staircase",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.024087804871421
+    },
+    {
+      "record": "sub-05_FDSI_staircase_snr25dB",
+      "subject": "sub-05",
+      "condition": "staircase",
+      "snr_db": 25,
+      "angle_rmse_degrees": 1.9582873732563275
+    },
+    {
+      "record": "sub-05_FDSI_staircase_snr30dB",
+      "subject": "sub-05",
+      "condition": "staircase",
+      "snr_db": 30,
+      "angle_rmse_degrees": 1.9353794420286787
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp10s_snr15dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp10s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 3.0814425608376306
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp10s_snr20dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp10s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 3.151179281162169
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp10s_snr25dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp10s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 3.185747561215057
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp10s_snr30dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp10s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 3.174840728535295
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp20s_snr15dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp20s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 2.5154974697378134
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp20s_snr20dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp20s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 2.4563126521649967
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp20s_snr25dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp20s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 2.51129260779199
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp20s_snr30dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp20s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 2.5161883393987257
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp40s_snr15dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp40s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 3.2144668285863087
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp40s_snr20dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp40s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 3.3515584625233217
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp40s_snr25dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp40s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 3.519791677295079
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp40s_snr30dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp40s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 3.5938453050784553
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp5s_snr15dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp5s",
+      "snr_db": 15,
+      "angle_rmse_degrees": 4.493813992701325
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp5s_snr20dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp5s",
+      "snr_db": 20,
+      "angle_rmse_degrees": 4.585033678057888
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp5s_snr25dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp5s",
+      "snr_db": 25,
+      "angle_rmse_degrees": 4.5012263673392665
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp5s_snr30dB",
+      "subject": "sub-05",
+      "condition": "triangular-ramp5s",
+      "snr_db": 30,
+      "angle_rmse_degrees": 4.4722071153331475
+    }
+  ],
+  "state_rmse_by_condition": {
+    "staircase": 2.4568985399323013,
+    "triangular-ramp40s": 2.8465190482053107,
+    "triangular-ramp20s": 2.7004818786296205,
+    "triangular-ramp10s": 3.5151861930101482,
+    "triangular-ramp5s": 5.317271316664662
+  },
+  "state_rmse_by_snr": {
+    "30": 3.2644785738563216,
+    "25": 3.3046441156974735,
+    "20": 3.3576340326161214,
+    "15": 3.5423288589837165
+  },
+  "b_and_fifo_state_sequences_identical": true,
+  "limitations": "same previously explored generator; four outer subjects with shared fitting data"
+}

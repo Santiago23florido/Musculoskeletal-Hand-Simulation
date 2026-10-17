@@ -1,0 +1,75 @@
+{
+  "training_oracle_pilot.json": {
+    "scope": "TRAIN sub-01 only; estimated GT-triggered waveform oracle; not deployable",
+    "roa_pct": 78.86738849684221,
+    "per_unit": [
+      0.9981818181818182,
+      0.980701754385965,
+      0.47583333333333333,
+      0.8612012987012987,
+      0.7382103990326482,
+      0.7605536332179931,
+      0.9010380622837371,
+      0.7911764705882353,
+      0.9643423137876387,
+      0.9483568075117371,
+      0.69136460554371,
+      0.53,
+      0.6998332406892718,
+      0.7006406523005242
+    ],
+    "timing": {
+      "median_core_batch_ms": 6.1989999958314,
+      "p95_core_batch_ms": 21.32688001729547,
+      "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+    }
+  },
+  "training_oracle_alpha0.json": {
+    "scope": "TRAIN sub-01 only; covariance control alpha=0; estimated oracle",
+    "roa_pct": 80.26036647362056,
+    "per_unit": [
+      0.9975757575757576,
+      0.9762532981530343,
+      0.5151644596326356,
+      0.8567921440261865,
+      0.7373300370828183,
+      0.776657060518732,
+      0.9366906474820144,
+      0.8038013488657265,
+      0.9548335974643423,
+      0.9549125168236877,
+      0.7267789244975557,
+      0.575493345571363,
+      0.7007382169222033,
+      0.7234299516908212
+    ],
+    "timing": {
+      "median_core_batch_ms": 8.324299997184426,
+      "p95_core_batch_ms": 70.48485999112013,
+      "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+    }
+  },
+  "training_pca512_pilot.json": [
+    {
+      "scope": "TRAIN sub-01 only; PCA512 estimated-template oracle",
+      "alpha": 0.5,
+      "roa_pct": 96.38724179694401,
+      "timing": {
+        "median_core_batch_ms": 7.549000030849129,
+        "p95_core_batch_ms": 24.511780001921565,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    },
+    {
+      "scope": "TRAIN sub-01 only; PCA512 estimated-template oracle",
+      "alpha": 0.0,
+      "roa_pct": 87.16168832412467,
+      "timing": {
+        "median_core_batch_ms": 6.624099973123521,
+        "p95_core_batch_ms": 8.739479997893795,
+        "scope": "projected preprocessed inputs; excludes projection, features and disk I/O"
+      }
+    }
+  ],
+  "scope": "sub-01 staircase 30 dB only; engineering pilots before Stage B registration; estimated-template oracles, not learned models or outer results"
+}
