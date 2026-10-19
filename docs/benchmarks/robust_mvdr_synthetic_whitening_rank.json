@@ -1,0 +1,89 @@
+{
+ "active_units": 40,
+ "postures": {
+  "s=0.99": {
+   "kl_total": 16.351791451496304,
+   "rank3_residual_fraction_fix_r_dirs": 0.7789218165794504,
+   "rank3_residual_fraction_lower_bound_2r": 0.6797411892194404,
+   "rank6_residual_fraction_fix_r_dirs": 0.6797411892194404,
+   "rank6_residual_fraction_lower_bound_2r": 0.5309667326921244,
+   "rank18_residual_fraction_fix_r_dirs": 0.4294237716254107,
+   "rank18_residual_fraction_lower_bound_2r": 0.27622511890045237,
+   "rank50_residual_fraction_fix_r_dirs": 0.21344471678818472,
+   "rank50_residual_fraction_lower_bound_2r": 0.09994452868685026,
+   "diagonal_residual_fraction": 0.9401185694390226,
+   "channel_gain_residual_fraction": 0.9454756402979339,
+   "diagonal_plus_rank3_residual_fraction": 0.7780646885579063
+  },
+  "s=0.98": {
+   "kl_total": 27.611500564331315,
+   "rank3_residual_fraction_fix_r_dirs": 0.7521181025199398,
+   "rank3_residual_fraction_lower_bound_2r": 0.6271086863227656,
+   "rank6_residual_fraction_fix_r_dirs": 0.6271086863227656,
+   "rank6_residual_fraction_lower_bound_2r": 0.5018934594081967,
+   "rank18_residual_fraction_fix_r_dirs": 0.4263365375029503,
+   "rank18_residual_fraction_lower_bound_2r": 0.29695425977657885,
+   "rank50_residual_fraction_fix_r_dirs": 0.23701863596478365,
+   "rank50_residual_fraction_lower_bound_2r": 0.11482698325725893,
+   "diagonal_residual_fraction": 0.9058329552513906,
+   "channel_gain_residual_fraction": 0.9177955721530027,
+   "diagonal_plus_rank3_residual_fraction": 0.739462873955878
+  },
+  "s=0.96": {
+   "kl_total": 38.857773117986326,
+   "rank3_residual_fraction_fix_r_dirs": 0.78766637122759,
+   "rank3_residual_fraction_lower_bound_2r": 0.7035927451236049,
+   "rank6_residual_fraction_fix_r_dirs": 0.7035927451236049,
+   "rank6_residual_fraction_lower_bound_2r": 0.5986409769426205,
+   "rank18_residual_fraction_fix_r_dirs": 0.5201180772467713,
+   "rank18_residual_fraction_lower_bound_2r": 0.3613811682235325,
+   "rank50_residual_fraction_fix_r_dirs": 0.2828597241827138,
+   "rank50_residual_fraction_lower_bound_2r": 0.1415322061868737,
+   "diagonal_residual_fraction": 0.8867442332046517,
+   "channel_gain_residual_fraction": 0.9054332659481036,
+   "diagonal_plus_rank3_residual_fraction": 0.7526438673479063
+  },
+  "s=0.94": {
+   "kl_total": 58.4622824534242,
+   "rank3_residual_fraction_fix_r_dirs": 0.8108995178743643,
+   "rank3_residual_fraction_lower_bound_2r": 0.7116215865881488,
+   "rank6_residual_fraction_fix_r_dirs": 0.7116215865881488,
+   "rank6_residual_fraction_lower_bound_2r": 0.6087393596637182,
+   "rank18_residual_fraction_fix_r_dirs": 0.532459303601881,
+   "rank18_residual_fraction_lower_bound_2r": 0.3725863731442135,
+   "rank50_residual_fraction_fix_r_dirs": 0.29685455651264525,
+   "rank50_residual_fraction_lower_bound_2r": 0.14857153190187522,
+   "diagonal_residual_fraction": 0.8528723654364572,
+   "channel_gain_residual_fraction": 0.8724857990795553,
+   "diagonal_plus_rank3_residual_fraction": 0.7417679797062294
+  },
+  "s=0.91": {
+   "kl_total": 107.6805818814343,
+   "rank3_residual_fraction_fix_r_dirs": 0.7571807811002303,
+   "rank3_residual_fraction_lower_bound_2r": 0.6449652115448571,
+   "rank6_residual_fraction_fix_r_dirs": 0.6449652115448571,
+   "rank6_residual_fraction_lower_bound_2r": 0.5320243868613805,
+   "rank18_residual_fraction_fix_r_dirs": 0.45944874793461854,
+   "rank18_residual_fraction_lower_bound_2r": 0.3280705785198776,
+   "rank50_residual_fraction_fix_r_dirs": 0.2627565354939919,
+   "rank50_residual_fraction_lower_bound_2r": 0.1344268303060389,
+   "diagonal_residual_fraction": 0.7824166766485043,
+   "channel_gain_residual_fraction": 0.8059387798234625,
+   "diagonal_plus_rank3_residual_fraction": 0.6739956297721439
+  },
+  "s=0.88": {
+   "kl_total": 133.11407678892692,
+   "rank3_residual_fraction_fix_r_dirs": 0.7934829403308765,
+   "rank3_residual_fraction_lower_bound_2r": 0.6911748409511064,
+   "rank6_residual_fraction_fix_r_dirs": 0.6911748409511064,
+   "rank6_residual_fraction_lower_bound_2r": 0.583155796781873,
+   "rank18_residual_fraction_fix_r_dirs": 0.515909652162064,
+   "rank18_residual_fraction_lower_bound_2r": 0.38292733226601106,
+   "rank50_residual_fraction_fix_r_dirs": 0.3110422715227025,
+   "rank50_residual_fraction_lower_bound_2r": 0.15658824085291417,
+   "diagonal_residual_fraction": 0.7800952921241715,
+   "channel_gain_residual_fraction": 0.8018755907401931,
+   "diagonal_plus_rank3_residual_fraction": 0.6886229693740109
+  }
+ }
+}

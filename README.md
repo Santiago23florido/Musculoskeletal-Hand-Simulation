@@ -119,12 +119,21 @@ Each workflow has its own commands, protocol, scoring, and documented limits.
 | --- | --- | --- |
 | [Farina references](benchmarks/farina/README.md) | Pinned adaptive tutorial, spike scoring, detector ablation, and cached FDSI reproduction | Tutorial adaptive RoA: 90.25%; all 28 cached Table 2 comparisons pass the one-point tolerance. |
 | [Stage A](benchmarks/stage_a/README.md) | Causal encoder and invertible low-rank whitening correction | 57.83% mean RoA versus Pareto's 79.25% on 100 records; **no-go**. |
-| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded calibration-conditioned correction with 97 shared parameters | 81.69% versus 80.89% on 80 outer records; rapid-movement targets unmet, **no-go**. |
+| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded calibration-conditioned correction with 97 shared parameters; two inputs are the measured wrist angle and its velocity | 81.69% versus 80.89% on 80 outer records; rapid-movement targets unmet, **no-go**. |
 | [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel directions, dormant-unit recovery, and Pareto fallback | 81.42% on the same 80 records; restores 511 final retained instances, **no-go**. |
 | [Stage B MoCA](benchmarks/stage_b/README.md) | Shared FiLM MUAP morphing and an EMG-only state observer | MoCA-B: 37.26%, MoCA-K: 36.97%, versus Pareto's 80.89%; **no-go**. |
 | [Separation pilot](benchmarks/stage_b_separation/README.md) | Covariance-aware source loss and MVDR normalization | Stopped during validation; no outer-test predictions. |
 | [Geometry pilot](benchmarks/stage_b_geometry/README.md) | Shared physical template warping | Stopped during validation; no outer-test predictions. |
 | [Spike likelihood](benchmarks/spike_likelihood/README.md) | Bounded shared classifier of discharge candidates, without angular inputs | **83.51% versus 80.89%**; 72.33% versus 65.81% on 5-second ramps; full thresholds still **no-go**. |
+| [Robust MVDR](benchmarks/robust_mvdr/README.md) | Training-free analytic decoding, with phase, target-reliability and frozen-checkpoint audits | static_subtract: **5.22%** versus Pareto's 80.89% on the same 80 records; [diagnostic result](docs/benchmarks/robust_mvdr_diagnostic.md), not independent confirmation. |
+
+Phase metrics follow the reference `get_triangular_phases`: for triangular
+conditions the reported "first hold" spans 0–10 s, while it is the 5 s calibration
+hold in the staircase. The triangular "first hold" RoA falls with ramp speed for
+every method (Pareto: 98.3% at 40 s ramps, 73.5% at 5 s ramps), which indicates
+that this window contains movement after the 5 s calibration hold. Verify with
+`python -m benchmarks.robust_mvdr.run phase-audit` before interpreting
+"first hold" differences; see the [independent review](docs/benchmarks/independent_review.md).
 
 RoA is `TP / (TP + FP + FN)` and differs from F1. The tutorial evaluates a
 separate example and window. Stage A uses 100 records; later outer-subject

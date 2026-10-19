@@ -1,0 +1,16 @@
+{
+  "observed_at_utc": "2026-10-19T16:54:07+00:00",
+  "timing_observation": "A long interval without tool response/progress was observed. sub-05 triangular-ramp10s at 30dB reported 2722.2 wall-clock seconds. Processes continued, no computation exception appeared, and approximately 10 GB RAM remained free. Cause not determined; preserve raw timings and distinguish elapsed wall time from median core-batch measurements.",
+  "long_wall_clock_records": [
+    {
+      "record": "sub-04_FDSI_triangular-ramp5s_snr25dB",
+      "elapsed_seconds": 2735.2213979000226,
+      "completed_at_utc": "2026-10-19T16:55:12.503104+00:00"
+    },
+    {
+      "record": "sub-05_FDSI_triangular-ramp10s_snr30dB",
+      "elapsed_seconds": 2722.163299100008,
+      "completed_at_utc": "2026-10-19T16:53:25.143420+00:00"
+    }
+  ]
+}

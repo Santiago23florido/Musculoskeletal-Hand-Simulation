@@ -1,0 +1,38 @@
+{
+  "static_subtract": {
+    "records": 80,
+    "median_core_batch_ms": 16.997075013932772
+  },
+  "static_subtract_strong": {
+    "records": 80,
+    "median_core_batch_ms": 15.537325001787394
+  },
+  "static_loaded": {
+    "records": 80,
+    "median_core_batch_ms": 5.393549989094026
+  },
+  "static_fifo_mvdr": {
+    "records": 80,
+    "median_core_batch_ms": 5.505875000380911
+  },
+  "moca_k_subtract": {
+    "records": 80,
+    "median_core_batch_ms": 15.301399980671704
+  },
+  "moca_b_subtract": {
+    "records": 80,
+    "median_core_batch_ms": 16.317575005814433
+  },
+  "stage_b_moca_k": {
+    "records": 80,
+    "median_core_batch_ms": 11.001674967701547
+  },
+  "stage_b_moca_b": {
+    "records": 80,
+    "median_core_batch_ms": 10.917799998424016
+  },
+  "stage_b_static_analytic": {
+    "records": 80,
+    "median_core_batch_ms": 10.562750001554377
+  }
+}

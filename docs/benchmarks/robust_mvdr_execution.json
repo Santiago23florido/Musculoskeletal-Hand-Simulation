@@ -1,0 +1,23 @@
+{
+  "started_at_utc": "2026-10-19T14:56:31.998844+00:00",
+  "stage": "completed",
+  "completed_subjects": [
+    "sub-03",
+    "sub-02",
+    "sub-04",
+    "sub-05"
+  ],
+  "workers": 2,
+  "threads_per_worker": 4,
+  "cpu_only": true,
+  "deviations": [
+    "Guarded CPU checkpoint loader permits only the optional-PDF metadata AST change.",
+    "Two concurrent subject processes, four threads each, to limit memory usage.",
+    "Previously completed audits reused; their code and inputs are unchanged."
+  ],
+  "active_subjects": {
+    "sub-05": 45808
+  },
+  "completed_at_utc": "2026-10-19T17:12:29.657953+00:00",
+  "elapsed_seconds": 8157.6585912000155
+}

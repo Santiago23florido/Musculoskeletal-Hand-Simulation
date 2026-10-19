@@ -1,0 +1,139 @@
+{
+  "registered_at_utc": "2026-10-19T14:56:38.899215+00:00",
+  "spec": {
+    "methods": {
+      "static_subtract": {
+        "mode": "static",
+        "rho": 0.5,
+        "loading": 0.03,
+        "alpha": 0.0
+      },
+      "static_subtract_strong": {
+        "mode": "static",
+        "rho": 1.0,
+        "loading": 0.1,
+        "alpha": 0.0
+      },
+      "static_loaded": {
+        "mode": "static",
+        "rho": 0.0,
+        "loading": 0.1,
+        "alpha": 0.0
+      },
+      "static_fifo_mvdr": {
+        "mode": "static",
+        "rho": 0.0,
+        "loading": 0.001,
+        "alpha": 0.0
+      },
+      "moca_k_subtract": {
+        "mode": "k",
+        "rho": 0.5,
+        "loading": 0.03,
+        "alpha": 0.0
+      },
+      "moca_b_subtract": {
+        "mode": "b",
+        "rho": 0.5,
+        "loading": 0.03,
+        "alpha": 0.0
+      }
+    },
+    "primary": "static_subtract",
+    "lag_knots": 33,
+    "fifo_batches": 10,
+    "subtraction_floor": 0.05,
+    "angle_rest_deg": 1.0,
+    "speed_rest_deg_s": 0.5,
+    "reference_methods": [
+      "moca_k",
+      "moca_b",
+      "static_analytic"
+    ],
+    "detector": "original SD detector via benchmarks.pareto_residual.detector",
+    "trained_parameters": 0,
+    "labels_used_before_scoring": false
+  },
+  "source_sha256": {
+    "benchmarks\\robust_mvdr\\__init__.py": "be26ca6f6eb1a3b6155e90b146371f620d4606bd3f55b606d9b977e2bdc7feb8",
+    "benchmarks\\robust_mvdr\\audits.py": "c7f7b795e7fe67b0a2ed33df73a69ae15b733dda87840fb247a99143ff33a24a",
+    "benchmarks\\robust_mvdr\\common.py": "98fe738ffa260be62f9bc8834b34f5341145c82289c25ec6187cd7991411f0e9",
+    "benchmarks\\robust_mvdr\\evaluate.py": "2e17c4f133ec4fd36837a518f4944c44e50afd1b5b74abe172369d85a6cb7d0d",
+    "benchmarks\\robust_mvdr\\filters.py": "bd41e0480aa107201852c3de844f712a9ffa90c02b3cd7ce69186029cdc16dfb",
+    "benchmarks\\robust_mvdr\\frozen.py": "05b8fb8631e5c905f9e65504be4933abd928eec93836c1829baee8b16168b75b",
+    "benchmarks\\robust_mvdr\\inference.py": "23f6fdb1eb3f546dcf4205702920fc3485e10e820353abdacd5dcd2854771b62",
+    "benchmarks\\robust_mvdr\\phases.py": "ce40a97dd7f03d666e8d903a9809ae9bad70bb3b57d1c6cf7badda4e8126f311",
+    "benchmarks\\robust_mvdr\\report.py": "e9beaabb0c3f71fe93dc5d0342597b5ba0f0d2e5de3e6b47bf611c908493a872",
+    "benchmarks\\robust_mvdr\\run.py": "886e09c0483904b04721b2ec8ff83ec4e495dbb9959a06220d769b32a2b9747d",
+    "benchmarks\\robust_mvdr\\test_frozen.py": "337785b42df3451c60ece14fa7f19cb44c014d5ffa0e639309605ac5fda32990",
+    "benchmarks\\robust_mvdr\\test_pipeline.py": "377d50b64b3d0cd4210e1682caf7490483b3e4e5ba0248b4bdfd2b43ef0dad26",
+    "benchmarks\\robust_mvdr\\test_robust.py": "fd3b4d8996e12179b70a976aa3eecaf27fe50773486dd27d8a1b04da47ecc960",
+    "benchmarks\\robust_mvdr\\test_synthetic.py": "cf3bf8d284f6353894ae76171f1e519e99698658bdb91f01954c42a541b004cd",
+    "benchmarks\\stage_b\\inference.py": "188e703cc4859d804a84e9d3d67354c791cede5516f50efbc213a81a1e15ba97",
+    "benchmarks\\stage_b\\data.py": "d07e2546862369739ee6f66593116aa6acbc6e89ccaad7ab570ec1ce1ba112ba",
+    "benchmarks\\stage_b\\experiment.py": "10a6ea5fcf7465b7c19423a2cd61f5245385ccc85f786ae82d920019bd9ecc12",
+    "benchmarks\\pareto_residual\\detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27"
+  },
+  "stage_b_locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+  "stage_b_frozen_provenance": {
+    "protocol_sha256": "6ce8b014372ba329f347148303851889b9554692b8d76bc8f232af78f05ab061",
+    "locked_sha256": "6bf2c59bd3d1abcb5a4f0edead9d85dd4aa09c4b243cc2b6f36248c07ddf337c",
+    "registered_source_sha256": {
+      "benchmarks/pareto_residual/common.py": "b1ec856e213f0eedac253b58bf8b7a79ae7a67fa16630a6462f96864385f0938",
+      "benchmarks/pareto_residual/detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27",
+      "benchmarks/stage_a/common.py": "f47aad4ce27f524ac068f4b1a84e0ffa3f189703789bd0ff58f4f0d8e3570a0c",
+      "benchmarks/stage_a/data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+      "benchmarks/stage_a/evaluate.py": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+      "benchmarks/stage_b/__init__.py": "b9ebf76ee13ab2c30630bf2bae8682142bb98936b70f9fe5d1e6066fa1cf201f",
+      "benchmarks/stage_b/audit.py": "344fc9924d574572ab359f8c1a32d1b9b9a4f0fd8043b89624fa7d6edbc12955",
+      "benchmarks/stage_b/common.py": "9fe7232ede0fd2da099af5db760d2227d0e4329ad69cd261607b39c9e23ccfab",
+      "benchmarks/stage_b/data.py": "d07e2546862369739ee6f66593116aa6acbc6e89ccaad7ab570ec1ce1ba112ba",
+      "benchmarks/stage_b/evaluate.py": "aaa9018d06b22c1ad7fdd775020a3dc3dbe5c1cfc7068553600fbbc9c6f5c807",
+      "benchmarks/stage_b/experiment.py": "829bfb32c8f2f5b00f29bde7f67a82a1345f2f4d645a27c426b66c8e1193d383",
+      "benchmarks/stage_b/inference.py": "188e703cc4859d804a84e9d3d67354c791cede5516f50efbc213a81a1e15ba97",
+      "benchmarks/stage_b/model.py": "a1d1d7a8b42a43b0bcccc4a1ab93dfd92379af0b7415c8711daf27656b0f8c53",
+      "benchmarks/stage_b/report.py": "7b0dcf77aae0b15c97a21c1199574850adb4f02f0c1477248c46729e7746a1b3",
+      "benchmarks/stage_b/run.py": "0c0729c6dce22100397c749825a14c99c421e41f20a888a20dc571947b89e8e3",
+      "benchmarks/stage_b/test_stage_b.py": "f6d2312af3921a82a828587242328be761c71e9e481f959ebc058ad27354d73c"
+    },
+    "current_source_sha256": {
+      "benchmarks/pareto_residual/common.py": "b1ec856e213f0eedac253b58bf8b7a79ae7a67fa16630a6462f96864385f0938",
+      "benchmarks/pareto_residual/detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27",
+      "benchmarks/stage_a/common.py": "f47aad4ce27f524ac068f4b1a84e0ffa3f189703789bd0ff58f4f0d8e3570a0c",
+      "benchmarks/stage_a/data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+      "benchmarks/stage_a/evaluate.py": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+      "benchmarks/stage_b/__init__.py": "b9ebf76ee13ab2c30630bf2bae8682142bb98936b70f9fe5d1e6066fa1cf201f",
+      "benchmarks/stage_b/audit.py": "344fc9924d574572ab359f8c1a32d1b9b9a4f0fd8043b89624fa7d6edbc12955",
+      "benchmarks/stage_b/common.py": "9fe7232ede0fd2da099af5db760d2227d0e4329ad69cd261607b39c9e23ccfab",
+      "benchmarks/stage_b/data.py": "d07e2546862369739ee6f66593116aa6acbc6e89ccaad7ab570ec1ce1ba112ba",
+      "benchmarks/stage_b/evaluate.py": "aaa9018d06b22c1ad7fdd775020a3dc3dbe5c1cfc7068553600fbbc9c6f5c807",
+      "benchmarks/stage_b/experiment.py": "10a6ea5fcf7465b7c19423a2cd61f5245385ccc85f786ae82d920019bd9ecc12",
+      "benchmarks/stage_b/inference.py": "188e703cc4859d804a84e9d3d67354c791cede5516f50efbc213a81a1e15ba97",
+      "benchmarks/stage_b/model.py": "a1d1d7a8b42a43b0bcccc4a1ab93dfd92379af0b7415c8711daf27656b0f8c53",
+      "benchmarks/stage_b/report.py": "7b0dcf77aae0b15c97a21c1199574850adb4f02f0c1477248c46729e7746a1b3",
+      "benchmarks/stage_b/run.py": "0c0729c6dce22100397c749825a14c99c421e41f20a888a20dc571947b89e8e3",
+      "benchmarks/stage_b/test_stage_b.py": "f6d2312af3921a82a828587242328be761c71e9e481f959ebc058ad27354d73c"
+    },
+    "compatibility_changes": {
+      "benchmarks/stage_b/experiment.py": "Optional guide metadata only; all other AST nodes identical"
+    },
+    "checkpoint_sha256": {
+      "folds/sub-02/seed0/morph.pt": "d772ebcc84c38f6f4e37d39d1698c3668e764352e0663aa3cfabc225333f4a15",
+      "folds/sub-02/seed0/observer.pt": "7f07d1be895b4d9525e57cc2e3ae6801cdb85e1a47e766b59fc554b417c90a3b",
+      "folds/sub-02/seed1/morph.pt": "ec783dcb6b1c6fe67352364476bc25148e88cd4d19614921811051c6352a9285",
+      "folds/sub-02/seed1/observer.pt": "b3937fbe1d1d45a68afa675e12f9bc361b077cf12942080a697f59a2c738b4a9",
+      "folds/sub-03/seed0/morph.pt": "7b11dfb898a2f87fde70d411713c3dcdeb8cbf1e5d58c3382d8e61f9770ab0d4",
+      "folds/sub-03/seed0/observer.pt": "20bb78405d24bab14c4b78310eeacadbc431980595109740155a1eb3e88c1b85",
+      "folds/sub-03/seed1/morph.pt": "4b28054b939d7402e0383199c27b2437e0e522c3db154344110b557bd8e66e30",
+      "folds/sub-03/seed1/observer.pt": "1c5d2cae836570c1dad4e24e2287077e3fe792b5a0f79d9178fb9c0500bf7d27",
+      "folds/sub-04/seed0/morph.pt": "98b2964a15f8152d9085c08d218210f1006167c42f332e55d9ff01b5a9c2ffec",
+      "folds/sub-04/seed0/observer.pt": "1a829a6a451f7822c19487a7019f2c88ef29d2f7a4f0ca59913c68c2d0952dd9",
+      "folds/sub-04/seed1/morph.pt": "3c2c2c4a8d200fcf9149ddfb41b1f5866937944159e2836bf8d65ff55ae05cb0",
+      "folds/sub-04/seed1/observer.pt": "5133614e6084edcd2eda0fe91fc80d834bfc2c9c31226b90f73efb8fd6e9ae01",
+      "folds/sub-05/seed0/morph.pt": "6daac419f2883b817fac44063c6a206cf7c4cabf8e4c0cb7ef14685c425e544a",
+      "folds/sub-05/seed0/observer.pt": "9bedc4e6eb7ce937e60b74623aa17ce7c9d1d11b318066fe33476aee12e2fd59",
+      "folds/sub-05/seed1/morph.pt": "709545321b9a0bac009e9d14df3922da5de49693cdf7318448437fdc62052f86",
+      "folds/sub-05/seed1/observer.pt": "51eb8fc12018ddcc8aa904c385aa8077b8d5175b9ab84500a3fb32047fda71a8"
+    }
+  }
+}
