@@ -1,81 +1,77 @@
 # Musculoskeletal Hand Simulation
 
-![Official MyoHand bones and muscle-tendon paths rendered in MuJoCo, with 23 joint DOFs, 39 muscle actuators and five fingertips](docs/images/myohand-overview.png)
-
 [![Validate physical simulation](https://github.com/Santiago23florido/Musculoskeletal-Hand-Simulation/actions/workflows/validate.yml/badge.svg)](https://github.com/Santiago23florido/Musculoskeletal-Hand-Simulation/actions/workflows/validate.yml)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB)
 ![MuJoCo 3.16.0](https://img.shields.io/badge/MuJoCo-3.16.0-55d9cf)
 ![MyoSuite 3.0.0](https://img.shields.io/badge/MyoSuite-3.0.0-ff7b80)
 
-A small, independent Python foundation for loading and observing the **official
-MyoSuite MyoHand model** in MuJoCo. Windows native is the primary development and
-validated runtime; Ubuntu under WSL2 is also supported.
+A Python workspace for inspecting the **official MyoSuite MyoHand model** and
+researching motor-unit discharge identification in EMG during hand movement.
+The current implementation includes a working musculoskeletal simulation,
+anatomical queries, a MuJoCo viewer, and separate EMG research benchmarks with
+recorded results, including unsuccessful experiments.
 
-The original model supplies all bodies, joint constraints, tendon paths, muscle
-force laws, activation dynamics and contact parameters. This repository adds
-anatomical identification, physical-state access, NumPy debugging archives and a
-standard MuJoCo viewer. It contains no research controller, training algorithm,
-EMG synthesis or experimental task definition.
+![Official MyoHand bones and muscle-tendon paths rendered in MuJoCo](docs/images/myohand-overview.png)
 
-## Research direction
+## What is implemented
 
-The long-term aim is **robust identification of motor unit action potentials
-(MUAPs) from EMG during hand movement**, including movement-related variability.
-This repository establishes the reproducible musculoskeletal simulation and
-anatomical observations needed to support that independent research direction.
-The MUAP-identification methodology will be defined separately; the current
-implementation provides physical state and geometry without generating EMG,
-identifying MUAPs or claiming robustness results.
+The `hand_sim` package loads the upstream model without changing its bodies,
+joint constraints, tendon paths, muscle force laws, activation dynamics, or
+contact parameters. It provides:
 
-![Physical measurements from a 200-step native simulation: excitation, activation, actuator forces, joint coordinates and fingertip displacement](docs/images/physical-observations.png)
+- Native CPU simulation with validated muscle excitation inputs.
+- Anatomical lookup of joints, muscles, tendons, bodies, sites, and sensors.
+- Joint coordinates, muscle activations, signed actuator forces, tendon
+  lengths and velocities, fingertip poses and velocities, and contact wrenches.
+- Model inventories and owned physical snapshots exported as JSON or
+  pickle-free NumPy archives.
+- An interactive MuJoCo viewer showing native bones and muscle-tendon paths.
 
-Both figures come from the actual pinned model and a constant-excitation smoke
-check. The geometry, muscle-tendon paths and plotted quantities are simulation
-outputs. Regenerate the images on a desktop with OpenGL using
-`uv run --locked python scripts/render_readme_assets.py`. The script changes only
-rendering options (lighting and offscreen resolution); it preserves biomechanics.
+The pinned hand has **23 joint degrees of freedom, 39 muscle actuators,
+39 tendons, 496 sites, and five fingertips**. It has no registered MuJoCo
+sensor channels; observations are obtained from the native simulation state.
+Total tendon tension and separate muscle-fiber force are not exposed as
+measurement channels. See the [physical model](docs/simulation_model.md) and
+[anatomical inventory](docs/anatomical_names.md) for the measurement contract.
 
-## Install on Windows (PowerShell)
+The simulation supplies physical state and geometry. The optional `benchmarks/`
+workflows use independently published simulated EMG recordings; they do not
+synthesize EMG from MyoHand or establish a live tracking system.
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/), for example:
+## Install and run on Windows
+
+Windows PowerShell is the primary development environment. Install
+[uv](https://docs.astral.sh/uv/getting-started/installation/), reopen PowerShell,
+and run these commands from the repository root:
 
 ```powershell
 winget install --id=astral-sh.uv -e
-# Reopen PowerShell after installing uv, then enter the repository.
 $env:UV_PROJECT_ENVIRONMENT = '.venv-windows'
 uv sync --locked --python 3.12
-```
-
-Python 3.12 is downloaded by uv if needed. No system Python changes, NVIDIA GPU,
-CUDA toolkit or separate MuJoCo download are required. Keep the environment
-variable set in each PowerShell session so Windows uses `.venv-windows` and WSL
-can use its separate `.venv`. The scripts below run from the repository root.
-After installing uv, `powershell -ExecutionPolicy Bypass -File scripts/setup_windows.ps1 -Validate`
-also creates and verifies the native environment; the policy change applies only
-to that PowerShell process. The script locates uv on `PATH` or in `.local/bin`.
-
-```powershell
 uv run --locked python scripts/run_simulation.py --steps 200 --output outputs/smoke.npz
 uv run --locked python scripts/inspect_model.py --output outputs/model_inventory.json
-uv run --locked python scripts/inspect_model.py --joint mcp2_flexion_r --muscle FDS2_r --site IFtip_r
 uv run --locked python scripts/visualize_hand.py
 ```
 
-For the already installed native environment, these commands also work without
-activating a virtual environment or putting uv on `PATH`:
+Alternatively, after installing uv, run the setup script to prepare and validate
+the native Windows environment:
 
 ```powershell
-.\.venv-windows\Scripts\python.exe scripts/run_simulation.py --steps 200
-.\.venv-windows\Scripts\python.exe scripts/visualize_hand.py
+powershell -ExecutionPolicy Bypass -File scripts/setup_windows.ps1 -Validate
 ```
 
-The headless demo holds a constant native excitation of `0.02` on all muscle
-actuators to check that physics advances. It does not implement a movement task.
-The viewer uses the same simulation and holds its reset commands by default.
-Drag to rotate, scroll to zoom and close the window to stop. View options expose
-native geometry groups and tendons. Attachment-site markers are initially hidden
-to keep hundreds of sites from obscuring the hand. A desktop with an OpenGL-capable
-driver is needed for visualization; headless execution does not open a window.
+Python 3.12 is downloaded by uv when needed. The physical simulation needs no
+GPU or CUDA toolkit. The viewer needs a desktop and an OpenGL-capable driver;
+headless simulation does not open a window. Rotate by dragging, scroll to zoom,
+and close the viewer to stop.
+
+Keep `UV_PROJECT_ENVIRONMENT` set in each PowerShell session. Windows uses
+`.venv-windows`; a separate `.venv` can be used under WSL. Once installed,
+`.\.venv-windows\Scripts\python.exe scripts/visualize_hand.py` also works directly.
+
+The headless example applies a constant native excitation of `0.02` to all
+muscle actuators. It verifies physics execution; it does not implement a
+movement task or learned controller.
 
 ## Python API
 
@@ -95,85 +91,123 @@ with load_model("configs/simulation.yaml") as sim:
     save_states("outputs/query.npz", [initial, current], metadata=sim.provenance)
 ```
 
-`load_model()` returns a context manager with `reset()`, `step()`, `get_state()`,
-`get_joint_state(name)`, `get_muscle_state(name)`, `get_tendon_state(name)`,
-`get_site_position(name)`, `get_site_velocity(name)`, `get_body_state(name)`,
-`get_contacts()`, `get_sensor_data(name)`, `get_model_inventory()` and `close()`.
-Queries return owned copies. Invalid names raise `KeyError`. The native MuJoCo
-objects are available as `sim.model` and `sim.data`; call `mujoco.mj_forward` after
-direct state changes before querying dependent spatial or force quantities.
+Queries return owned copies, and invalid names raise `KeyError`. `step()` accepts
+a finite vector of length `model.nu` within the model's native control limits
+(`[0, 1]` here). It advances one native `0.002`-second step by default; omitting
+the vector holds previous commands. `substeps` changes the number of native
+steps. This API steps MuJoCo directly and does not compute Gym rewards or
+episode termination.
 
-`step()` accepts a finite vector of length `model.nu`, within the loaded native
-control limits (`[0, 1]` for this model). Passing no vector holds the previous
-commands. It advances one native 0.002-second step by default; `substeps` changes
-the number of native steps, preserving the upstream integrator and timestep.
-The standard Gym environment has a different control interval and normalized
-actions; this API steps `mujoco.mj_step` directly and does not compute rewards or
-episode termination. `reset()` uses the official environment's reset configuration.
+Additional methods include `get_state()`, `get_tendon_state()`,
+`get_body_state()`, `get_contacts()`, and `get_sensor_data()`. Native objects are
+available as `sim.model` and `sim.data`. Call `mujoco.mj_forward` after direct
+state edits before reading dependent quantities.
 
-## Anatomy and measurements
+Saved snapshots load with `np.load("outputs/smoke.npz", allow_pickle=False)`.
+They contain observations and provenance rather than complete restart states.
 
-The pinned environment contains 38 bodies (including world and fixed upstream
-scaffolding), 23 hinge joints, 39 muscle actuators, 39 tendons, 496 sites and **zero
-registered MuJoCo sensors**. `nq = nv = 23`, `na = nu = 39`. The upstream `tip_sids`
-identify `THtip_r`, `IFtip_r`, `MFtip_r`, `RFtip_r`, and `LFtip_r`.
+![Physical observations from a 200-step native simulation](docs/images/physical-observations.png)
+
+## EMG research benchmarks
+
+The research goal is movement-robust identification of motor unit action
+potentials (MUAPs) and their discharges. The current benchmarks investigate
+adaptation, template morphing, and event detection on the authors' FDSI data.
+Each workflow has its own commands, protocol, scoring, and documented limits.
+
+| Workflow | Implemented approach | Recorded outcome |
+| --- | --- | --- |
+| [Farina references](benchmarks/farina/README.md) | Pinned adaptive tutorial, spike scoring, detector ablation, and cached FDSI reproduction | Tutorial adaptive RoA: 90.25%; all 28 cached Table 2 comparisons pass the one-point tolerance. |
+| [Stage A](benchmarks/stage_a/README.md) | Causal encoder and invertible low-rank whitening correction | 57.83% mean RoA versus Pareto's 79.25% on 100 records; **no-go**. |
+| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded calibration-conditioned correction with 97 shared parameters | 81.69% versus 80.89% on 80 outer records; rapid-movement targets unmet, **no-go**. |
+| [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel directions, dormant-unit recovery, and Pareto fallback | 81.42% on the same 80 records; restores 511 final retained instances, **no-go**. |
+| [Stage B MoCA](benchmarks/stage_b/README.md) | Shared FiLM MUAP morphing and an EMG-only state observer | MoCA-B: 37.26%, MoCA-K: 36.97%, versus Pareto's 80.89%; **no-go**. |
+| [Separation pilot](benchmarks/stage_b_separation/README.md) | Covariance-aware source loss and MVDR normalization | Stopped during validation; no outer-test predictions. |
+| [Geometry pilot](benchmarks/stage_b_geometry/README.md) | Shared physical template warping | Stopped during validation; no outer-test predictions. |
+| [Spike likelihood](benchmarks/spike_likelihood/README.md) | Bounded shared classifier of discharge candidates, without angular inputs | **83.51% versus 80.89%**; 72.33% versus 65.81% on 5-second ramps; full thresholds still **no-go**. |
+
+RoA is `TP / (TP + FP + FN)` and differs from F1. The tutorial evaluates a
+separate example and window. Stage A uses 100 records; later outer-subject
+experiments use the same 80 records and 591 calibrated instances. Comparisons
+must preserve these populations and scoring protocols.
+
+The spike-likelihood result improves recall from 83.16% to 87.74%, while
+precision falls from 91.47% to 91.10%. It demonstrates an event-detection gain on
+this benchmark. Independent-generator transfer, true MUAP-trajectory recovery,
+and full live-stream latency remain unverified. See the
+[published summary](docs/benchmarks/spike_likelihood_summary.json) and
+[analysis](docs/benchmarks/spike_likelihood_analysis.json).
+
+![Spike-likelihood comparison on the same outer-subject records](docs/images/spike-likelihood.png)
+
+### Benchmark environments and data
+
+Benchmarks run separately from `hand_sim`; do not install their numerical stack
+into the simulation environment. Start with the pinned reference setup:
 
 ```powershell
-uv run --locked python scripts/inspect_model.py --list joints
-uv run --locked python scripts/inspect_model.py --list muscles
-uv run --locked python scripts/inspect_model.py --list tendons
-uv run --locked python scripts/inspect_model.py --list sites
-uv run --locked python scripts/inspect_model.py --list sensors
+powershell -NoProfile -ExecutionPolicy Bypass -File benchmarks/farina/setup.ps1 -Fdsi
+.\.venv-benchmarks\Scripts\python.exe benchmarks/farina/download.py fdsi-data
+.\.venv-benchmarks\Scripts\python.exe benchmarks/farina/download.py fdsi-outputs
+uv pip install --python .venv-benchmarks/Scripts/python.exe --requirement benchmarks/stage_a/requirements.lock.txt
+.\.venv-benchmarks\Scripts\python.exe -m pytest -q benchmarks
 ```
 
-The inventory includes IDs, joint types, independent `qpos`/`qvel` indices,
-activation-state addresses, actuator transmission IDs, limits and sensor dimensions.
-No assumption equates a joint ID with a generalized coordinate index.
-The complete checked-in [name list](docs/anatomical_names.md) and
-[JSON inventory](docs/model_inventory.json) were generated from this pinned model.
+The two FDSI archives total approximately 21.1 GB before extraction. Downloads
+verify the published checksums. The setup script pins the reference code in
+`external/farina/`; each benchmark README documents its subsequent commands.
+CUDA training uses a separate environment and the Stage B GPU requirements;
+benchmark inference and timing use the CPU environment.
 
-Joint coordinates, commands, activation states, actuator forces, actuator/tendon
-lengths and velocities, and body/site poses are read from native model/data fields.
-Site velocity is derived with MuJoCo's site Jacobian. Contact wrenches come from
-`mj_contactForce` in the contact frame. `get_sensor_data(name)` reads only actual
-registered sensor channels; on this hand every sensor name raises `KeyError`.
+Tracked `docs/benchmarks/` files contain compact result summaries, protocols,
+audits, and per-unit tables. Large signals, downloaded implementations,
+checkpoints, predictions, environments, and generated runtime outputs remain
+local under Git-ignored directories. PDF guides, agent instructions, and internal
+research notes are also ignored. Public READMEs and result documentation remain
+versioned. The local research PDF is optional provenance: new run manifests
+record `null` for its hash when it is absent. Archived reports retain their
+original values. Use fresh output directories for new runs so existing frozen
+experiments and their source checks are preserved.
 
-Total tendon tension and separate muscle-fiber force are not exposed as measurement
-channels. The API returns available **signed actuator force contributions** for
-tendon transmissions and `None` with a reason for total tendon force. Empty native
-sensor arrays and an empty contact list mean no channels or current contacts;
-they are not synthetic zero measurements. No sites or sensors were added.
-See [the physical model and measurement details](docs/simulation_model.md).
+## Project layout
 
-Saved `.npz` arrays have a leading sample dimension and can be loaded using
-`np.load("outputs/smoke.npz", allow_pickle=False)`. `metadata_json` is a scalar JSON
-string. Archives contain observations, not complete restart checkpoints.
+```text
+src/hand_sim/          Physical simulation and anatomical query API
+configs/              Reproducible simulation defaults
+scripts/              Setup, inspection, simulation, viewer, and figure commands
+tests/                Physical model and observation tests
+benchmarks/           Optional EMG experiments and their tests
+docs/benchmarks/       Recorded benchmark results, protocols, and audits
+docs/images/           Model renders and benchmark figures
+LICENSES/             Third-party license texts
+```
 
 ## Validation
 
 ```powershell
+$env:UV_PROJECT_ENVIRONMENT = '.venv-windows'
 uv run --locked pytest -q
-uv run --locked ruff check src scripts tests
-uv run --locked ruff format --check src scripts tests
-$env:HAND_SIM_TEST_GRAPHICS = '1'
-uv run --locked pytest -q -m graphics
-Remove-Item Env:HAND_SIM_TEST_GRAPHICS
+uv run --locked ruff check src scripts tests benchmarks
+uv run --locked ruff format --check src scripts tests benchmarks
+.\.venv-benchmarks\Scripts\python.exe -m pytest -q benchmarks
 ```
 
-The suite compares biomechanical arrays with a separately loaded official
-environment, advances at least 200 steps, checks reset and input validation,
-validates every named object, tests sensor slicing, verifies fingertip velocities
-against finite differences and round-trips JSON/NumPy exports. Separate small
-MuJoCo fixtures exercise free/ball joint metadata, nonempty sensors and contacts;
-they never replace the physical hand. The graphics test is skipped unless explicitly
-enabled. Tests keep temporary files under `.pytest_tmp` to avoid system-temp
-permission conflicts on Windows.
-The [local validation record](docs/validation.md) documents 47 passing tests on
-Windows with graphics enabled and the separately checked headless WSL2 path.
+The physical tests check upstream biomechanical arrays, at least 200 simulation
+steps, reset behavior, excitation validation, anatomical identifiers, contacts,
+sensor slicing, fingertip velocities, and export round trips. Benchmark tests
+cover numerical identities, gradients, causality, data separation, spike
+scoring, download integrity, and evaluation acceptance rules. Graphics and CUDA
+tests skip when their required display or device is unavailable.
 
-## Ubuntu under WSL2 (alternative)
+[GitHub Actions](.github/workflows/validate.yml) runs physical validation on
+Windows and Ubuntu. See the [original platform validation](docs/validation.md)
+and [publication validation](docs/publication_validation.md) for local results.
+Regenerate the model figures with
+`uv run --locked python scripts/render_readme_assets.py` on a desktop with OpenGL.
 
-Run these in Ubuntu's Bash terminal, with uv installed there:
+## Ubuntu / WSL2
+
+With uv installed in Ubuntu, use a separate Linux environment:
 
 ```bash
 sudo apt-get update
@@ -184,27 +218,25 @@ uv run --locked pytest -q
 uv run --locked python scripts/visualize_hand.py
 ```
 
-WSLg on a compatible Windows desktop supplies the graphical display. Otherwise an
-X server and a working `DISPLAY` are needed. Do not set `MUJOCO_GL=egl` or `osmesa`
-for the interactive GLFW viewer. Headless physics needs no display or GPU. Keep
-Windows and Linux virtual environments separate; for faster WSL installs, clone
-on the Linux filesystem and use `uv sync --link-mode copy` when needed.
+The interactive viewer requires WSLg or another working graphical display.
+Headless physics needs no GPU. Keep Windows and Linux environments separate.
 
-## Sources, licensing and scope
+## Sources and licenses
 
-The model is imported from [MyoSuite](https://github.com/MyoHub/myosuite) 3.0.0 and
-[myo-sim](https://github.com/MyoHub/myo_sim) 0.2.3, with MuJoCo 3.16.0. Python 3.12
-and all resolved dependencies are captured in `.python-version` and `uv.lock`.
-The implementation was validated on native Windows with Python 3.12.14.
+The model comes from [MyoSuite](https://github.com/MyoHub/myosuite) 3.0.0 and
+[myo-sim](https://github.com/MyoHub/myo_sim) 0.2.3, with MuJoCo 3.16.0.
+Simulation dependencies are pinned in `uv.lock`; benchmark locks are stored
+alongside their workflows.
 
-Cite [Caggiano et al. (2022)](https://arxiv.org/abs/2205.13600) for MyoSuite.
-[Hodossy and Farina (2026)](https://arxiv.org/abs/2603.07364) is acknowledged as a
-related application, with no replication of its methodology. See
-[references](docs/references.md), [CITATION.cff](CITATION.cff) and
-[third-party notices](THIRD_PARTY_NOTICES.md). The existing MIT license covers this
-repository's independent code; upstream components retain their own licenses.
+This repository's independent code uses the [MIT license](LICENSE). Upstream
+components retain their licenses and attribution. See
+[third-party notices](THIRD_PARTY_NOTICES.md),
+[benchmark provenance](benchmarks/farina/sources.json),
+[references](docs/references.md), and [CITATION.cff](CITATION.cff).
 
-The initial Git commit is preserved. At the repository owner's request, the new
-implementation commits use retrospective author/committer dates starting on
-1 October 2026. Implementation and validation were performed on 15 October 2026;
-the commit dates do not establish historical execution or validation dates.
+At the owner's request, publication commits use retrospective author and
+committer dates. This batch was organized and validated on **19 October 2026**,
+with commit dates distributed from the repository's creation on **15 October**
+through **19 October**. Earlier implementation commits already used dates
+starting on 1 October, as recorded before this publication. The existing history
+is preserved; commit dates do not establish when experiments were executed.
