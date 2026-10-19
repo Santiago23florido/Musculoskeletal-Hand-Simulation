@@ -1,0 +1,10 @@
+{
+  "scope": "training record; candidate EMG features after original offline source preprocessing",
+  "future_feature_perturbation_preserves_prefix": true,
+  "prefix_samples": 20400,
+  "identity_spike_disagreements": 0,
+  "identity_records": 86,
+  "input_features": 19,
+  "true_angle_inputs": false,
+  "postcalibration_true_spikes_loaded": false
+}

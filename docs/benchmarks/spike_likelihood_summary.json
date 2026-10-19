@@ -1,0 +1,215 @@
+{
+  "status": "no-go",
+  "summaries": {
+    "pareto": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 80.8884580403995,
+      "median_roa_pct": 95.2932657494569,
+      "pct_units_roa_ge_90": 58.37563451776649,
+      "by_snr": {
+        "15": 81.86451484492073,
+        "20": 85.13025687291052,
+        "25": 80.13324222754702,
+        "30": 79.69617957818429
+      },
+      "by_condition": {
+        "staircase": 91.60603643194463,
+        "triangular-ramp40s": 88.41515860263105,
+        "triangular-ramp20s": 81.88957044449121,
+        "triangular-ramp10s": 77.135287542155,
+        "triangular-ramp5s": 65.80980984573496
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 80.8884580403995,
+      "mean_precision": 0.9147099695643086,
+      "mean_recall": 0.831555558807194,
+      "mean_f1": 0.864291417876762,
+      "by_subject": {
+        "sub-02": 78.63666733530866,
+        "sub-03": 81.76942073511955,
+        "sub-04": 87.65256762672922,
+        "sub-05": 76.84516138816953
+      },
+      "end_units_roa_ge_90": 511,
+      "final_gained": 0,
+      "final_lost": 0,
+      "mean_first_hold_roa": 0.9222772480164098,
+      "mean_ramp_roa": 0.7945059262407389,
+      "mean_last_hold_roa": 0.8798840434305156
+    },
+    "posterior": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 83.5129714426752,
+      "median_roa_pct": 95.06828528072838,
+      "pct_units_roa_ge_90": 59.729272419627755,
+      "by_snr": {
+        "15": 84.56204764275192,
+        "20": 87.21174485008878,
+        "25": 82.97891030814026,
+        "30": 82.34907754119902
+      },
+      "by_condition": {
+        "staircase": 92.05122770148613,
+        "triangular-ramp40s": 89.45658765631792,
+        "triangular-ramp20s": 83.988995624063,
+        "triangular-ramp10s": 80.04553240846569,
+        "triangular-ramp5s": 72.32641666925893
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 83.5129714426752,
+      "mean_precision": 0.9110329402230942,
+      "mean_recall": 0.8773871742767141,
+      "mean_f1": 0.8894898385529335,
+      "by_subject": {
+        "sub-02": 81.7115451046137,
+        "sub-03": 83.94955381111635,
+        "sub-04": 89.90038640653731,
+        "sub-05": 79.69726907456675
+      },
+      "end_units_roa_ge_90": 520,
+      "final_gained": 16,
+      "final_lost": 7,
+      "mean_first_hold_roa": 0.9348370220159572,
+      "mean_ramp_roa": 0.8195031016894336,
+      "mean_last_hold_roa": 0.952470896334834
+    },
+    "previous_b": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 37.258042893546296,
+      "median_roa_pct": 37.395833333333336,
+      "pct_units_roa_ge_90": 0.0,
+      "by_snr": {
+        "15": 43.25422086140731,
+        "20": 41.02030175134203,
+        "25": 36.576766906297856,
+        "30": 35.23313801059123
+      },
+      "by_condition": {
+        "staircase": 37.75804704320594,
+        "triangular-ramp40s": 42.004700522939224,
+        "triangular-ramp20s": 37.98499536597683,
+        "triangular-ramp10s": 34.92611152599061,
+        "triangular-ramp5s": 33.77904175272932
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 37.258042893546296,
+      "mean_precision": 0.9216819447994262,
+      "mean_recall": 0.39303809586127825,
+      "mean_f1": 0.5334244520078675,
+      "by_subject": {
+        "sub-02": 36.70576051875312,
+        "sub-03": 39.590343769401564,
+        "sub-04": 40.043482694401135,
+        "sub-05": 33.03149632322772
+      },
+      "end_units_roa_ge_90": 573,
+      "final_gained": 74,
+      "final_lost": 12,
+      "mean_first_hold_roa": 0.7696186543792171,
+      "mean_ramp_roa": 0.29639398162548175,
+      "mean_last_hold_roa": 0.9731573037167529
+    },
+    "rescue_union": {
+      "recordings": 80,
+      "unit_instances": 591,
+      "mean_roa_pct": 83.26868238806621,
+      "median_roa_pct": 95.03475670307844,
+      "pct_units_roa_ge_90": 59.729272419627755,
+      "by_snr": {
+        "15": 84.43282900570043,
+        "20": 87.0479893419029,
+        "25": 82.70089002060423,
+        "30": 82.0772926989002
+      },
+      "by_condition": {
+        "staircase": 92.03802090827861,
+        "triangular-ramp40s": 89.09867699183353,
+        "triangular-ramp20s": 83.60453323884653,
+        "triangular-ramp10s": 79.81592313000526,
+        "triangular-ramp5s": 72.08351587007829
+      },
+      "trained_subject_mean_roa_pct": null,
+      "unseen_subject_mean_roa_pct": 83.26868238806621,
+      "mean_precision": 0.9050417586545806,
+      "mean_recall": 0.878618763491159,
+      "mean_f1": 0.8869907220380174,
+      "by_subject": {
+        "sub-02": 81.43917109617588,
+        "sub-03": 83.75462593532895,
+        "sub-04": 89.72263768606888,
+        "sub-05": 79.37777109736017
+      },
+      "end_units_roa_ge_90": 506,
+      "final_gained": 9,
+      "final_lost": 14,
+      "mean_first_hold_roa": 0.9348771212209267,
+      "mean_ramp_roa": 0.8179900447356647,
+      "mean_last_hold_roa": 0.9261586852462912
+    }
+  },
+  "accuracy_gates": {
+    "overall": {
+      "observed": 83.5129714426752,
+      "minimum": 85,
+      "passed": false
+    },
+    "ramp5s": {
+      "observed": 72.32641666925893,
+      "minimum": 80,
+      "passed": false
+    },
+    "units_ge90": {
+      "observed": 59.729272419627755,
+      "minimum": 70,
+      "passed": false
+    }
+  },
+  "primary": "posterior",
+  "delta_vs_pareto_pp": 2.6245134022756957,
+  "delta_vs_previous_b_pp": 46.2549285491289,
+  "statistics": [
+    {
+      "condition": "staircase",
+      "mean_delta_pp": 0.4451912695415145,
+      "wilcoxon_unit_p": 1.0934395997141605e-06,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        0.08917485265773328,
+        0.8885324679250916
+      ],
+      "wilcoxon_holm_p": 1.0934395997141605e-06
+    },
+    {
+      "condition": "triangular-ramp10s",
+      "mean_delta_pp": 2.9102448663106903,
+      "wilcoxon_unit_p": 2.1458390788841937e-12,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        2.110990629547336,
+        3.5971039760291967
+      ],
+      "wilcoxon_holm_p": 4.2916781577683874e-12
+    },
+    {
+      "condition": "triangular-ramp5s",
+      "mean_delta_pp": 6.516606823523995,
+      "wilcoxon_unit_p": 9.594469329360926e-19,
+      "subject_cluster_bootstrap_95_ci_pp": [
+        5.316192762888137,
+        7.62565898698837
+      ],
+      "wilcoxon_holm_p": 2.878340798808278e-18
+    }
+  ],
+  "protocol_sha256": "f253c8d32b5beed873ff8079cc983878fd0cefcab010f23290b96b7e8d2505fa",
+  "locked_sha256": "4a0fcf862a1b5a3521048e747ed9844670d037105a9d397bd6a88e4623f5ac6c",
+  "manifest_sha256": "e8aa5148a4db334414a4ac04033b8de39b318dab24db8ee5c838032533613908",
+  "scope": "supervised event likelihood over cached EMG source views; exploratory same-generator transfer",
+  "unverified": [
+    "independent generator/data",
+    "1s/2.5s true-generator ramps",
+    "full raw-stream CPU latency"
+  ],
+  "sil_scope": "combined event decisions have no single synthesized source; SIL not assigned"
+}

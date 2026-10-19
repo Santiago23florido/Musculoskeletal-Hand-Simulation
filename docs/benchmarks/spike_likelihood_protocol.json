@@ -1,0 +1,145 @@
+{
+  "registered_at_utc": "2026-10-19T09:56:57.363258+00:00",
+  "spec": {
+    "seeds": [
+      0,
+      1
+    ],
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 16384,
+    "features": 19,
+    "hidden": 8,
+    "logit_bound": 4.0,
+    "training_device": "cuda",
+    "precision": "float32; no AMP/TF32",
+    "loss": "unit-balanced natural-prior BCE on true event labels; no class reweighting",
+    "thresholds": [
+      0.25,
+      0.35,
+      0.45,
+      0.55,
+      0.65,
+      0.75,
+      0.85
+    ],
+    "ensemble_strengths": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "selection": "validation mean unit Jaccard at calibration-only lags every two epochs; identity candidate",
+    "calibration_seconds": 5,
+    "reserved_conditions": [
+      "triangular-ramp20s",
+      "triangular-ramp5s"
+    ],
+    "training_conditions": [
+      "staircase",
+      "triangular-ramp40s",
+      "triangular-ramp10s"
+    ],
+    "training_snrs": [
+      30,
+      20
+    ],
+    "validation_snrs": [
+      25
+    ],
+    "angular_inputs": false,
+    "test_time_gradients": false,
+    "primary": "posterior",
+    "control": "rescue_union"
+  },
+  "source_sha256": {
+    "benchmarks\\pareto_residual\\common.py": "b1ec856e213f0eedac253b58bf8b7a79ae7a67fa16630a6462f96864385f0938",
+    "benchmarks\\pareto_residual\\detector.py": "d2871f81ace21701bc1debd503fd561c336919b3e834d9eec7bab32d29676b27",
+    "benchmarks\\stage_a\\common.py": "f47aad4ce27f524ac068f4b1a84e0ffa3f189703789bd0ff58f4f0d8e3570a0c",
+    "benchmarks\\stage_a\\data.py": "dbfe689ce8a76675bba79c8b49bc3e6dacd2eaabb77cf8035473c118f7d7c124",
+    "benchmarks\\stage_a\\evaluate.py": "2bf7dc00681c620032b5f558f0b7c6bb391207ee34bf6ff0cd37e96a844dec13",
+    "benchmarks\\stage_b\\__init__.py": "b9ebf76ee13ab2c30630bf2bae8682142bb98936b70f9fe5d1e6066fa1cf201f",
+    "benchmarks\\stage_b\\audit.py": "344fc9924d574572ab359f8c1a32d1b9b9a4f0fd8043b89624fa7d6edbc12955",
+    "benchmarks\\stage_b\\common.py": "9fe7232ede0fd2da099af5db760d2227d0e4329ad69cd261607b39c9e23ccfab",
+    "benchmarks\\stage_b\\data.py": "d07e2546862369739ee6f66593116aa6acbc6e89ccaad7ab570ec1ce1ba112ba",
+    "benchmarks\\stage_b\\evaluate.py": "aaa9018d06b22c1ad7fdd775020a3dc3dbe5c1cfc7068553600fbbc9c6f5c807",
+    "benchmarks\\stage_b\\experiment.py": "829bfb32c8f2f5b00f29bde7f67a82a1345f2f4d645a27c426b66c8e1193d383",
+    "benchmarks\\stage_b\\inference.py": "188e703cc4859d804a84e9d3d67354c791cede5516f50efbc213a81a1e15ba97",
+    "benchmarks\\stage_b\\model.py": "a1d1d7a8b42a43b0bcccc4a1ab93dfd92379af0b7415c8711daf27656b0f8c53",
+    "benchmarks\\stage_b\\report.py": "7b0dcf77aae0b15c97a21c1199574850adb4f02f0c1477248c46729e7746a1b3",
+    "benchmarks\\stage_b\\run.py": "0c0729c6dce22100397c749825a14c99c421e41f20a888a20dc571947b89e8e3",
+    "benchmarks\\stage_b\\test_stage_b.py": "f6d2312af3921a82a828587242328be761c71e9e481f959ebc058ad27354d73c",
+    "benchmarks\\spike_likelihood\\audit.py": "fb16758842d5391a2a285f1842e79cbb88f2cb90cc0442c275c5fd1b94dda44c",
+    "benchmarks\\spike_likelihood\\common.py": "b23d700eaa71db4a1e68c1b0acf36adf0ef60a3183f77d422231e2e8b2708c01",
+    "benchmarks\\spike_likelihood\\data.py": "cf2f95fdb9b1c7f6e3e1243d33a58403484e47bdd4d743620e72c22e42dc4e23",
+    "benchmarks\\spike_likelihood\\evaluate.py": "02f7ffa75b845616be85e2bcf84019e00f743e0acc3d865329541c0d5b9eec80",
+    "benchmarks\\spike_likelihood\\experiment.py": "1d445895f5949ca79e838d494a47718ed9bf9e51798686f466aaafe4859d99ac",
+    "benchmarks\\spike_likelihood\\model.py": "a140cfe87ed6eb5b0cdbaa69e486c14c5d52bef8f1dfd63deb3ba8de6221180a",
+    "benchmarks\\spike_likelihood\\report.py": "4913b5bad43762b7323c8c910c0b2d09149b6bbea395a886ba1aa45a336dde17",
+    "benchmarks\\spike_likelihood\\run.py": "40e1bad28828607d835482da290b2a40be9ce19713d77ba59c0b494a9e5403a1",
+    "benchmarks\\spike_likelihood\\test_likelihood.py": "3df7ff8bcfac2d0d6f8fe05e7f23b1521e152ef0b1d0cafc570f705132d6419a",
+    "benchmarks\\spike_likelihood\\__init__.py": "0707ad9e563d3bed02467de650e37133d4b26718f956cc04bb16bd5f61766d19",
+    "benchmarks\\pareto_residual\\data.py": "0cc540c50b983b08f3ab34eb567d00366c7bf8421880886fd482c8a630a6434c",
+    "benchmarks\\stage_b_separation\\states.py": "7937d803a4a11716eb88ce16239056dea370ba38b84088dfc77a1773abc0658c",
+    "benchmarks\\stage_b_separation\\common.py": "c3fd9c19282d28694e2cbe1f379a25b1e0cf7b301a83f28e4afedf2e46b16d1d"
+  },
+  "guide_sha256": "65dd8c23dae932dc88027e67fb822aa1a74dc220e765d4824ef5a2c921a90aaf",
+  "folds": {
+    "sub-02": {
+      "training": [
+        "sub-01",
+        "sub-04",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-03"
+      ],
+      "test": [
+        "sub-02"
+      ]
+    },
+    "sub-03": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-05"
+      ],
+      "validation": [
+        "sub-04"
+      ],
+      "test": [
+        "sub-03"
+      ]
+    },
+    "sub-04": {
+      "training": [
+        "sub-01",
+        "sub-02",
+        "sub-03"
+      ],
+      "validation": [
+        "sub-05"
+      ],
+      "test": [
+        "sub-04"
+      ]
+    },
+    "sub-05": {
+      "training": [
+        "sub-01",
+        "sub-03",
+        "sub-04"
+      ],
+      "validation": [
+        "sub-02"
+      ],
+      "test": [
+        "sub-05"
+      ]
+    }
+  },
+  "exposure": "P1 already explored; hypothesis prompted by earlier failures; exploratory transfer",
+  "supervision": "post-calibration true firing labels on training/validation subjects only",
+  "architecture": "169 shared parameters; bounded residual event log odds; no unit/subject IDs",
+  "test": "80 outer records; all 160 new predictions saved before scoring"
+}

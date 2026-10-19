@@ -1,0 +1,306 @@
+{
+  "folds\\sub-02\\seed0": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.9055232572602666
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.9135576479342629
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.35,
+      "validation_jaccard": 0.9149297358860682
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.918714426239967
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.9218427725823826
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.923923256884645
+    }
+  ],
+  "folds\\sub-02\\seed1": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.9055232572602666
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.35,
+      "validation_jaccard": 0.9142990803088026
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.35,
+      "validation_jaccard": 0.9137358326717273
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.35,
+      "validation_jaccard": 0.9181094910903642
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.35,
+      "validation_jaccard": 0.9210214000945676
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.9228840208422308
+    }
+  ],
+  "folds\\sub-03\\seed0": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8843170025584225
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8912494552601486
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8926641286553373
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8963538900151212
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8984971540214941
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.899269342276256
+    }
+  ],
+  "folds\\sub-03\\seed1": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8843170025584225
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8912599043499252
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8911067530174555
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.65,
+      "validation_jaccard": 0.8937002494405621
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8966511057093774
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8963478339158256
+    }
+  ],
+  "folds\\sub-04\\seed0": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8231305535653524
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8300821835939257
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8323791725461336
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8359741676980738
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8391883916819817
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8417176301348178
+    }
+  ],
+  "folds\\sub-04\\seed1": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8231305535653524
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8295701585526026
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8313018628834362
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8337704204489654
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8373675233661654
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8397342123546622
+    }
+  ],
+  "folds\\sub-05\\seed0": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8001979964199976
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8065737377157868
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8089069023254859
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.818066476330379
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8234016467381532
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8268413564380904
+    }
+  ],
+  "folds\\sub-05\\seed1": [
+    {
+      "epoch": 0,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8001979964199976
+    },
+    {
+      "epoch": 2,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8066747937513992
+    },
+    {
+      "epoch": 4,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8064656389732465
+    },
+    {
+      "epoch": 6,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8138323304406769
+    },
+    {
+      "epoch": 8,
+      "strength": 1.0,
+      "threshold": 0.55,
+      "validation_jaccard": 0.8223125710771177
+    },
+    {
+      "epoch": 10,
+      "strength": 1.0,
+      "threshold": 0.45,
+      "validation_jaccard": 0.8252358699684558
+    }
+  ]
+}

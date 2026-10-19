@@ -1,0 +1,18 @@
+{
+  "source_guard": true,
+  "cuda_training_runs": 8,
+  "frozen_models": 8,
+  "prepared_input_records": 86,
+  "identity_disagreements": 0,
+  "sealed_predictions": 160,
+  "scored_records": 80,
+  "metric_rows": 2364,
+  "instances_per_method": 591,
+  "maximum_reference_metric_difference": 0,
+  "all_model_input_prediction_hashes_valid": true,
+  "chronology_valid": true,
+  "previous_experiments_unchanged": true,
+  "local_links_valid": true,
+  "parameters_per_seed": 169,
+  "tests_passed": 77
+}

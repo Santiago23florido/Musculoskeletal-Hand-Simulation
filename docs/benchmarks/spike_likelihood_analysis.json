@@ -1,0 +1,114 @@
+{
+  "scope": "descriptive analysis; frozen predictions; no model or threshold selection",
+  "mean_delta_pp": 2.6245134022756917,
+  "improved_instances": 502,
+  "worsened_instances": 89,
+  "unchanged_instances": 0,
+  "subject_cluster_bootstrap_95_ci_pp": [
+    2.210989793910765,
+    2.9771103348000185
+  ],
+  "selected_checkpoints": {
+    "folds\\sub-02\\seed0": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.45,
+        "validation_jaccard": 0.923923256884645
+      },
+      "model_sha256": "c5022d7e662065a2c4a209d318d6a6779dbbc1720577c1720106d457d20df970"
+    },
+    "folds\\sub-02\\seed1": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.45,
+        "validation_jaccard": 0.9228840208422308
+      },
+      "model_sha256": "be8ae63379621dcebb980fd7b2367a50593abb4303595738e1260c4db2935008"
+    },
+    "folds\\sub-03\\seed0": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.55,
+        "validation_jaccard": 0.899269342276256
+      },
+      "model_sha256": "7842323d9658752b372be47145ecadd4a12ec72e10dce2f3f040d2fe1e39a755"
+    },
+    "folds\\sub-03\\seed1": {
+      "epoch": 8,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.55,
+        "validation_jaccard": 0.8966511057093774
+      },
+      "model_sha256": "0266db3ded23ac5699f2a128a2f50f973191f929d64f59f889b76abeaeed7137"
+    },
+    "folds\\sub-04\\seed0": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.45,
+        "validation_jaccard": 0.8417176301348178
+      },
+      "model_sha256": "c70673680c474a0d70db5d4ee1d5efa2fefdb9fc1443e0d38eb7cd2f7d9119d1"
+    },
+    "folds\\sub-04\\seed1": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.45,
+        "validation_jaccard": 0.8397342123546622
+      },
+      "model_sha256": "df801732e012127ec909feb4c1ac4dfb10bf5117fc0dba5475bf45b86444d254"
+    },
+    "folds\\sub-05\\seed0": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.45,
+        "validation_jaccard": 0.8268413564380904
+      },
+      "model_sha256": "21fbb7e45fc2eacaf849e600932cd8138ca7c4dab9f02f1a73e99fec2ee9008b"
+    },
+    "folds\\sub-05\\seed1": {
+      "epoch": 10,
+      "selection": {
+        "strength": 1.0,
+        "threshold": 0.45,
+        "validation_jaccard": 0.8252358699684558
+      },
+      "model_sha256": "59fa90443c6186ad4324f29c1e8112fa7784a8a2f11ae3f7942249121cdef475"
+    }
+  },
+  "counts": {
+    "pareto": {
+      "tp": 570761,
+      "fp": 51670,
+      "fn": 108900
+    },
+    "posterior": {
+      "tp": 601414,
+      "fp": 61955,
+      "fn": 78247
+    },
+    "rescue_union": {
+      "tp": 602399,
+      "fp": 70655,
+      "fn": 77262
+    }
+  },
+  "sample_changes": {
+    "added_sample_events": 50623,
+    "removed_sample_events": 9685
+  },
+  "delta_counts_vs_pareto": {
+    "tp": 30653,
+    "fp": 10285,
+    "fn": -30653
+  },
+  "count_interpretation": "counts use each method's official alignment; sample additions include retiming, not independently classified extra events",
+  "limitations": "four subjects, overlapping fitting folds, previously explored generator; descriptive confidence interval",
+  "summary_sha256": "4bcd608884bb9d6a9ee3323c44e8862e66efebfde341f28afd3a462b79339629"
+}
