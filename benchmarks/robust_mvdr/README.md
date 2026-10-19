@@ -1,25 +1,27 @@
 # Decodificación analítica robusta a la autocancelación
 
-**Estado: experimento FDSI completado en CPU, sobre 80 registros y 591 instancias. static_subtract: 5.22% frente a Pareto: 80.89%. Diagnostico, no confirmacion independiente.**
-El [informe completo](../../docs/benchmarks/robust_mvdr_diagnostic.md) contiene las comparaciones, auditorias y tiempos. El codigo ejecutable quedo congelado al registrar; esta actualizacion solo documenta el resultado. Propuesto por la
-[revisión independiente](../../docs/benchmarks/independent_review.md). No entrena
-parámetros: cambia solo la síntesis del filtro de [Stage B](../stage_b/README.md)
-y reutiliza sus entradas, sus pesos congelados y el detector SD original.
+**Estado: retirado.** El cambio al régimen FIFO con normalización de respuesta
+unitaria produce una pérdida de amplitud frente al umbral del detector; el
+colapso se reproduce en sub-01. Excluir solo el bloque actual recupera parte de
+la RoA, pero no se ha establecido una explicación exhaustiva del déficit restante.
+La [corrección y auditoría CPU](../../docs/benchmarks/robust_mvdr_correction.md)
+contiene las cifras, la sensibilidad y los límites de esta atribución.
 
-**Resultado diagnóstico y corrección de interpretación.** La ejecución FDSI
-terminó entre 5,21% y 5,30% de RoA para las seis variantes. El estático anterior
-alcanza 45,56%. Stage B normaliza por `sqrt(h^T R^-1 h)`, mientras este filtro
-impone respuesta unitaria y normaliza por `h^T R^-1 h`: la dirección coincide,
-pero la amplitud cambia. El control FIFO también colapsa, incluido el reposo de
-referencia. Estos resultados no aíslan una causa única ni respaldan que esta
-sustracción corrija el déficit. La auditoría de objetivos dio una razón de
-30,9224, lejos del supuesto de ruido dominante cercano a 1. El informe enlazado
-evalúa las cuatro reglas sin ajustar parámetros ni alterar el código registrado.
+El [informe original](../../docs/benchmarks/robust_mvdr_diagnostic.md) conserva
+los resultados de 80 registros y 591 instancias: static_subtract obtuvo 5,22%.
+Las cuatro reglas de decisión no son interpretables como prueba de F1, porque
+el control comparte el defecto. No se cambió ningún código ejecutable registrado,
+predicción ni resultado puntuado; no se reevalúan sub-02 a sub-05.
 
-## Hipótesis
+El resto documenta la propuesta histórica de la
+[revisión independiente](../../docs/benchmarks/independent_review.md), retirada
+tras la auditoría. No debe ejecutarse de nuevo sobre los sujetos externos.
 
-El separador de Stage B, `w = R⁻¹h / (hᵀR⁻¹h)`, es un beamformer
-MVDR/Capon. `R` es la covarianza FIFO de los datos observados y **contiene la
+## Hipótesis original, no confirmada
+
+El filtro de respuesta unitaria propuesto, `w = R⁻¹h / (hᵀR⁻¹h)`, es un beamformer
+MVDR/Capon. Stage B divide por `sqrt(hᵀR⁻¹h)`; la diferencia de amplitud importa.
+`R` es la covarianza FIFO de los datos observados y **contiene la
 unidad objetivo**. Cuando `h` no coincide con el MUAP real, MVDR suprime parte de
 la propia unidad: es la autocancelación descrita por
 [Cox, 1973](https://doi.org/10.1121/1.1913659) y tratada por el Capon robusto de

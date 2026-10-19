@@ -125,7 +125,7 @@ Each workflow has its own commands, protocol, scoring, and documented limits.
 | [Separation pilot](benchmarks/stage_b_separation/README.md) | Covariance-aware source loss and MVDR normalization | Stopped during validation; no outer-test predictions. |
 | [Geometry pilot](benchmarks/stage_b_geometry/README.md) | Shared physical template warping | Stopped during validation; no outer-test predictions. |
 | [Spike likelihood](benchmarks/spike_likelihood/README.md) | Bounded shared classifier of discharge candidates, without angular inputs | **83.51% versus 80.89%**; 72.33% versus 65.81% on 5-second ramps; full thresholds still **no-go**. |
-| [Robust MVDR](benchmarks/robust_mvdr/README.md) | Training-free analytic decoding, with phase, target-reliability and frozen-checkpoint audits | static_subtract: **5.22%** versus Pareto's 80.89% on the same 80 records; [diagnostic result](docs/benchmarks/robust_mvdr_diagnostic.md), not independent confirmation. |
+| [Robust MVDR](benchmarks/robust_mvdr/README.md) | Training-free analytic decoding, with phase, target-reliability and frozen-checkpoint audits | Executed, then **withdrawn**: 5.22% RoA; a FIFO-regime amplitude defect reproduced on sub-01. See the [correction and CPU audit](docs/benchmarks/robust_mvdr_correction.md). |
 
 Phase metrics follow the reference `get_triangular_phases`: for triangular
 conditions the reported "first hold" spans 0–10 s, while it is the 5 s calibration

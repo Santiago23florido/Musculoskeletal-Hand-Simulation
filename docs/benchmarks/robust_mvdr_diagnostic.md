@@ -1,3 +1,5 @@
+> **Corrección posterior: propuesta retirada.** La interpretación de este informe se corrige en [robust_mvdr_correction.md](robust_mvdr_correction.md). El control FIFO comparte el defecto de régimen; las cuatro reglas no permiten evaluar F1. Se conserva íntegro el informe original debajo.
+
 # Diagnostico robust_mvdr en CPU
 
 Resultado exploratorio sobre los mismos 80 registros y 591 instancias. Los sujetos sub-02 a sub-05 ya se evaluaron en experimentos anteriores: este resultado es diagnostico, no confirmatorio.
