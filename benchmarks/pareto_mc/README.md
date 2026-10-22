@@ -90,6 +90,10 @@ predicciones selladas ni resultados. El primer intento L0 en
 $env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/reproduction'
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.phase0
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.run identity --threads 4
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.run train-observer --threads 4
+$env:OPENBLAS_NUM_THREADS = '1'
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.run identity-head --threads 4
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.run l1 --threads 4
 .venv-benchmarks/Scripts/python.exe -m pytest benchmarks/pareto_mc -q
 .venv-windows/Scripts/python.exe -m ruff check benchmarks/pareto_mc
 .venv-windows/Scripts/python.exe -m ruff format --check benchmarks/pareto_mc
@@ -107,3 +111,63 @@ centroides, aciertos de memoria, control frente a velocidad ciega, unidades
 con recall <0,5 y distribución de tiempos. Las fases usan `angle_phases`.
 Los ciclos son excursiones angulares >1° que alcanzan ≥35°, con calibración
 excluida; no se usan intervalos temporales fijos para fabricarlos.
+
+## Ejecución de desarrollo
+
+C1 terminó: 30 épocas, semilla 0, checkpoint por NLL de sub-04 en época 13;
+NLL −1,87788 y RMSE angular descriptivo de 3,2407°. Pesos en
+`outputs/pareto_mc/development_v2/C1/seed0/observer.pt`, con su manifest original.
+Solo el objetivo de entrenamiento/evaluación contiene ángulos medidos.
+
+El primer L1 (`development_v1`) se conserva, sustituido antes de seleccionar por
+RoA/Jaccard. `development_v2` reutiliza entradas y un checkpoint completado,
+verificados en `input_reuse.json`. La caché de entrenamiento conserva exactamente
+arrays y etiquetas por registro; no recalcula desfases ni descomprime en cada
+época. Sus archivos y procedencia tienen hashes y controles de sujeto.
+
+Se fija Torch a cuatro hilos como en el C0 exacto. Dos hilos producían siete
+diferencias en un registro por diferencias numéricas de BLAS. Con cuatro,
+**C4 sin entrenar vuelve a dar cero diferencias en los tres registros reales**,
+incluso con el observador entrenado y con una sola ventana para las estadísticas
+KL que no se usan con paso fijo. No se confunden los tiempos bajo contención
+de estas pruebas con una medición aislada de latencia final.
+
+L1 agrega las rondas 0–3, con tres semillas por ronda. El checkpoint se elige por
+BCE de validación; después, 40 ensayos TPE ajustan umbral y fuerza residual por
+Jaccard a desfases de calibración. Los tres mejores se repiten en tres semillas,
+seleccionando por mediana. Los parámetros de memoria todavía no están activos
+y no se buscan hasta L2. La puerta se comprueba después de ejecutar el modelo
+completo, con el evaluador original y predicciones previamente selladas.
+
+Si la realimentación completa no pasa, hay un único cambio estructural
+preregistrado: eventos añadidos solo pueden actualizar SV/centroides si su
+posterior es ≥0,8 (los aceptados siguen siendo predicciones). Este umbral es
+alcanzable con el residual acotado a cuatro; 0,9 no lo era para candidatos nuevos.
+Si también falla, se conserva L0 y no se ejecutan L2–L4.
+
+La retención de Pareto durante calibración se decide por lotes que comienzan
+antes de 5 s; puede abarcar la fracción restante del último lote (~80 ms).
+No se usan esos instantes como etiquetas en inferencia. La referencia abierta
+conserva exactamente los cinco segundos iniciales de predicciones originales.
+
+### L1 completado
+
+La primera estructura supera la puerta; no se ejecuta la alternativa.
+Validación sub-04 (20 registros, 124 instancias), con el evaluador original:
+
+| Nivel | RoA global | ramp5s | ≥90 % | Precisión | Recall |
+|---|---:|---:|---:|---:|---:|
+| Pareto-rerun | 87,65 % | 73,88 % | 66,94 % | 96,06 % | 89,03 % |
+| C4 abierto | 90,39 % | 81,77 % | 70,16 % | 95,70 % | 92,94 % |
+| L1 cerrado | 91,24 % | 84,71 % | 72,58 % | 96,38 % | 93,01 % |
+
+L1 gana +0,84 pp global y +2,94 pp en ramp5s frente al abierto. Reposo de
+referencia 97,13 %, movimiento 90,48 %, mesetas alejadas 89,98 %. Primer ciclo
+de ramp5s 65,89 %, ciclos 2–8 84,94 %. La latencia medida durante cuatro
+ejecuciones simultáneas fue mediana 127,92 ms, p95 151,32 ms; no satisface
+22 ms y no representa una medición aislada. Son resultados exploratorios de
+desarrollo, sin evaluación externa de 80 registros ni confirmación nueva.
+
+Detalles, puertas, limitaciones y hashes en el
+[diario](../../docs/benchmarks/pareto_mc_journal.md) y
+[resumen versionado](../../docs/benchmarks/pareto_mc_l1/pareto_mc_summary.json).

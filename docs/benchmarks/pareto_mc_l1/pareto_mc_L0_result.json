@@ -1,0 +1,52 @@
+{
+  "completed_at_utc": "2026-10-21T08:55:44.292035+00:00",
+  "reference": "Pareto-rerun",
+  "records": [
+    {
+      "record": "sub-01_FDSI_staircase_snr30dB",
+      "samples": 256000,
+      "units": 14,
+      "disagreements": 0,
+      "equality": 1.0,
+      "roa_mean_pct": 88.75984138149674,
+      "max_roa_difference_pp": 0.0,
+      "published_equality": 1.0,
+      "published_roa_pct": 88.75984138149674,
+      "median_batch_ms": 38.05249999277294,
+      "p95_batch_ms": 46.70160992536694,
+      "elapsed_seconds": 103.36319310008548,
+      "passed": true
+    },
+    {
+      "record": "sub-01_FDSI_triangular-ramp10s_snr30dB",
+      "samples": 184320,
+      "units": 13,
+      "disagreements": 0,
+      "equality": 1.0,
+      "roa_mean_pct": 61.12190983660373,
+      "max_roa_difference_pp": 0.0,
+      "published_equality": 1.0,
+      "published_roa_pct": 61.12190983660373,
+      "median_batch_ms": 38.483149954117835,
+      "p95_batch_ms": 47.209590004058555,
+      "elapsed_seconds": 74.98346420004964,
+      "passed": true
+    },
+    {
+      "record": "sub-01_FDSI_triangular-ramp5s_snr30dB",
+      "samples": 184320,
+      "units": 14,
+      "disagreements": 0,
+      "equality": 1.0,
+      "roa_mean_pct": 51.03673688292608,
+      "max_roa_difference_pp": 0.0,
+      "published_equality": 1.0,
+      "published_roa_pct": 51.03673688292608,
+      "median_batch_ms": 38.1205000448972,
+      "p95_batch_ms": 46.545290003996335,
+      "elapsed_seconds": 74.36921299993992,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

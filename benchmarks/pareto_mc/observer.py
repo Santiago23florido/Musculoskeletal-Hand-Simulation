@@ -8,7 +8,18 @@ import numpy as np
 import torch
 
 from .backbone import AdaptDecomp
-from .common import OUTPUT, TRAIN, VALIDATION, guard, now, records, sha256, stub, write_new
+from .common import (
+    OUTPUT,
+    TRAIN,
+    VALIDATION,
+    guard,
+    now,
+    records,
+    register,
+    sha256,
+    stub,
+    write_new,
+)
 from .data import load_angle, load_record
 from .models import BlindState, gaussian_nll
 
@@ -88,6 +99,9 @@ def prepare(subject, condition, snr, *, phase):
     name = stub(subject, condition, snr)
     path = folder / f"{name}.npz"
     if path.exists():
+        metadata = json.loads(path.with_suffix(".json").read_text(encoding="utf-8"))
+        if metadata["cache_sha256"] != sha256(path) or metadata["code_sha256"] != sha256(__file__):
+            raise ValueError("Observer feature cache changed")
         with np.load(path) as archive:
             return torch.from_numpy(archive["features"]), torch.from_numpy(archive["target"])
     record = load_record(subject, condition, snr, phase=phase)
@@ -107,6 +121,7 @@ def prepare(subject, condition, snr, *, phase):
             raw_sha256=record["raw_sha256"],
             calibration_sha256=record["calibration_sha256"],
             cache_sha256=sha256(path),
+            code_sha256=sha256(__file__),
             feature_inputs="EMG plus initial calibration only",
             angle_role="training target only",
         ),
@@ -118,6 +133,18 @@ def train(seed=0, epochs=30):
     folder = OUTPUT / "C1" / f"seed{seed}"
     if (folder / "complete.json").exists():
         raise ValueError("Observer training already complete")
+    register(
+        folder,
+        dict(
+            component="C1",
+            seed=seed,
+            epochs=epochs,
+            training=records(TRAIN),
+            validation=records(VALIDATION),
+            selection="Gaussian validation NLL",
+            optimizer="AdamW lr=0.001 wd=0.01; grad clip=1; no AMP/TF32",
+        ),
+    )
     device = torch.device("cuda")
     if not torch.cuda.is_available():
         raise RuntimeError("Use .venv-stage-b-gpu for observer training")

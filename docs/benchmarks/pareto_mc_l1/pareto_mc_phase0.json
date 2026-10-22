@@ -1,0 +1,33 @@
+{
+  "attempted_at_utc": "2026-10-21T08:51:25.480894+00:00",
+  "muniverse_commit": "94fbfab253f037e3b3cbfdbc6aed85b781f0ea49",
+  "official_backend": "pranavm19/muniverse:neuromotion",
+  "dockerfile_sha256": "aa6438b525d487f50af78e2d4ea1b99370b865866edbb24311762849385df870",
+  "launcher_sha256": "7efdef15f5e228a80e416730ee85d5828fef5cdabbd65550c0583b7ca6cdc2be",
+  "probes": {
+    "docker info --format {{.ServerVersion}}": {
+      "returncode": 1,
+      "stdout": "\n",
+      "stderr": "failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.\n"
+    },
+    "docker run --rm --pull never pranavm19/muniverse:neuromotion true": {
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "docker: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.\n\nRun 'docker run --help' for more information\n"
+    },
+    "wsl -d Ubuntu -- sh -lc command -v singularity; command -v apptainer; command -v docker": {
+      "returncode": 0,
+      "stdout": "/mnt/c/Program Files/Docker/Docker/resources/bin/docker\n",
+      "stderr": ""
+    }
+  },
+  "singularity_on_windows": null,
+  "generated_new_fdsi_records": false,
+  "conclusion": "No running Docker Linux engine; no Singularity/Apptainer in Ubuntu. Official backend cannot start in the available environment. No substitute line-source data are called FDSI confirmation.",
+  "result_scope": "exploratory only",
+  "new_subject_seeds_reserved": [
+    210601,
+    210602,
+    210603
+  ]
+}

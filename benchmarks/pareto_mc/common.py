@@ -2,6 +2,7 @@
 
 import json
 import os
+import shutil
 import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
@@ -53,6 +54,24 @@ def records(subjects):
     return [(s, c, n) for s in subjects for c in CONDITIONS for n in SNRS]
 
 
+def register(folder, specification):
+    folder = Path(folder)
+    sources = source_hashes()
+    write_new(
+        folder / "protocol.json",
+        dict(
+            registered_at_utc=now(),
+            spec=specification,
+            sources=sources,
+            protected=protected_hashes(),
+        ),
+    )
+    for relative in sources:
+        destination = folder / "source" / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / relative, destination)
+
+
 def guard(subject, phase):
     allowed = {"training": TRAIN, "validation": VALIDATION, "identity": TRAIN}
     if phase not in allowed or subject not in allowed[phase]:
@@ -79,5 +98,6 @@ __all__ = [
     "source_hashes",
     "protected_hashes",
     "records",
+    "register",
     "guard",
 ]
