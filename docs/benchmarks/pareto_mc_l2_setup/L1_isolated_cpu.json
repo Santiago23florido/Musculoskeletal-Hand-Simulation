@@ -1,0 +1,11 @@
+{
+  "completed_at_utc": "2026-10-22T06:47:35.576725+00:00",
+  "record": "sub-01_FDSI_triangular-ramp5s_snr30dB",
+  "checkpoint_sha256": "337a16d0d470804a33cbef2ee2fdd2179453e370bf8d9d40b428a8faf63e22ca",
+  "prediction_sha256": "84dfefdadbf1a08d2a787eb1e0d6b1a440288bf79fc0f9a8612ac4f325f6defb",
+  "median_batch_ms": 56.121750036254525,
+  "p95_batch_ms": 360.8740149182267,
+  "timing_scope": "single record; CPU four Torch threads; full raw-EMG L1 loop",
+  "labels_opened": false,
+  "passed_22_ms": false
+}

@@ -171,3 +171,36 @@ desarrollo, sin evaluación externa de 80 registros ni confirmación nueva.
 Detalles, puertas, limitaciones y hashes en el
 [diario](../../docs/benchmarks/pareto_mc_journal.md) y
 [resumen versionado](../../docs/benchmarks/pareto_mc_l1/pareto_mc_summary.json).
+
+### Desarrollo de L2
+
+`memory_loop.py` añade recuperación causal de filtros efectivos y sus centroides,
+proyección al blanqueo actual, atenuación por incertidumbre y mezcla limitada
+después de QR. En L2 solo existe la instantánea de calibración. Beta cero
+reproduce exactamente Pareto en los tres controles reales y conserva todo el
+estado de L1 en las pruebas de integración.
+
+```powershell
+# Requiere L0, C1 y L1 completados en PARETO_MC_OUTPUT.
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.memory_identity "$env:PARETO_MC_OUTPUT/C2_identity_v1"
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.shared_identity
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.memory_experiment L2 --workers 4
+```
+
+Se registran 45 ensayos, cinco por cada combinación estructural, y se repiten
+los tres mejores con las tres semillas entrenadas de C4. La búsqueda comparte
+solo preprocesado, blanqueo y C1 del mismo lote entre nueve trayectorias; una
+prueba real exige igualdad bit a bit con la ejecución independiente. No se
+consideran sus tiempos como latencia de inferencia. Después se reentrena C4 en
+tres rondas DAgger y se predice de nuevo con el bucle CPU completo antes de
+decidir la puerta. Todos los registros se sellan antes de abrir sus etiquetas.
+
+El momento de bin permanece fijo en L2 porque no hay inserciones; se busca en
+L3. El limitador acota el residual de memoria respecto a la propuesta Pareto.
+Los centroides recuperados se conservan; los vivos mantienen su actualización
+EMA. Estas decisiones y la única alternativa permitida tras un fallo están
+declaradas en el diario. No hay resultado L2 hasta que exista su `gate.json`.
+
+Perfil adicional de L1 con un registro a la vez: mediana **56,12 ms**, p95
+**360,87 ms**; tampoco satisface los 22 ms. Las pruebas y mediciones iniciales
+de C2 están en `docs/benchmarks/pareto_mc_l2_setup/`.

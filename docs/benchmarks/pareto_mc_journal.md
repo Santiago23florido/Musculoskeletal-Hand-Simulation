@@ -150,3 +150,87 @@ los protocolos, pesos, ensayos y predicciones completos permanecen en
 Verificación al cerrar L1: `pytest benchmarks -q`, 126 pasadas y 2 omitidas;
 Ruff check y format limpios en 173 archivos. Fuentes registradas de L1 y todos
 los archivos históricos protegidos verificados por SHA256 antes de exportar.
+
+## L2 — hipótesis registrada antes de buscar en validación
+
+Recuperar gradualmente el filtro de calibración al volver a un estado ciego
+cercano a cero puede evitar la pérdida de unidades y de centroides en reposo.
+Solo existe el bin inicial, inmutable y con confianza uno: no se insertan filtros
+de movimiento. La recuperación ocurre después de C1 y antes de C4; el filtro
+recuperado se proyecta al blanqueo actual y mezcla después del paso SV de Pareto
+para afectar el siguiente lote. Se guardan también sus centroides, pero los
+centroides vivos siguen la EMA de L1: no se restauran abruptamente.
+
+La mezcla residual pasa por la QR y tiene límite relativo κ respecto a la
+propuesta Pareto de ese lote. Este límite controla la contribución nueva de
+memoria, no modifica el paso Pareto en la ruta identidad. La varianza ciega
+atenúa beta por `exp(-0.5*var/h²)`; solo se mezcla con masa de recuperación
+≥umbral. El diagnóstico de aciertos mide la fracción de pares unidad/lote con
+mezcla no nula. Las decisiones de C4 siguen realimentando centroides y SV.
+
+Búsqueda: las nueve combinaciones bins={8,16,32} × h={0,03;0,06;0,12}, con
+45 ensayos completos (cinco por estructura), TPE continuo para umbral
+[0,5;0,95], κ [0,02;0,3] y beta_max [0,1;0,8]. El momento de bin se fija en
+0,95: es inactivo mientras no hay inserciones y no se simula una búsqueda
+inefectiva. Se activa su búsqueda [0,8;0,99] en L3. El umbral de confianza se
+aplica a la recuperación en L2 y, además, a la inserción en L3.
+
+Cada ensayo predice todos los registros de sub-04 y sella las salidas antes
+del evaluador original. Se buscan los parámetros con el C4 de semilla 0 de L1;
+los tres mejores se repiten con sus semillas entrenadas 0/1/2 y se elige la
+mediana del objetivo 0,5 global + 0,5 ramp5s, penalizando cinco veces la pérdida
+de precisión más allá de un punto frente a Pareto. No se abren sujetos externos.
+
+Después de elegir memoria se reentrena C4 desde identidad, tres semillas por
+ronda y tres rondas DAgger nuevas. Se agregan candidatos de las cuatro rondas
+de L1 y las rondas nuevas completadas. Se usa la misma receta AdamW y selección
+por BCE y Jaccard de validación de L1. Solo la ejecución completa final decide
+la puerta: reposo ≥97 % y movimiento ≥90,4810521752 %.
+
+Si falla, el único cambio estructural adicional será multiplicar beta por el
+cuadrado de la confianza local (tasa, separación e IQR), conservando la EMA de
+centroides. Se registra el análisis del fallo antes de ejecutarlo. Si tampoco
+pasa, se conserva L1 y se detiene la escalera. No se ejecutan L3/L4 por omisión.
+
+Desviaciones explícitas: 45 ensayos continuos repartidos entre las nueve
+estructuras, no 45 por estructura; momento fijo por ser inactivo en L2;
+limitación del residual de memoria respecto a Pareto; centroides recuperados
+conservados como diagnóstico, sin sustitución directa de los centroides vivos.
+Sub-05 sigue reservado. Resultados L2 pendientes.
+
+### C2 — controles previos completados
+
+Tres registros reales de sub-01 (staircase/ramp10s/ramp5s, 30 dB), observador
+entrenado y memoria con beta=0: **cero diferencias** respecto a los disparos
+sellados de L0 en los tres. Además, las pruebas de integración verifican la
+igualdad de fuentes, blanqueo, filtros, FIFO y centroides frente a L1, el límite
+después de QR y la independencia respecto al EMG futuro con memoria activa.
+Protocolo y salidas en `outputs/pareto_mc/development_v2/C2_identity_v1/`.
+
+Perfil CPU del L1 retenido, un único registro sub-01 ramp5s 30 dB y cuatro
+hilos: mediana **56,1218 ms**, p95 **360,8740 ms**. No se abrieron etiquetas.
+El objetivo de 22 ms tampoco pasa en esta ejecución aislada; el p95 incluye
+las pausas observadas de la máquina y no se descartan lotes lentos.
+
+### L2 — reutilización exacta del cálculo común antes de la búsqueda
+
+La búsqueda TPE usa ask/tell en cinco grupos de nueve ensayos. Dentro de cada
+lote de EMG se calculan una vez el preprocesado, el blanqueo y C1, que dependen
+solo de la calibración y del EMG, y se usan en las nueve trayectorias antes de
+avanzar al lote siguiente. Filtros SV, centroides, FIFO del detector, decisiones
+C4 y memoria son independientes. La optimización no mide latencia de despliegue;
+las rondas DAgger y la puerta final ejecutan el bucle CPU completo habitual.
+
+Prueba real previa, sub-01 ramp5s 30 dB, primeros 30 s: tres cabezas entrenadas,
+tres estructuras y ganancias de memoria distintas. **Igualdad bit a bit** entre
+ejecución independiente y cálculo compartido para disparos, fuentes, centroides,
+confianza IQR, C1, memoria, filtros, blanqueo y FIFO. Se exigió memoria activa;
+no se abrieron etiquetas. Resultado en `C2_shared_identity_v1/result.json`.
+Una prueba adicional interrumpe TPE con nueve ensayos en marcha y verifica que
+reanudar conserva los mismos parámetros y termina exactamente los 45 ensayos
+(cinco por estructura), con selección por semilla mediana. No se descartan los
+ensayos en marcha ni se reinicia la búsqueda con otra semilla.
+
+Verificación de la implementación L2 antes de lanzar búsqueda: 137 pruebas
+pasadas y 2 omitidas en `pytest benchmarks -q`; Ruff check y format limpios
+en 185 archivos. Los resultados L1 siguen congelados y sin cambios.

@@ -1,0 +1,30 @@
+{
+  "completed_at_utc": "2026-10-22T06:47:35.595335+00:00",
+  "records": [
+    {
+      "record": "sub-01_FDSI_staircase_snr30dB",
+      "disagreements": 0,
+      "passed": true,
+      "median_batch_ms": 50.486600026488304,
+      "p95_batch_ms": 297.1856500138523,
+      "sha256": "7a7d769ae382afb2ec059205af6a5e188868d40cda6b1be7c2e44e6f695b7120"
+    },
+    {
+      "record": "sub-01_FDSI_triangular-ramp10s_snr30dB",
+      "disagreements": 0,
+      "passed": true,
+      "median_batch_ms": 49.27959997439757,
+      "p95_batch_ms": 213.21697505772997,
+      "sha256": "edc8e800fce5e27c2b2997f1b52314180376e4deb5ce1c3a5d6c27d13c55b004"
+    },
+    {
+      "record": "sub-01_FDSI_triangular-ramp5s_snr30dB",
+      "disagreements": 0,
+      "passed": true,
+      "median_batch_ms": 49.25300006289035,
+      "p95_batch_ms": 62.53149496042169,
+      "sha256": "c63da1b5afd5803879adc039da14ee8ad5f5e5761b5a8c1aa46da30efcfee3c6"
+    }
+  ],
+  "passed": true
+}
