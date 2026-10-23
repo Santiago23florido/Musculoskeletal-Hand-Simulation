@@ -1,0 +1,73 @@
+{
+  "completed_at_utc": "2026-10-23T07:46:35.933946+00:00",
+  "runs": [
+    {
+      "run": 0,
+      "exact": {
+        "spikes": true,
+        "sources": true,
+        "centroid": true,
+        "trusted_count": true,
+        "state": true,
+        "memory_trace": true,
+        "sep_vectors": true,
+        "whitening": true,
+        "spikes_centr": true,
+        "base_centr": true,
+        "source_fifo": true,
+        "memory_filters": true,
+        "memory_centroids": true,
+        "memory_quality": true
+      },
+      "populated_bins": 7,
+      "memory_hit_rate": 0.7743613719940186,
+      "passed": true
+    },
+    {
+      "run": 1,
+      "exact": {
+        "spikes": true,
+        "sources": true,
+        "centroid": true,
+        "trusted_count": true,
+        "state": true,
+        "memory_trace": true,
+        "sep_vectors": true,
+        "whitening": true,
+        "spikes_centr": true,
+        "base_centr": true,
+        "source_fifo": true,
+        "memory_filters": true,
+        "memory_centroids": true,
+        "memory_quality": true
+      },
+      "populated_bins": 14,
+      "memory_hit_rate": 0.6220434904098511,
+      "passed": true
+    },
+    {
+      "run": 2,
+      "exact": {
+        "spikes": true,
+        "sources": true,
+        "centroid": true,
+        "trusted_count": true,
+        "state": true,
+        "memory_trace": true,
+        "sep_vectors": true,
+        "whitening": true,
+        "spikes_centr": true,
+        "base_centr": true,
+        "source_fifo": true,
+        "memory_filters": true,
+        "memory_centroids": true,
+        "memory_quality": true
+      },
+      "populated_bins": 29,
+      "memory_hit_rate": 0.29210028052330017,
+      "passed": true
+    }
+  ],
+  "active": true,
+  "passed": true
+}

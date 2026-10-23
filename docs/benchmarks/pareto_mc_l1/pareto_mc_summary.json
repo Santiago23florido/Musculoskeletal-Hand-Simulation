@@ -1,0 +1,65 @@
+{
+  "generated_at_utc": "2026-10-22T06:37:03.793699+00:00",
+  "levels": {
+    "L0": {
+      "records": 20,
+      "instances": 124,
+      "global_roa_pct": 87.65256762672922,
+      "ramp5s_roa_pct": 73.87732738335835,
+      "ge90_pct": 66.93548387096774,
+      "precision_pct": 96.05713426834419,
+      "recall_pct": 89.03058445453776,
+      "phases": {
+        "reference_rest": 92.45529177062915,
+        "moving": 86.71520255871206,
+        "hold_away": 90.68917639543612
+      },
+      "ramp5s_cycle1_roa_pct": 58.90600902699696,
+      "ramp5s_cycles2_8_roa_pct": 72.15209899580147,
+      "lost_by_condition": {
+        "staircase": 2,
+        "triangular-ramp10s": 1,
+        "triangular-ramp20s": 0,
+        "triangular-ramp40s": 0,
+        "triangular-ramp5s": 2
+      },
+      "median_batch_ms": 38.1205000448972,
+      "p95_batch_ms": 47.209590004058555,
+      "timing_scope": "median of 3 sub-01 medians; maximum p95 of those controls; CPU 4 threads",
+      "memory_hit_rate": null,
+      "controller": "identity: wh=1, sv=1, beta=0; no dependence on blind speed"
+    },
+    "L1/all_feedback": {
+      "records": 20,
+      "instances": 124,
+      "global_roa_pct": 91.23603366911999,
+      "ramp5s_roa_pct": 84.70843915320941,
+      "ge90_pct": 72.58064516129032,
+      "precision_pct": 96.38295672759784,
+      "recall_pct": 93.01151565299055,
+      "phases": {
+        "reference_rest": 97.13086011127373,
+        "moving": 90.48105217523515,
+        "hold_away": 89.97878804417557
+      },
+      "ramp5s_cycle1_roa_pct": 65.88985768805549,
+      "ramp5s_cycles2_8_roa_pct": 84.94462563237336,
+      "lost_by_condition": {
+        "staircase": 2,
+        "triangular-ramp10s": 1,
+        "triangular-ramp20s": 0,
+        "triangular-ramp40s": 0,
+        "triangular-ramp5s": 1
+      },
+      "median_batch_ms": 127.91939999442548,
+      "p95_batch_ms": 151.3212149904575,
+      "timing_scope": "native Windows CPU; raw filtering through closed-loop update; four independent record workers, four Torch threads each",
+      "gate_passed": true
+    }
+  },
+  "validation_subject": "sub-04",
+  "scope": "exploratory development only; no external 80-record result is implied",
+  "historical_files_verified": 234,
+  "historical_files_changed": [],
+  "confirmation": null
+}

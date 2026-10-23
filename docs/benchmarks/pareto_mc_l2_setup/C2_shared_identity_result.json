@@ -1,0 +1,58 @@
+{
+  "completed_at_utc": "2026-10-22T07:00:55.024937+00:00",
+  "runs": [
+    {
+      "run": 0,
+      "exact": {
+        "spikes": true,
+        "sources": true,
+        "centroid": true,
+        "trusted_count": true,
+        "state": true,
+        "memory": true,
+        "sep_vectors": true,
+        "whitening": true,
+        "spikes_centr": true,
+        "base_centr": true,
+        "source_fifo": true
+      },
+      "passed": true
+    },
+    {
+      "run": 1,
+      "exact": {
+        "spikes": true,
+        "sources": true,
+        "centroid": true,
+        "trusted_count": true,
+        "state": true,
+        "memory": true,
+        "sep_vectors": true,
+        "whitening": true,
+        "spikes_centr": true,
+        "base_centr": true,
+        "source_fifo": true
+      },
+      "passed": true
+    },
+    {
+      "run": 2,
+      "exact": {
+        "spikes": true,
+        "sources": true,
+        "centroid": true,
+        "trusted_count": true,
+        "state": true,
+        "memory": true,
+        "sep_vectors": true,
+        "whitening": true,
+        "spikes_centr": true,
+        "base_centr": true,
+        "source_fifo": true
+      },
+      "passed": true
+    }
+  ],
+  "memory_hit_rate": 0.01655629090964794,
+  "passed": true
+}

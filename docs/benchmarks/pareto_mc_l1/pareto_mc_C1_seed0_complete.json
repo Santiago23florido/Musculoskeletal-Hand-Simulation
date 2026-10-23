@@ -1,0 +1,16 @@
+{
+  "completed_at_utc": "2026-10-21T09:11:59.014425+00:00",
+  "model_sha256": "9826803063c82af10c306e1d4e445972f9564e55778ed3ef2d3a9a1f120ba3fa",
+  "validation_nll": -1.8778804898262025,
+  "training_subjects": [
+    "sub-01",
+    "sub-02",
+    "sub-03"
+  ],
+  "validation_subjects": [
+    "sub-04"
+  ],
+  "seed": 0,
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "epochs": 30
+}
