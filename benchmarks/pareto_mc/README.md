@@ -1,90 +1,91 @@
 # Pareto-MC
 
-Desarrollo en CPU de una corrección residual de Pareto, con memoria por registro,
-estado ciego y decisiones de disparo realimentadas. No es un modelo aprobado:
-las puertas de validación y los criterios finales son independientes.
+Pareto adaptation with EMG-only state estimation, feedback from discharge
+decisions, and memory local to each recording. **L2 is the latest accepted
+development stage: 91.66% global RoA and 85.05% on 5-second ramps.** These are
+validation results; external evaluation and the final latency target remain
+pending. **L3 is paused at the user's request.**
 
-## Protocolo previo
+## Development protocol
 
-Rama desde `review/robust-mvdr`, PR #1 abierto. Entrenamiento en sub-01–03;
-validación en sub-04; sub-05 reservado. **Cambio frente a Stage B declarado antes
-de entrenar:** todas las condiciones y los cuatro SNR se permiten en desarrollo.
-No se abre sub-05 para ajustar ni para diagnosticar. El diario registra todas
-las decisiones y desviaciones en
-[`pareto_mc_journal.md`](../../docs/benchmarks/pareto_mc_journal.md).
+Development started from `review/robust-mvdr` while PR #1 was open. Training uses
+sub-01–03, validation uses sub-04, and sub-05 is reserved. **The change from
+Stage B was declared before training:** all conditions and all four SNR levels
+are allowed during development. Sub-05 is excluded from tuning and diagnostics.
+The [journal](../../docs/benchmarks/pareto_mc_journal.md) records decisions and
+deviations.
 
-La Fase 0 intentó iniciar el backend oficial NeuroMotion de
-[MUniverse](https://github.com/dfarinagroup/muniverse), revisión
-`94fbfab253f037e3b3cbfdbc6aed85b781f0ea49`. Docker no tiene su motor Linux
-activo y Ubuntu no dispone de Singularity/Apptainer. No se generaron registros
-confirmatorios; el alcance es exploratorio. Se conservan los comandos, errores
-y hashes del Dockerfile y lanzador en `phase0.json`.
+Phase 0 attempted to start the official NeuroMotion backend from
+[MUniverse](https://github.com/dfarinagroup/muniverse), revision
+`94fbfab253f037e3b3cbfdbc6aed85b781f0ea49`. Docker's Linux engine was inactive,
+and Ubuntu had neither Singularity nor Apptainer. No confirmatory recordings
+were generated, so the study remains exploratory. Commands, errors, and hashes
+of the Dockerfile and launcher are retained in `phase0.json`.
 
-## Fundamento y límites
+## Method and limits
 
-La columna vertebral conserva las operaciones de
+The backbone retains the operations of
 [`adapt_decomp` a8f5373](https://github.com/imendezguerra/adapt_decomp/tree/a8f53736e297962670276bc123c137050b7056b6),
-con
+using
 [`optim_muniverse_fdsi_pareto.yaml`](https://github.com/imendezguerra/adapt_decomp/blob/a8f53736e297962670276bc123c137050b7056b6/configs/adapt_configs/optim_muniverse_fdsi_pareto.yaml):
-paso fijo de blanqueo `W -= eta_wh (Rz-I) W`, con FIFO, shrinkage y clipping de
-la referencia; corrección de coordenadas wh→sv; contraste `tanh(y)` solo en
-disparos fiables; QR; y centroides EMA (0,95). Tasas 0,04038249 y 0,002422225.
-No se confunde la fórmula abreviada con todas las salvaguardas del código.
+the fixed whitening step `W -= eta_wh (Rz-I) W`, reference FIFO, shrinkage and
+clipping, wh→sv coordinate correction, `tanh(y)` contrast only at reliable
+discharges, QR, and EMA centroids (0.95). The learning rates are 0.04038249 and
+0.002422225. The implementation retains the safeguards omitted from this
+abbreviated formula.
 
-Esto se interpreta como seguimiento autoentrenado de plantillas blanqueadas.
-El compromiso entre seguimiento de deriva y ruido en filtros adaptativos
-motiva pasos dependientes del estado; no garantiza un paso universalmente
-óptimo. Véanse [Widrow et al., 1975](https://doi.org/10.1109/PROC.1975.10036)
-y [Kalman, 1960](https://doi.org/10.1115/1.3662552).
-En ramp5s se repite la postura aproximadamente ocho veces: la memoria local
-busca reutilizar filtros aprendidos del propio registro. No se presupone que
-el morph entre sujetos de Γ haya funcionado.
+This can be interpreted as self-trained tracking of whitened templates. The
+trade-off between drift tracking and noise in adaptive filters motivates
+state-dependent steps, without guaranteeing a universally optimal step.
+See [Widrow et al., 1975](https://doi.org/10.1109/PROC.1975.10036) and
+[Kalman, 1960](https://doi.org/10.1115/1.3662552).
+In ramp5s, posture repeats approximately eight times. Local memory aims to reuse
+filters learned from the recording itself. The method does not assume that
+cross-subject morphing with Γ succeeded.
 
-La auditoría
-[`fifo_audit`](../fifo_audit/README.md) muestra el riesgo de pérdida brusca de
-amplitud frente a centroides con estado. La mezcla se limita **después de QR**;
-`beta=0` omite toda operación adicional sobre el filtro. Se guardan filtros
-efectivos `v=W.T@w` y centroides, con EMA por bin y confianza combinada de tasa,
-separación e IQR. La recuperación es una regresión kernel ponderada
-([Nadaraya, 1964](https://doi.org/10.1137/1109020)). No se inserta el lote actual
-antes de recuperarlo, ni se comparte memoria entre registros.
+The [FIFO audit](../fifo_audit/README.md) shows the risk of an abrupt amplitude
+loss relative to stateful centroids. Mixing is bounded **after QR**; `beta=0`
+skips every additional filter operation. Memory stores effective filters
+`v=W.T@w` and centroids, with EMA per bin and confidence combining rate,
+separation, and IQR. Retrieval uses weighted kernel regression
+([Nadaraya, 1964](https://doi.org/10.1137/1109020)). The current batch is inserted
+only after retrieval, and memory is never shared between recordings.
 
-El éxito previo de
-[`spike_likelihood`](../spike_likelihood/README.md) motiva aprender la decisión.
-Realimentarla cambia las observaciones de entrenamiento: las rondas agregadas
-siguen el principio de
+The earlier [spike-likelihood improvement](../spike_likelihood/README.md)
+motivates learning discharge decisions. Feeding decisions back changes the
+training observations; the aggregated rounds follow the principle of
 [DAgger, Ross et al., 2011](https://proceedings.mlr.press/v15/ross11a.html).
-Esto es una motivación metodológica, no una garantía de sus cotas para EMG.
+This motivates the procedure, without establishing the paper's bounds for EMG.
 
-C1 conserva GRU(120,24), añade media y log-varianza y usa NLL gaussiana. C3
-tiene 159 parámetros y salidas acotadas; los multiplicadores empiezan en uno
-y beta en cero. C4 extiende el MLP 19→8→1 a 22→8→1 (193 parámetros), con
-fuente, confianza y velocidad estimada. Su última capa empieza en cero:
-sin entrenar, las decisiones y la adaptación reproducen Pareto.
+C1 retains GRU(120,24), adds mean and log-variance outputs, and uses Gaussian NLL.
+C3 has 159 parameters and bounded outputs; multipliers start at one and beta at
+zero. C4 extends the 19→8→1 MLP to 22→8→1 (193 parameters), adding source,
+confidence, and estimated velocity. Its final layer starts at zero, so the
+untrained decisions and adaptation reproduce Pareto.
 
-## C0 medido
+## C0 equivalence check
 
-En tres registros reales de sub-01 (staircase/ramp10s/ramp5s, 30 dB): **100 % de
-muestras iguales**, cero diferencias de RoA frente al bucle original y también
-frente a las salidas publicadas. El protocolo mantuvo el nombre conservador
-**Pareto-rerun**. Medianas de lote: 38,05/38,48/38,12 ms; p95: 46,70/47,21/46,55
-ms. **No pasa el objetivo de 22 ms** con cuatro hilos en esta máquina.
-Estos tres registros son una prueba de equivalencia de entrenamiento; sus
-medias no son una evaluación externa de 80 registros.
+On three real sub-01 records (staircase/ramp10s/ramp5s, 30 dB), **all samples
+match, with zero RoA differences from both the original loop and the published
+outputs**. The protocol retains the conservative name **Pareto-rerun**. Batch
+medians are 38.05/38.48/38.12 ms and p95 values are 46.70/47.21/46.55 ms.
+The 22 ms target is unmet with four threads on this machine. These three
+training records establish equivalence; their averages are not an external
+80-record evaluation.
 
-La interfaz operacional recibe EMG crudo y un índice secuencial. El filtrado
-es `sosfilt` con estado; la extensión usa solo historial. El filtrado de la
-referencia también es causal: "offline" describe la preparación del registro,
-no un `filtfilt`. La media global de `Data` se evita en la interfaz nueva.
-Las salidas tienen hasta un lote de latencia (100 ms); se permite la calibración
-inicial suministrada de cinco segundos. Ángulos y disparos verdaderos se abren
-solo en funciones separadas de supervisión/evaluación protegidas por sujeto.
+The operational interface receives raw EMG and a sequential index. Filtering
+uses stateful `sosfilt`, and extension uses past samples only. Reference filtering
+is also causal: “offline” describes preparation of the recording, rather than
+`filtfilt`. The new interface avoids the global mean used by `Data`. Outputs can
+be delayed by up to one batch (100 ms); the supplied initial five-second
+calibration is allowed. True angles and discharges are opened only in separate
+supervision/evaluation functions with subject guards.
 
-## Reproducir
+## Reproduction
 
-Cada ejecución utiliza un directorio nuevo; no se sobreescriben protocolos,
-predicciones selladas ni resultados. El primer intento L0 en
-`outputs/pareto_mc/L0` falló por una firma de constructor; se conserva.
+Each run uses a fresh directory to preserve protocols, sealed predictions, and
+results. The first L0 attempt in `outputs/pareto_mc/L0` failed because of a
+constructor signature mismatch and is retained.
 
 ```powershell
 $env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/reproduction'
@@ -99,160 +100,162 @@ $env:OPENBLAS_NUM_THREADS = '1'
 .venv-windows/Scripts/python.exe -m ruff format --check benchmarks/pareto_mc
 ```
 
-El entorno de entrenamiento es `.venv-stage-b-gpu`, RTX 4070; la inferencia y
-sus tiempos se miden con `.venv-benchmarks` en CPU. El constructor original
-emite errores Intel MKL `SLASWP` al estimar estadísticas KL por lotes en Windows;
-esas estadísticas no escalan los pasos con `lr_mode=fixed`. La coincidencia
-exacta de los tres controles se comprueba pese a esos mensajes. No se modifica
-la dependencia fijada para silenciarlos.
+Training uses `.venv-stage-b-gpu` on the RTX 4070; inference and timing use
+`.venv-benchmarks` on CPU. The original constructor emits Intel MKL `SLASWP`
+errors when estimating batch KL statistics on Windows. Those statistics do not
+scale the steps under `lr_mode=fixed`. Exact agreement is checked on all three
+controls despite those messages. The pinned dependency is preserved.
 
-Los diagnósticos por nivel incluyen amplitud verdadera con `amplitude_metrics`,
-centroides, aciertos de memoria, control frente a velocidad ciega, unidades
-con recall <0,5 y distribución de tiempos. Las fases usan `angle_phases`.
-Los ciclos son excursiones angulares >1° que alcanzan ≥35°, con calibración
-excluida; no se usan intervalos temporales fijos para fabricarlos.
+Per-stage diagnostics include true amplitude through `amplitude_metrics`,
+centroids, memory hits, control versus estimated velocity, units with recall
+below 0.5, and timing distributions. Phases use `angle_phases`. Cycles are
+angular excursions above 1° that reach at least 35°, excluding calibration;
+they are not constructed from fixed time intervals.
 
-## Ejecución de desarrollo
+## Development run
 
-C1 terminó: 30 épocas, semilla 0, checkpoint por NLL de sub-04 en época 13;
-NLL −1,87788 y RMSE angular descriptivo de 3,2407°. Pesos en
-`outputs/pareto_mc/development_v2/C1/seed0/observer.pt`, con su manifest original.
-Solo el objetivo de entrenamiento/evaluación contiene ángulos medidos.
+**C1 completed 30 epochs**, using seed 0 and selecting the checkpoint at epoch 13
+by sub-04 NLL: −1.87788, with a descriptive angular RMSE of 3.2407°. Weights are
+in `outputs/pareto_mc/development_v2/C1/seed0/observer.pt`, alongside the original
+manifest. Measured angles occur only in the training/evaluation target.
 
-El primer L1 (`development_v1`) se conserva, sustituido antes de seleccionar por
-RoA/Jaccard. `development_v2` reutiliza entradas y un checkpoint completado,
-verificados en `input_reuse.json`. La caché de entrenamiento conserva exactamente
-arrays y etiquetas por registro; no recalcula desfases ni descomprime en cada
-época. Sus archivos y procedencia tienen hashes y controles de sujeto.
+The first L1 run (`development_v1`) is retained. It was superseded before
+RoA/Jaccard selection. `development_v2` reuses inputs and a completed checkpoint,
+verified in `input_reuse.json`. The training cache preserves the exact arrays
+and labels per record, avoiding repeated lag estimation and decompression at
+each epoch. Files and provenance have hashes and subject checks.
 
-Se fija Torch a cuatro hilos como en el C0 exacto. Dos hilos producían siete
-diferencias en un registro por diferencias numéricas de BLAS. Con cuatro,
-**C4 sin entrenar vuelve a dar cero diferencias en los tres registros reales**,
-incluso con el observador entrenado y con una sola ventana para las estadísticas
-KL que no se usan con paso fijo. No se confunden los tiempos bajo contención
-de estas pruebas con una medición aislada de latencia final.
+Torch uses four threads, as in the exact C0 control. Two threads produced seven
+differences in one record due to BLAS numerical differences. With four threads,
+**untrained C4 again produces zero differences on all three real records**,
+including with the trained observer and a single window for KL statistics,
+which fixed-step adaptation does not use. Timing under contention in these
+checks is separate from an isolated final latency measurement.
 
-L1 agrega las rondas 0–3, con tres semillas por ronda. El checkpoint se elige por
-BCE de validación; después, 40 ensayos TPE ajustan umbral y fuerza residual por
-Jaccard a desfases de calibración. Los tres mejores se repiten en tres semillas,
-seleccionando por mediana. Los parámetros de memoria todavía no están activos
-y no se buscan hasta L2. La puerta se comprueba después de ejecutar el modelo
-completo, con el evaluador original y predicciones previamente selladas.
+L1 aggregates rounds 0–3, with three seeds per round. The checkpoint is selected
+by validation BCE. Then 40 TPE trials tune threshold and residual strength by
+Jaccard with calibration lags. The best three candidates are repeated with
+three seeds and selected by the median. Memory parameters remain inactive
+until L2. The acceptance check runs after full-model inference, using the
+original evaluator and previously sealed predictions.
 
-Si la realimentación completa no pasa, hay un único cambio estructural
-preregistrado: eventos añadidos solo pueden actualizar SV/centroides si su
-posterior es ≥0,8 (los aceptados siguen siendo predicciones). Este umbral es
-alcanzable con el residual acotado a cuatro; 0,9 no lo era para candidatos nuevos.
-Si también falla, se conserva L0 y no se ejecutan L2–L4.
+If full feedback fails the criteria, one structural alternative is
+preregistered: added events may update SV/centroids only when their posterior
+is at least 0.8; accepted events remain predictions. This threshold is reachable
+with the residual bounded to four; 0.9 was unreachable for new candidates.
+If the alternative also fails, L0 is retained and L2–L4 are not run.
 
-La retención de Pareto durante calibración se decide por lotes que comienzan
-antes de 5 s; puede abarcar la fracción restante del último lote (~80 ms).
-No se usan esos instantes como etiquetas en inferencia. La referencia abierta
-conserva exactamente los cinco segundos iniciales de predicciones originales.
+Pareto is retained during calibration for batches starting before 5 s, which can
+include the remaining fraction of the last batch (about 80 ms). Those timestamps
+are not inference labels. The open-loop reference retains exactly the first
+five seconds of original predictions.
 
-### L1 completado
+### L1 completed
 
-La primera estructura supera la puerta; no se ejecuta la alternativa.
-Validación sub-04 (20 registros, 124 instancias), con el evaluador original:
+**The first structure passes the L1 criteria**, so the alternative was not run.
+Sub-04 validation covers 20 records and 124 instances, scored with the original
+evaluator:
 
-| Nivel | RoA global | ramp5s | ≥90 % | Precisión | Recall |
+| Stage | Global RoA | ramp5s | ≥90% | Precision | Recall |
 |---|---:|---:|---:|---:|---:|
-| Pareto-rerun | 87,65 % | 73,88 % | 66,94 % | 96,06 % | 89,03 % |
-| C4 abierto | 90,39 % | 81,77 % | 70,16 % | 95,70 % | 92,94 % |
-| L1 cerrado | 91,24 % | 84,71 % | 72,58 % | 96,38 % | 93,01 % |
+| Pareto-rerun | 87.65% | 73.88% | 66.94% | 96.06% | 89.03% |
+| Open-loop C4 | 90.39% | 81.77% | 70.16% | 95.70% | 92.94% |
+| Closed-loop L1 | **91.24%** | **84.71%** | **72.58%** | 96.38% | 93.01% |
 
-L1 gana +0,84 pp global y +2,94 pp en ramp5s frente al abierto. Reposo de
-referencia 97,13 %, movimiento 90,48 %, mesetas alejadas 89,98 %. Primer ciclo
-de ramp5s 65,89 %, ciclos 2–8 84,94 %. La latencia medida durante cuatro
-ejecuciones simultáneas fue mediana 127,92 ms, p95 151,32 ms; no satisface
-22 ms y no representa una medición aislada. Son resultados exploratorios de
-desarrollo, sin evaluación externa de 80 registros ni confirmación nueva.
+**L1 gains 0.84 percentage points globally and 2.94 points on ramp5s over
+open-loop C4.** Reference-rest RoA is 97.13%, moving RoA 90.48%, and
+away-from-reference plateau RoA 89.98%. The first ramp5s cycle scores 65.89%;
+cycles 2–8 score 84.94%. With four concurrent runs, measured latency was
+127.92 ms median and 151.32 ms p95. This exceeds 22 ms and is not an isolated
+measurement. Results are exploratory development validation, with neither the
+external 80-record evaluation nor confirmation on new data completed.
 
-Detalles, puertas, limitaciones y hashes en el
-[diario](../../docs/benchmarks/pareto_mc_journal.md) y
-[resumen versionado](../../docs/benchmarks/pareto_mc_l1/pareto_mc_summary.json).
+Details, acceptance checks, limits, and hashes are in the
+[journal](../../docs/benchmarks/pareto_mc_journal.md) and
+[versioned summary](../../docs/benchmarks/pareto_mc_l1/pareto_mc_summary.json).
 
-### Desarrollo de L2
+### L2 method
 
-`memory_loop.py` añade recuperación causal de filtros efectivos y sus centroides,
-proyección al blanqueo actual, atenuación por incertidumbre y mezcla limitada
-después de QR. En L2 solo existe la instantánea de calibración. Beta cero
-reproduce exactamente Pareto en los tres controles reales y conserva todo el
-estado de L1 en las pruebas de integración.
+`memory_loop.py` adds causal retrieval of effective filters and their centroids,
+projection into the current whitening coordinates, uncertainty attenuation, and
+bounded mixing after QR. In L2, only the calibration snapshot is available.
+Zero beta exactly reproduces Pareto on the three real controls and preserves
+all L1 state in integration tests.
 
 ```powershell
-# Requiere L0, C1 y L1 completados en PARETO_MC_OUTPUT.
+# Requires completed L0, C1, and L1 stages in PARETO_MC_OUTPUT.
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.memory_identity "$env:PARETO_MC_OUTPUT/C2_identity_v1"
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.shared_identity
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.memory_experiment L2 --workers 4
 ```
 
-Se registran 45 ensayos, cinco por cada combinación estructural, y se repiten
-los tres mejores con las tres semillas entrenadas de C4. La búsqueda comparte
-solo preprocesado, blanqueo y C1 del mismo lote entre nueve trayectorias; una
-prueba real exige igualdad bit a bit con la ejecución independiente. No se
-consideran sus tiempos como latencia de inferencia. Después se reentrena C4 en
-tres rondas DAgger y se predice de nuevo con el bucle CPU completo antes de
-decidir la puerta. Todos los registros se sellan antes de abrir sus etiquetas.
+The search registers 45 trials, five per structural combination, then repeats
+the best three with all three trained C4 seeds. It shares only preprocessing,
+whitening, and C1 from the same batch across nine trajectories. A real-data
+test requires bitwise equality with independent execution. Search timing is
+not treated as inference latency. C4 is then retrained through three DAgger
+rounds, and predictions are regenerated with the full CPU loop before checking
+the criteria. All records are sealed before their labels are opened.
 
-El momento de bin permanece fijo en L2 porque no hay inserciones; se busca en
-L3. El limitador acota el residual de memoria respecto a la propuesta Pareto.
-Los centroides recuperados se conservan; los vivos mantienen su actualización
-EMA. Estas decisiones y la única alternativa permitida tras un fallo están
-declaradas en el diario. No hay resultado L2 hasta que exista su `gate.json`.
+Bin momentum stays fixed in L2 because there are no insertions; it is searched
+in L3. The limiter bounds the memory residual relative to the Pareto proposal.
+Retrieved centroids are preserved, while live centroids retain their EMA update.
+The journal records these choices and the single permitted alternative after
+a failure. The L2 result is established by its saved `gate.json`.
 
-Perfil adicional de L1 con un registro a la vez: mediana **56,12 ms**, p95
-**360,87 ms**; tampoco satisface los 22 ms. Las pruebas y mediciones iniciales
-de C2 están en `docs/benchmarks/pareto_mc_l2_setup/`.
+An additional L1 profile with one record at a time measured 56.12 ms median
+and 360.87 ms p95, also above 22 ms. Initial C2 tests and measurements are in
+`docs/benchmarks/pareto_mc_l2_setup/`.
 
-### L2 completado
+### L2 completed
 
-La primera estructura supera la puerta, después de 45 ensayos, repeticiones
-con tres semillas y tres rondas DAgger nuevas. Validación sub-04, 20 registros
-y 124 instancias:
+**L2 passes its validation criteria with the first structure**, after 45 trials,
+three-seed repetitions, and three new DAgger rounds. Sub-04 validation covers
+20 records and 124 instances:
 
-| Métrica | L1 | L2 |
+| Metric | L1 | L2 |
 |---|---:|---:|
-| RoA global | 91,24 % | 91,66 % |
-| RoA ramp5s | 84,71 % | 85,05 % |
-| Instancias ≥90 % | 72,58 % | 75,81 % |
-| Precisión | 96,38 % | 95,68 % |
-| Recall | 93,01 % | 94,14 % |
-| Reposo de referencia | 97,13 % | 97,54 % |
-| Movimiento | 90,48 % | 90,94 % |
+| Global RoA | 91.24% | **91.66%** |
+| ramp5s RoA | 84.71% | **85.05%** |
+| Instances ≥90% | 72.58% | **75.81%** |
+| Precision | 96.38% | 95.68% |
+| Recall | 93.01% | **94.14%** |
+| Reference rest | 97.13% | **97.54%** |
+| Moving | 90.48% | **90.94%** |
 
-Pasa reposo ≥97 % y mejora movimiento frente a L1. La pérdida de precisión
-frente a Pareto es 0,38 pp, dentro del margen de un punto. Ramp5s: ciclo 1
-68,97 %, ciclos 2–8 85,01 %. Memoria activa en el 4,29 % de pares unidad/lote.
+**L2 meets the reference-rest target of at least 97% and improves movement
+accuracy over L1.** Precision is 0.38 percentage points below Pareto, within the
+one-point allowance. Ramp5s scores 68.97% on cycle 1 and 85.01% on cycles 2–8.
+Memory is active in 4.29% of unit/batch pairs.
 
-Tiempo CPU con cuatro registros simultáneos: mediana **86,16 ms**, p95
-**105,51 ms**. No satisface 22 ms; queda pendiente un perfil aislado de L2.
-Se conserva L2. Son resultados exploratorios de validación, sin evaluación
-externa ni confirmación nueva. La puerta y los hashes están en
-[el resultado versionado](../../docs/benchmarks/pareto_mc_l2_standard/gate.json).
+CPU timing with four concurrent records is **86.16 ms median and 105.51 ms p95**,
+above the 22 ms target. An isolated L2 profile remains pending. **L2 is retained
+as the latest accepted development stage.** Results remain exploratory
+validation, pending external evaluation and confirmation on new data. The
+[versioned result](../../docs/benchmarks/pareto_mc_l2_standard/gate.json) records
+the acceptance check and hashes.
 
-### Desarrollo de L3
+### L3 setup and pause
 
-L3 activa inserciones fiables en los bins de memoria y conserva la calibración
-inmutable. Parte de los tres checkpoints finales de L2 y añade tres rondas
-DAgger; las trayectorias de L1 y L2 también forman parte de la agregación.
-El momento de los bins se incluye ahora en TPE. Antes de buscar, una prueba
-real exige igualdad bit a bit entre ejecución independiente y compartida,
-incluyendo los bins aprendidos y su confianza.
+L3 enables reliable insertions into memory bins and keeps calibration immutable.
+It starts from the three final L2 checkpoints and adds three DAgger rounds,
+also aggregating L1 and L2 trajectories. Bin momentum is now included in TPE.
+Before the search, a real-data test requires bitwise equality between independent
+and shared execution, including learned bins and their confidence.
 
 ```powershell
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.full_memory_identity "$env:PARETO_MC_OUTPUT/C2_full_memory_identity_v1"
 .venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.full_memory_experiment --workers 4
 ```
 
-La puerta exige global ≥92,6580 % y ciclos 2–8 de ramp5s al menos cinco puntos
-por encima del ciclo 1. Si la primera estructura falla, solo se permite la
-alternativa de confianza local registrada; un segundo fallo detiene la escalera.
+The L3 criteria require global RoA of at least 92.6580%, and ramp5s cycles 2–8
+at least five points above cycle 1. If the first structure fails, only the
+registered local-confidence alternative is allowed. A second failure stops
+progression to later stages.
 
-L3 está **pausado por petición del usuario desde el 23 de octubre de 2026**.
-Sus controles de identidad pasaron; la búsqueda se detuvo sin ensayos puntuados.
-El estudio y los parámetros pendientes permanecen guardados para una reanudación
-expresamente solicitada. Publicar o fusionar el código no inicia experimentos.
-L2 sigue siendo el último nivel aceptado; el
-[registro de pausa](../../docs/benchmarks/pareto_mc_l3_setup/pause.json) describe
-el estado conservado.
+**L3 has been paused at the user's request since 23 October 2026.** Its identity
+checks passed, but the search stopped without scored trials. The study and
+pending parameters are saved for an explicitly requested resumption. Publishing
+or merging the code does not start experiments. L2 remains the latest accepted
+stage; the [pause record](../../docs/benchmarks/pareto_mc_l3_setup/pause.json)
+describes the saved state.
