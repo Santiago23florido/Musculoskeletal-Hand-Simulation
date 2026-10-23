@@ -1,0 +1,2162 @@
+[
+  {
+    "number": 0,
+    "state": "COMPLETE",
+    "value": 84.57027542942947,
+    "params": {
+      "structure": 0,
+      "threshold": 0.5987055357171153,
+      "kappa": 0.13564328632602682,
+      "beta_max": 0.7836448347122108
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.80807643932764,
+        "ramp5s_roa_pct": 86.1195691258409,
+        "ge90_pct": 66.93548387096774,
+        "precision_pct": 94.27842479771323,
+        "recall_pct": 94.50904676090332,
+        "phases": {
+          "reference_rest": 97.4715829001283,
+          "moving": 90.03547948657595,
+          "hold_away": 88.5584742338542
+        },
+        "ramp5s_cycle1_roa_pct": 72.46174268381421,
+        "ramp5s_cycles2_8_roa_pct": 86.05959938776635,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0452867295127362
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.03,
+        "threshold": 0.5987055357171153,
+        "kappa": 0.13564328632602682,
+        "beta_max": 0.7836448347122108,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 1,
+    "state": "COMPLETE",
+    "value": 83.39040712867565,
+    "params": {
+      "structure": 1,
+      "threshold": 0.5400045597416582,
+      "kappa": 0.1542011607104508,
+      "beta_max": 0.791285345966369
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.40074836587071,
+        "ramp5s_roa_pct": 84.34669534064876,
+        "ge90_pct": 66.12903225806451,
+        "precision_pct": 94.26047132342737,
+        "recall_pct": 94.0707735596939,
+        "phases": {
+          "reference_rest": 97.72526516799978,
+          "moving": 89.57316528144071,
+          "hold_away": 88.57978715622305
+        },
+        "ramp5s_cycle1_roa_pct": 72.14411438324319,
+        "ramp5s_cycles2_8_roa_pct": 83.77925315089672,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.042875136435031894
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.06,
+        "threshold": 0.5400045597416582,
+        "kappa": 0.1542011607104508,
+        "beta_max": 0.791285345966369,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 2,
+    "state": "COMPLETE",
+    "value": 84.27785552280214,
+    "params": {
+      "structure": 2,
+      "threshold": 0.5891634900585132,
+      "kappa": 0.2752802509166769,
+      "beta_max": 0.49077508040610085
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.91156612069722,
+        "ramp5s_roa_pct": 86.7707657073567,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.14447219009922,
+        "recall_pct": 94.66978206821221,
+        "phases": {
+          "reference_rest": 95.36427411965217,
+          "moving": 90.21834108865178,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.13847994726517,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.12,
+        "threshold": 0.5891634900585132,
+        "kappa": 0.2752802509166769,
+        "beta_max": 0.49077508040610085,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 3,
+    "state": "COMPLETE",
+    "value": 84.0770939648326,
+    "params": {
+      "structure": 3,
+      "threshold": 0.8524532608140925,
+      "kappa": 0.1046934450934738,
+      "beta_max": 0.378110695440364
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88632445884403,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11130279690259,
+        "recall_pct": 94.67708709975581,
+        "phases": {
+          "reference_rest": 95.26203577255077,
+          "moving": 90.19513074376775,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.03,
+        "threshold": 0.8524532608140925,
+        "kappa": 0.1046934450934738,
+        "beta_max": 0.378110695440364,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 4,
+    "state": "COMPLETE",
+    "value": 84.19164208732354,
+    "params": {
+      "structure": 4,
+      "threshold": 0.6331852916106904,
+      "kappa": 0.27034476908405997,
+      "beta_max": 0.13372257189899686
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90217232486535,
+        "ramp5s_roa_pct": 86.74927262253365,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.130318191069,
+        "recall_pct": 94.68141672159939,
+        "phases": {
+          "reference_rest": 95.46267636706845,
+          "moving": 90.20368454433968,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.10012257564169,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.06,
+        "threshold": 0.6331852916106904,
+        "kappa": 0.27034476908405997,
+        "beta_max": 0.13372257189899686,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 5,
+    "state": "COMPLETE",
+    "value": 84.22626853859283,
+    "params": {
+      "structure": 5,
+      "threshold": 0.7002804392436135,
+      "kappa": 0.1773302889766735,
+      "beta_max": 0.35460024118596345
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90380603750675,
+        "ramp5s_roa_pct": 86.76131321642283,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.1358760506698,
+        "recall_pct": 94.67616467021347,
+        "phases": {
+          "reference_rest": 95.4383110310627,
+          "moving": 90.20627578244238,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.1199596130276,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.12,
+        "threshold": 0.7002804392436135,
+        "kappa": 0.1773302889766735,
+        "beta_max": 0.35460024118596345,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 6,
+    "state": "COMPLETE",
+    "value": 84.06117818438646,
+    "params": {
+      "structure": 6,
+      "threshold": 0.8125218859771794,
+      "kappa": 0.27854306297221326,
+      "beta_max": 0.12141514727955216
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88443303235404,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.10830878346236,
+        "recall_pct": 94.6778863580441,
+        "phases": {
+          "reference_rest": 95.25061323721819,
+          "moving": 90.19371745133235,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.03,
+        "threshold": 0.8125218859771794,
+        "kappa": 0.27854306297221326,
+        "beta_max": 0.12141514727955216,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 7,
+    "state": "COMPLETE",
+    "value": 84.06894117127733,
+    "params": {
+      "structure": 7,
+      "threshold": 0.5546324473654948,
+      "kappa": 0.08493378356807534,
+      "beta_max": 0.55002786484262
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88416041471596,
+        "ramp5s_roa_pct": 86.72213494783708,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11029296634435,
+        "recall_pct": 94.67007510097115,
+        "phases": {
+          "reference_rest": 95.28393067383163,
+          "moving": 90.1919594189817,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.08710881437293,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.06,
+        "threshold": 0.5546324473654948,
+        "kappa": 0.08493378356807534,
+        "beta_max": 0.55002786484262,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 8,
+    "state": "COMPLETE",
+    "value": 84.08206069730691,
+    "params": {
+      "structure": 8,
+      "threshold": 0.6061701203478109,
+      "kappa": 0.29072241546601607,
+      "beta_max": 0.20441699315134676
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88454532553875,
+        "ramp5s_roa_pct": 86.72227631966052,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11286424328564,
+        "recall_pct": 94.66819775181146,
+        "phases": {
+          "reference_rest": 95.27187762844224,
+          "moving": 90.19313697774908,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.0882971933031,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.12,
+        "threshold": 0.6061701203478109,
+        "kappa": 0.29072241546601607,
+        "beta_max": 0.20441699315134676,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 9,
+    "state": "COMPLETE",
+    "value": 84.74750623508554,
+    "params": {
+      "structure": 0,
+      "threshold": 0.5211033977738723,
+      "kappa": 0.1517263210515991,
+      "beta_max": 0.5778042382210472
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.87725541305531,
+        "ramp5s_roa_pct": 86.39402934878345,
+        "ge90_pct": 67.74193548387096,
+        "precision_pct": 94.27950703917742,
+        "recall_pct": 94.58292795906833,
+        "phases": {
+          "reference_rest": 97.47282096114625,
+          "moving": 90.10847631881553,
+          "hold_away": 88.5584742338542
+        },
+        "ramp5s_cycle1_roa_pct": 72.43170407887703,
+        "ramp5s_cycles2_8_roa_pct": 86.4216283194993,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.048386409878730774
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.03,
+        "threshold": 0.5211033977738723,
+        "kappa": 0.1517263210515991,
+        "beta_max": 0.5778042382210472,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 10,
+    "state": "COMPLETE",
+    "value": 84.25713119064731,
+    "params": {
+      "structure": 1,
+      "threshold": 0.8957224216349584,
+      "kappa": 0.21121770421119837,
+      "beta_max": 0.46420063640345444
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90562542852203,
+        "ramp5s_roa_pct": 86.77851708193042,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.1401462554284,
+        "recall_pct": 94.67289717450721,
+        "phases": {
+          "reference_rest": 95.46786871722226,
+          "moving": 90.2071125893145,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.11961016203338,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.06,
+        "threshold": 0.8957224216349584,
+        "kappa": 0.21121770421119837,
+        "beta_max": 0.46420063640345444,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 11,
+    "state": "COMPLETE",
+    "value": 84.27785552280214,
+    "params": {
+      "structure": 2,
+      "threshold": 0.710152501332799,
+      "kappa": 0.09207216803066884,
+      "beta_max": 0.4556197964898835
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.91156612069722,
+        "ramp5s_roa_pct": 86.7707657073567,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.14447219009922,
+        "recall_pct": 94.66978206821221,
+        "phases": {
+          "reference_rest": 95.36427411965217,
+          "moving": 90.21834108865178,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.13847994726517,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.12,
+        "threshold": 0.710152501332799,
+        "kappa": 0.09207216803066884,
+        "beta_max": 0.4556197964898835,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 12,
+    "state": "COMPLETE",
+    "value": 84.0770939648326,
+    "params": {
+      "structure": 3,
+      "threshold": 0.7585114066762992,
+      "kappa": 0.1572397279908029,
+      "beta_max": 0.2450260001503287
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88632445884403,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11130279690259,
+        "recall_pct": 94.67708709975581,
+        "phases": {
+          "reference_rest": 95.26203577255077,
+          "moving": 90.19513074376775,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.03,
+        "threshold": 0.7585114066762992,
+        "kappa": 0.1572397279908029,
+        "beta_max": 0.2450260001503287,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 13,
+    "state": "COMPLETE",
+    "value": 84.19164208732354,
+    "params": {
+      "structure": 4,
+      "threshold": 0.7028976022133638,
+      "kappa": 0.2831800809985067,
+      "beta_max": 0.31822760710976217
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90217232486535,
+        "ramp5s_roa_pct": 86.74927262253365,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.130318191069,
+        "recall_pct": 94.68141672159939,
+        "phases": {
+          "reference_rest": 95.46267636706845,
+          "moving": 90.20368454433968,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.10012257564169,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.06,
+        "threshold": 0.7028976022133638,
+        "kappa": 0.2831800809985067,
+        "beta_max": 0.31822760710976217,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 14,
+    "state": "COMPLETE",
+    "value": 84.22626853859283,
+    "params": {
+      "structure": 5,
+      "threshold": 0.5103511557782872,
+      "kappa": 0.0897468356365641,
+      "beta_max": 0.247688408650696
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90380603750675,
+        "ramp5s_roa_pct": 86.76131321642283,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.1358760506698,
+        "recall_pct": 94.67616467021347,
+        "phases": {
+          "reference_rest": 95.4383110310627,
+          "moving": 90.20627578244238,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.1199596130276,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.12,
+        "threshold": 0.5103511557782872,
+        "kappa": 0.0897468356365641,
+        "beta_max": 0.247688408650696,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 15,
+    "state": "COMPLETE",
+    "value": 84.06117818438646,
+    "params": {
+      "structure": 6,
+      "threshold": 0.5911820250289754,
+      "kappa": 0.20787925478653035,
+      "beta_max": 0.6195718107823012
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88443303235404,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.10830878346236,
+        "recall_pct": 94.6778863580441,
+        "phases": {
+          "reference_rest": 95.25061323721819,
+          "moving": 90.19371745133235,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.03,
+        "threshold": 0.5911820250289754,
+        "kappa": 0.20787925478653035,
+        "beta_max": 0.6195718107823012,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 16,
+    "state": "COMPLETE",
+    "value": 84.06894117127733,
+    "params": {
+      "structure": 7,
+      "threshold": 0.8845485572360554,
+      "kappa": 0.043617660091815585,
+      "beta_max": 0.2189716783410331
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88416041471596,
+        "ramp5s_roa_pct": 86.72213494783708,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11029296634435,
+        "recall_pct": 94.67007510097115,
+        "phases": {
+          "reference_rest": 95.28393067383163,
+          "moving": 90.1919594189817,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.08710881437293,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.06,
+        "threshold": 0.8845485572360554,
+        "kappa": 0.043617660091815585,
+        "beta_max": 0.2189716783410331,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 17,
+    "state": "COMPLETE",
+    "value": 84.08206069730691,
+    "params": {
+      "structure": 8,
+      "threshold": 0.9391605629032658,
+      "kappa": 0.020671208394428927,
+      "beta_max": 0.42036798208693427
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88454532553875,
+        "ramp5s_roa_pct": 86.72227631966052,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11286424328564,
+        "recall_pct": 94.66819775181146,
+        "phases": {
+          "reference_rest": 95.27187762844224,
+          "moving": 90.19313697774908,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.0882971933031,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.12,
+        "threshold": 0.9391605629032658,
+        "kappa": 0.020671208394428927,
+        "beta_max": 0.42036798208693427,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 18,
+    "state": "COMPLETE",
+    "value": 84.96411258990832,
+    "params": {
+      "structure": 0,
+      "threshold": 0.6597845204424242,
+      "kappa": 0.1819789750701839,
+      "beta_max": 0.6090293233843552
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90359388698937,
+        "ramp5s_roa_pct": 86.5178148181038,
+        "ge90_pct": 68.54838709677419,
+        "precision_pct": 94.30781591581653,
+        "recall_pct": 94.58923509022097,
+        "phases": {
+          "reference_rest": 97.41014701590768,
+          "moving": 90.14587175422653,
+          "hold_away": 88.5584742338542
+        },
+        "ramp5s_cycle1_roa_pct": 72.54052780554954,
+        "ramp5s_cycles2_8_roa_pct": 86.5732478353752,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.042875136435031894
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.03,
+        "threshold": 0.6597845204424242,
+        "kappa": 0.1819789750701839,
+        "beta_max": 0.6090293233843552,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 19,
+    "state": "COMPLETE",
+    "value": 84.41742664586826,
+    "params": {
+      "structure": 1,
+      "threshold": 0.6225609745902467,
+      "kappa": 0.09008225938755329,
+      "beta_max": 0.7026169071754822
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.85154610397417,
+        "ramp5s_roa_pct": 86.38644182216547,
+        "ge90_pct": 68.54838709677419,
+        "precision_pct": 94.21682080490388,
+        "recall_pct": 94.59709904426802,
+        "phases": {
+          "reference_rest": 97.44522000380941,
+          "moving": 90.08564016879406,
+          "hold_away": 88.5584742338542
+        },
+        "ramp5s_cycle1_roa_pct": 72.22870340985658,
+        "ramp5s_cycles2_8_roa_pct": 86.49315942864739,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.027909688465297223
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.06,
+        "threshold": 0.6225609745902467,
+        "kappa": 0.09008225938755329,
+        "beta_max": 0.7026169071754822,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 20,
+    "state": "COMPLETE",
+    "value": 84.27785552280214,
+    "params": {
+      "structure": 2,
+      "threshold": 0.586309654741109,
+      "kappa": 0.0654138261826785,
+      "beta_max": 0.7290810065525712
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.91156612069722,
+        "ramp5s_roa_pct": 86.7707657073567,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.14447219009922,
+        "recall_pct": 94.66978206821221,
+        "phases": {
+          "reference_rest": 95.36427411965217,
+          "moving": 90.21834108865178,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.13847994726517,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.12,
+        "threshold": 0.586309654741109,
+        "kappa": 0.0654138261826785,
+        "beta_max": 0.7290810065525712,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 21,
+    "state": "COMPLETE",
+    "value": 84.17604816634565,
+    "params": {
+      "structure": 3,
+      "threshold": 0.5026783050596518,
+      "kappa": 0.14876083980372418,
+      "beta_max": 0.5899401063466598
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.8979110376346,
+        "ramp5s_roa_pct": 86.78604217565507,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.12394858028435,
+        "recall_pct": 94.68098854068329,
+        "phases": {
+          "reference_rest": 95.3240494314654,
+          "moving": 90.20403659959226,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.68457525417601,
+        "ramp5s_cycles2_8_roa_pct": 87.16059325502023,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.00042700877820607276
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.03,
+        "threshold": 0.5026783050596518,
+        "kappa": 0.14876083980372418,
+        "beta_max": 0.5899401063466598,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 22,
+    "state": "COMPLETE",
+    "value": 84.19164208732354,
+    "params": {
+      "structure": 4,
+      "threshold": 0.5463309481759242,
+      "kappa": 0.18768965625437295,
+      "beta_max": 0.5056919398754365
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90217232486535,
+        "ramp5s_roa_pct": 86.74927262253365,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.130318191069,
+        "recall_pct": 94.68141672159939,
+        "phases": {
+          "reference_rest": 95.46267636706845,
+          "moving": 90.20368454433968,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.10012257564169,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.06,
+        "threshold": 0.5463309481759242,
+        "kappa": 0.18768965625437295,
+        "beta_max": 0.5056919398754365,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 23,
+    "state": "COMPLETE",
+    "value": 84.22626853859283,
+    "params": {
+      "structure": 5,
+      "threshold": 0.6614888754635183,
+      "kappa": 0.11718968892534123,
+      "beta_max": 0.7836749758447711
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90380603750675,
+        "ramp5s_roa_pct": 86.76131321642283,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.1358760506698,
+        "recall_pct": 94.67616467021347,
+        "phases": {
+          "reference_rest": 95.4383110310627,
+          "moving": 90.20627578244238,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.1199596130276,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.12,
+        "threshold": 0.6614888754635183,
+        "kappa": 0.11718968892534123,
+        "beta_max": 0.7836749758447711,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 24,
+    "state": "COMPLETE",
+    "value": 84.06117818438646,
+    "params": {
+      "structure": 6,
+      "threshold": 0.5493403524543322,
+      "kappa": 0.16370017238099593,
+      "beta_max": 0.6793643187888035
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88443303235404,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.10830878346236,
+        "recall_pct": 94.6778863580441,
+        "phases": {
+          "reference_rest": 95.25061323721819,
+          "moving": 90.19371745133235,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.03,
+        "threshold": 0.5493403524543322,
+        "kappa": 0.16370017238099593,
+        "beta_max": 0.6793643187888035,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 25,
+    "state": "COMPLETE",
+    "value": 84.06894117127733,
+    "params": {
+      "structure": 7,
+      "threshold": 0.6555675367472648,
+      "kappa": 0.25455508499690405,
+      "beta_max": 0.5773390178264725
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88416041471596,
+        "ramp5s_roa_pct": 86.72213494783708,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11029296634435,
+        "recall_pct": 94.67007510097115,
+        "phases": {
+          "reference_rest": 95.28393067383163,
+          "moving": 90.1919594189817,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.08710881437293,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.06,
+        "threshold": 0.6555675367472648,
+        "kappa": 0.25455508499690405,
+        "beta_max": 0.5773390178264725,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 26,
+    "state": "COMPLETE",
+    "value": 84.08206069730691,
+    "params": {
+      "structure": 8,
+      "threshold": 0.5118966896891265,
+      "kappa": 0.2618365662881993,
+      "beta_max": 0.3971192559104529
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88454532553875,
+        "ramp5s_roa_pct": 86.72227631966052,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11286424328564,
+        "recall_pct": 94.66819775181146,
+        "phases": {
+          "reference_rest": 95.27187762844224,
+          "moving": 90.19313697774908,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.0882971933031,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.12,
+        "threshold": 0.5118966896891265,
+        "kappa": 0.2618365662881993,
+        "beta_max": 0.3971192559104529,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 27,
+    "state": "COMPLETE",
+    "value": 84.67279058180124,
+    "params": {
+      "structure": 0,
+      "threshold": 0.5586226442560023,
+      "kappa": 0.12008142906820692,
+      "beta_max": 0.7215806005184368
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.83915676582257,
+        "ramp5s_roa_pct": 86.28696581055387,
+        "ge90_pct": 67.74193548387096,
+        "precision_pct": 94.27908012706679,
+        "recall_pct": 94.54389667598579,
+        "phases": {
+          "reference_rest": 97.45322466119032,
+          "moving": 90.07129127799838,
+          "hold_away": 88.55715621464877
+        },
+        "ramp5s_cycle1_roa_pct": 72.56489321909477,
+        "ramp5s_cycles2_8_roa_pct": 86.27709314296975,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.04685977371409535
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.03,
+        "threshold": 0.5586226442560023,
+        "kappa": 0.12008142906820692,
+        "beta_max": 0.7215806005184368,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 28,
+    "state": "COMPLETE",
+    "value": 84.22822007917715,
+    "params": {
+      "structure": 1,
+      "threshold": 0.6341314418005494,
+      "kappa": 0.1837414302839937,
+      "beta_max": 0.48424355844399464
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.79390323824308,
+        "ramp5s_roa_pct": 85.97988430897546,
+        "ge90_pct": 66.93548387096774,
+        "precision_pct": 94.22539952945776,
+        "recall_pct": 94.52058680249309,
+        "phases": {
+          "reference_rest": 97.50762988069567,
+          "moving": 90.0196349150572,
+          "hold_away": 88.55715621464877
+        },
+        "ramp5s_cycle1_roa_pct": 72.46108037786418,
+        "ramp5s_cycles2_8_roa_pct": 85.91430380640149,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.026082131662406027
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.06,
+        "threshold": 0.6341314418005494,
+        "kappa": 0.1837414302839937,
+        "beta_max": 0.48424355844399464,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 29,
+    "state": "COMPLETE",
+    "value": 84.27785552280214,
+    "params": {
+      "structure": 2,
+      "threshold": 0.6655939065211789,
+      "kappa": 0.08398136725325057,
+      "beta_max": 0.5403132626747935
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.91156612069722,
+        "ramp5s_roa_pct": 86.7707657073567,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.14447219009922,
+        "recall_pct": 94.66978206821221,
+        "phases": {
+          "reference_rest": 95.36427411965217,
+          "moving": 90.21834108865178,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.13847994726517,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.12,
+        "threshold": 0.6655939065211789,
+        "kappa": 0.08398136725325057,
+        "beta_max": 0.5403132626747935,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 30,
+    "state": "COMPLETE",
+    "value": 84.0770939648326,
+    "params": {
+      "structure": 3,
+      "threshold": 0.6621122240527894,
+      "kappa": 0.2166830482724079,
+      "beta_max": 0.6560928586998379
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88632445884403,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11130279690259,
+        "recall_pct": 94.67708709975581,
+        "phases": {
+          "reference_rest": 95.26203577255077,
+          "moving": 90.19513074376775,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.03,
+        "threshold": 0.6621122240527894,
+        "kappa": 0.2166830482724079,
+        "beta_max": 0.6560928586998379,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 31,
+    "state": "COMPLETE",
+    "value": 84.19164208732354,
+    "params": {
+      "structure": 4,
+      "threshold": 0.7039658389355133,
+      "kappa": 0.14838004186885326,
+      "beta_max": 0.611206765651652
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90217232486535,
+        "ramp5s_roa_pct": 86.74927262253365,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.130318191069,
+        "recall_pct": 94.68141672159939,
+        "phases": {
+          "reference_rest": 95.46267636706845,
+          "moving": 90.20368454433968,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.10012257564169,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.06,
+        "threshold": 0.7039658389355133,
+        "kappa": 0.14838004186885326,
+        "beta_max": 0.611206765651652,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 32,
+    "state": "COMPLETE",
+    "value": 84.22626853859283,
+    "params": {
+      "structure": 5,
+      "threshold": 0.5761155459599875,
+      "kappa": 0.12740140465824365,
+      "beta_max": 0.4566000838454487
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90380603750675,
+        "ramp5s_roa_pct": 86.76131321642283,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.1358760506698,
+        "recall_pct": 94.67616467021347,
+        "phases": {
+          "reference_rest": 95.4383110310627,
+          "moving": 90.20627578244238,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.1199596130276,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.12,
+        "threshold": 0.5761155459599875,
+        "kappa": 0.12740140465824365,
+        "beta_max": 0.4566000838454487,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 33,
+    "state": "COMPLETE",
+    "value": 84.06117818438646,
+    "params": {
+      "structure": 6,
+      "threshold": 0.6225539044209417,
+      "kappa": 0.16321981572268943,
+      "beta_max": 0.7438458901238534
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88443303235404,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.10830878346236,
+        "recall_pct": 94.6778863580441,
+        "phases": {
+          "reference_rest": 95.25061323721819,
+          "moving": 90.19371745133235,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.03,
+        "threshold": 0.6225539044209417,
+        "kappa": 0.16321981572268943,
+        "beta_max": 0.7438458901238534,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 34,
+    "state": "COMPLETE",
+    "value": 84.06894117127733,
+    "params": {
+      "structure": 7,
+      "threshold": 0.619452689275917,
+      "kappa": 0.13701033236872862,
+      "beta_max": 0.7850908445479201
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88416041471596,
+        "ramp5s_roa_pct": 86.72213494783708,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11029296634435,
+        "recall_pct": 94.67007510097115,
+        "phases": {
+          "reference_rest": 95.28393067383163,
+          "moving": 90.1919594189817,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.08710881437293,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.06,
+        "threshold": 0.619452689275917,
+        "kappa": 0.13701033236872862,
+        "beta_max": 0.7850908445479201,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 35,
+    "state": "COMPLETE",
+    "value": 84.08206069730691,
+    "params": {
+      "structure": 8,
+      "threshold": 0.5007014459431819,
+      "kappa": 0.08627328458343915,
+      "beta_max": 0.6221280246166969
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88454532553875,
+        "ramp5s_roa_pct": 86.72227631966052,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11286424328564,
+        "recall_pct": 94.66819775181146,
+        "phases": {
+          "reference_rest": 95.27187762844224,
+          "moving": 90.19313697774908,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.0882971933031,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.12,
+        "threshold": 0.5007014459431819,
+        "kappa": 0.08627328458343915,
+        "beta_max": 0.6221280246166969,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 36,
+    "state": "COMPLETE",
+    "value": 84.87043923696758,
+    "params": {
+      "structure": 0,
+      "threshold": 0.5083323403504209,
+      "kappa": 0.1460410052641146,
+      "beta_max": 0.6808298466022041
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.87038601239631,
+        "ramp5s_roa_pct": 86.33750172449558,
+        "ge90_pct": 67.74193548387096,
+        "precision_pct": 94.31043334204851,
+        "recall_pct": 94.55926471874271,
+        "phases": {
+          "reference_rest": 97.48245735323297,
+          "moving": 90.10278531992584,
+          "hold_away": 88.56690173092535
+        },
+        "ramp5s_cycle1_roa_pct": 72.6297084955999,
+        "ramp5s_cycles2_8_roa_pct": 86.31284676942421,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.048813418671488765
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.03,
+        "threshold": 0.5083323403504209,
+        "kappa": 0.1460410052641146,
+        "beta_max": 0.6808298466022041,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 37,
+    "state": "COMPLETE",
+    "value": 83.5132874408911,
+    "params": {
+      "structure": 1,
+      "threshold": 0.5571553785762307,
+      "kappa": 0.12054683304123466,
+      "beta_max": 0.7995852923366067
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.53143652691634,
+        "ramp5s_roa_pct": 84.8579307753529,
+        "ge90_pct": 65.32258064516128,
+        "precision_pct": 94.22085502629548,
+        "recall_pct": 94.22979260021451,
+        "phases": {
+          "reference_rest": 97.64417518803123,
+          "moving": 89.72005415736625,
+          "hold_away": 88.57365234242225
+        },
+        "ramp5s_cycle1_roa_pct": 72.14411438324319,
+        "ramp5s_cycles2_8_roa_pct": 84.44547332253009,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.03979092491790652
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.06,
+        "threshold": 0.5571553785762307,
+        "kappa": 0.12054683304123466,
+        "beta_max": 0.7995852923366067,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 38,
+    "state": "COMPLETE",
+    "value": 84.27785552280214,
+    "params": {
+      "structure": 2,
+      "threshold": 0.698639282349376,
+      "kappa": 0.1688663261680729,
+      "beta_max": 0.7657085778407996
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.91156612069722,
+        "ramp5s_roa_pct": 86.7707657073567,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.14447219009922,
+        "recall_pct": 94.66978206821221,
+        "phases": {
+          "reference_rest": 95.36427411965217,
+          "moving": 90.21834108865178,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.13847994726517,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 8,
+        "h": 0.12,
+        "threshold": 0.698639282349376,
+        "kappa": 0.1688663261680729,
+        "beta_max": 0.7657085778407996,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 39,
+    "state": "COMPLETE",
+    "value": 84.0770939648326,
+    "params": {
+      "structure": 3,
+      "threshold": 0.5468355565309456,
+      "kappa": 0.1164936263683963,
+      "beta_max": 0.5296401146883201
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88632445884403,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11130279690259,
+        "recall_pct": 94.67708709975581,
+        "phases": {
+          "reference_rest": 95.26203577255077,
+          "moving": 90.19513074376775,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 5.530973430722952e-05
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.03,
+        "threshold": 0.5468355565309456,
+        "kappa": 0.1164936263683963,
+        "beta_max": 0.5296401146883201,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 40,
+    "state": "COMPLETE",
+    "value": 84.19164208732354,
+    "params": {
+      "structure": 4,
+      "threshold": 0.5962820964717509,
+      "kappa": 0.11859141163748563,
+      "beta_max": 0.6923383554826349
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90217232486535,
+        "ramp5s_roa_pct": 86.74927262253365,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.130318191069,
+        "recall_pct": 94.68141672159939,
+        "phases": {
+          "reference_rest": 95.46267636706845,
+          "moving": 90.20368454433968,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.10012257564169,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.06,
+        "threshold": 0.5962820964717509,
+        "kappa": 0.11859141163748563,
+        "beta_max": 0.6923383554826349,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 41,
+    "state": "COMPLETE",
+    "value": 84.22626853859283,
+    "params": {
+      "structure": 5,
+      "threshold": 0.5912302557571952,
+      "kappa": 0.14945587105089492,
+      "beta_max": 0.6736317748756439
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.90380603750675,
+        "ramp5s_roa_pct": 86.76131321642283,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.1358760506698,
+        "recall_pct": 94.67616467021347,
+        "phases": {
+          "reference_rest": 95.4383110310627,
+          "moving": 90.20627578244238,
+          "hold_away": 88.5767025381498
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.1199596130276,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 16,
+        "h": 0.12,
+        "threshold": 0.5912302557571952,
+        "kappa": 0.14945587105089492,
+        "beta_max": 0.6736317748756439,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 42,
+    "state": "COMPLETE",
+    "value": 84.06117818438646,
+    "params": {
+      "structure": 6,
+      "threshold": 0.7267816132871343,
+      "kappa": 0.10997202057190933,
+      "beta_max": 0.7103952158447308
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88443303235404,
+        "ramp5s_roa_pct": 86.7261781852371,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.10830878346236,
+        "recall_pct": 94.6778863580441,
+        "phases": {
+          "reference_rest": 95.25061323721819,
+          "moving": 90.19371745133235,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.09480748908562,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.03,
+        "threshold": 0.7267816132871343,
+        "kappa": 0.10997202057190933,
+        "beta_max": 0.7103952158447308,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 43,
+    "state": "COMPLETE",
+    "value": 84.06894117127733,
+    "params": {
+      "structure": 7,
+      "threshold": 0.5175934221494969,
+      "kappa": 0.18313771184192112,
+      "beta_max": 0.6299154123889794
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88416041471596,
+        "ramp5s_roa_pct": 86.72213494783708,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11029296634435,
+        "recall_pct": 94.67007510097115,
+        "phases": {
+          "reference_rest": 95.28393067383163,
+          "moving": 90.1919594189817,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.08710881437293,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.06,
+        "threshold": 0.5175934221494969,
+        "kappa": 0.18313771184192112,
+        "beta_max": 0.6299154123889794,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  },
+  {
+    "number": 44,
+    "state": "COMPLETE",
+    "value": 84.08206069730691,
+    "params": {
+      "structure": 8,
+      "threshold": 0.5270676522688313,
+      "kappa": 0.13952800180913158,
+      "beta_max": 0.7658568569127199
+    },
+    "attrs": {
+      "metrics": {
+        "records": 20,
+        "instances": 124,
+        "global_roa_pct": 90.88454532553875,
+        "ramp5s_roa_pct": 86.72227631966052,
+        "ge90_pct": 69.35483870967742,
+        "precision_pct": 94.11286424328564,
+        "recall_pct": 94.66819775181146,
+        "phases": {
+          "reference_rest": 95.27187762844224,
+          "moving": 90.19313697774908,
+          "hold_away": 88.57171424146127
+        },
+        "ramp5s_cycle1_roa_pct": 72.73285922284943,
+        "ramp5s_cycles2_8_roa_pct": 87.0882971933031,
+        "lost_by_condition": {
+          "staircase": 2,
+          "triangular-ramp10s": 1,
+          "triangular-ramp20s": 0,
+          "triangular-ramp40s": 0,
+          "triangular-ramp5s": 1
+        },
+        "timing_scope": "shared search work; final gate measures the full ordinary CPU loop",
+        "memory_hit_rate": 0.0
+      },
+      "settings": {
+        "bins": 32,
+        "h": 0.12,
+        "threshold": 0.5270676522688313,
+        "kappa": 0.13952800180913158,
+        "beta_max": 0.7658568569127199,
+        "momentum": 0.95,
+        "calibration_only": true,
+        "conservative": false
+      }
+    }
+  }
+]

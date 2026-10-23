@@ -1,0 +1,184 @@
+{
+  "decided_at_utc": "2026-10-22T15:57:16.551451+00:00",
+  "run_root": "L2/standard",
+  "actual": {
+    "records": 20,
+    "instances": 124,
+    "global_roa_pct": 91.65800814434645,
+    "ramp5s_roa_pct": 85.05194597545375,
+    "ge90_pct": 75.80645161290323,
+    "precision_pct": 95.6784074331502,
+    "recall_pct": 94.14458283176906,
+    "phases": {
+      "reference_rest": 97.54215033412389,
+      "moving": 90.9428264970432,
+      "hold_away": 91.00450254396304
+    },
+    "ramp5s_cycle1_roa_pct": 68.97424859292549,
+    "ramp5s_cycles2_8_roa_pct": 85.0129189192,
+    "lost_by_condition": {
+      "staircase": 1,
+      "triangular-ramp10s": 1,
+      "triangular-ramp20s": 0,
+      "triangular-ramp40s": 0,
+      "triangular-ramp5s": 1
+    },
+    "median_batch_ms": 86.15565003128722,
+    "p95_batch_ms": 105.50950501929036,
+    "timing_scope": "native Windows CPU; raw filtering through closed-loop update; four independent record workers, four Torch threads each",
+    "memory_hit_rate": 0.042875136435031894
+  },
+  "gates": {
+    "reference_rest": true,
+    "moving": true
+  },
+  "passed": true,
+  "selection": {
+    "selected_at_utc": "2026-10-22T15:49:31.006370+00:00",
+    "repeats": [
+      {
+        "trial": 23,
+        "parameters": {
+          "threshold": 0.5126006363395559,
+          "strength": 0.9711127696943692
+        },
+        "seed_metrics": [
+          {
+            "global_roa_pct": 90.8844609258209,
+            "ramp5s_roa_pct": 84.5741243249956,
+            "precision_pct": 95.07969954550755
+          },
+          {
+            "global_roa_pct": 90.50859422689372,
+            "ramp5s_roa_pct": 83.73340861050514,
+            "precision_pct": 94.81286480562694
+          },
+          {
+            "global_roa_pct": 90.88830466221745,
+            "ramp5s_roa_pct": 84.05502509589626,
+            "precision_pct": 95.35620539058857
+          }
+        ],
+        "median_objective": 87.47166487905685,
+        "selected_seed": 2
+      },
+      {
+        "trial": 21,
+        "parameters": {
+          "threshold": 0.5398960201932254,
+          "strength": 0.9936664677697393
+        },
+        "seed_metrics": [
+          {
+            "global_roa_pct": 90.87042080802938,
+            "ramp5s_roa_pct": 84.5060958432494,
+            "precision_pct": 95.246299860406
+          },
+          {
+            "global_roa_pct": 90.49102836318225,
+            "ramp5s_roa_pct": 83.60169280738684,
+            "precision_pct": 94.96788055925421
+          },
+          {
+            "global_roa_pct": 90.81256263258922,
+            "ramp5s_roa_pct": 83.77941773286932,
+            "precision_pct": 95.50918336466381
+          }
+        ],
+        "median_objective": 87.29599018272927,
+        "selected_seed": 2
+      },
+      {
+        "trial": 3,
+        "parameters": {
+          "threshold": 0.537573915808109,
+          "strength": 0.9875504942376699
+        },
+        "seed_metrics": [
+          {
+            "global_roa_pct": 90.86131482010131,
+            "ramp5s_roa_pct": 84.48780292368033,
+            "precision_pct": 95.2315063623
+          },
+          {
+            "global_roa_pct": 90.49052267596319,
+            "ramp5s_roa_pct": 83.56340222269112,
+            "precision_pct": 94.97038948993905
+          },
+          {
+            "global_roa_pct": 90.81791871159342,
+            "ramp5s_roa_pct": 83.75936614968772,
+            "precision_pct": 95.50456842078565
+          }
+        ],
+        "median_objective": 87.28864243064058,
+        "selected_seed": 2
+      }
+    ],
+    "selection": {
+      "trial": 23,
+      "parameters": {
+        "threshold": 0.5126006363395559,
+        "strength": 0.9711127696943692
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 90.8844609258209,
+          "ramp5s_roa_pct": 84.5741243249956,
+          "precision_pct": 95.07969954550755
+        },
+        {
+          "global_roa_pct": 90.50859422689372,
+          "ramp5s_roa_pct": 83.73340861050514,
+          "precision_pct": 94.81286480562694
+        },
+        {
+          "global_roa_pct": 90.88830466221745,
+          "ramp5s_roa_pct": 84.05502509589626,
+          "precision_pct": 95.35620539058857
+        }
+      ],
+      "median_objective": 87.47166487905685,
+      "selected_seed": 2
+    },
+    "checkpoint": "L2/standard/round3/seed2/model.pt",
+    "checkpoint_sha256": "b9f9df948b25670e03e84ab157645168f80d0781ae4ba9f06df58324d7018ad5",
+    "scope": "post-calibration validation Jaccard; final gate uses original evaluator"
+  },
+  "settings": {
+    "bins": 8,
+    "h": 0.03,
+    "threshold": 0.6597845204424242,
+    "kappa": 0.1819789750701839,
+    "beta_max": 0.6090293233843552,
+    "momentum": 0.95,
+    "calibration_only": true,
+    "conservative": false
+  },
+  "reference": {
+    "records": 20,
+    "instances": 124,
+    "global_roa_pct": 91.23603366911999,
+    "ramp5s_roa_pct": 84.70843915320941,
+    "ge90_pct": 72.58064516129032,
+    "precision_pct": 96.38295672759784,
+    "recall_pct": 93.01151565299055,
+    "phases": {
+      "reference_rest": 97.13086011127373,
+      "moving": 90.48105217523515,
+      "hold_away": 89.97878804417557
+    },
+    "ramp5s_cycle1_roa_pct": 65.88985768805549,
+    "ramp5s_cycles2_8_roa_pct": 84.94462563237336,
+    "lost_by_condition": {
+      "staircase": 2,
+      "triangular-ramp10s": 1,
+      "triangular-ramp20s": 0,
+      "triangular-ramp40s": 0,
+      "triangular-ramp5s": 1
+    },
+    "median_batch_ms": 127.91939999442548,
+    "p95_batch_ms": 151.3212149904575,
+    "timing_scope": "native Windows CPU; raw filtering through closed-loop update; four independent record workers, four Torch threads each"
+  }
+}

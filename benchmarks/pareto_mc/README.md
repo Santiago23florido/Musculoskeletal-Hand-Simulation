@@ -204,3 +204,29 @@ declaradas en el diario. No hay resultado L2 hasta que exista su `gate.json`.
 Perfil adicional de L1 con un registro a la vez: mediana **56,12 ms**, p95
 **360,87 ms**; tampoco satisface los 22 ms. Las pruebas y mediciones iniciales
 de C2 están en `docs/benchmarks/pareto_mc_l2_setup/`.
+
+### L2 completado
+
+La primera estructura supera la puerta, después de 45 ensayos, repeticiones
+con tres semillas y tres rondas DAgger nuevas. Validación sub-04, 20 registros
+y 124 instancias:
+
+| Métrica | L1 | L2 |
+|---|---:|---:|
+| RoA global | 91,24 % | 91,66 % |
+| RoA ramp5s | 84,71 % | 85,05 % |
+| Instancias ≥90 % | 72,58 % | 75,81 % |
+| Precisión | 96,38 % | 95,68 % |
+| Recall | 93,01 % | 94,14 % |
+| Reposo de referencia | 97,13 % | 97,54 % |
+| Movimiento | 90,48 % | 90,94 % |
+
+Pasa reposo ≥97 % y mejora movimiento frente a L1. La pérdida de precisión
+frente a Pareto es 0,38 pp, dentro del margen de un punto. Ramp5s: ciclo 1
+68,97 %, ciclos 2–8 85,01 %. Memoria activa en el 4,29 % de pares unidad/lote.
+
+Tiempo CPU con cuatro registros simultáneos: mediana **86,16 ms**, p95
+**105,51 ms**. No satisface 22 ms; queda pendiente un perfil aislado de L2.
+Se conserva L2. Son resultados exploratorios de validación, sin evaluación
+externa ni confirmación nueva. La puerta y los hashes están en
+[el resultado versionado](../../docs/benchmarks/pareto_mc_l2_standard/gate.json).

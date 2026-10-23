@@ -234,3 +234,64 @@ ensayos en marcha ni se reinicia la búsqueda con otra semilla.
 Verificación de la implementación L2 antes de lanzar búsqueda: 137 pruebas
 pasadas y 2 omitidas en `pytest benchmarks -q`; Ruff check y format limpios
 en 185 archivos. Los resultados L1 siguen congelados y sin cambios.
+
+### L2 — ejecución iniciada
+
+22 de octubre, 09:03 CEST: búsqueda nativa Windows iniciada desde el commit
+`3bb3a68`, cuatro procesos, Torch cuatro hilos por proceso y OpenBLAS uno.
+Protocolo y estudio en `outputs/pareto_mc/development_v2/L2/standard/`;
+salida en `l2_search_v1.stdout.log` y errores en `l2_search_v1.stderr.log`,
+ambos dentro de `outputs/pareto_mc/development_v2/`. La búsqueda continúa en
+segundo plano. Aún no existe una decisión de puerta L2. No se debe relanzar
+otro proceso sobre el mismo estudio mientras siga activo.
+
+### L2/standard — resultado automático
+
+RoA global 91.6580 %, ramp5s 85.0519 %, precisión 95.6784 %. Reposo 97.5422 %, movimiento 90.9428 %. Puertas: {'reference_rest': True, 'moving': True}. Superada: True. Diagnósticos y sello en `C:\Users\USER\Documents\AppsPlayGround\Musculoskeletal-Hand-Simulation\outputs\pareto_mc\development_v2\L2\standard`.
+
+### L2 — cierre revisado (23 de octubre de 2026)
+
+Finalizó el 22 de octubre a las 17:57 CEST. La primera estructura **superó ambas
+puertas**; no se ejecuta la alternativa. Se completaron 45 ensayos de memoria,
+repetición de los tres mejores con tres semillas y las tres rondas nuevas de
+DAgger, con tres semillas por ronda. El checkpoint final es ronda 3, semilla 2:
+`b9f9df948b25670e03e84ab157645168f80d0781ae4ba9f06df58324d7018ad5`.
+
+Validación sub-04: 20 registros, 124 instancias, predicciones selladas y evaluador
+original. Todos los valores de exactitud de la tabla son porcentajes.
+
+| Métrica | L1 | L2 |
+|---|---:|---:|
+| RoA global | 91,2360 | 91,6580 |
+| RoA ramp5s | 84,7084 | 85,0519 |
+| Instancias con RoA ≥90 % | 72,5806 | 75,8065 |
+| Precisión | 96,3830 | 95,6784 |
+| Recall | 93,0115 | 94,1446 |
+| Reposo de referencia | 97,1309 | 97,5422 |
+| Movimiento | 90,4811 | 90,9428 |
+| Meseta alejada | 89,9788 | 91,0045 |
+| Ramp5s ciclo 1 | 65,8899 | 68,9742 |
+| Ramp5s ciclos 2–8 | 84,9446 | 85,0129 |
+
+Puertas: reposo 97,5422 % ≥97 %; movimiento 90,9428 % ≥90,4811 %.
+Global +0,4220 pp y ramp5s +0,3435 pp frente a L1. La precisión cae 0,7045 pp
+frente a L1 y 0,3787 pp frente a Pareto-rerun: dentro del margen de un punto.
+Unidades perdidas por condición: staircase 1, ramp10s 1, ramp20s 0, ramp40s 0,
+ramp5s 1. La memoria modifica el filtro en el 4,2875 % de pares unidad/lote.
+
+Configuración: 8 bins, h=0,03, confianza mínima 0,6597845, κ=0,1819790,
+beta_max=0,6090293, momento inactivo 0,95, solo instantánea de calibración.
+Umbral final de C4 0,5126006 y fuerza residual 0,9711128. Los centroides
+continúan su EMA; no se restauran abruptamente desde memoria.
+
+CPU: mediana **86,1557 ms**, p95 **105,5095 ms**, con cuatro registros simultáneos
+y cuatro hilos Torch cada uno. Esta medición incluye todo el bucle; no es un
+perfil aislado y **no satisface 22 ms**. Las condiciones de contención no permiten
+atribuir la diferencia temporal frente a L1 a una mejora de implementación.
+
+Se conservan protocolo, búsqueda, repeticiones y puerta en
+`docs/benchmarks/pareto_mc_l2_standard/`, y diagnósticos completos en las salidas
+selladas. Sigue siendo desarrollo exploratorio; sub-05 no se abrió y no existe
+evaluación externa ni confirmación nueva. Decisión: conservar L2 y continuar
+a L3. Su puerta exigirá global ≥92,6580081443 % y, en ramp5s, ciclos 2–8
+al menos cinco puntos por encima del ciclo 1.
