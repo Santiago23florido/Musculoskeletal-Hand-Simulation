@@ -1,144 +1,142 @@
-# Recuperación con plantillas multicanal y respaldo de Pareto
+# Multichannel template recovery with Pareto fallback
 
-Experimento posterior al residual de 97 parámetros. Su objetivo es contrastar
-tres mecanismos: direcciones físicas de corrección adicionales, reidentificación
-de unidades inactivas y conservación de las descargas al regresar a la postura
-de calibración. Incluye una corrección constante seleccionada sin RoA como
-control de la utilidad del condicionamiento aprendido.
+This experiment follows the 97-parameter residual. It tests three mechanisms:
+additional physical correction directions, reidentification of inactive units,
+and preservation of discharges on returning to the calibration posture.
+A constant correction selected without RoA provides a control for the value
+of learned conditioning.
 
-Este es un **control analítico inspirado en MoCA-K**, no una implementación
-completa de MoCA, una nueva ejecución del Stage A ni un modelo ciego. Usa ángulo
-medido. No implementa todavía la red convolucional FiLM de deformación del
-documento guía, supervisión con trayectorias MUAP verdaderas, covarianza FIFO
-completa, peel-off ni nuevas unidades no presentes en calibración.
+This **analytic control inspired by MoCA-K** uses the measured angle. A full
+MoCA implementation, a new Stage A run, and an EMG-only model are outside its
+scope. It does not implement the guide's FiLM morphing CNN, supervision with
+true MUAP trajectories, full FIFO covariance, peel-off, or units absent from
+calibration.
 
-## Fundamento y decisiones anteriores al test
+## Rationale and decisions made before testing
 
-El documento guía, §§5.2–5.4 y algoritmo 1, propone representar explícitamente
-los MUAP y sintetizar filtros a partir de la mezcla. El modelo de señal es
-una suma de trenes de descargas convolucionados con MUAP multicanal variables.
-La adaptación de esta mezcla es también el problema del
-[benchmark de Mendez Guerra et al.](https://doi.org/10.1088/1741-2552/ad5ebf).
-La teoría de inversión y sus errores por semejanza entre MUAP, ruido y
-condicionamiento se desarrolla en
-[Klotz y Rohlén](https://arxiv.org/abs/2502.04065).
-La creación, búsqueda y actualización de plantillas tiene precedentes en
-[Nawab et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC2932793/).
-Estas fuentes justifican mecanismos; no prueban la eficacia de este experimento.
+The research guide, §§5.2–5.4 and algorithm 1, proposes explicit MUAP
+representation and filter synthesis from the mixture. The signal model sums
+discharge trains convolved with varying multichannel MUAPs. Adapting to this
+mixture is also the problem studied by the
+[Mendez Guerra et al. benchmark](https://doi.org/10.1088/1741-2552/ad5ebf).
+[Klotz and Rohlén](https://arxiv.org/abs/2502.04065) develop inversion theory and
+errors arising from MUAP similarity, noise, and conditioning.
+[Nawab et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC2932793/) provide
+precedents for template creation, search, and updates. These sources motivate
+mechanisms without proving this experiment's effectiveness.
 
-### 1. Plantillas y nuevas direcciones
+### 1. Templates and additional directions
 
-Se blanquean espacialmente los 100 canales con la covarianza de calibración:
+The 100 channels are spatially whitened using calibration covariance:
 
 `S = (C_cal + 0.05 trace(C_cal)/100 I)^(-1/2)`.
 
-Luego se usan los diez retardos originales, dando 1.000 coordenadas. Es una
-aproximación separable de la covarianza, diferente del blanqueamiento adaptativo
-completo de Pareto, que permanece como rama independiente. Las plantillas `H0_j`
-son promedios del EMG extendido en las descargas predichas de calibración. Son
-estimaciones multicanal alineadas a esos picos, no MUAP verdaderos del simulador
-ni necesariamente su forma temporal completa.
+The original ten lags then give 1,000 coordinates. This separable covariance
+approximation differs from full adaptive whitening in Pareto, which remains an
+independent branch. Templates `H0_j` average extended EMG at predicted calibration
+discharges. They are multichannel estimates aligned to those peaks, without
+providing the simulator's true MUAPs or necessarily their full temporal shapes.
 
-Con `q = (ángulo - ángulo de calibración)/40`, se ajusta en línea
+With `q = (angle - calibration angle)/40`, online fitting uses
 
 `H_j(q) = H0_j + q B_j`.
 
-El ajuste de `B_j` resuelve una regresión ridge mediante estadísticas suficientes,
-con pseudoconteo 20. Solo incorpora picos previos de Pareto cuya similitud con
-la plantilla retenida supera un umbral de calibración; la decisión del lote se
-emite **antes** de incorporar sus observaciones. `H0` nunca se sobrescribe y
-`||H_j(q)-H0_j|| <= 0.5 ||H0_j||`. La dependencia lineal en el ángulo es una
-hipótesis local con capacidad limitada, no una ley fisiológica demostrada.
+Fitting `B_j` solves ridge regression through sufficient statistics, with
+pseudocount 20. It incorporates only previous Pareto peaks whose similarity to
+the retained template exceeds a calibration threshold. The batch decision is
+emitted **before** incorporating that batch's observations. `H0` is immutable
+and `||H_j(q)-H0_j|| <= 0.5 ||H0_j||`. Linear dependence on angle is a limited
+local hypothesis, without an established physiological law.
 
-Con las columnas de `H` normalizadas, los filtros son
+With normalized columns of `H`, filters are
 
 `F(H) = H (H.T H + 0.1 I)^(-1)`.
 
-Es el inverso regularizado del modelo de covarianza `H H.T + 0.1 I`, mediante
-una resolución pequeña compartida por unidades. Su matriz tiene autovalores
-al menos 0,1, lo que asegura una resolución única. No demuestra identificabilidad
-de todas las unidades, invertibilidad global del sistema ni mejora de RoA.
+This is the regularized inverse of the covariance model `H H.T + 0.1 I`,
+computed through a small solve shared across units. Its matrix has eigenvalues
+of at least 0.1, ensuring a unique solve. This does not establish identifiability
+of every unit, global system invertibility, or improved RoA.
 
-La dirección física añadida al residual previo es
+The physical direction added to the earlier residual is
 
 `r = z [F(H(q)) - F(H0)] gain_cal`.
 
-Su RMS por unidad se limita a 0,25 veces el RMS de la fuente de calibración.
-Así se ensayan direcciones multicanal que no están restringidas a la recta
-entre los filtros fijo y Pareto. La cota RMS es una cota de desplazamiento de
-salida por lote; no garantiza menor error de descargas.
+Its per-unit RMS is capped at 0.25 times the calibration-source RMS. This tests
+multichannel directions beyond the line between fixed and Pareto filters.
+The RMS bound limits batch output displacement; it does not guarantee lower
+discharge error.
 
-### 2. Recuperación explícita
+### 2. Explicit recovery
 
-Un detector independiente recibe las fuentes de `F(H(q))`, con amplitudes y
-centroides estimados únicamente en calibración. Retiene la plantilla de una
-unidad aunque Pareto no produzca picos de ella. Puede proponer una descarga
-si la rama principal lleva al menos 250 ms sin detectar esa unidad y se cumplen:
+A separate detector receives `F(H(q))` sources, with amplitudes and centroids
+estimated only during calibration. It retains a unit's template even if Pareto
+produces no peaks for it. It may propose a discharge after the main branch has
+gone at least 250 ms without detecting that unit, provided that:
 
-- evidencia multicanal superior al percentil 10 de sus picos de calibración;
-- similitud mayor que con las demás identidades calibradas; los empates se rechazan;
-- distancia mínima original de 10 ms respecto a descargas emitidas, también
-  entre lotes y respecto a picos principales del lote actual.
+- Multichannel evidence exceeds the tenth percentile of its calibration peaks.
+- Similarity exceeds that of every other calibrated identity; ties are rejected.
+- The original 10 ms minimum distance from emitted discharges is respected,
+  across batches and relative to main-branch peaks in the current batch.
 
-No se obliga a disparar a una unidad ausente: sin evidencia no se añade nada.
-El mecanismo no depende de que la pérdida de contraste proporcione gradiente
-a una unidad inactiva. Es una decisión de búsqueda/detección, no una nueva
-pérdida diferenciable de recuperación. Se miden sus posibles falsos positivos.
+No event is added without evidence. Recovery does not rely on contrast-loss
+gradients reaching an inactive unit. It is a search/detection decision, with
+its false positives measured separately from differentiable training losses.
 
-### 3. Protección de la postura de referencia
+### 3. Reference-posture protection
 
-La corrección neuronal anterior y la dirección física se multiplican por
-`clip((|q|-0.025)/0.1, 0, 1)`. Si `|q|<=0.025` y la velocidad normalizada
-`|v|<=0.1`, se devuelven las descargas originales de la **rama Pareto completa**.
-Los centroides alterados del detector secundario no intervienen en ese respaldo.
-La condición depende de cinemática actual, nunca del nombre de la condición,
-la duración conocida del registro ni etiquetas futuras.
+The earlier neural correction and physical direction are multiplied by
+`clip((|q|-0.025)/0.1, 0, 1)`. When `|q|<=0.025` and normalized velocity
+`|v|<=0.1`, the original discharges from the **full Pareto branch** are returned.
+Altered secondary-detector centroids do not affect that fallback. The condition
+depends on current kinematics, without condition names, known recording duration,
+or future labels.
 
-Se comprueba igualdad exacta con Pareto en las muestras respaldadas. Esto no
-garantiza ausencia de regresión en posturas estáticas alejadas de la calibración,
-en las transiciones ni en cualquier fase final de otros datos.
+Exact equality with Pareto is checked on fallback samples. This cannot guarantee
+absence of regression at static postures away from calibration, during
+transitions, or in final phases of other data.
 
-## Comparación y generalización
+## Comparison and generalization
 
-Se mantienen los cuatro sujetos externos `sub-02..05` y sus mismos 80 registros,
-591 instancias calibradas. Los ocho modelos neuronales anteriores conservan sus
-pesos y combinan las dos semillas como antes. No se reentrena una red nueva.
-La regresión de plantillas es una adaptación causal al registro, regularizada
-y basada en predicciones, no en descargas verdaderas posteriores a calibración.
+The same four outer subjects, `sub-02..05`, provide 80 records and 591 calibrated
+instances. All eight earlier neural models retain their weights, combining the
+two seeds as before. No new network is trained. Template regression is causal,
+regularized adaptation to the recording, based on predictions rather than true
+post-calibration discharges.
 
-En cada partición se comparan constantes `[0, -0.075, -0.15, 0.075, 0.15]`
-usando las tres condiciones de validación del estudio anterior a 25 dB y un
-sujeto distinto del externo. Se aplica el mismo replay y objetivo sin etiquetas,
-con cero elegible, mejora mínima del 0,5% y regresión por condición máxima 0,01.
-No se selecciona una constante por RoA. El sujeto original de ajuste de Pareto,
-`sub-01`, nunca se presenta como externo. 5 s, 20 s y 15 dB no participan en
-la selección. La red anterior conserva su entrenamiento original.
+Each fold compares constants `[0, -0.075, -0.15, 0.075, 0.15]` using the prior
+study's three validation conditions at 25 dB in a subject distinct from the
+outer subject. The same replay and unsupervised objective apply, with zero
+eligible, at least 0.5% improvement, and at most 0.01 regression per condition.
+RoA is excluded from constant selection. The original Pareto fitting subject,
+`sub-01`, is never presented as an outer subject. The 5 s and 20 s ramps and
+15 dB are excluded from selection. The previous network retains its original
+training.
 
-| Método | Función |
+| Method | Role |
 | --- | --- |
-| `pareto` | Referencia original completa |
-| `previous` | Residual neuronal anterior, pesos y predicciones conservados |
-| `constant` | Corrección constante con selección sin etiquetas |
-| `protected` | Red anterior con atenuación y respaldo de referencia |
-| `physical` | `protected` más dirección física, sin rescate de descargas |
-| `rescue` | Variante principal: `physical` más recuperación explícita |
+| `pareto` | Full original reference |
+| `previous` | Earlier neural residual, with weights and predictions retained |
+| `constant` | Constant correction selected without labels |
+| `protected` | Earlier network with attenuation and reference fallback |
+| `physical` | `protected` plus physical direction, without discharge rescue |
+| `rescue` | Primary variant: `physical` plus explicit recovery |
 
-El método principal se fija antes de puntuar y no se sustituye por la mejor
-ablación al ver el RoA. Criterios: +5 puntos en cada rampa 5/10 s, ninguna pérdida
-en escalera, fase final y unidades finales ≥90%, mejora media estricta y ninguna
-pérdida a 15 dB. Se conserva la tolerancia de 2 ms y alineación del evaluador
-original, incluida su realineación separada por fase.
+The primary method is fixed before scoring and is not replaced by the best
+ablation after examining RoA. Criteria require five-point gains on both 5/10 s
+ramps, no loss in staircase, final phase, or final units ≥90%, a strictly higher
+global mean, and no loss at 15 dB. Original evaluator alignment and 2 ms
+tolerance are retained, including separate realignment within each phase.
 
-**Todos los resultados originales ya se examinaron.** Este estudio es exploratorio;
-la separación por sujeto impide ajuste directo con ese sujeto, pero no elimina
-la exposición previa del diseño al benchmark. Nuevos registros reservados y
-otros generadores o datos humanos son necesarios para confirmación independiente.
-No se usa ELMo ni se atribuye a su trabajo sobre texto evidencia sobre EMG.
+**All original results had already been examined.** Subject separation prevents
+direct fitting on the outer subject, but cannot remove prior design exposure
+to the benchmark. Independent confirmation requires newly reserved records and
+other generators or human data. The method uses no ELMo component or evidence
+from its text experiments.
 
-## Reproducción y controles
+## Reproduction and controls
 
-Usar `.venv-benchmarks`, los datos existentes y el estudio residual anterior.
-Para otra ejecución, definir antes `TEMPLATE_RESCUE_OUTPUT` con otra carpeta.
+Use `.venv-benchmarks`, the existing data, and the preceding residual study.
+Set `TEMPLATE_RESCUE_OUTPUT` to a fresh directory for another run.
 
 ```powershell
 .\.venv-benchmarks\Scripts\python.exe -m pytest -q benchmarks/template_rescue/test_rescue.py
@@ -151,61 +149,63 @@ Para otra ejecución, definir antes `TEMPLATE_RESCUE_OUTPUT` con otra carpeta.
 .\.venv-benchmarks\Scripts\python.exe -m benchmarks.analyze_template_rescue
 ```
 
-`predict --subject sub-02` permite generar una partición; después de las cuatro
-se usa `seal` antes de `score`. Los 320 archivos nuevos de predicciones se sellan
-antes de abrir las etiquetas para puntuar el primero. Las predicciones neuronales
-anteriores se comparan sin modificación. Se registran hashes de código,
-protocolo, modelos previos, calibraciones, señales, ángulos y predicciones.
+`predict --subject sub-02` generates one fold; after all four, run `seal` before
+`score`. All 320 new prediction files are sealed before opening labels to score
+the first. Earlier neural predictions are compared unchanged. Hashes cover
+code, protocol, previous models, calibrations, signals, angles, and predictions.
 
-Las pruebas numéricas cubren el inverso regularizado frente a la resolución
-densa, canales degenerados, anclaje y cota del morfismo, permutación de unidades,
-rechazo de identidades ambiguas, recuperación con evidencia y refractario entre
-lotes. Una perturbación real de lotes futuros comprueba que las primeras
-24.480 muestras de fuentes, evidencia y descargas permanecen idénticas.
-La causalidad es por lotes de 100 ms **después del preprocesamiento offline**
-original; no se afirma un preprocesador de EMG completamente online.
+Numerical tests cover the regularized inverse against a dense solve, degenerate
+channels, morph anchoring and bounds, unit permutation, ambiguous-identity
+rejection, evidence-based recovery, and cross-batch refractory behavior.
+A real perturbation of future batches checks that the first 24,480 samples of
+sources, evidence, and discharges remain identical. Causality applies to
+100 ms batches **after the original offline preprocessing**; fully online raw
+EMG preprocessing is not established.
 
-El tiempo de la rama adicional excluye la adaptación Pareto, preprocesamiento
-y lectura de disco. No acredita la latencia completa de MoCA del documento.
-Los resultados y fallos se conservan en el [resumen](../../docs/benchmarks/template_rescue_summary.json).
+Timing of the additional branch excludes Pareto adaptation, preprocessing, and
+disk reads, so it cannot establish the guide's full MoCA latency. The
+[summary](../../docs/benchmarks/template_rescue_summary.json) retains results
+and failures.
 
-## Resultado ejecutado
+## Measured results
 
-**NO-GO.** En los 80 registros externos, RoA medio 81,4166% frente a 80,8885%
-de Pareto y 81,6896% del residual anterior. Rampa 5 s: +2,8785 puntos frente
-a Pareto; 10 s: +0,2665; escalera: −0,1845; 15 dB: +1,0239. Se conservan
-511 instancias finales ≥90%, igual que Pareto y frente a 501 del residual previo.
-La fase final pierde 0,00025545 puntos, por lo que también falla la condición
-estricta de ausencia de pérdida. Los umbrales originales permanecen vigentes.
+The primary method did not meet the acceptance criteria. Mean RoA on the
+80 outer-test records is 81.4166%, compared with Pareto's 80.8885% and the
+previous residual's 81.6896%. Differences from Pareto are +2.8785 points on
+5 s ramps, +0.2665 on 10 s ramps, −0.1845 on staircase, and +1.0239 at 15 dB.
+**Final retention returns to 511 instances at or above 90%, matching Pareto and
+improving on the earlier residual's 501.** Final-phase RoA loses 0.00025545
+points, failing the strict no-loss criterion. Original thresholds remain in
+force.
 
-| Variante | RoA medio (%) | Instancias finales ≥90% |
+| Variant | Mean RoA (%) | Final instances ≥90% |
 | --- | ---: | ---: |
-| Pareto | 80,8885 | 511 |
-| Residual anterior | **81,6896** | 501 |
-| Constante seleccionada | 80,8121 | 510 |
-| Protección | 81,6706 | **511** |
-| Protección + dirección física | 81,4984 | 511 |
-| Principal con recuperación | 81,4166 | 511 |
+| Pareto | 80.8885 | 511 |
+| Previous residual | 81.6896 | 501 |
+| Selected constant | 80.8121 | 510 |
+| Protection | 81.6706 | **511** |
+| Protection + physical direction | 81.4984 | 511 |
+| Primary with recovery | 81.4166 | **511** |
 
-La protección evita la pérdida de instancias finales introducida por el modelo
-anterior. La dirección física pierde 0,1723 puntos respecto a la protección;
-añadir recuperaciones pierde otros 0,0818. El rescate incorpora 6.792 eventos:
-con la alineación propia de cada método, +2.082 TP netos y +4.710 FP netos.
-Son cambios agregados, no etiquetas independientes de cada evento añadido.
-La precisión media cae de 91,0366% a 90,1264% frente a la rama sin rescate.
-Esta estimación lineal de plantilla y sus controles de identidad son insuficientes.
+**Protection restores the final-instance retention lost by the earlier model.**
+The physical direction loses 0.1723 points relative to protection; added recovery
+loses another 0.0818. Rescue adds 6,792 events, with net +2,082 TP and +4,710 FP
+under each method's own alignment. These aggregate changes do not independently
+label each added event. Mean precision falls from 91.0366% to 90.1264% relative
+to the branch without rescue. Linear template estimation and its identity
+checks were insufficient.
 
-El análisis del borde final encuentra cinco muestras-tiempo distintas de Pareto,
-en cinco instancias de cuatro registros, dentro de los primeros 54 ms de la fase.
-La envolvente ya vale cero pero el respaldo exige además velocidad pequeña;
-ese primer lote conserva un detector previamente alterado. No se modifica ese
-umbral después de ver el test. No se declara GO mediante redondeo ni se sustituye
-el método principal por una ablación.
+The final-boundary analysis finds five sample-times differing from Pareto,
+in five instances from four records, within the phase's first 54 ms. The envelope
+is already zero, but fallback also requires low velocity; that first batch
+retains a previously altered detector. The threshold is not changed after
+examining test results. Rounding does not satisfy the original criterion, and
+the primary method is retained rather than replaced by an ablation.
 
-![Diferencias frente a Pareto y retención final](../../docs/images/template-rescue-deltas.png)
+![Differences from Pareto and final retention](../../docs/images/template-rescue-deltas.png)
 
-Las 51 pruebas del benchmark pasan. Los resultados son exploratorios y no
-constituyen evidencia independiente fuera de estos datos. Ver
-[resumen](../../docs/benchmarks/template_rescue_summary.json),
-[análisis por componente](../../docs/benchmarks/template_rescue_analysis.json)
-y [diagnóstico de fronteras](../../docs/benchmarks/template_rescue_boundary.json).
+All 51 benchmark tests pass. Results remain exploratory, without independent
+evidence beyond these data. See the
+[summary](../../docs/benchmarks/template_rescue_summary.json),
+[component analysis](../../docs/benchmarks/template_rescue_analysis.json),
+and [boundary diagnostic](../../docs/benchmarks/template_rescue_boundary.json).
