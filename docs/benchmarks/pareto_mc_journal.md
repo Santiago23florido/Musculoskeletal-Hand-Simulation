@@ -295,3 +295,46 @@ selladas. Sigue siendo desarrollo exploratorio; sub-05 no se abrió y no existe
 evaluación externa ni confirmación nueva. Decisión: conservar L2 y continuar
 a L3. Su puerta exigirá global ≥92,6580081443 % y, en ramp5s, ciclos 2–8
 al menos cinco puntos por encima del ciclo 1.
+
+## L3 — hipótesis previa a la búsqueda
+
+La memoria deja de limitarse al filtro de calibración. Se insertan filtros
+efectivos y centroides de otros estados solo con suficiente confianza local,
+después de recuperar y procesar el lote actual; el bin de calibración continúa
+inmutable. Reutilizar posturas visitadas podría mejorar los ciclos posteriores
+sin reiniciar bruscamente los centroides vivos, que conservan su EMA.
+
+El punto de partida es el C4 final de **L2**, con sus semillas 0/1/2 de ronda 3,
+y C1 congelado. El protocolo de L3 identifica expresamente esos checkpoints;
+no atribuye los pesos iniciales a L1. Se comprueba primero en EMG de entrenamiento
+que el cálculo compartido reproduce bit a bit las trayectorias independientes
+con inserciones en bins no iniciales y memoria activa, sin abrir etiquetas.
+
+Se mantienen las nueve estructuras y los 45 ensayos. En L3 también se busca
+el momento de bin [0,8;0,99], que ahora sí es activo. Se repiten los tres mejores
+con las tres semillas y se elige la mediana. Después se agregan las trayectorias
+selladas de L1, L2 y tres rondas nuevas de L3 para reentrenar C4 en GPU.
+La generación de trayectorias y la medición final continúan en CPU; no se ha
+portado el bucle de búsqueda a GPU.
+
+Puertas finales sobre sub-04: RoA global ≥92,6580081443 % (L2 +1 pp) y
+RoA de ramp5s en ciclos 2–8 ≥ciclo 1 +5 pp. La única alternativa si falla es
+atenuar beta por el cuadrado de la confianza local; si también falla, se conserva
+L2 y se detiene antes de L4. Todos los parámetros y decisiones se registran
+antes de predecir; los 20 registros finales se sellan antes de puntuar.
+Sub-05 permanece sin abrir durante desarrollo. Resultados L3 pendientes.
+
+### L3 — controles previos
+
+EMG real de entrenamiento sub-01 ramp5s 30 dB, primeros 30 s, tres cabezas
+finales de L2 y tres configuraciones de memoria completa. Las trayectorias
+independientes y compartidas coinciden bit a bit en disparos, fuentes, C1,
+centroides, IQR, blanqueo, SV, FIFO y todos los filtros/centroides/confianzas
+de memoria. Se poblaron 7/14/29 bins no iniciales, con memoria activa en
+77,44/62,20/29,21 % de pares unidad/lote. No se abrieron etiquetas.
+Protocolo y resultado en `C2_full_memory_identity_v1/`; controles superados.
+
+Antes del lanzamiento de L3: 139 pruebas pasadas y 2 omitidas en benchmarks;
+Ruff check y format limpios en 188 archivos. Las fuentes registradas de L2,
+los 234 archivos históricos protegidos, los cuatro sellos de sus rollouts
+y el hash de su checkpoint final se verificaron al cerrar ese nivel.

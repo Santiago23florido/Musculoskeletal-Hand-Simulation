@@ -230,3 +230,21 @@ Tiempo CPU con cuatro registros simultáneos: mediana **86,16 ms**, p95
 Se conserva L2. Son resultados exploratorios de validación, sin evaluación
 externa ni confirmación nueva. La puerta y los hashes están en
 [el resultado versionado](../../docs/benchmarks/pareto_mc_l2_standard/gate.json).
+
+### Desarrollo de L3
+
+L3 activa inserciones fiables en los bins de memoria y conserva la calibración
+inmutable. Parte de los tres checkpoints finales de L2 y añade tres rondas
+DAgger; las trayectorias de L1 y L2 también forman parte de la agregación.
+El momento de los bins se incluye ahora en TPE. Antes de buscar, una prueba
+real exige igualdad bit a bit entre ejecución independiente y compartida,
+incluyendo los bins aprendidos y su confianza.
+
+```powershell
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.full_memory_identity "$env:PARETO_MC_OUTPUT/C2_full_memory_identity_v1"
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.full_memory_experiment --workers 4
+```
+
+La puerta exige global ≥92,6580 % y ciclos 2–8 de ramp5s al menos cinco puntos
+por encima del ciclo 1. Si la primera estructura falla, solo se permite la
+alternativa de confianza local registrada; un segundo fallo detiene la escalera.
