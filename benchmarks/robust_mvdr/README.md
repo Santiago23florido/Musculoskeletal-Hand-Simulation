@@ -1,166 +1,168 @@
-# Decodificación analítica robusta a la autocancelación
+# Analytic decoding with self-cancellation correction
 
-**Estado: retirado.** El cambio al régimen FIFO con normalización de respuesta
-unitaria produce una pérdida de amplitud frente al umbral del detector; el
-colapso se reproduce en sub-01. Excluir solo el bloque actual recupera parte de
-la RoA, pero no se ha establecido una explicación exhaustiva del déficit restante.
-La [corrección y auditoría CPU](../../docs/benchmarks/robust_mvdr_correction.md)
-contiene las cifras, la sensibilidad y los límites de esta atribución.
+**This proposal was withdrawn.** Switching to the FIFO regime with unit-response
+normalization causes amplitude loss relative to the detector threshold; the
+collapse reproduces on sub-01. Excluding only the current block recovers some
+RoA, but the remaining deficit has not been fully explained. The
+[correction and CPU audit](../../docs/benchmarks/robust_mvdr_correction.md)
+records measurements, sensitivity, and limits of this attribution.
 
-El [informe original](../../docs/benchmarks/robust_mvdr_diagnostic.md) conserva
-los resultados de 80 registros y 591 instancias: static_subtract obtuvo 5,22%.
-Las cuatro reglas de decisión no son interpretables como prueba de F1, porque
-el control comparte el defecto. No se cambió ningún código ejecutable registrado,
-predicción ni resultado puntuado; no se reevalúan sub-02 a sub-05.
+The [original report](../../docs/benchmarks/robust_mvdr_diagnostic.md) retains
+results for 80 records and 591 instances: static_subtract achieved 5.22%.
+The four decision rules cannot test hypothesis F1 because their control shares
+the defect. Registered executable code, predictions, and scored results remain
+unchanged; sub-02 through sub-05 are not reevaluated.
 
-El resto documenta la propuesta histórica de la
-[revisión independiente](../../docs/benchmarks/independent_review.md), retirada
-tras la auditoría. No debe ejecutarse de nuevo sobre los sujetos externos.
+The remaining sections document the historical proposal from the
+[independent review](../../docs/benchmarks/independent_review.md), withdrawn
+after the audit. It should not be rerun on the outer subjects.
 
-## Hipótesis original, no confirmada
+## Original hypothesis, not confirmed
 
-El filtro de respuesta unitaria propuesto, `w = R⁻¹h / (hᵀR⁻¹h)`, es un beamformer
-MVDR/Capon. Stage B divide por `sqrt(hᵀR⁻¹h)`; la diferencia de amplitud importa.
-`R` es la covarianza FIFO de los datos observados y **contiene la
-unidad objetivo**. Cuando `h` no coincide con el MUAP real, MVDR suprime parte de
-la propia unidad: es la autocancelación descrita por
-[Cox, 1973](https://doi.org/10.1121/1.1913659) y tratada por el Capon robusto de
-[Li, Stoica y Wang, 2003](https://doi.org/10.1109/TSP.2003.812831). La respuesta
-a la unidad real cae por debajo del umbral calibrado en reposo y las demás unidades
-siguen suprimidas. El resultado esperado es precisión alta y recall bajo, que es
-el patrón medido en Stage B:
+The proposed unit-response filter, `w = R⁻¹h / (hᵀR⁻¹h)`, is an MVDR/Capon
+beamformer. Stage B divides by `sqrt(hᵀR⁻¹h)`; the amplitude difference matters.
+`R` is observed-data FIFO covariance and **contains the target unit**.
+When `h` mismatches the true MUAP, MVDR suppresses part of the unit itself:
+the self-cancellation described by
+[Cox, 1973](https://doi.org/10.1121/1.1913659) and addressed by robust Capon in
+[Li, Stoica, and Wang, 2003](https://doi.org/10.1109/TSP.2003.812831).
+Response to the true unit falls below the threshold calibrated at rest, while
+other units remain suppressed. This predicts high precision and low recall,
+as measured in Stage B:
 
-| Método Stage B | RoA | Precisión | Recall | Meseta final |
+| Stage B method | RoA | Precision | Recall | Final plateau |
 | --- | ---: | ---: | ---: | ---: |
-| Pareto | 80,89% | 91,47% | 83,16% | 87,99% |
-| Plantilla estática analítica | 45,56% | 91,39% | 47,85% | 97,50% |
-| MoCA-B | 37,26% | 92,17% | 39,30% | 97,32% |
+| Pareto | 80.89% | 91.47% | 83.16% | 87.99% |
+| Analytic static template | 45.56% | 91.39% | 47.85% | 97.50% |
+| MoCA-B | 37.26% | 92.17% | 39.30% | 97.32% |
 
-La meseta final, donde la plantilla vuelve a ser correcta, supera a Pareto. El
-déficit aparece solo cuando la plantilla deja de coincidir.
+The final plateau, where the template becomes correct again, exceeds Pareto.
+The original hypothesis attributed the deficit away from that posture to
+template mismatch; the later audit above limits that interpretation.
 
-## Evidencia sintética que fijó los parámetros
+## Synthetic evidence used to set parameters
 
-Se usó un generador *line-source* independiente de BioMime
-([`synthetic/generator.py`](synthetic/generator.py)), con las leyes de longitud de
-NeuroMotion, una rejilla de 10×10 y 20 dB. Se calibra en `s=1` y después se
-mantienen 10 s en una longitud acortada `s₁`, sin movimiento, para excluir el
-retardo de la covarianza. Se decodifican las 12 unidades más separables de unas 40
-activas, con plantillas interpoladas entre el MUAP real de la postura (λ=0) y la
-plantilla estática de calibración (λ=1). RoA con tolerancia de 2 ms; columnas:
-umbral MVDR fijo 0,5 / umbral de dos medias sin etiquetas / mejor umbral.
+An independent *line-source* generator was used in place of BioMime
+([`synthetic/generator.py`](synthetic/generator.py)), with NeuroMotion's length
+laws, a 10×10 grid, and 20 dB noise. Calibration occurs at `s=1`, followed by a
+10 s hold at shortened length `s₁`, without movement, to exclude covariance lag.
+The twelve most separable units among roughly forty active units are decoded,
+using templates interpolated between the posture's true MUAP (λ=0) and the
+static calibration template (λ=1). RoA uses 2 ms tolerance. Entries show a fixed
+MVDR threshold of 0.5 / unlabeled two-means threshold / best threshold.
 
-| s₁, λ | `R` completa | Loading 0,1 | **ρ=0,5 + loading 0,03** | ρ=1 + loading 0,1 |
+| s₁, λ | Full `R` | Loading 0.1 | ρ=0.5 + loading 0.03 | ρ=1 + loading 0.1 |
 | --- | --- | --- | --- | --- |
-| 0,94, λ=0 | 0,999 / 0,999 / 0,986 | 0,912 / 0,990 / 0,984 | 0,963 / 0,997 / 0,990 | 0,919 / 0,991 / 0,981 |
-| 0,94, λ=0,5 | 0,864 / 0,906 / 0,943 | 0,833 / 0,923 / 0,947 | 0,869 / 0,968 / 0,971 | 0,843 / 0,918 / 0,949 |
-| 0,94, λ=1 | 0,585 / 0,897 / 0,935 | 0,853 / 0,972 / 0,972 | 0,848 / 0,982 / 0,976 | 0,931 / 0,966 / 0,964 |
-| 0,91, λ=0,5 | 0,674 / 0,722 / 0,858 | 0,728 / 0,744 / 0,861 | 0,773 / 0,790 / 0,876 | 0,759 / 0,758 / 0,864 |
-| 0,91, λ=1 | 0,312 / 0,770 / 0,854 | 0,730 / 0,851 / 0,897 | 0,650 / 0,920 / 0,940 | 0,848 / 0,888 / 0,918 |
+| 0.94, λ=0 | 0.999 / 0.999 / 0.986 | 0.912 / 0.990 / 0.984 | 0.963 / 0.997 / 0.990 | 0.919 / 0.991 / 0.981 |
+| 0.94, λ=0.5 | 0.864 / 0.906 / 0.943 | 0.833 / 0.923 / 0.947 | 0.869 / 0.968 / 0.971 | 0.843 / 0.918 / 0.949 |
+| 0.94, λ=1 | 0.585 / 0.897 / 0.935 | 0.853 / 0.972 / 0.972 | 0.848 / 0.982 / 0.976 | 0.931 / 0.966 / 0.964 |
+| 0.91, λ=0.5 | 0.674 / 0.722 / 0.858 | 0.728 / 0.744 / 0.861 | 0.773 / 0.790 / 0.876 | 0.759 / 0.758 / 0.864 |
+| 0.91, λ=1 | 0.312 / 0.770 / 0.854 | 0.730 / 0.851 / 0.897 | 0.650 / 0.920 / 0.940 | 0.848 / 0.888 / 0.918 |
 
-Con la covarianza **sin la unidad objetivo** (cota oráculo, no implementable),
-la plantilla estática recupera 0,997 en `s₁=0,94` y 0,870 en `s₁=0,91` con el
-umbral fijo. La separabilidad apenas se pierde (mejor umbral ≥0,85 en todas las
-celdas): falla la amplitud de la respuesta frente a un umbral fijo. La mezcla α=0,5
-del modelo de covarianza de Stage B deja el RoA con umbral fijo en 0,74–0,76 incluso
-con plantilla exacta en este generador. El recall sigue en 0,99, así que la pérdida
-son falsos positivos: el modelo de 12 unidades deja de suprimir a las no calibradas. El *blanking* de las propias detecciones apenas ayuda (0,677 frente a
-0,585 en `s₁=0,94`, λ=1).
+With covariance **excluding the target unit** (an oracle bound unavailable in
+practice), the static template reaches 0.997 at `s₁=0.94` and 0.870 at `s₁=0.91`
+with the fixed threshold. Separability is largely retained (best-threshold
+RoA ≥0.85 in all cells); response amplitude fails relative to a fixed threshold.
+The Stage B covariance-model mixture with α=0.5 yields fixed-threshold RoA of
+0.74–0.76 even with the exact template in this generator. Recall stays at 0.99,
+so false positives drive the loss: the twelve-unit model no longer suppresses
+uncalibrated units. Blanking the unit's own detections provides little benefit
+(0.677 versus 0.585 at `s₁=0.94`, λ=1).
 
-Se eligió **ρ=0,5 con loading 0,03** como método primario: en las nueve celdas
-(`s₁` = 0,96, 0,94 y 0,91) es el mejor o queda a menos de 0,3 puntos del mejor con el
-umbral de dos medias, el análogo más próximo a los centroides adaptativos del
-detector. Con plantilla exacta cuesta 1,9–5,4 puntos con el umbral fijo y como
-máximo 0,3 con el de dos medias. ρ=1 con loading 0,1
-gana con umbral fijo ante desajustes grandes y se conserva como ablación
-preregistrada. Los parámetros se fijaron solo con datos sintéticos, antes de abrir
-cualquier registro FDSI en esta revisión.
+ρ=0.5 with loading 0.03 was chosen as the primary method: across nine cells
+(`s₁` = 0.96, 0.94, and 0.91), it is best or within 0.3 percentage points of
+the best under two-means thresholding, the closest analogue to adaptive
+detector centroids. With an exact template, the cost is 1.9–5.4 points under
+the fixed threshold and at most 0.3 under two-means. ρ=1 with loading 0.1 wins
+with a fixed threshold under large mismatch and is retained as a preregistered
+ablation. Parameters were set using synthetic data only, before opening any
+FDSI recording in this review.
 
-## Filtro
+## Filter
 
-Para cada unidad `j`, con su plantilla completa en los 73 retardos `C_j` (la fila
-del retardo cero es exactamente `extended_template` de Stage B):
+For each unit `j`, its full template across 73 lags is `C_j`. The zero-lag row
+is exactly Stage B's `extended_template`:
 
 ```text
-A   = R + loading · media(eig(R)) · I
-R_j = A − ρ · tasa_j · C_jᵀ C_j
+A   = R + loading · mean(eig(R)) · I
+R_j = A − ρ · rate_j · C_jᵀ C_j
 w_j = R_j⁻¹ h_j / (h_jᵀ R_j⁻¹ h_j)
 ```
 
-`R_j⁻¹` se obtiene con Woodbury sobre un único Cholesky de `A`. La matriz interna
-`I − UᵀA⁻¹U` se recorta en sus autovalores a 0,05, de modo que la sustracción no
-puede volver indefinida la covarianza aunque la plantilla sea errónea. La tasa se
-inicializa con la calibración y se actualiza con el EMA de las descargas aceptadas
-por el detector, como en Stage B.
+`R_j⁻¹` is obtained with Woodbury from a single Cholesky factorization of `A`.
+Eigenvalues of the inner matrix `I − UᵀA⁻¹U` are clipped at 0.05, preventing
+subtraction from making covariance indefinite even with an incorrect template.
+Rate is initialized from calibration and updated by EMA of detector-accepted
+discharges, as in Stage B.
 
-## Métodos preregistrados
+## Preregistered methods
 
-| Método | Estado | ρ | Loading | Propósito |
+| Method | State | ρ | Loading | Purpose |
 | --- | --- | ---: | ---: | --- |
-| **`static_subtract`** (primario) | plantilla de calibración | 0,5 | 0,03 | ¿Basta corregir la autocancelación? |
-| `static_subtract_strong` | plantilla de calibración | 1,0 | 0,1 | Ablación más agresiva |
-| `static_loaded` | plantilla de calibración | 0 | 0,1 | Solo Capon robusto |
-| `static_fifo_mvdr` | plantilla de calibración | 0 | 0,001 | Control: MVDR FIFO sin mezcla α |
-| `moca_k_subtract` | morph congelado, ángulo medido | 0,5 | 0,03 | Valor del morph sin autocancelación |
-| `moca_b_subtract` | morph y observador congelados | 0,5 | 0,03 | Igual, con estado ciego |
+| `static_subtract` (primary) | Calibration template | 0.5 | 0.03 | Test whether correcting self-cancellation is sufficient |
+| `static_subtract_strong` | Calibration template | 1.0 | 0.1 | More aggressive ablation |
+| `static_loaded` | Calibration template | 0 | 0.1 | Robust Capon only |
+| `static_fifo_mvdr` | Calibration template | 0 | 0.001 | Control: FIFO MVDR without α mixing |
+| `moca_k_subtract` | Frozen morph, measured angle | 0.5 | 0.03 | Morph value after self-cancellation correction |
+| `moca_b_subtract` | Frozen morph and observer | 0.5 | 0.03 | Same, with EMG-only state |
 
-Se comparan con Pareto y, si están presentes y sin cambios, con las predicciones
-selladas de Stage B (`stage_b_static_analytic`, `stage_b_moca_k`,
-`stage_b_moca_b`) sobre las mismas 591 instancias.
+Comparators are Pareto and, when present and unchanged, sealed Stage B predictions
+(`stage_b_static_analytic`, `stage_b_moca_k`, `stage_b_moca_b`), on the same
+591 instances.
 
-Lectura declarada antes de predecir:
+The interpretation was declared before prediction:
 
-1. Si `static_subtract` supera a `stage_b_static_analytic` en recall y RoA,
-   sobre todo en la fase angular `moving` y en ramp5s, la autocancelación era un
-   cuello de botella real en FDSI.
-2. Si `static_subtract ≈ static_fifo_mvdr`, la autocancelación no explica el
-   déficit de FDSI y hay que revisar el diagnóstico.
-3. `moca_*_subtract − static_subtract` mide el valor del morph congelado una vez
-   eliminada la autocancelación. Si es ≤0, se interpreta junto con
+1. If `static_subtract` exceeds `stage_b_static_analytic` in recall and RoA,
+   especially during angular `moving` phases and ramp5s, self-cancellation was
+   a real FDSI bottleneck.
+2. If `static_subtract ≈ static_fifo_mvdr`, self-cancellation does not explain
+   the FDSI deficit and the diagnosis needs revision.
+3. `moca_*_subtract − static_subtract` measures the frozen morph's value after
+   self-cancellation removal. Values ≤0 are interpreted alongside
    `target-reliability`.
-4. No se espera superar a Pareto solo con este filtro. El siguiente paso sería
-   colocar encima la [verosimilitud de disparos](../spike_likelihood/README.md) o
-   un umbral adaptativo sin etiquetas.
+4. This filter alone was not expected to beat Pareto. A later step would add
+   [spike likelihood](../spike_likelihood/README.md) or an unlabeled adaptive
+   threshold.
 
-**Limitación importante.** Los sujetos `sub-02`–`sub-05` ya se han puntuado en
-cinco experimentos anteriores. Aunque aquí no se ajusta nada con ellos, el
-resultado es **diagnóstico, no confirmatorio**. Una mejora debe confirmarse con
-registros nuevos (otro generador o nuevas simulaciones NeuroMotion).
+Subjects `sub-02`–`sub-05` had already been scored in five preceding experiments.
+Even without fitting on them here, the result is **diagnostic and exploratory**.
+Any improvement requires confirmation with new records from another generator
+or new NeuroMotion simulations.
 
-## Auditorías
+## Audits
 
-- `phase-audit` lee solo los ángulos. Para cada registro informa el ángulo a 5 y
-  10 s y la fracción en movimiento dentro de 0–10 s. La fase `first_hold` de las
-  triangulares abarca 0–10 s (como `get_triangular_phases` de la referencia); si la
-  fracción en movimiento es mayor que cero, esa etiqueta contiene movimiento.
-  El evaluador añade además fases definidas por el ángulo: reposo de referencia
-  tras la calibración, movimiento (>0,5°/s) y mesetas lejos de la referencia.
-- `target-reliability` usa solo `sub-01`, sujeto de entrenamiento en todas las
-  particiones de Stage B. Divide en mitades par/impar los objetivos STA por
-  postura que entrenaron Γ y compara su ruido con el cambio respecto a la
-  plantilla de calibración, en bruto y en la geometría de separación. Una razón
-  cambio/ruido cercana a 1 significa que esos objetivos no contienen una señal de
-  postura aprendible.
+- `phase-audit` reads angles only. It reports each record's angle at 5 and 10 s
+  and the moving fraction within 0–10 s. Triangular `first_hold` spans 0–10 s,
+  matching reference `get_triangular_phases`; a nonzero moving fraction means
+  this label contains movement. The evaluator also adds angle-defined phases:
+  reference rest after calibration, movement (>0.5°/s), and plateaus away from
+  the reference posture.
+- `target-reliability` uses only `sub-01`, a training subject in every Stage B
+  fold. It splits Γ's posture-specific STA targets into even/odd halves and
+  compares their noise with their change from the calibration template, both
+  in raw coordinates and separation geometry. A change/noise ratio near one
+  means those targets lack a learnable posture signal.
 
-## Reproducción en CPU
+## CPU reproduction
 
-Requisitos: el entorno `.venv-benchmarks` de los benchmarks anteriores, los datos
-FDSI y las salidas de Stage B en `outputs/stage_b_main` (entradas en caché,
-`protocol.json`, `locked.json` y los pesos `folds/*/seed*/{morph,observer}.pt`).
-Sin esos pesos, define `ROBUST_MVDR_STATIC_ONLY=1` para **todas** las órdenes:
-la elección forma parte de la especificación registrada.
+The historical commands below require `.venv-benchmarks`, FDSI data, and Stage B
+outputs in `outputs/stage_b_main`: cached inputs, `protocol.json`, `locked.json`,
+and morph/observer weights under each fold and seed. Without those weights,
+set `ROBUST_MVDR_STATIC_ONLY=1` for **every** command; that choice is part of the
+registered specification. The withdrawal above still applies to outer-subject
+runs.
 
-### Compatibilidad con los pesos congelados
+### Compatibility with frozen weights
 
-La publicación hizo opcional el hash del PDF en `Stage B register`, después de
-congelar sus pesos. El cargador original rechaza ese cambio de procedencia.
-`frozen.py` conserva el protocolo, las fuentes archivadas y los pesos anteriores:
-verifica sus hashes, los dieciséis checkpoints y el código actual. La única
-diferencia permitida es la expresión que hace opcional `guide_sha256` dentro de
-`register`; el resto del árbol sintáctico debe ser idéntico. Cualquier cambio
-numérico, de checkpoint o de protocolo se rechaza. Se instancian las clases
-originales con sus parámetros exactos en CPU, sin entrenamiento. El nuevo
-registro guarda toda esta procedencia, incluida la excepción de metadatos.
+Publication made the PDF hash optional in `Stage B register` after weights
+were frozen. The original loader rejects that provenance change. `frozen.py`
+preserves the protocol, archived sources, and earlier weights: it verifies
+their hashes, all sixteen checkpoints, and current code. The only permitted
+difference is the expression making `guide_sha256` optional within `register`;
+the rest of the syntax tree must be identical. Numerical, checkpoint, or
+protocol changes are rejected. Original classes are instantiated on CPU with
+their exact parameters and no training. New registration records this provenance,
+including the metadata exception.
 
 ```powershell
 .venv-benchmarks/Scripts/python.exe -m pytest benchmarks/robust_mvdr -q
@@ -175,30 +177,30 @@ foreach ($subject in 'sub-02','sub-03','sub-04','sub-05') {
 .venv-benchmarks/Scripts/python.exe -m benchmarks.robust_mvdr.run report
 ```
 
-La salida es `outputs/robust_mvdr`; `ROBUST_MVDR_OUTPUT` permite otra. `register`
-guarda los hashes del código propio y del código de Stage B del que depende, y
-rechaza sobrescribir un protocolo. `predict` no abre disparos verdaderos externos.
-`seal` exige las 80 × 6 predicciones y `score` verifica sus hashes antes de
-puntuar; además comprueba que el evaluador reproduce el RoA guardado de Pareto.
-Los sujetos pueden predecirse en procesos paralelos.
+Output defaults to `outputs/robust_mvdr`; `ROBUST_MVDR_OUTPUT` selects another
+directory. `register` records hashes of its own code and Stage B dependencies
+and refuses to overwrite a protocol. `predict` does not open true outer-subject
+discharges. `seal` requires all 80 × 6 predictions; `score` checks their hashes
+before scoring and verifies that the evaluator reproduces Pareto's saved RoA.
+Subjects can be predicted in parallel processes.
 
-Coste: la síntesis con sustracción tarda unos 9 ms por lote de 100 ms con 8
-unidades y D=512 (4 hilos, medido en Linux), además de los 8–11 ms del bucle de
-Stage B. Stage B tardó una mediana de 51 s por registro con cuatro métodos
-(1,1 h en total); aquí se esperan 1,5–3 min por registro con seis, es decir, unas
-2–4 h para los 80 registros.
+Subtraction synthesis takes about 9 ms per 100 ms batch with eight units and
+D=512 (four threads, measured on Linux), in addition to Stage B's 8–11 ms loop.
+Stage B took a median of 51 s per record with four methods (1.1 h total).
+The historical estimate here was 1.5–3 min per record with six methods, or
+roughly 2–4 h for all 80 records.
 
-`report` escribe `report/summary.json` y `report/per_unit.csv`, con medias por
-condición, SNR y fase (fija y angular), y diferencias frente a Pareto y a la
-plantilla estática de Stage B. Copia los resultados pequeños con el prefijo
+`report` writes `report/summary.json` and `report/per_unit.csv`, with means by
+condition, SNR, and phase (fixed and angular), plus differences from Pareto and
+the Stage B static template. Compact results use the prefix
 `docs/benchmarks/robust_mvdr_`.
 
-El estudio sintético se reproduce sin datos externos:
+The synthetic study can be reproduced without external data:
 
 ```powershell
 .venv-benchmarks/Scripts/python.exe -m benchmarks.robust_mvdr.synthetic.study all --output docs/benchmarks
 ```
 
-Escribe `docs/benchmarks/robust_mvdr_synthetic_*.json`, que contienen las cifras de
-las tablas anteriores. Las semillas están fijadas; con otro número de hilos BLAS el
-redondeo puede cambiar una decisión aislada y mover alguna celda en ±0,001.
+It writes `docs/benchmarks/robust_mvdr_synthetic_*.json` containing the table
+values above. Seeds are fixed; a different BLAS thread count can change an
+isolated decision through rounding and move a cell by ±0.001.
