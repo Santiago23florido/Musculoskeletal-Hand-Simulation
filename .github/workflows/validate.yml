@@ -24,8 +24,41 @@ jobs:
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y libgl1 libglfw3
       - run: uv sync --locked --python 3.12
-      - run: uv run --locked ruff check src scripts tests
-      - run: uv run --locked ruff format --check src scripts tests
+      - run: uv run --locked ruff check src scripts tests benchmarks
+      - run: uv run --locked ruff format --check src scripts tests benchmarks
       - run: uv run --locked pytest -q
       - run: uv run --locked python scripts/run_simulation.py --steps 200 --output outputs/smoke.npz
       - run: uv run --locked python scripts/inspect_model.py --output outputs/model_inventory.json
+
+  benchmarks:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: .venv-benchmarks/bin/python
+          - os: windows-latest
+            python: .venv-benchmarks/Scripts/python.exe
+    runs-on: ${{ matrix.os }}
+    env:
+      CUDA_VISIBLE_DEVICES: '-1'
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: imendezguerra/adapt_decomp
+          ref: a8f53736e297962670276bc123c137050b7056b6
+          path: external/farina/adapt_decomp
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.21'
+      - run: uv venv .venv-benchmarks --python 3.12
+      - name: Install the locked CPU benchmark environment
+        run: >-
+          uv pip sync --python ${{ matrix.python }}
+          --index https://download.pytorch.org/whl/cpu --index-strategy unsafe-best-match
+          benchmarks/stage_a/requirements.lock.txt
+      - run: ${{ matrix.python }} -m pytest benchmarks -q

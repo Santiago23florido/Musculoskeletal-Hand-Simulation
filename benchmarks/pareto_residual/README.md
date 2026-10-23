@@ -59,6 +59,14 @@ entre unidades aporta contexto invariante a su orden. La salida es equivariante
 a permutar las unidades y acepta cantidades distintas de unidades. La historia
 causal está en los centroides y FIFO del detector, no en un embedding por sujeto.
 
+**Entradas cinemáticas (aclaración de la revisión del 19 de octubre de 2026).**
+Dos de las diez características son el **ángulo de muñeca medido**, `q = ángulo/40`,
+y su velocidad normalizada, leídos de `*_angle.npz` en `data.py`. Esta corrección
+es por tanto una variante con cinemática observada (tipo K), no una corrección
+ciega: no es comparable sin más con Pareto, que no usa el ángulo. El rescate de
+plantillas hereda estos pesos. La verosimilitud de disparos descarta
+explícitamente esas dos columnas.
+
 La arquitectura residual y la representación por conjuntos se apoyan en
 [He et al., identidad residual](https://arxiv.org/abs/1603.05027) y
 [Zaheer et al., Deep Sets](https://arxiv.org/abs/1703.06114). Esas publicaciones

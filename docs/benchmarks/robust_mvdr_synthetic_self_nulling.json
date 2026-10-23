@@ -1,0 +1,805 @@
+{
+ "active_units": 40,
+ "postures": {
+  "s=0.98": {
+   "lambda=0.0": {
+    "whitened_cosine_template_vs_true_median": 1.0,
+    "full": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.9969754278663018,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9840600255182275
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.9984567901234568,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9835240198891805
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.9138018973523825,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9809080081112347
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7508756591120673,
+     "recall_fixed_threshold_mean": 0.992325366252099,
+     "roa_best_threshold_mean": 0.9078459957111141
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7561816454621041,
+     "recall_fixed_threshold_mean": 0.9936377022101043,
+     "roa_best_threshold_mean": 0.9207939107111685
+    }
+   },
+   "lambda=0.1": {
+    "whitened_cosine_template_vs_true_median": 0.9966244402022013,
+    "full": {
+     "true_unit_response_median": 1.0221666542382608,
+     "roa_fixed_threshold_mean": 0.9962387028176503,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.986899620676827
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0147389191550777,
+     "roa_fixed_threshold_mean": 0.9969696969696971,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9834419917107385
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.0187470163452852,
+     "roa_fixed_threshold_mean": 0.9079427402559342,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9814660551350268
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.0163950881665373,
+     "roa_fixed_threshold_mean": 0.740324714753374,
+     "recall_fixed_threshold_mean": 0.992325366252099,
+     "roa_best_threshold_mean": 0.9080736637204098
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0161311207052335,
+     "roa_fixed_threshold_mean": 0.7474839817778632,
+     "recall_fixed_threshold_mean": 0.9937189973579453,
+     "roa_best_threshold_mean": 0.9174443974092802
+    }
+   },
+   "lambda=0.25": {
+    "whitened_cosine_template_vs_true_median": 0.9786211306293413,
+    "full": {
+     "true_unit_response_median": 1.0228737488257518,
+     "roa_fixed_threshold_mean": 0.9969754278663018,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9861264995903462
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0196283847049146,
+     "roa_fixed_threshold_mean": 0.9977064220183486,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9839974576422437
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.0245601430369744,
+     "roa_fixed_threshold_mean": 0.905547012901953,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9794017601512014
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.0235904708860861,
+     "roa_fixed_threshold_mean": 0.728553836199776,
+     "recall_fixed_threshold_mean": 0.9887519405183939,
+     "roa_best_threshold_mean": 0.8947958031490316
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0226791644532596,
+     "roa_fixed_threshold_mean": 0.7360213927345406,
+     "recall_fixed_threshold_mean": 0.9908017396032426,
+     "roa_best_threshold_mean": 0.9056100928745323
+    }
+   },
+   "lambda=0.5": {
+    "whitened_cosine_template_vs_true_median": 0.914829416119559,
+    "full": {
+     "true_unit_response_median": 0.9534704031060341,
+     "roa_fixed_threshold_mean": 0.9921335763488094,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9864270866399404
+    },
+    "target_free": {
+     "true_unit_response_median": 0.983318916235414,
+     "roa_fixed_threshold_mean": 0.9977064220183486,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9823847652893675
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.975706616031603,
+     "roa_fixed_threshold_mean": 0.9044248772163574,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9718783987192757
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.9828749264988075,
+     "roa_fixed_threshold_mean": 0.7227435939421306,
+     "recall_fixed_threshold_mean": 0.9842796116772856,
+     "roa_best_threshold_mean": 0.869340032633445
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.9817784610485665,
+     "roa_fixed_threshold_mean": 0.729197922713547,
+     "recall_fixed_threshold_mean": 0.985673242783132,
+     "roa_best_threshold_mean": 0.8772260130939951
+    }
+   },
+   "lambda=0.75": {
+    "whitened_cosine_template_vs_true_median": 0.812575845872574,
+    "full": {
+     "true_unit_response_median": 0.7835799710295281,
+     "roa_fixed_threshold_mean": 0.9914548052290112,
+     "recall_fixed_threshold_mean": 0.9986376173317318,
+     "roa_best_threshold_mean": 0.9871462037855943
+    },
+    "target_free": {
+     "true_unit_response_median": 0.9139720206720396,
+     "roa_fixed_threshold_mean": 0.9962462462462462,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9860347609909001
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.876950220632454,
+     "roa_fixed_threshold_mean": 0.9054193531513165,
+     "recall_fixed_threshold_mean": 0.9960691823899371,
+     "roa_best_threshold_mean": 0.9470921018690558
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.9045155083700069,
+     "roa_fixed_threshold_mean": 0.7363983816269463,
+     "recall_fixed_threshold_mean": 0.9809177839525001,
+     "roa_best_threshold_mean": 0.8356014570629199
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.9033132278854363,
+     "roa_fixed_threshold_mean": 0.7439680063459155,
+     "recall_fixed_threshold_mean": 0.9816218474044226,
+     "roa_best_threshold_mean": 0.8422063757357864
+    }
+   },
+   "lambda=1.0": {
+    "whitened_cosine_template_vs_true_median": 0.6906107548482834,
+    "full": {
+     "true_unit_response_median": 0.6209570189037015,
+     "roa_fixed_threshold_mean": 0.966913446370258,
+     "recall_fixed_threshold_mean": 0.9690605209811007,
+     "roa_best_threshold_mean": 0.9854331216781088
+    },
+    "target_free": {
+     "true_unit_response_median": 0.7918839957585873,
+     "roa_fixed_threshold_mean": 0.9992211838006231,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.986516962426862
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.7223866733792162,
+     "roa_fixed_threshold_mean": 0.9195309092005536,
+     "recall_fixed_threshold_mean": 0.9972291888236778,
+     "roa_best_threshold_mean": 0.955537629669319
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.7707550312380473,
+     "roa_fixed_threshold_mean": 0.7599679280901923,
+     "recall_fixed_threshold_mean": 0.976247716845163,
+     "roa_best_threshold_mean": 0.8351150848026062
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.7685280819336586,
+     "roa_fixed_threshold_mean": 0.7701182217840851,
+     "recall_fixed_threshold_mean": 0.978427511473022,
+     "roa_best_threshold_mean": 0.84058051394594
+    }
+   }
+  },
+  "s=0.96": {
+   "lambda=0.0": {
+    "whitened_cosine_template_vs_true_median": 1.0,
+    "full": {
+     "true_unit_response_median": 0.9999999999999999,
+     "roa_fixed_threshold_mean": 0.9984567901234568,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9873916110766766
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.9992211838006231,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9849831255146072
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.9999999999999999,
+     "roa_fixed_threshold_mean": 0.9319021449625255,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9835593340187079
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7482943255073885,
+     "recall_fixed_threshold_mean": 0.9924545568728599,
+     "roa_best_threshold_mean": 0.9112584172233639
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7581512192319986,
+     "recall_fixed_threshold_mean": 0.9937668928308652,
+     "roa_best_threshold_mean": 0.919666188576976
+    }
+   },
+   "lambda=0.1": {
+    "whitened_cosine_template_vs_true_median": 0.9924722592731168,
+    "full": {
+     "true_unit_response_median": 1.0717480083904902,
+     "roa_fixed_threshold_mean": 0.9942437246216316,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9889207911379677
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0529711869339142,
+     "roa_fixed_threshold_mean": 0.9963186553030304,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9854065612003887
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.0623309724400936,
+     "roa_fixed_threshold_mean": 0.905973204500568,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9823335938701319
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.05805567598038,
+     "roa_fixed_threshold_mean": 0.7236154023884168,
+     "recall_fixed_threshold_mean": 0.9909309302240037,
+     "roa_best_threshold_mean": 0.9030078281082096
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0577030538986654,
+     "roa_fixed_threshold_mean": 0.7329128300745703,
+     "recall_fixed_threshold_mean": 0.9930294297040215,
+     "roa_best_threshold_mean": 0.912753222263628
+    }
+   },
+   "lambda=0.25": {
+    "whitened_cosine_template_vs_true_median": 0.9425688506680059,
+    "full": {
+     "true_unit_response_median": 1.1008285360962988,
+     "roa_fixed_threshold_mean": 0.9880440121819433,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9885888295826337
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0947746013965132,
+     "roa_fixed_threshold_mean": 0.9920315440316346,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9860630248174221
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.1035528520047795,
+     "roa_fixed_threshold_mean": 0.8858278394317319,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9778269012982442
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.1044155499731017,
+     "roa_fixed_threshold_mean": 0.6945246622479688,
+     "recall_fixed_threshold_mean": 0.9900147711589812,
+     "roa_best_threshold_mean": 0.8855414601906938
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.1038423576093543,
+     "roa_fixed_threshold_mean": 0.6976450605750285,
+     "recall_fixed_threshold_mean": 0.9906709391379839,
+     "roa_best_threshold_mean": 0.8931628021672445
+    }
+   },
+   "lambda=0.5": {
+    "whitened_cosine_template_vs_true_median": 0.7222069533168634,
+    "full": {
+     "true_unit_response_median": 0.8680112214627475,
+     "roa_fixed_threshold_mean": 0.9599136927016568,
+     "recall_fixed_threshold_mean": 0.9738700564971752,
+     "roa_best_threshold_mean": 0.9839190768869875
+    },
+    "target_free": {
+     "true_unit_response_median": 0.9751683867221257,
+     "roa_fixed_threshold_mean": 0.9886339768410286,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.985917967482817
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.9317644872608178,
+     "roa_fixed_threshold_mean": 0.8803342565332112,
+     "recall_fixed_threshold_mean": 0.9984276729559749,
+     "roa_best_threshold_mean": 0.9665066737095992
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.9565783855350674,
+     "roa_fixed_threshold_mean": 0.6804354388415415,
+     "recall_fixed_threshold_mean": 0.9817668744244168,
+     "roa_best_threshold_mean": 0.8523825532324123
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.9554079667725269,
+     "roa_fixed_threshold_mean": 0.6898089701778218,
+     "recall_fixed_threshold_mean": 0.98504771431943,
+     "roa_best_threshold_mean": 0.8637158516999873
+    }
+   },
+   "lambda=0.75": {
+    "whitened_cosine_template_vs_true_median": 0.40952989293403885,
+    "full": {
+     "true_unit_response_median": 0.4441849183355063,
+     "roa_fixed_threshold_mean": 0.9115392273994424,
+     "recall_fixed_threshold_mean": 0.9166135107223133,
+     "roa_best_threshold_mean": 0.981887487590578
+    },
+    "target_free": {
+     "true_unit_response_median": 0.6869047309826936,
+     "roa_fixed_threshold_mean": 0.9971208667716375,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9832866672294518
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.57914628984517,
+     "roa_fixed_threshold_mean": 0.8994846014250824,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9768712212039153
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.6520812968122807,
+     "roa_fixed_threshold_mean": 0.7137246779199247,
+     "recall_fixed_threshold_mean": 0.9862077588279754,
+     "roa_best_threshold_mean": 0.8792480884020438
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.6488026843434868,
+     "roa_fixed_threshold_mean": 0.7244330832249376,
+     "recall_fixed_threshold_mean": 0.9895372991181574,
+     "roa_best_threshold_mean": 0.8914260521312946
+    }
+   },
+   "lambda=1.0": {
+    "whitened_cosine_template_vs_true_median": 0.14970016503916256,
+    "full": {
+     "true_unit_response_median": 0.13144380162664887,
+     "roa_fixed_threshold_mean": 0.7373231716889873,
+     "recall_fixed_threshold_mean": 0.7380476968662372,
+     "roa_best_threshold_mean": 0.974573730472691
+    },
+    "target_free": {
+     "true_unit_response_median": 0.37221614016600635,
+     "roa_fixed_threshold_mean": 1.0,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9833266292169925
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.2633015978171125,
+     "roa_fixed_threshold_mean": 0.937627961970985,
+     "recall_fixed_threshold_mean": 0.993532870526285,
+     "roa_best_threshold_mean": 0.9720001863085491
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.3452083393609695,
+     "roa_fixed_threshold_mean": 0.7736829569695466,
+     "recall_fixed_threshold_mean": 0.9789147681002534,
+     "roa_best_threshold_mean": 0.8596895152261655
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.3421650967508374,
+     "roa_fixed_threshold_mean": 0.7838705646493098,
+     "recall_fixed_threshold_mean": 0.9829656658747824,
+     "roa_best_threshold_mean": 0.8744614122083604
+    }
+   }
+  },
+  "s=0.94": {
+   "lambda=0.0": {
+    "whitened_cosine_template_vs_true_median": 1.0,
+    "full": {
+     "true_unit_response_median": 0.9999999999999999,
+     "roa_fixed_threshold_mean": 0.9940864389233953,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9889482251312774
+    },
+    "target_free": {
+     "true_unit_response_median": 1.0000000000000002,
+     "roa_fixed_threshold_mean": 0.9984567901234568,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9849825022313489
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.9126262233199399,
+     "recall_fixed_threshold_mean": 0.9992138364779874,
+     "roa_best_threshold_mean": 0.9819951603972804
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7329192400793209,
+     "recall_fixed_threshold_mean": 0.9925377691832676,
+     "roa_best_threshold_mean": 0.9093376875323486
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.743681799102489,
+     "recall_fixed_threshold_mean": 0.9947340148464968,
+     "roa_best_threshold_mean": 0.9191548845875329
+    }
+   },
+   "lambda=0.1": {
+    "whitened_cosine_template_vs_true_median": 0.9914602973740274,
+    "full": {
+     "true_unit_response_median": 1.0992323103201596,
+     "roa_fixed_threshold_mean": 0.9880241105001607,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9882747587130373
+    },
+    "target_free": {
+     "true_unit_response_median": 1.09903311860015,
+     "roa_fixed_threshold_mean": 0.9927027714213068,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9867889245489075
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.1048912200421857,
+     "roa_fixed_threshold_mean": 0.8896106808995009,
+     "recall_fixed_threshold_mean": 0.9992138364779874,
+     "roa_best_threshold_mean": 0.9798766755481187
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.1018028056806508,
+     "roa_fixed_threshold_mean": 0.6900260454740107,
+     "recall_fixed_threshold_mean": 0.9938010974280354,
+     "roa_best_threshold_mean": 0.9102821984382494
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.101416289010848,
+     "roa_fixed_threshold_mean": 0.696219759189566,
+     "recall_fixed_threshold_mean": 0.9964257693440458,
+     "roa_best_threshold_mean": 0.9225678300464919
+    }
+   },
+   "lambda=0.25": {
+    "whitened_cosine_template_vs_true_median": 0.9238429130493783,
+    "full": {
+     "true_unit_response_median": 1.1149908990309396,
+     "roa_fixed_threshold_mean": 0.9735331785109657,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.98912264661491
+    },
+    "target_free": {
+     "true_unit_response_median": 1.178316240095647,
+     "roa_fixed_threshold_mean": 0.9844313580116729,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9865078018399984
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.1927577589283862,
+     "roa_fixed_threshold_mean": 0.8498210069531966,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9813124554450922
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.1949724503723942,
+     "roa_fixed_threshold_mean": 0.636752221212812,
+     "recall_fixed_threshold_mean": 0.9951134333860406,
+     "roa_best_threshold_mean": 0.9012320445621125
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.194449573887077,
+     "roa_fixed_threshold_mean": 0.6444997929218924,
+     "recall_fixed_threshold_mean": 0.9957696013650432,
+     "roa_best_threshold_mean": 0.9115651981444088
+    }
+   },
+   "lambda=0.5": {
+    "whitened_cosine_template_vs_true_median": 0.5528880331538777,
+    "full": {
+     "true_unit_response_median": 0.7968448259996757,
+     "roa_fixed_threshold_mean": 0.8573189549981066,
+     "recall_fixed_threshold_mean": 0.8955722430329819,
+     "roa_best_threshold_mean": 0.941147143117176
+    },
+    "target_free": {
+     "true_unit_response_median": 0.9449037956968508,
+     "roa_fixed_threshold_mean": 0.9837522706101344,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9848615053594432
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.8792913433821885,
+     "roa_fixed_threshold_mean": 0.8326812237802517,
+     "recall_fixed_threshold_mean": 0.9941104359876346,
+     "roa_best_threshold_mean": 0.948138716159406
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.9147336332406983,
+     "roa_fixed_threshold_mean": 0.6287022363574438,
+     "recall_fixed_threshold_mean": 0.978020842640163,
+     "roa_best_threshold_mean": 0.8327596091354424
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.9150908375843438,
+     "roa_fixed_threshold_mean": 0.6356600689696126,
+     "recall_fixed_threshold_mean": 0.9813837826052662,
+     "roa_best_threshold_mean": 0.8405663584776516
+    }
+   },
+   "lambda=0.75": {
+    "whitened_cosine_template_vs_true_median": 0.1452658196922536,
+    "full": {
+     "true_unit_response_median": 0.1404030900404873,
+     "roa_fixed_threshold_mean": 0.8067749107103953,
+     "recall_fixed_threshold_mean": 0.8289787209045013,
+     "roa_best_threshold_mean": 0.9194896584366385
+    },
+    "target_free": {
+     "true_unit_response_median": 0.3120765676298473,
+     "roa_fixed_threshold_mean": 0.9901335465167028,
+     "recall_fixed_threshold_mean": 0.9993438320209974,
+     "roa_best_threshold_mean": 0.9861342122400147
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.22341172203913018,
+     "roa_fixed_threshold_mean": 0.8276099292389413,
+     "recall_fixed_threshold_mean": 0.9476601641616033,
+     "roa_best_threshold_mean": 0.9613099169298506
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.2811930982286474,
+     "roa_fixed_threshold_mean": 0.680746602397364,
+     "recall_fixed_threshold_mean": 0.9761566705369007,
+     "roa_best_threshold_mean": 0.8514698926624605
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.27957493375598613,
+     "roa_fixed_threshold_mean": 0.6925699025415065,
+     "recall_fixed_threshold_mean": 0.9815360099119318,
+     "roa_best_threshold_mean": 0.8616275999405804
+    }
+   },
+   "lambda=1.0": {
+    "whitened_cosine_template_vs_true_median": -0.08945884340783103,
+    "full": {
+     "true_unit_response_median": -0.06374190195962036,
+     "roa_fixed_threshold_mean": 0.5688901702577605,
+     "recall_fixed_threshold_mean": 0.5701371590741984,
+     "roa_best_threshold_mean": 0.9261377215995892
+    },
+    "target_free": {
+     "true_unit_response_median": -0.02844433571149333,
+     "roa_fixed_threshold_mean": 0.9972526798636152,
+     "recall_fixed_threshold_mean": 0.9980314960629921,
+     "roa_best_threshold_mean": 0.9848168600142219
+    },
+    "loading_0.1": {
+     "true_unit_response_median": -0.07018976278796968,
+     "roa_fixed_threshold_mean": 0.8498058724638686,
+     "recall_fixed_threshold_mean": 0.9125184469776239,
+     "roa_best_threshold_mean": 0.9674387270186581
+    },
+    "loading_1": {
+     "true_unit_response_median": -0.052844439371698346,
+     "roa_fixed_threshold_mean": 0.7807123495100473,
+     "recall_fixed_threshold_mean": 0.9788891210466234,
+     "roa_best_threshold_mean": 0.8627591601594403
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": -0.04886620611115088,
+     "roa_fixed_threshold_mean": 0.7890602268722958,
+     "recall_fixed_threshold_mean": 0.9822991515623972,
+     "roa_best_threshold_mean": 0.8711618936813803
+    }
+   }
+  },
+  "s=0.91": {
+   "lambda=0.0": {
+    "whitened_cosine_template_vs_true_median": 1.0,
+    "full": {
+     "true_unit_response_median": 0.9999999999999999,
+     "roa_fixed_threshold_mean": 0.9887124699845963,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9890765848709991
+    },
+    "target_free": {
+     "true_unit_response_median": 0.9999999999999998,
+     "roa_fixed_threshold_mean": 0.9948047201336675,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9832371305154423
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.8999961030981815,
+     "recall_fixed_threshold_mean": 0.9984276729559749,
+     "roa_best_threshold_mean": 0.9716097446986353
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7297740351474437,
+     "recall_fixed_threshold_mean": 0.9892474734390859,
+     "roa_best_threshold_mean": 0.886093320422015
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.0,
+     "roa_fixed_threshold_mean": 0.7382530741146374,
+     "recall_fixed_threshold_mean": 0.9920185919334767,
+     "roa_best_threshold_mean": 0.8962661214410476
+    }
+   },
+   "lambda=0.1": {
+    "whitened_cosine_template_vs_true_median": 0.9882726155202401,
+    "full": {
+     "true_unit_response_median": 1.0734584487027559,
+     "roa_fixed_threshold_mean": 0.9730032623249243,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9853937608182646
+    },
+    "target_free": {
+     "true_unit_response_median": 1.1225513814437247,
+     "roa_fixed_threshold_mean": 0.9842183159124306,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9864425287073267
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.106584749175764,
+     "roa_fixed_threshold_mean": 0.8794756061266481,
+     "recall_fixed_threshold_mean": 0.9984276729559749,
+     "roa_best_threshold_mean": 0.9722604834600577
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.1178951190534452,
+     "roa_fixed_threshold_mean": 0.6819378879411251,
+     "recall_fixed_threshold_mean": 0.9884613099170734,
+     "roa_best_threshold_mean": 0.8827698540616514
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.1173119105543183,
+     "roa_fixed_threshold_mean": 0.6901995185397292,
+     "recall_fixed_threshold_mean": 0.9907062559754715,
+     "roa_best_threshold_mean": 0.8925802144703031
+    }
+   },
+   "lambda=0.25": {
+    "whitened_cosine_template_vs_true_median": 0.9047124822346614,
+    "full": {
+     "true_unit_response_median": 0.9938938878633938,
+     "roa_fixed_threshold_mean": 0.9505924482169378,
+     "recall_fixed_threshold_mean": 0.992231638418079,
+     "roa_best_threshold_mean": 0.9884266496423049
+    },
+    "target_free": {
+     "true_unit_response_median": 1.2019093051256278,
+     "roa_fixed_threshold_mean": 0.9651887464387464,
+     "recall_fixed_threshold_mean": 1.0,
+     "roa_best_threshold_mean": 0.9853346937475903
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 1.1705820625756174,
+     "roa_fixed_threshold_mean": 0.8252696189221704,
+     "recall_fixed_threshold_mean": 0.9992138364779874,
+     "roa_best_threshold_mean": 0.9700462530619017
+    },
+    "loading_1": {
+     "true_unit_response_median": 1.224467800065474,
+     "roa_fixed_threshold_mean": 0.6235036116452111,
+     "recall_fixed_threshold_mean": 0.9899200924534589,
+     "roa_best_threshold_mean": 0.8744074336068351
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 1.2223038696654172,
+     "roa_fixed_threshold_mean": 0.6293131108414582,
+     "recall_fixed_threshold_mean": 0.9920347356507785,
+     "roa_best_threshold_mean": 0.8856542500507188
+    }
+   },
+   "lambda=0.5": {
+    "whitened_cosine_template_vs_true_median": 0.5359124890553504,
+    "full": {
+     "true_unit_response_median": 0.6326498583177925,
+     "roa_fixed_threshold_mean": 0.6584377489605899,
+     "recall_fixed_threshold_mean": 0.7077060413158764,
+     "roa_best_threshold_mean": 0.8513109594581242
+    },
+    "target_free": {
+     "true_unit_response_median": 0.8146226342827247,
+     "roa_fixed_threshold_mean": 0.9573384722332751,
+     "recall_fixed_threshold_mean": 0.9919257974109169,
+     "roa_best_threshold_mean": 0.9729825955150547
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.7792759066806946,
+     "roa_fixed_threshold_mean": 0.7254392400302584,
+     "recall_fixed_threshold_mean": 0.9113956647921463,
+     "roa_best_threshold_mean": 0.8692657643932963
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.8244818614733379,
+     "roa_fixed_threshold_mean": 0.6025280535264379,
+     "recall_fixed_threshold_mean": 0.9399426772777156,
+     "roa_best_threshold_mean": 0.7143322071602539
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.818736800421596,
+     "roa_fixed_threshold_mean": 0.607339479591371,
+     "recall_fixed_threshold_mean": 0.9413850087787309,
+     "roa_best_threshold_mean": 0.719613563902731
+    }
+   },
+   "lambda=0.75": {
+    "whitened_cosine_template_vs_true_median": 0.16295631872903044,
+    "full": {
+     "true_unit_response_median": 0.1441678761188523,
+     "roa_fixed_threshold_mean": 0.4725741283216999,
+     "recall_fixed_threshold_mean": 0.49549091515676724,
+     "roa_best_threshold_mean": 0.8209684352167703
+    },
+    "target_free": {
+     "true_unit_response_median": 0.08178552693329524,
+     "roa_fixed_threshold_mean": 0.9386318446148688,
+     "recall_fixed_threshold_mean": 0.9586836603051737,
+     "roa_best_threshold_mean": 0.9839088885061177
+    },
+    "loading_0.1": {
+     "true_unit_response_median": 0.13546526413460488,
+     "roa_fixed_threshold_mean": 0.7801514030572002,
+     "recall_fixed_threshold_mean": 0.891129576753925,
+     "roa_best_threshold_mean": 0.8714981833465779
+    },
+    "loading_1": {
+     "true_unit_response_median": 0.11585299710474756,
+     "roa_fixed_threshold_mean": 0.6802649263582626,
+     "recall_fixed_threshold_mean": 0.9520477243905754,
+     "roa_best_threshold_mean": 0.8058392279766227
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": 0.11263631996854269,
+     "roa_fixed_threshold_mean": 0.6817565248961902,
+     "recall_fixed_threshold_mean": 0.9505499989937264,
+     "roa_best_threshold_mean": 0.8115417720581468
+    }
+   },
+   "lambda=1.0": {
+    "whitened_cosine_template_vs_true_median": -0.019760264551842776,
+    "full": {
+     "true_unit_response_median": -0.01124019348628989,
+     "roa_fixed_threshold_mean": 0.31066367350026897,
+     "recall_fixed_threshold_mean": 0.31215131463545354,
+     "roa_best_threshold_mean": 0.8624802301919852
+    },
+    "target_free": {
+     "true_unit_response_median": -0.16560441483410537,
+     "roa_fixed_threshold_mean": 0.8700836772680461,
+     "recall_fixed_threshold_mean": 0.8708551461447874,
+     "roa_best_threshold_mean": 0.9816211710460413
+    },
+    "loading_0.1": {
+     "true_unit_response_median": -0.09084962695120435,
+     "roa_fixed_threshold_mean": 0.7279949751842182,
+     "recall_fixed_threshold_mean": 0.7824965415227766,
+     "roa_best_threshold_mean": 0.8975304298588197
+    },
+    "loading_1": {
+     "true_unit_response_median": -0.15055512419813616,
+     "roa_fixed_threshold_mean": 0.7461470049085048,
+     "recall_fixed_threshold_mean": 0.9107616814783063,
+     "roa_best_threshold_mean": 0.8154905100829534
+    },
+    "repo_alpha0.5": {
+     "true_unit_response_median": -0.15257471211064783,
+     "roa_fixed_threshold_mean": 0.7459896317599157,
+     "recall_fixed_threshold_mean": 0.9084373073839155,
+     "roa_best_threshold_mean": 0.8228141949209937
+    }
+   }
+  }
+ }
+}

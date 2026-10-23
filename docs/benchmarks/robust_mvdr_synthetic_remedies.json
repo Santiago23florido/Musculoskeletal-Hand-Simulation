@@ -1,0 +1,245 @@
+{
+ "s=0.96,lambda=0.0": {
+  "full": {
+   "roa_fixed": 0.9972188939966963,
+   "roa_best_threshold": 0.9882790436586255
+  },
+  "oracle_free": {
+   "roa_fixed": 0.9984567901234568,
+   "roa_best_threshold": 0.9842133728911736
+  },
+  "blank_detected": {
+   "roa_fixed": 0.9984567901234568,
+   "roa_best_threshold": 0.983423994680975
+  },
+  "model_subtract": {
+   "roa_fixed": 0.9984567901234568,
+   "roa_best_threshold": 0.9852417641336325
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.9329049061007563,
+   "roa_best_threshold": 0.9839146074488991
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.9804743921022991,
+   "roa_best_threshold": 0.985691883645777
+  },
+  "blank_kept_sample_fraction": 0.5335205078124999
+ },
+ "s=0.96,lambda=0.5": {
+  "full": {
+   "roa_fixed": 0.9528313498686541,
+   "roa_best_threshold": 0.9850778205361029
+  },
+  "oracle_free": {
+   "roa_fixed": 0.990010069751449,
+   "roa_best_threshold": 0.9843703527449327
+  },
+  "blank_detected": {
+   "roa_fixed": 0.9881226053639846,
+   "roa_best_threshold": 0.9851234048793521
+  },
+  "model_subtract": {
+   "roa_fixed": 0.9835677065266349,
+   "roa_best_threshold": 0.9871411873796102
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.88378717510854,
+   "roa_best_threshold": 0.9672078901173004
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.9298292001416376,
+   "roa_best_threshold": 0.9791174610003363
+  },
+  "blank_kept_sample_fraction": 0.5304768880208333
+ },
+ "s=0.96,lambda=1.0": {
+  "full": {
+   "roa_fixed": 0.7387379188587851,
+   "roa_best_threshold": 0.974737448833256
+  },
+  "oracle_free": {
+   "roa_fixed": 1.0,
+   "roa_best_threshold": 0.9884545080509929
+  },
+  "blank_detected": {
+   "roa_fixed": 0.8054659498207886,
+   "roa_best_threshold": 0.9735570907855352
+  },
+  "model_subtract": {
+   "roa_fixed": 0.9722115356939945,
+   "roa_best_threshold": 0.9678295407400314
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.9383252569089359,
+   "roa_best_threshold": 0.9671209291442816
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.9005848537011812,
+   "roa_best_threshold": 0.9842613248014764
+  },
+  "blank_kept_sample_fraction": 0.6264160156249999
+ },
+ "s=0.94,lambda=0.0": {
+  "full": {
+   "roa_fixed": 0.9985507246376811,
+   "roa_best_threshold": 0.986493140509674
+  },
+  "oracle_free": {
+   "roa_fixed": 0.9984901896485763,
+   "roa_best_threshold": 0.981141339109583
+  },
+  "blank_detected": {
+   "roa_fixed": 0.9992690058479532,
+   "roa_best_threshold": 0.9841591384145261
+  },
+  "model_subtract": {
+   "roa_fixed": 0.9992690058479532,
+   "roa_best_threshold": 0.9818038140234847
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.9117724366607195,
+   "roa_best_threshold": 0.9844873804349014
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.969278252611586,
+   "roa_best_threshold": 0.983737140299179
+  },
+  "blank_kept_sample_fraction": 0.5338053385416667
+ },
+ "s=0.94,lambda=0.5": {
+  "full": {
+   "roa_fixed": 0.8635954801070493,
+   "roa_best_threshold": 0.9433142971562295
+  },
+  "oracle_free": {
+   "roa_fixed": 0.9867805664814285,
+   "roa_best_threshold": 0.9865370772011337
+  },
+  "blank_detected": {
+   "roa_fixed": 0.894984025692669,
+   "roa_best_threshold": 0.9549414712976135
+  },
+  "model_subtract": {
+   "roa_fixed": 0.881517329375416,
+   "roa_best_threshold": 0.8979128163635434
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.8329415957484164,
+   "roa_best_threshold": 0.9468528484520325
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.8644862928617915,
+   "roa_best_threshold": 0.9652690500511442
+  },
+  "blank_kept_sample_fraction": 0.5694742838541665
+ },
+ "s=0.94,lambda=1.0": {
+  "full": {
+   "roa_fixed": 0.5847344827557969,
+   "roa_best_threshold": 0.9353042191565081
+  },
+  "oracle_free": {
+   "roa_fixed": 0.9992690058479532,
+   "roa_best_threshold": 0.9857556351900637
+  },
+  "blank_detected": {
+   "roa_fixed": 0.6772552862999337,
+   "roa_best_threshold": 0.9365446522677635
+  },
+  "model_subtract": {
+   "roa_fixed": 0.920648785561435,
+   "roa_best_threshold": 0.9615539704007342
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.8533583759178498,
+   "roa_best_threshold": 0.9718143768710957
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.8601591530542603,
+   "roa_best_threshold": 0.97409139826009
+  },
+  "blank_kept_sample_fraction": 0.7097737630208334
+ },
+ "s=0.91,lambda=0.0": {
+  "full": {
+   "roa_fixed": 0.9886424049103475,
+   "roa_best_threshold": 0.9872593392623071
+  },
+  "oracle_free": {
+   "roa_fixed": 0.9941536784670008,
+   "roa_best_threshold": 0.9835097198676492
+  },
+  "blank_detected": {
+   "roa_fixed": 0.9913905960342185,
+   "roa_best_threshold": 0.9845761534078051
+  },
+  "model_subtract": {
+   "roa_fixed": 0.9948642104275328,
+   "roa_best_threshold": 0.9844998190784019
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.9002811043918314,
+   "roa_best_threshold": 0.9744421562419733
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.9407924356420526,
+   "roa_best_threshold": 0.9827080974196215
+  },
+  "blank_kept_sample_fraction": 0.5313273111979167
+ },
+ "s=0.91,lambda=0.5": {
+  "full": {
+   "roa_fixed": 0.6737542555963962,
+   "roa_best_threshold": 0.8584523233068321
+  },
+  "oracle_free": {
+   "roa_fixed": 0.9638628855102988,
+   "roa_best_threshold": 0.9806953710319167
+  },
+  "blank_detected": {
+   "roa_fixed": 0.7605387727873509,
+   "roa_best_threshold": 0.8980146863987458
+  },
+  "model_subtract": {
+   "roa_fixed": 0.6679903033089762,
+   "roa_best_threshold": 0.7658729257364207
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.7276610735061132,
+   "roa_best_threshold": 0.8610562726491562
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.7909070036817522,
+   "roa_best_threshold": 0.8989751593772035
+  },
+  "blank_kept_sample_fraction": 0.6275675455729165
+ },
+ "s=0.91,lambda=1.0": {
+  "full": {
+   "roa_fixed": 0.3121531111070784,
+   "roa_best_threshold": 0.8536097034347301
+  },
+  "oracle_free": {
+   "roa_fixed": 0.8739788519509011,
+   "roa_best_threshold": 0.988659955201766
+  },
+  "blank_detected": {
+   "roa_fixed": 0.3726975021137045,
+   "roa_best_threshold": 0.8651894931047263
+  },
+  "model_subtract": {
+   "roa_fixed": 0.7612673919809884,
+   "roa_best_threshold": 0.944416966665508
+  },
+  "loading_0.1": {
+   "roa_fixed": 0.7296270622637652,
+   "roa_best_threshold": 0.8970339216974565
+  },
+  "blank_plus_loading": {
+   "roa_fixed": 0.5897785194109931,
+   "roa_best_threshold": 0.9240665348495255
+  },
+  "blank_kept_sample_fraction": 0.8493693033854166
+ }
+}
