@@ -338,3 +338,19 @@ Antes del lanzamiento de L3: 139 pruebas pasadas y 2 omitidas en benchmarks;
 Ruff check y format limpios en 188 archivos. Las fuentes registradas de L2,
 los 234 archivos históricos protegidos, los cuatro sellos de sus rollouts
 y el hash de su checkpoint final se verificaron al cerrar ese nivel.
+
+### L3 — pausa solicitada por el usuario (23 de octubre de 2026)
+
+L3 se inició a las 09:49 CEST y se detuvo a las 09:51 CEST por petición
+expresa del usuario. Se detuvieron el coordinador y sus cuatro procesos de
+inferencia, incluida la redirección del entorno Windows. No quedan procesos
+de L3 en ejecución. La búsqueda conserva sus nueve ensayos marcados RUNNING
+y 36 WAITING para reanudarlos, sin clasificarlos como fallidos o completados.
+Todavía no había registros de predicción completados ni puntuaciones de L3.
+SQLite pasa su comprobación de integridad. Los controles de identidad de
+memoria completa sí estaban terminados y superados.
+
+Estado conservado en `docs/benchmarks/pareto_mc_l3_setup/pause.json` y en las
+salidas locales; L2 sigue siendo el último nivel aceptado. La publicación y
+fusión solicitadas después no reanudan L3. Solo se retomará por una nueva
+instrucción del usuario, con el mismo directorio y las fuentes registradas.

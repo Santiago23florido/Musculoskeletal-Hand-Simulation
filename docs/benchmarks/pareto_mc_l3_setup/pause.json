@@ -1,0 +1,16 @@
+{
+  "status": "paused_by_user",
+  "paused_at_utc": "2026-10-23T07:51:06+00:00",
+  "recorded_at_utc": "2026-10-23T07:54:32.602172+00:00",
+  "level": "L3",
+  "run_root": "outputs/pareto_mc/development_v2/L3/standard",
+  "trial_states": {
+    "RUNNING": 9,
+    "WAITING": 36
+  },
+  "completed_record_metadata": 0,
+  "prediction_files": 0,
+  "retained_level": "L2",
+  "resume": "Use the same output root and full_memory_experiment only when the user resumes L3.",
+  "inference_processes_stopped": true
+}

@@ -248,3 +248,11 @@ incluyendo los bins aprendidos y su confianza.
 La puerta exige global ≥92,6580 % y ciclos 2–8 de ramp5s al menos cinco puntos
 por encima del ciclo 1. Si la primera estructura falla, solo se permite la
 alternativa de confianza local registrada; un segundo fallo detiene la escalera.
+
+L3 está **pausado por petición del usuario desde el 23 de octubre de 2026**.
+Sus controles de identidad pasaron; la búsqueda se detuvo sin ensayos puntuados.
+El estudio y los parámetros pendientes permanecen guardados para una reanudación
+expresamente solicitada. Publicar o fusionar el código no inicia experimentos.
+L2 sigue siendo el último nivel aceptado; el
+[registro de pausa](../../docs/benchmarks/pareto_mc_l3_setup/pause.json) describe
+el estado conservado.
