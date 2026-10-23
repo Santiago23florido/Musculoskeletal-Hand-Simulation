@@ -1,27 +1,26 @@
-# Piloto de deformación geométrica de MUAP
+# MUAP geometry warping pilot
 
-**Estado: piloto de entrenamiento/validación, sin predicciones externas.**
-Tras descartar en validación el reajuste libre de la CNN, se probó una
-deformación de la plantilla inicial con 240 parámetros compartidos.
-La salida conserva la identidad en q=0, cero entrada produce cero salida
-y escalar la amplitud de la entrada escala la salida de la misma forma.
-No hay un patrón aditivo común ni parámetros por identificador.
+**This pilot stopped during training and validation, before outer-test prediction.**
+After validation ruled out unrestricted CNN refinement, the next experiment
+warped the initial template using 240 shared parameters. The output preserves
+identity at q=0, maps zero input to zero output, and scales with input amplitude.
+It uses no shared additive pattern or parameters tied to unit identifiers.
 
-El operador desplaza/estira tiempo y desplaza, escala y rota la cuadrícula
-espacial. Sus ocho parámetros son funciones acotadas de q, q², q³ y diez
-momentos de energía de la plantilla de calibración. Usa interpolación
-trilineal determinista y un límite de corrección relativo a la norma propia.
-Las pruebas verifican identidad, homogeneidad de amplitud, permutación de
-unidades y gradiente CUDA finito.
+The operator shifts and stretches time, then shifts, scales, and rotates the
+spatial grid. Its eight parameters are bounded functions of q, q², q³, and ten
+energy moments of the calibration template. It uses deterministic trilinear
+interpolation and bounds the correction relative to the template's own norm.
+Tests check identity, amplitude homogeneity, unit permutation, and finite CUDA
+gradients.
 
-Con la pérdida proyectada dominante, la selección por riesgo de fuente
-conserva la identidad. Un piloto separado con riesgo de fuente dominante
-reduce ese riesgo de validación de 0,7151 a 0,6498 en seis épocas, mientras
-empeoran el error de forma y el proyectado. Sus pesos se descartan; no se
-midió RoA externo ni se afirma que esa reducción recupere descargas.
+When projected loss dominates, selection by source risk retains the identity.
+A separate pilot with source risk as the dominant objective reduces validation
+risk from 0.7151 to 0.6498 in six epochs, while waveform and projected errors
+worsen. Those weights were discarded. No outer-test RoA was measured, so the
+lower risk does not establish that discharges were recovered.
 
-Los protocolos, fuentes, historiales y pilotos se conservan en
-`outputs/stage_b_geometry/`. La corrección que pasa a evaluación de disparos
-está en [spike_likelihood](../spike_likelihood/README.md), con etiquetas de
-eventos y selección de umbral por Jaccard de validación. Sus resultados están
-en el [resumen publicado](../../docs/benchmarks/spike_likelihood_summary.json).
+Protocols, source snapshots, histories, and pilot outputs are retained in
+`outputs/stage_b_geometry/`. The subsequent experiment evaluates discharge
+decisions directly in [spike_likelihood](../spike_likelihood/README.md), using
+event labels and threshold selection by validation Jaccard. Its results are in
+the [published summary](../../docs/benchmarks/spike_likelihood_summary.json).

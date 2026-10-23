@@ -1,160 +1,160 @@
-# Residual de filtros sobre Pareto: transferencia y fallos de seguimiento
+# Pareto filter residual: transfer and tracking failures
 
-Experimento posterior al NO-GO de Stage A. Implementa una corrección pequeña
-sobre el sistema Pareto completo, con selección sin etiquetas y validación
-separada por sujeto. El resultado está en el [resumen publicado](../../docs/benchmarks/pareto_residual_summary.json).
+This experiment follows Stage A's failure to meet its targets. It adds a small
+correction to the full Pareto system, with unsupervised selection and subject
+separation. Results are in the
+[published summary](../../docs/benchmarks/pareto_residual_summary.json).
 
-**Resultado ejecutado:** 81,6896% frente a 80,8885% de Pareto sobre los mismos
-80 registros externos, con mejora en los cuatro sujetos. Rampa 5 s: +2,8224
-puntos; 10 s: +0,7230; 15 dB: +1,0960. **NO-GO:** no alcanza +5 puntos en
-rampas rápidas y termina con 501 frente a 511 instancias ≥90% en la fase final.
-Ocho modelos y 240 archivos de predicciones quedan conservados;
-no se reajustan con el test.
+**Mean RoA improves to 81.6896% from Pareto's 80.8885% on the same 80 outer-test
+records, with gains in all four subjects.** Gains are 2.8224 percentage points
+on 5 s ramps, 0.7230 on 10 s ramps, and 1.0960 at 15 dB. The model falls short
+of the required five-point gain on fast ramps and ends with 501 instances
+at or above 90% in the final phase, versus Pareto's 511. Eight models and
+240 prediction files are retained, without test-based retuning.
 
-## Fundamento y cambio respecto al primer Stage A
+## Rationale and changes from Stage A
 
-Pareto conserva íntegros su blanqueamiento, acoplamiento y actualización SV/SD.
-Para cada unidad calibrada, sus fuentes adaptativas y las del filtro inicial son
-dos observaciones alineadas por la identidad establecida durante calibración:
+Pareto retains its full whitening, coupling, and SV/SD updates. For each
+calibrated unit, its adaptive source and initial-filter source are two
+observations aligned by the identity established during calibration:
 
 `y_P = w_P,b^T x`, `y_C = w_C^T x`.
 
-La salida corregida es
+The corrected output is
 
-`y_H = y_P + a_phi(f_b,j) (y_C - y_P)`, con `|a_phi| <= 0,15`.
+`y_H = y_P + a_phi(f_b,j) (y_C - y_P)`, with `|a_phi| <= 0.15`.
 
-Por linealidad, equivale exactamente a aplicar el filtro
-`w_H = w_P,b + a_phi(f_b,j) (w_C - w_P,b)` dentro de cada lote. El residual se
-aplica a los filtros efectivos, después del blanqueamiento, para conservar
-el circuito de Pareto. **No se presenta como otra ejecución del Stage A original
-ni como una corrección aprendida de rango tres en el espacio de electrodos.**
+By linearity, this is exactly equivalent to applying
+`w_H = w_P,b + a_phi(f_b,j) (w_C - w_P,b)` within each batch. The residual acts on
+effective filters after whitening, preserving Pareto's loop. It is a distinct
+experiment from the original Stage A and does not learn a rank-three correction
+in electrode space.
 
-El coeficiente positivo devuelve parte de la respuesta hacia la calibración;
-el negativo permite extrapolar la dirección de cambio respecto a ella.
-Si el filtro varía localmente de forma aproximadamente lineal con el movimiento,
-esa extrapolación puede compensar una parte del retraso de adaptación. Al volver
-a la postura de referencia, la vista de calibración puede aportar una unidad
-que el seguimiento adaptativo haya perdido. Son hipótesis contrastables:
-la aproximación local y la recuperación de unidades no están garantizadas.
+A positive coefficient moves part of the response toward calibration. A negative
+coefficient extrapolates the direction of change away from it. If the filter
+varies approximately linearly with local movement, extrapolation may compensate
+for some adaptation lag. On returning to the reference posture, the calibration
+view may provide a unit lost by adaptive tracking. These are testable hypotheses;
+local linearity and unit recovery are not guaranteed.
 
-Sobre la observación aumentada `(y_P, y_C)`, la transformación es
+On the augmented observation `(y_P, y_C)`, the transformation is
 
 `T = [[I-D, D], [0,I]]`, `D=diag(a)`.
 
-Entonces `||T-I||_2 = sqrt(2) max|a| <= 0,21214 < 1`,
-`sigma_min(T) >= 0,78786` y `T` es invertible. La cota se verifica en pruebas.
-Es una propiedad de la transformación aumentada, no una garantía de RoA, de
-invertibilidad de una mezcla EMG no cuadrada ni de mejora fuera de muestra.
-La afirmación es **condicional al coeficiente y al estado ya calculados**.
-Como el coeficiente depende de las fuentes actuales, esta cota de matriz no
-demuestra que el mapa no lineal completo, incluyendo el cálculo del coeficiente,
-sea globalmente invertible o tenga el mismo límite para su Jacobiano.
-Inicializar a cero la última capa reproduce exactamente Pareto.
+Then `||T-I||_2 = sqrt(2) max|a| <= 0.21214 < 1`,
+`sigma_min(T) >= 0.78786`, and `T` is invertible. Tests verify the bound.
+This is a property of the augmented transformation, without guaranteeing RoA,
+invertibility of a non-square EMG mixture, or improvement out of sample.
+The statement is **conditional on the already computed coefficient and state**.
+Because the coefficient depends on current sources, the matrix bound does not
+establish global invertibility of the full nonlinear map or the same bound
+on its Jacobian. Zero initialization of the last layer exactly reproduces Pareto.
 
-La red contiene **97 parámetros**: 10 características → 8 unidades `tanh` → un
-coeficiente acotado. Los mismos pesos se aplican a cada unidad y registro.
-No hay identificadores de sujeto, número de unidad ni pesos por electrodo.
-Los RMS y amplitudes se normalizan por la calibración propia; un promedio
-entre unidades aporta contexto invariante a su orden. La salida es equivariante
-a permutar las unidades y acepta cantidades distintas de unidades. La historia
-causal está en los centroides y FIFO del detector, no en un embedding por sujeto.
+The network has **97 shared parameters**: 10 features → 8 `tanh` units → one
+bounded coefficient. The same weights apply to each unit and record. There are
+no subject identifiers, unit numbers, or per-electrode weights. RMS and amplitude
+are normalized by each record's calibration; an average across units provides
+order-invariant context. Output is equivariant to unit permutation and supports
+different unit counts. Causal history resides in detector centroids and FIFO,
+without a subject embedding.
 
-**Entradas cinemáticas (aclaración de la revisión del 19 de octubre de 2026).**
-Dos de las diez características son el **ángulo de muñeca medido**, `q = ángulo/40`,
-y su velocidad normalizada, leídos de `*_angle.npz` en `data.py`. Esta corrección
-es por tanto una variante con cinemática observada (tipo K), no una corrección
-ciega: no es comparable sin más con Pareto, que no usa el ángulo. El rescate de
-plantillas hereda estos pesos. La verosimilitud de disparos descarta
-explícitamente esas dos columnas.
+**Kinematic inputs, clarified in the 19 October 2026 review.** Two of the ten
+features are the **measured wrist angle**, `q = angle/40`, and its normalized
+velocity, read from `*_angle.npz` in `data.py`. This is an observed-kinematics
+variant (type K); its comparison with angle-free Pareto requires that distinction.
+Template rescue inherits these weights. Spike likelihood explicitly discards
+the two kinematic columns.
 
-La arquitectura residual y la representación por conjuntos se apoyan en
-[He et al., identidad residual](https://arxiv.org/abs/1603.05027) y
-[Zaheer et al., Deep Sets](https://arxiv.org/abs/1703.06114). Esas publicaciones
-justifican patrones de arquitectura; no prueban el éxito de esta propuesta en EMG.
-El blanqueamiento, contraste y adaptación de referencia proceden de
+The residual architecture and set representation follow
+[He et al., residual identity](https://arxiv.org/abs/1603.05027) and
+[Zaheer et al., Deep Sets](https://arxiv.org/abs/1703.06114). These papers support
+architecture patterns, without proving this proposal's success in EMG.
+Reference whitening, contrast, and adaptation come from
 [Mendez Guerra et al.](https://doi.org/10.1088/1741-2552/ad5ebf).
 
-## Entrenamiento y control de sobreajuste
+## Training and overfitting controls
 
-Se usan las fuentes publicadas de Pareto, generadas por su circuito adaptativo
-completo, y las fuentes del comparador fijo. El código de preparación solo
-extrae fuentes predichas, predicciones y correspondencias iniciales; no usa sus
-RoA históricos como características ni objetivos. Es un replay exacto de una
-rama base congelada: el residual nunca modifica retrospectivamente su estado.
+The experiment uses published Pareto sources generated by its full adaptive
+loop, plus fixed-comparator sources. Preparation extracts predicted sources,
+predictions, and initial correspondences; historical RoA is used neither as a
+feature nor as a target. This is an exact replay of a frozen base branch.
+The residual never changes its state retrospectively.
 
-El detector del residual sí actualiza centroides y FIFO con las fuentes
-corregidas. Se ejecuta igual durante ajuste, validación e inferencia. La detección
-dura y el estado se desacoplan del gradiente; se diferencia a través de las
-fuentes actuales y la red compartida. Se actualizan pesos cada 32 lotes y se
-evalúa pérdida cada cuatro. No se afirma diferenciación completa a través del
-detector ni a través de la adaptación SV de la rama Pareto.
+The residual's detector updates centroids and FIFO from corrected sources and
+runs identically in training, validation, and inference. Hard detection and
+state are detached from gradients; differentiation passes through current
+sources and the shared network. Weights update every 32 batches and loss is
+evaluated every four. The detector and Pareto SV adaptation are not fully
+differentiated.
 
-Objetivo fijado antes del test:
+The objective was fixed before testing:
 
-`L = 0,1 contraste + forma + 0,2 duplicación + 0,1 desplazamiento + 0,02 tamaño + 0,01 suavidad`.
+`L = 0.1 contrast + shape + 0.2 duplication + 0.1 displacement + 0.02 size + 0.01 smoothness`.
 
-- Contraste: error normalizado por calibración de `log(cosh)` en picos confiables,
-  con la penalización original para unidades inactivas.
-- Forma: consistencia de la respuesta temporal de la fuente alrededor de picos
-  confiables con su respuesta de calibración, normalizada en energía e invariante
-  al signo arbitrario de ICA. Es una
-  plantilla de fuente, **no la trayectoria MUAP multicanal real**.
-- Duplicación: correlación al cuadrado entre fuentes distintas.
-- Desplazamiento, tamaño y suavidad: penalizan alejarse de Pareto y oscilar entre
-  lotes. La calibración inicial de cinco segundos conserva corrección cero.
+- Contrast: calibration-normalized `log(cosh)` error at reliable peaks, retaining
+  the original penalty for inactive units.
+- Shape: consistency between the source's temporal response around reliable
+  peaks and its calibration response, energy-normalized and invariant to ICA's
+  arbitrary sign. This is a source template; the true multichannel MUAP
+  trajectory is unavailable.
+- Duplication: squared correlation between distinct sources.
+- Displacement, size, and smoothness: penalize departure from Pareto and
+  oscillation across batches. Correction remains zero during the initial
+  five-second calibration.
 
-Las pérdidas de forma e identidad añaden restricciones al contraste; siguen
-siendo proxies y pueden fallar. No hay selección por RoA ni una promesa teórica
-de que menor pérdida implique mejores descargas identificadas.
+Shape and identity losses add constraints to contrast but remain proxies that
+can fail. Selection does not use RoA, and a lower loss does not theoretically
+ensure better discharge identification.
 
-Cuatro particiones externas reservan sucesivamente `sub-02..05`. El siguiente
-sujeto, en orden cíclico, es validación; los otros tres entrenan. `sub-01`, usado
-para ajustar el Pareto publicado, queda siempre en entrenamiento. Así se evita
-presentarlo como sujeto desconocido para la rama base.
+Four outer folds successively hold out `sub-02..05`. The next cyclic subject
+provides validation and the other three train. `sub-01`, used to tune published
+Pareto, always remains in training and is not presented as unseen by the base
+branch.
 
-Entrenamiento: escalera, rampas 40/10 s, SNR 30/20 dB. Validación: esas mismas
-condiciones a 25 dB, en otro sujeto. Evaluación: los veinte registros del sujeto
-externo, incluidos **15 dB y rampas de 5/20 s**, ausentes del ajuste y selección.
-La rampa de 5 s prueba velocidad más alta; la de 20 s, interpolación.
+Training uses staircase and 40/10 s ramps at SNR 30/20 dB. Validation uses the
+same conditions at 25 dB in another subject. Evaluation covers all twenty
+records of the outer subject, including **15 dB and 5/20 s ramps**, excluded
+from fitting and selection. The 5 s ramp tests higher speed; the 20 s ramp
+tests interpolation.
 
-Se fijan dos semillas, cinco épocas máximas, AdamW, tasa 0,003 y decay 0,01.
-La época cero es candidata. Se exige al menos 0,5% de mejora en el proxy de
-validación y no empeorarlo más de 0,01 en ninguna condición; de lo contrario se
-conserva la corrección cero. Se promedian los coeficientes de ambas semillas;
-no se elige la semilla mirando el test. Todos los candidatos de las cuatro
-particiones se congelan antes de abrir etiquetas para puntuar una sola.
+The fixed budget uses two seeds, at most five epochs, AdamW, learning rate
+0.003, and weight decay 0.01. Epoch zero is eligible. Selection requires at least
+0.5% improvement in the validation proxy and no condition worsening by more than
+0.01; otherwise zero correction is retained. Coefficients from both seeds are
+averaged, without test-based seed selection. All candidates for all four folds
+are frozen before any outer scoring labels are opened.
 
-Los cien registros ya se exploraron en el trabajo anterior. La separación
-impide entrenar esta red con el sujeto externo, pero el estudio sigue siendo
-**exploratorio**, con cuatro sujetos externos y una sola familia de simulación.
-Una confirmación independiente requiere registros nuevos reservados.
+All 100 records had already been explored in preceding work. Subject separation
+prevents training this network on its outer subject, but the study remains
+**exploratory**, with four outer subjects and one simulation family. Independent
+confirmation requires newly reserved records.
 
-## Brechas que se evalúan
+## Evaluation targets
 
-El comparador principal usa **los mismos 80 registros y unidades externas**,
-no el 79,25% calculado sobre otros cien registros. Se informa:
+The primary comparator uses **the same 80 outer records and units**, rather than
+the 79.25% computed over a different 100-record population. Reporting covers:
 
-- RoA medio, mediana y porcentaje de unidades ≥90%, por sujeto, condición y SNR.
-- Rampas rápidas: objetivo ≥+5 puntos tanto en 5 s como en 10 s.
-- Escalera: ninguna pérdida de RoA.
-- Seguimiento: RoA de primera fase, fase central y últimos cinco segundos;
-  ninguna pérdida en la fase final ni en el número de instancias ≥90% al final.
-- Aceptación adicional del usuario: mejora estricta del promedio global y
-  ausencia de pérdida a 15 dB. Esas condiciones se registran en `acceptance.json`
-  antes de puntuar los sujetos externos, sin alterar selección ni pesos.
-- Precisión, recall, F1 y SIL por unidad, dos semillas separadas, Wilcoxon con
-  Holm e intervalos bootstrap por sujeto.
+- Mean RoA, median, and percentage of units ≥90%, by subject, condition, and SNR.
+- Fast ramps: a gain of at least five points on both 5 s and 10 s ramps.
+- Staircase: no RoA loss.
+- Tracking: RoA in the first phase, middle phase, and final five seconds, with
+  no loss in final-phase RoA or number of final instances ≥90%.
+- Additional user criteria: strictly higher global mean and no loss at 15 dB.
+  These are recorded in `acceptance.json` before outer scoring, without changing
+  selection or weights.
+- Per-unit precision, recall, F1, and SIL; separate seeds; Wilcoxon with Holm;
+  and subject-bootstrap intervals.
 
-Superar solo el promedio no da `go`. El umbral de +5 puntos es un criterio de
-avance, no demuestra por sí solo que la brecha de movimientos rápidos haya
-desaparecido; también se examinan errores y unidades perdidas. Recuperación de unidades no calibradas,
-nuevos reclutamientos, otras anatomías y velocidades fuera de estos datos no
-se acreditan con este experimento.
+A higher average alone does not meet all criteria. The five-point threshold is
+a progression criterion and cannot by itself establish that fast-movement
+failures are solved; errors and lost units are also examined. This experiment
+does not establish recovery of uncalibrated units, new recruitment, transfer to
+other anatomies, or performance at speeds outside these data.
 
-## Ejecución reproducible
+## Reproduction
 
-Se utiliza `.venv-benchmarks` y los datos de las semanas 1–2. Para repetir sin
-sobrescribir, define primero `$env:PARETO_RESIDUAL_OUTPUT = 'outputs/residual_repeat'`.
+Use `.venv-benchmarks` and the weeks 1–2 data. To preserve existing runs, first
+set `$env:PARETO_RESIDUAL_OUTPUT = 'outputs/residual_repeat'`.
 
 ```powershell
 .\.venv-benchmarks\Scripts\python.exe -m benchmarks.pareto_residual.run --threads 2 prepare
@@ -174,9 +174,8 @@ foreach ($testSubject in 'sub-02','sub-03','sub-04','sub-05') {
 .\.venv-benchmarks\Scripts\python.exe -m pytest -q benchmarks/pareto_residual/test_residual.py --basetemp=outputs/test_residual
 ```
 
-Las predicciones se guardan antes de abrir las etiquetas. Los modelos y caches
-quedan en `outputs/pareto_residual/`. El origen de cada fuente tiene hash; el
-registro de protocolo conserva código, particiones y objetivos. Una corrección
-cero debe reproducir exactamente las descargas publicadas en los cien registros.
-Los tiempos del residual sobre fuentes precalculadas excluyen el coste de la
-rama Pareto y no demuestran latencia completa en vivo.
+Predictions are saved before labels are opened. Models and caches remain in
+`outputs/pareto_residual/`. Each source has a provenance hash; the protocol
+record retains code, splits, and objectives. Zero correction must exactly
+reproduce published discharges on all 100 records. Residual timing on cached
+sources excludes the Pareto branch and does not establish complete live latency.

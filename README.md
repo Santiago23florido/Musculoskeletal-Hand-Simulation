@@ -19,13 +19,13 @@ The `hand_sim` package loads the upstream model without changing its bodies,
 joint constraints, tendon paths, muscle force laws, activation dynamics, or
 contact parameters. It provides:
 
-- Native CPU simulation with validated muscle excitation inputs.
-- Anatomical lookup of joints, muscles, tendons, bodies, sites, and sensors.
+- **Working native CPU simulation** with validated muscle excitation inputs.
+- **Anatomical lookup** of joints, muscles, tendons, bodies, sites, and sensors.
 - Joint coordinates, muscle activations, signed actuator forces, tendon
   lengths and velocities, fingertip poses and velocities, and contact wrenches.
 - Model inventories and owned physical snapshots exported as JSON or
   pickle-free NumPy archives.
-- An interactive MuJoCo viewer showing native bones and muscle-tendon paths.
+- **An interactive MuJoCo viewer** showing native bones and muscle-tendon paths.
 
 The pinned hand has **23 joint degrees of freedom, 39 muscle actuators,
 39 tendons, 496 sites, and five fingertips**. It has no registered MuJoCo
@@ -117,16 +117,16 @@ Each workflow has its own commands, protocol, scoring, and documented limits.
 
 | Workflow | Implemented approach | Recorded outcome |
 | --- | --- | --- |
-| [Farina references](benchmarks/farina/README.md) | Pinned adaptive tutorial, spike scoring, detector ablation, and cached FDSI reproduction | Tutorial adaptive RoA: 90.25%; all 28 cached Table 2 comparisons pass the one-point tolerance. |
-| [Stage A](benchmarks/stage_a/README.md) | Causal encoder and invertible low-rank whitening correction | 57.83% mean RoA versus Pareto's 79.25% on 100 records; **no-go**. |
-| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded calibration-conditioned correction with 97 shared parameters; two inputs are the measured wrist angle and its velocity | 81.69% versus 80.89% on 80 outer records; rapid-movement targets unmet, **no-go**. |
-| [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel directions, dormant-unit recovery, and Pareto fallback | 81.42% on the same 80 records; restores 511 final retained instances, **no-go**. |
-| [Stage B MoCA](benchmarks/stage_b/README.md) | Shared FiLM MUAP morphing and an EMG-only state observer | MoCA-B: 37.26%, MoCA-K: 36.97%, versus Pareto's 80.89%; **no-go**. |
+| [Farina references](benchmarks/farina/README.md) | Pinned adaptive tutorial, spike scoring, detector ablation, and cached FDSI reproduction | **Tutorial adaptive RoA: 90.25%; all 28 cached Table 2 comparisons pass the one-point tolerance.** |
+| [Stage A](benchmarks/stage_a/README.md) | Causal encoder and invertible low-rank whitening correction | 57.83% mean RoA versus Pareto's 79.25% on 100 records; accuracy targets unmet. |
+| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded calibration-conditioned correction with 97 shared parameters; two inputs are the measured wrist angle and its velocity | 81.69% versus 80.89% on 80 outer records; rapid-movement and final-retention targets unmet. |
+| [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel directions, dormant-unit recovery, and Pareto fallback | 81.42% on the same 80 records; **restores 511 final retained instances**; full acceptance criteria unmet. |
+| [Stage B MoCA](benchmarks/stage_b/README.md) | Shared FiLM MUAP morphing and an EMG-only state observer | MoCA-B: 37.26%, MoCA-K: 36.97%, versus Pareto's 80.89%; accuracy targets unmet. |
 | [Separation pilot](benchmarks/stage_b_separation/README.md) | Covariance-aware source loss and MVDR normalization | Stopped during validation; no outer-test predictions. |
 | [Geometry pilot](benchmarks/stage_b_geometry/README.md) | Shared physical template warping | Stopped during validation; no outer-test predictions. |
-| [Spike likelihood](benchmarks/spike_likelihood/README.md) | Bounded shared classifier of discharge candidates, without angular inputs | **83.51% versus 80.89%**; 72.33% versus 65.81% on 5-second ramps; full thresholds still **no-go**. |
+| [Spike likelihood](benchmarks/spike_likelihood/README.md) | Bounded shared classifier of discharge candidates, without angular inputs | **83.51% versus 80.89% globally; 72.33% versus 65.81% on 5-second ramps.** Full accuracy targets remain unmet. |
 | [Robust MVDR](benchmarks/robust_mvdr/README.md) | Training-free analytic decoding, with phase, target-reliability and frozen-checkpoint audits | Executed, then **withdrawn**: 5.22% RoA; a FIFO-regime amplitude defect reproduced on sub-01. See the [correction and CPU audit](docs/benchmarks/robust_mvdr_correction.md). |
-| [Pareto-MC](benchmarks/pareto_mc/README.md) | EMG-only state estimation, closed-loop spike likelihood, and bounded calibration-filter memory | **Development validation only:** L2 reaches 91.66% RoA versus 87.65% for Pareto-rerun on sub-04; 85.05% on 5-second ramps. L2 gates pass; the CPU latency target is unmet and L3 is paused by request. |
+| [Pareto-MC](benchmarks/pareto_mc/README.md) | EMG-only state estimation, closed-loop spike likelihood, and bounded calibration-filter memory | On sub-04 development validation, **L2 reaches 91.66% RoA versus 87.65% for Pareto-rerun, and 85.05% on 5-second ramps. L2 passes its validation criteria.** The CPU latency target is unmet and L3 is paused by request. |
 
 Phase metrics follow the reference `get_triangular_phases`: for triangular
 conditions the reported "first hold" spans 0–10 s, while it is the 5 s calibration
@@ -141,16 +141,21 @@ separate example and window. Stage A uses 100 records; later outer-subject
 experiments use the same 80 records and 591 calibrated instances. Comparisons
 must preserve these populations and scoring protocols.
 
+**L2 also reaches 75.81% of instances with RoA ≥90%, 97.54% at reference rest,
+and 90.94% during movement.** Its calibration-filter memory improves movement
+accuracy over L1 while meeting the 97% rest criterion.
+
 Pareto-MC uses a separate development split: training on sub-01 through sub-03
 and validation on sub-04 (20 records, 124 instances). Its current results are
 exploratory; the external 80-record evaluation and confirmation on new data are
-pending. L2's CPU timing is 86.16 ms median and 105.51 ms p95 with four records
-processed concurrently, above the 22 ms target. See the
+pending. **L2's CPU timing remains above the 22 ms target:** 86.16 ms median
+and 105.51 ms p95 with four records processed concurrently. An isolated L2
+profile is still pending. See the
 [recorded L2 gate](docs/benchmarks/pareto_mc_l2_standard/gate.json) and
 [L3 pause](docs/benchmarks/pareto_mc_l3_setup/pause.json). Publishing the code
 does not resume the experiment.
 
-The spike-likelihood result improves recall from 83.16% to 87.74%, while
+The spike-likelihood result **improves recall from 83.16% to 87.74%**, while
 precision falls from 91.47% to 91.10%. It demonstrates an event-detection gain on
 this benchmark. Independent-generator transfer, true MUAP-trajectory recovery,
 and full live-stream latency remain unverified. See the

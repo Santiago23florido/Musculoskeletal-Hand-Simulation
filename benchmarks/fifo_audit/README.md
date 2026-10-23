@@ -25,8 +25,9 @@ before ablations, saves the controls, and returns exit code 3. Replay mismatches
 raise an assertion rather than silently changing the decoder. Output JSON files
 are never overwritten.
 
-The test suite checks frozen-predict equivalence, the D=512 stationary amplitude
-loss, subject restrictions, and the missing-cache guard:
+**The audit reproduces the D=512 stationary amplitude loss** and checks
+equivalence with the frozen prediction loop. Tests also cover subject
+restrictions and the missing-cache guard:
 
 ```powershell
 .venv-benchmarks/Scripts/python.exe -m pytest benchmarks/fifo_audit -q

@@ -1,29 +1,30 @@
-# Stage A — corrección aprendida del blanqueamiento
+# Stage A: learned whitening correction
 
-Implementación independiente de una corrección aprendida del blanqueamiento.
-El [resumen publicado](../../docs/benchmarks/stage_a_p1_summary.json) conserva
-los resultados y el criterio de salida de la evaluación P1.
+An independent implementation of a learned whitening correction. The
+[published summary](../../docs/benchmarks/stage_a_p1_summary.json) records the
+results and the acceptance criterion for the P1 evaluation.
 
-La arquitectura aplica `W_b = (I + U(z_b)V(z_b)^T) W_0`, con seis bases, rango 3,
-MLP de mezcla y estado causal. El límite certificado de norma espectral es 0,8.
-Se mantienen las calibraciones y las funciones originales de detección, compuerta
-IQR, centroides y actualización de separación de `adapt_decomp`, fijado a
-`a8f53736e297962670276bc123c137050b7056b6`. No es una reproducción del código
-no disponible de HarmonICA.
+The architecture applies `W_b = (I + U(z_b)V(z_b)^T) W_0`, using six bases, rank 3,
+a mixing MLP, and causal state. The certified spectral-norm bound is 0.8.
+It retains the original calibrations, detection functions, IQR gate, centroids,
+and separation updates from `adapt_decomp`, pinned to
+`a8f53736e297962670276bc123c137050b7056b6`. This is an independent implementation;
+the unavailable HarmonICA code could not be reproduced.
 
-El modelo principal usa ángulo de muñeca disponible (**Stage A-K**). Entrena con
-KL gaussiano y consistencia del contraste `log(cosh)`, sobre secuencias. Los
-detalles numéricos se recogen en los módulos y resultados enlazados más abajo.
+The main model uses the observed wrist angle (**Stage A-K**). It trains on
+sequences with Gaussian KL and `log(cosh)` contrast consistency. Numerical
+details are recorded in the modules and results linked below.
 
-**Resultado ejecutado: NO-GO.** Cinco entrenamientos y P1 completo, 100 registros
-y 768 instancias por método. RoA medio: Stage A 57,83%, Pareto 79,25%; diferencias
-en rampas de 5/10 s y escalera: −10,55/−20,74/−28,62 puntos. El modelo no supera
-el criterio de salida. Se conserva el resultado sin volver a seleccionar mirando
-el test.
+**The model did not meet the accuracy targets.** Five training runs and the full
+P1 evaluation covered 100 records and 768 instances per method. Mean RoA was
+57.83% for Stage A versus 79.25% for Pareto; differences on 5/10 s ramps and
+staircase were −10.55/−20.74/−28.62 percentage points. The result is retained,
+without selecting another model based on the test results.
 
-## Reproducir sin sobrescribir los experimentos conservados
+## Reproduce in a fresh output directory
 
-Desde la raíz, en PowerShell; los datos completos de las semanas 1–2 deben existir:
+Run from the repository root in PowerShell. The full weeks 1–2 dataset must
+already be available:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File benchmarks/farina/setup.ps1 -Fdsi
@@ -43,59 +44,60 @@ $env:STAGE_A_OUTPUT = 'outputs/stage_a_reproduction'
 Remove-Item Env:STAGE_A_OUTPUT
 ```
 
-Los nombres de entrenamiento y la selección se protegen contra sobrescritura.
-Para una nueva exploración usa otra carpeta de salida. La evaluación se puede
-reanudar con el mismo nombre si coinciden plan, código y checkpoint; se reutilizan
-solo registros terminados. El script no selecciona otro modelo mirando el test.
+Training and selection names are protected against overwriting. Use a different
+output directory for a new exploration. An evaluation can resume under the same
+name when its plan, code, and checkpoint match; only completed records are
+reused. The script does not select a different model based on the test results.
 
-El entrenamiento se hace en dos rampas del pool P1 (`sub-01`, 30 dB, 40 y 5 s)
-y selecciona en la tercera (10 s), exclusivamente por pérdida sin etiquetas.
-La calibración supervisada de los primeros cinco segundos se conserva. La
-selección común usa pesos 0,0001 para KL y 0,1 para contraste. Las descargas reales
-posteriores a calibración solo se abren para evaluar predicciones ya generadas.
-Los dos primeros entrenamientos seleccionaron época con sus pesos originales
-1/0,01, reproducidos por las opciones `--validation-...` de arriba. La selección
-final entre los cinco candidatos vuelve a puntuarlos con el objetivo común.
+Training uses two ramps from the P1 pool (`sub-01`, 30 dB, 40 and 5 s), with
+selection on the third ramp (10 s), exclusively by an unsupervised loss.
+Supervised calibration on the first five seconds is retained. The shared
+selection objective uses weights of 0.0001 for KL and 0.1 for contrast. True
+discharges after calibration are opened only to evaluate saved predictions.
+The first two training runs selected epochs with their original weights of
+1/0.01, reproduced by the `--validation-...` options above. Final selection
+rescores all five candidates with the shared objective.
 
-La evaluación completa equivale a cinco particiones por sujeto. Para repartir
-el cálculo se puede ejecutar `evaluate ... --name p1_sub01 --subjects sub-01`
-y lo mismo para los otros cuatro sujetos, conservando idéntico checkpoint,
-código, métodos e hilos. Después, `merge p1_sub01 p1_sub02 p1_sub03 p1_sub04 p1_sub05`
-genera `evaluations/p1_complete/`. La unión rechaza solapamientos y coberturas
-incompletas. La ejecución registrada usó como máximo tres procesos y dos hilos
-por proceso.
+The full evaluation is equivalent to five subject partitions. To distribute
+the computation, run `evaluate ... --name p1_sub01 --subjects sub-01` and the
+equivalent commands for the other four subjects, keeping the same checkpoint,
+code, methods, and thread count. Then
+`merge p1_sub01 p1_sub02 p1_sub03 p1_sub04 p1_sub05` creates
+`evaluations/p1_complete/`. Merging rejects overlaps and incomplete coverage.
+The recorded run used at most three processes with two threads per process.
 
-## Archivos y resultados
+## Files and results
 
-- `data.py`: preparación de señales y características, sin cargar descargas reales.
-- `model.py`: encoder, corrección invertible y pérdidas diferenciables.
-- `objectives.py`: constantes KL del FIFO y estadísticas de calibración, con Cholesky.
-- `train.py`, `selection.py`: secuencias, checkpoints y selección antes del test.
-- `inference.py`: detector/SV originales con el nuevo blanqueamiento y acoplamiento.
-- `evaluate.py`, `merge.py`: P1, controles, métricas, pruebas pareadas y cobertura.
-- `statistics.py`: modelo mixto `método × condición + (1 | sujeto/registro)`.
-- `report.py`: figuras regenerables desde los registros calculados.
+- `data.py`: prepares signals and features without loading true discharges.
+- `model.py`: encoder, invertible correction, and differentiable losses.
+- `objectives.py`: FIFO KL constants and calibration statistics, using Cholesky.
+- `train.py`, `selection.py`: sequences, checkpoints, and selection before testing.
+- `inference.py`: original detector/SV with the new whitening and coupling.
+- `evaluate.py`, `merge.py`: P1, controls, metrics, paired tests, and coverage.
+- `statistics.py`: mixed model `method × condition + (1 | subject/record)`.
+- `report.py`: figures regenerated from the computed records.
 
-Por defecto los artefactos van a `outputs/stage_a/`, ignorado por Git. Cada
-entrenamiento guarda protocolo, semilla, hashes, copia de código, pérdidas y pesos.
-La selección guarda el hash del candidato. Cada evaluación conserva código,
-predicciones y puntuaciones por unidad, fases y tiempos. El Pareto publicado se
-recalcula y debe coincidir con sus RoA guardados a `1e-10`.
+Outputs default to `outputs/stage_a/`, which Git ignores. Each training run
+saves its protocol, seed, hashes, source snapshot, losses, and weights. Selection
+saves the candidate hash. Each evaluation retains code, predictions, per-unit
+scores, phases, and timing. Published Pareto results are rescored and must match
+their saved RoA values within `1e-10`.
 
-El criterio de salida exige **+5 puntos en las rampas de 5 y 10 s y ninguna pérdida
-en escalera**, sobre las 768 instancias del P1 completo. Una evaluación parcial
-no puede marcarlo como superado. La inferencia con `W_0 x` precalculado conserva
-el protocolo offline: sus tiempos no acreditan latencia de un sistema en vivo.
+The acceptance criterion requires **a gain of at least 5 percentage points on
+both 5 and 10 s ramps, with no staircase loss**, across all 768 instances of the
+full P1 evaluation. A partial evaluation cannot establish acceptance. Inference
+with cached `W_0 x` retains the offline protocol, so its timing does not establish
+live-system latency.
 
-## Verificación
+## Verification
 
 ```powershell
 .\.venv-benchmarks\Scripts\python.exe -m pytest -q benchmarks/stage_a/test_stage_a.py benchmarks/farina/test_metrics.py benchmarks/farina/test_fdsi.py benchmarks/farina/test_download.py
 .\.venv-windows\Scripts\ruff.exe check benchmarks/stage_a
 ```
 
-Las pruebas verifican equivalencia y gradientes contra cálculo denso, Cholesky,
-invertibilidad, causalidad, la postura de referencia, acoplamiento Woodbury,
-contraste contra los autores y el rechazo de un `go` basado en datos parciales.
-La auditoría sobre señales reales del benchmark reproduce bit a bit el comparador
-fijo antes de entrenar.
+Tests check equivalence and gradients against dense computation, Cholesky,
+invertibility, causality, the reference posture, Woodbury coupling, contrast
+against the authors' implementation, and rejection of acceptance based on
+partial data. Before training, the audit on real benchmark signals reproduces
+the fixed comparator bit for bit.

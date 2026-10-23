@@ -1,50 +1,50 @@
-# Stage B: corrección de la geometría de separación
+# Stage B: separation geometry correction
 
-**Estado: piloto detenido en validación, antes de inferencia externa.** La
-CNN reajustada reduce el error proyectado pero su riesgo de fuente pierde
-frente a la identidad en las particiones completadas. Sus pesos no se
-promueven. Continúa la [corrección por etiquetas de disparo](../spike_likelihood/README.md).
+**This pilot stopped during validation, before outer-test inference.** The
+refined CNN reduces projected error, but its source risk is worse than the
+identity in completed folds. Its weights were discarded. The subsequent
+experiment uses [discharge labels](../spike_likelihood/README.md).
 
-Corrige el desajuste observado en la [variante anterior](../stage_b/README.md),
-donde mejorar NMSE de la forma completa empeoró su proyección al separador.
-La nueva corrida conserva sus registros, plantillas, proyección, arquitectura
-Γ y observadores congelados. Cambia la normalización y el objetivo de Γ;
-los experimentos anteriores y sus resultados permanecen intactos.
+The pilot addresses the mismatch observed in the
+[preceding variant](../stage_b/README.md), where lower full-waveform NMSE
+worsened projection into the separator. It retains the same records, templates,
+projection, Γ architecture, and frozen observers, changing Γ's normalization
+and objective. Previous experiments and results remain intact.
 
-## Derivación
+## Derivation
 
-Sea `x=h_i s_i+interferencia`, con covarianza positiva R. La dirección previa
-`R⁻¹h/sqrt(hᵀR⁻¹h)` tiene respuesta propia `sqrt(hᵀR⁻¹h)`, que varía con postura
-y covarianza. Eso permite cambios de escala aun con una plantilla correcta,
-mientras el detector parte de centroides calibrados en una postura.
+Let `x=h_i s_i+interference`, with positive covariance R. The earlier direction,
+`R⁻¹h/sqrt(hᵀR⁻¹h)`, has self-response `sqrt(hᵀR⁻¹h)`, which varies with posture
+and covariance. Scale can therefore change even with a correct template, while
+the detector starts with centroids calibrated at one posture.
 
-Se impone respuesta propia unitaria mediante **MVDR**:
+**MVDR** imposes unit self-response:
 
 \[
-\min_w w^\top Rw\quad\text{sujeto a }w^\top h=1,
+\min_w w^\top Rw\quad\text{subject to }w^\top h=1,
 \qquad w=\frac{R^{-1}h}{h^\top R^{-1}h}.
 \]
 
-La solución se obtiene con multiplicadores de Lagrange. Conserva la dirección
-de separación y fija la amplitud esperada del evento modelado. La ganancia
-adicional se calibra una sola vez con los cinco segundos iniciales. Se sigue
-usando el detector SD original. Fuentes: [Capon, 1969](https://doi.org/10.1109/PROC.1969.7278)
-y [documentación de MVDR](https://www.mathworks.com/help/phased/ref/mvdrweights.html).
-MVDR depende de la exactitud de la plantilla: la restricción se refiere al
-modelo estimado y no garantiza respuesta unitaria sobre una unidad mal estimada.
+Lagrange multipliers give the solution. It preserves the separation direction
+and fixes the expected amplitude of the modeled event. Additional gain is
+calibrated once using the first five seconds. The original SD detector is
+retained. Sources: [Capon, 1969](https://doi.org/10.1109/PROC.1969.7278) and
+[MVDR documentation](https://www.mathworks.com/help/phased/ref/mvdrweights.html).
+MVDR depends on template accuracy: its constraint applies to the estimated
+model and cannot guarantee unit response for an incorrectly estimated unit.
 
-Para entrenar, `h*` es la trayectoria estimada de EMG limpia y disparos verdaderos
-de sujetos permitidos. C es la covarianza observada de EMG proyectada en una
-vecindad de postura, y `R* = L*L*ᵀ` su versión con el mismo shrinkage físico.
-Se penaliza la forma extendida **en la geometría de separación**:
+For training, `h*` is the trajectory estimated from clean EMG and true discharges
+of permitted subjects. C is observed projected-EMG covariance in a posture
+neighborhood, and `R* = L*L*ᵀ` is its version with the same physical shrinkage.
+The extended waveform is penalized **in the separation geometry**:
 
 \[
 L_p=\frac{\|L_*^{-1}(\widehat h-h_*)\|^2}{\|L_*^{-1}h_*\|^2}.
 \]
 
-Este término positivo controla dirección y amplitud. A diferencia de NMSE
-en 6.400 muestras de forma, pondera los errores después de la proyección y la
-covarianza que utiliza el separador. Se añade riesgo de fuente diferenciable:
+This positive term controls direction and amplitude. Compared with NMSE over
+6,400 waveform samples, it weights error after the projection and covariance
+used by the separator. A differentiable source risk is added:
 
 \[
 L_s=\frac{(\widehat w-w_*)^\top C(\widehat w-w_*)}{w_*^\top Cw_*}
@@ -52,55 +52,53 @@ L_s=\frac{(\widehat w-w_*)^\top C(\widehat w-w_*)}{w_*^\top Cw_*}
 {\mathbb E[(x^\top w_*)^2]}.
 \]
 
-La igualdad vale para x centrada con covarianza C. Por ello se penaliza el
-error real de la fuente respecto al separador maestro, incluidas contribuciones
-de interferencia representadas en C. Se diferencia a través del modelo de
-covarianza, Cholesky y normalización MVDR. No se identifica artificialmente
-este riesgo con RoA: el maestro usa plantillas estimadas y puede equivocarse.
+The equality holds for centered x with covariance C. It penalizes actual source
+error relative to the teacher separator, including interference contributions
+represented in C. Gradients pass through the covariance model, Cholesky, and
+MVDR normalization. Source risk is distinct from RoA: the teacher uses estimated
+templates and can be wrong.
 
-El objetivo fijo es `Lp + 0.25 Ls + 0.1 Lang + 0.01 Lwave + 0.001 Lsize`.
-Lang compara direcciones blanqueadas; Lwave conserva una regularización débil
-de forma completa. Mantener Lp evita que una solución local que suprima la
-salida reduzca Ls sin aprender la identidad. La identidad exacta en q=0 y
-el límite de corrección de norma dos permanecen.
+The fixed objective is `Lp + 0.25 Ls + 0.1 Lang + 0.01 Lwave + 0.001 Lsize`.
+Lang compares whitened directions; Lwave retains weak full-waveform
+regularization. Retaining Lp prevents a local output-suppressing solution from
+reducing Ls without learning identity. Exact identity at q=0 and the correction
+norm bound of two remain.
 
-## Protocolo y controles
+## Protocol and controls
 
-Se reutilizan las cuatro particiones externas, dos semillas y 42 registros
-permitidos de supervisión: staircase/ramp40s/ramp10s, SNR 30/20 para ajuste
-y 25 para validación. Cada registro tiene nueve estados con objetivos para
-todas sus unidades. Ningún sujeto externo entra en el ajuste de su modelo;
-ramp5s/ramp20s/15 dB se reservan del ajuste y selección. Las covarianzas
-agrupan muestras de entrenamiento/validación por postura; en inferencia se
-conserva el FIFO causal de diez lotes después del preprocesamiento offline.
+The pilot reuses four outer folds, two seeds, and 42 permitted supervision
+records: staircase/ramp40s/ramp10s, SNR 30/20 for fitting and 25 for validation.
+Each record has nine states with targets for all its units. Each model excludes
+its outer subject from fitting; ramp5s/ramp20s/15 dB are excluded from fitting
+and selection. Covariances pool training/validation samples by posture.
+Inference retains the causal ten-batch FIFO after offline preprocessing.
 
-Se refina Γ durante veinte épocas en GPU, con AdamW, lr 0,0003, decaimiento
-0,001, gradiente máximo uno y perturbación de entrada del 3%. Hay tres tipos
-de candidatos: identidad sin corrección, pesos anteriores sin reajustar y
-épocas de refinamiento. Se elige por **riesgo de fuente en validación**,
-ponderado por unidades, sin seleccionar con RoA externo. El observador B
-anterior queda congelado, con los mismos estados por semilla. No aumentan
-los parámetros: Γ conserva 3.137 y el observador 10.537.
+Γ is refined for twenty epochs on GPU using AdamW, learning rate 0.0003,
+weight decay 0.001, gradient clipping at one, and 3% input perturbation.
+Candidates include identity without correction, previous unrefined weights,
+and refinement epochs. Selection uses **unit-weighted validation source risk**,
+without outer-test RoA. The previous B observer remains frozen, with the same
+state per seed. Parameter counts stay at 3,137 for Γ and 10,537 for the observer.
 
-Los cuatro métodos nuevos son Γ corregida con estado B, la misma Γ con estado
-K, Γ antigua con MVDR para aislar la normalización y plantilla estática con
-MVDR para aislar el aprendizaje. Se incluyen Pareto y el B anterior como
-referencias sobre las mismas 591 instancias. Las 320 predicciones nuevas se
-guardan antes de la primera puntuación. La selección de pesos y las fuentes
-quedan congeladas con hashes.
+The planned four new methods are corrected Γ with B state, the same Γ with K
+state, old Γ with MVDR to isolate normalization, and a static template with MVDR
+to isolate learning. Pareto and the earlier B are references on the same
+591 instances. The protocol requires all 320 new predictions to be saved before
+the first score, with weight selection and source snapshots frozen by hashes.
+The pilot stopped before this evaluation.
 
-Los resultados anteriores motivaron la corrección y ya exponen este benchmark.
-Las nuevas decisiones de selección usan entrenamiento/validación; aun así,
-la transferencia medida sigue siendo exploratoria sobre el mismo generador.
-Una confirmación independiente requiere datos nuevos. No se producen rampas
-de 1/2,5 s mediante remuestreo ni se afirma latencia completa desde EMG cruda.
+Earlier results motivated the correction and had already exposed this benchmark.
+New selection decisions use training/validation, but any measured transfer
+would remain exploratory within the same generator. Independent confirmation
+requires new data. Resampling does not supply true 1/2.5 s ramps, and complete
+latency from raw EMG is not established.
 
-## Ejecución
+## Execution
 
-Se usan el entorno CUDA `.venv-stage-b-gpu` y el entorno de evaluación CPU
-`.venv-benchmarks` del experimento anterior. No se reinstalan dependencias.
-La salida es `outputs/stage_b_separation`; `STAGE_B_SEPARATION_OUTPUT`
-permite otra salida sin sobrescribir una corrida registrada.
+Use the preceding experiment's CUDA environment, `.venv-stage-b-gpu`, and CPU
+evaluation environment, `.venv-benchmarks`. No dependency reinstallation is
+needed. Output defaults to `outputs/stage_b_separation`;
+`STAGE_B_SEPARATION_OUTPUT` selects a fresh directory.
 
 ```powershell
 foreach ($subject in 'sub-01','sub-02','sub-03','sub-04','sub-05') {
@@ -125,10 +123,10 @@ foreach ($subject in 'sub-02','sub-03','sub-04','sub-05') {
 .venv-benchmarks/Scripts/python.exe -m benchmarks.stage_b_separation.run report
 ```
 
-Tras iniciar puntuación se pueden distribuir los cuatro sujetos en procesos
-independientes. El informe exige ochenta registros y 591 instancias únicas
-por método. Los resultados pequeños se exportan con prefijo
-`docs/benchmarks/stage_b_separation_`; los arrays y pesos grandes se ignoran.
+After scoring starts, the four subjects can be distributed across independent
+processes. The report requires eighty records and 591 unique instances per
+method. Compact results would be exported with the prefix
+`docs/benchmarks/stage_b_separation_`; large arrays and weights are ignored.
 
-El [piloto geométrico](../stage_b_geometry/README.md) documenta la alternativa
-posterior. Ambos pilotos se detuvieron en validación, sin evaluación externa.
+The [geometry pilot](../stage_b_geometry/README.md) documents the subsequent
+alternative. Both pilots stopped during validation, without outer evaluation.
