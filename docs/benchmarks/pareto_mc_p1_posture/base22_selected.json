@@ -1,0 +1,115 @@
+{
+  "selected_at_utc": "2026-11-02T12:35:51.194944+00:00",
+  "repeats": [
+    {
+      "trial": 23,
+      "parameters": {
+        "threshold": 0.5126006363395559,
+        "strength": 0.9711127696943692
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 90.8844609258209,
+          "ramp5s_roa_pct": 84.5741243249956,
+          "precision_pct": 95.07969954550755
+        },
+        {
+          "global_roa_pct": 90.50859422689372,
+          "ramp5s_roa_pct": 83.73340861050514,
+          "precision_pct": 94.81286480562694
+        },
+        {
+          "global_roa_pct": 90.88830466221745,
+          "ramp5s_roa_pct": 84.05502509589626,
+          "precision_pct": 95.35620539058857
+        }
+      ],
+      "median_objective": 87.47166487905685,
+      "selected_seed": 2
+    },
+    {
+      "trial": 21,
+      "parameters": {
+        "threshold": 0.5398960201932254,
+        "strength": 0.9936664677697393
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 90.87042080802938,
+          "ramp5s_roa_pct": 84.5060958432494,
+          "precision_pct": 95.246299860406
+        },
+        {
+          "global_roa_pct": 90.49102836318225,
+          "ramp5s_roa_pct": 83.60169280738684,
+          "precision_pct": 94.96788055925421
+        },
+        {
+          "global_roa_pct": 90.81256263258922,
+          "ramp5s_roa_pct": 83.77941773286932,
+          "precision_pct": 95.50918336466381
+        }
+      ],
+      "median_objective": 87.29599018272927,
+      "selected_seed": 2
+    },
+    {
+      "trial": 3,
+      "parameters": {
+        "threshold": 0.537573915808109,
+        "strength": 0.9875504942376699
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 90.86131482010131,
+          "ramp5s_roa_pct": 84.48780292368033,
+          "precision_pct": 95.2315063623
+        },
+        {
+          "global_roa_pct": 90.49052267596319,
+          "ramp5s_roa_pct": 83.56340222269112,
+          "precision_pct": 94.97038948993905
+        },
+        {
+          "global_roa_pct": 90.81791871159342,
+          "ramp5s_roa_pct": 83.75936614968772,
+          "precision_pct": 95.50456842078565
+        }
+      ],
+      "median_objective": 87.28864243064058,
+      "selected_seed": 2
+    }
+  ],
+  "selection": {
+    "trial": 23,
+    "parameters": {
+      "threshold": 0.5126006363395559,
+      "strength": 0.9711127696943692
+    },
+    "seed_metrics": [
+      {
+        "global_roa_pct": 90.8844609258209,
+        "ramp5s_roa_pct": 84.5741243249956,
+        "precision_pct": 95.07969954550755
+      },
+      {
+        "global_roa_pct": 90.50859422689372,
+        "ramp5s_roa_pct": 83.73340861050514,
+        "precision_pct": 94.81286480562694
+      },
+      {
+        "global_roa_pct": 90.88830466221745,
+        "ramp5s_roa_pct": 84.05502509589626,
+        "precision_pct": 95.35620539058857
+      }
+    ],
+    "median_objective": 87.47166487905685,
+    "selected_seed": 2
+  },
+  "heads": {
+    "0": "P1_posture_c4/base22/seed0/model.pt",
+    "1": "L2/standard/round3/seed1/model.pt",
+    "2": "L2/standard/round3/seed2/model.pt"
+  },
+  "scope": "L2 round-3 validation candidates, as in L2; final comparison uses other candidates"
+}

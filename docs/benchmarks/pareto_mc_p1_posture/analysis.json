@@ -1,0 +1,291 @@
+{
+  "analysed_at_utc": "2026-11-02T15:21:25.779405+00:00",
+  "instances": 124,
+  "clusters": 57,
+  "arms": {
+    "base22_seed0": {
+      "global_roa_pct": 91.64374690557939,
+      "ramp5s_roa_pct": 85.58262510613905,
+      "ge90_pct": 75.80645161290323,
+      "precision_pct": 95.47332660936188,
+      "recall_pct": 94.32617141866064,
+      "ramp5s_cycle1_roa_pct": 69.70993151487406,
+      "ramp5s_cycles2_8_roa_pct": 85.57330333828634,
+      "reference_rest": 97.68886833787055,
+      "moving": 90.91352301213264,
+      "hold_away": 90.64579647550097,
+      "ramp5s_cycles6_8_roa_pct": 87.27503977470631,
+      "lost": 3.0,
+      "near_reference": 97.03850599597936,
+      "far_20deg": 86.79752269054445
+    },
+    "base22_seed1": {
+      "global_roa_pct": 91.28668637507839,
+      "ramp5s_roa_pct": 84.67368669311485,
+      "ge90_pct": 72.58064516129032,
+      "precision_pct": 95.20191515173093,
+      "recall_pct": 94.15167765670192,
+      "ramp5s_cycle1_roa_pct": 69.94898345213558,
+      "ramp5s_cycles2_8_roa_pct": 84.44446482046854,
+      "reference_rest": 97.34696797432183,
+      "moving": 90.54231745998092,
+      "hold_away": 90.76045439139143,
+      "ramp5s_cycles6_8_roa_pct": 86.25518021612781,
+      "lost": 3.0,
+      "near_reference": 96.63085274092897,
+      "far_20deg": 86.2035952220558
+    },
+    "base22_seed2": {
+      "global_roa_pct": 91.65800814434645,
+      "ramp5s_roa_pct": 85.05194597545375,
+      "ge90_pct": 75.80645161290323,
+      "precision_pct": 95.6784074331502,
+      "recall_pct": 94.14458283176904,
+      "ramp5s_cycle1_roa_pct": 68.97424859292549,
+      "ramp5s_cycles2_8_roa_pct": 85.0129189192,
+      "reference_rest": 97.5421503341239,
+      "moving": 90.9428264970432,
+      "hold_away": 91.00450254396306,
+      "ramp5s_cycles6_8_roa_pct": 86.65991344608322,
+      "lost": 3.0,
+      "near_reference": 96.90434444742749,
+      "far_20deg": 86.76936179172532
+    },
+    "posture24_seed0": {
+      "global_roa_pct": 92.14373437805006,
+      "ramp5s_roa_pct": 86.36366612217813,
+      "ge90_pct": 74.19354838709677,
+      "precision_pct": 95.63898359371905,
+      "recall_pct": 94.91039345590428,
+      "ramp5s_cycle1_roa_pct": 71.73906558851124,
+      "ramp5s_cycles2_8_roa_pct": 86.31430886649012,
+      "reference_rest": 98.29963641799394,
+      "moving": 91.4368566094656,
+      "hold_away": 90.99323420465305,
+      "ramp5s_cycles6_8_roa_pct": 88.2407636455311,
+      "lost": 3.0,
+      "near_reference": 98.54607086860717,
+      "far_20deg": 87.02837806051312
+    },
+    "posture24_seed1": {
+      "global_roa_pct": 92.01728973565554,
+      "ramp5s_roa_pct": 86.87436196897322,
+      "ge90_pct": 73.38709677419355,
+      "precision_pct": 94.8648025336774,
+      "recall_pct": 95.54545281473573,
+      "ramp5s_cycle1_roa_pct": 73.0784233038984,
+      "ramp5s_cycles2_8_roa_pct": 86.85781742115913,
+      "reference_rest": 98.21614135417306,
+      "moving": 91.31062157769433,
+      "hold_away": 90.76365195021611,
+      "ramp5s_cycles6_8_roa_pct": 88.38982952541421,
+      "lost": 3.0,
+      "near_reference": 98.40572512178103,
+      "far_20deg": 87.06511365290712
+    },
+    "posture24_seed2": {
+      "global_roa_pct": 91.88336520104517,
+      "ramp5s_roa_pct": 85.90975452555676,
+      "ge90_pct": 73.38709677419355,
+      "precision_pct": 95.42190641503257,
+      "recall_pct": 94.8359431347539,
+      "ramp5s_cycle1_roa_pct": 71.05424586314312,
+      "ramp5s_cycles2_8_roa_pct": 85.82225160468802,
+      "reference_rest": 98.07210971480595,
+      "moving": 91.1667707594724,
+      "hold_away": 91.06022790904423,
+      "ramp5s_cycles6_8_roa_pct": 87.86443601072251,
+      "lost": 3.0,
+      "near_reference": 98.11530617562529,
+      "far_20deg": 86.6713527003397
+    }
+  },
+  "posture_minus_base": {
+    "global_roa_pct": {
+      "estimate": 0.48531596324884063,
+      "ci95": [
+        0.078746712764353,
+        0.8834842287811624
+      ]
+    },
+    "ramp5s_roa_pct": {
+      "estimate": 1.2798416140001585,
+      "ci95": [
+        0.21172163199741548,
+        2.5250267122662895
+      ]
+    },
+    "ge90_pct": {
+      "estimate": -1.0752688172043072,
+      "ci95": [
+        -4.205936705936704,
+        1.8974077035852306
+      ]
+    },
+    "precision_pct": {
+      "estimate": -0.14265221727132982,
+      "ci95": [
+        -0.5613833125284033,
+        0.25822065514931963
+      ]
+    },
+    "recall_pct": {
+      "estimate": 0.8897858327541073,
+      "ci95": [
+        0.5740976018536168,
+        1.2567098383961817
+      ]
+    },
+    "ramp5s_cycle1_roa_pct": {
+      "estimate": 2.4128570652058805,
+      "ci95": [
+        1.1334597892603586,
+        3.611799209874886
+      ]
+    },
+    "ramp5s_cycles2_8_roa_pct": {
+      "estimate": 1.321230271460795,
+      "ci95": [
+        0.10529096378186688,
+        2.762750084329926
+      ]
+    },
+    "reference_rest": {
+      "estimate": 0.669966946885566,
+      "ci95": [
+        0.1578185152443714,
+        1.338139109881234
+      ]
+    },
+    "moving": {
+      "estimate": 0.5051939924918507,
+      "ci95": [
+        0.06022796840185487,
+        0.9319729079566542
+      ]
+    },
+    "hold_away": {
+      "estimate": 0.13545355101931378,
+      "ci95": [
+        -0.7854065226848173,
+        1.1205989213634169
+      ]
+    },
+    "ramp5s_cycles6_8_roa_pct": {
+      "estimate": 1.4349652482501618,
+      "ci95": [
+        -0.1309460545019809,
+        3.1742836623198407
+      ]
+    },
+    "lost": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "near_reference": {
+      "estimate": 1.4977996605592239,
+      "ci95": [
+        0.6315751304199969,
+        2.5699783239285368
+      ]
+    },
+    "far_20deg": {
+      "estimate": 0.3314549031447882,
+      "ci95": [
+        -0.22605456052172856,
+        0.8706347726366186
+      ]
+    }
+  },
+  "validation_bce": {
+    "base22": [
+      0.05114817099585649,
+      0.05163999041542411,
+      0.05133704459595104
+    ],
+    "posture24": [
+      0.05058954931014488,
+      0.05047330491605305,
+      0.050902861065321395
+    ]
+  },
+  "selections": {
+    "base22": {
+      "trial": 23,
+      "parameters": {
+        "threshold": 0.5126006363395559,
+        "strength": 0.9711127696943692
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 90.8844609258209,
+          "ramp5s_roa_pct": 84.5741243249956,
+          "precision_pct": 95.07969954550755
+        },
+        {
+          "global_roa_pct": 90.50859422689372,
+          "ramp5s_roa_pct": 83.73340861050514,
+          "precision_pct": 94.81286480562694
+        },
+        {
+          "global_roa_pct": 90.88830466221745,
+          "ramp5s_roa_pct": 84.05502509589626,
+          "precision_pct": 95.35620539058857
+        }
+      ],
+      "median_objective": 87.47166487905685,
+      "selected_seed": 2
+    },
+    "posture24": {
+      "trial": 34,
+      "parameters": {
+        "threshold": 0.44457679592428667,
+        "strength": 0.9088862670608499
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 91.53547377390372,
+          "ramp5s_roa_pct": 85.49845647439987,
+          "precision_pct": 95.30837333711838
+        },
+        {
+          "global_roa_pct": 91.3671678123694,
+          "ramp5s_roa_pct": 86.02095247160605,
+          "precision_pct": 94.45851970752703
+        },
+        {
+          "global_roa_pct": 91.19543012505625,
+          "ramp5s_roa_pct": 85.101921057977,
+          "precision_pct": 95.07878638244433
+        }
+      ],
+      "median_objective": 88.14867559151662,
+      "selected_seed": 2
+    }
+  },
+  "reliance": {
+    "seed0": {
+      "flipped_pct": 0.23495513421687822,
+      "candidates": 7043898
+    },
+    "seed1": {
+      "flipped_pct": 0.16429823373365146,
+      "candidates": 7043898
+    },
+    "seed2": {
+      "flipped_pct": 0.1554395023891601,
+      "candidates": 7043898
+    }
+  },
+  "decisions": {
+    "base_seed0_reproduced_l2": true,
+    "open_loop_reproduces_sealed_l2": true,
+    "posture_helps_open_loop": true,
+    "bce_lower_all_seeds": true,
+    "far_gain_exceeds_near": false,
+    "propose_closed_loop_level": true
+  }
+}

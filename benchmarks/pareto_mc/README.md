@@ -259,3 +259,203 @@ pending parameters are saved for an explicitly requested resumption. Publishing
 or merging the code does not start experiments. L2 remains the latest accepted
 stage; the [pause record](../../docs/benchmarks/pareto_mc_l3_setup/pause.json)
 describes the saved state.
+
+### L2 attribution ablation
+
+Before resuming L3, a registered factorial ablation separated L2's components on
+the same 20 sub-04 records: the three final L2 C4 seeds with no memory, memory
+confidence as a C4 input only, the filter blend only, and the full L2 loop, plus
+the L1 head with and without the blend. Before labels were opened, the full L2
+arm (seed 2) and the memory-free L1 arm reproduced the sealed L2 and L1
+predictions bit for bit.
+
+| Seed-mean variant | Global RoA | ramp5s | Reference rest | Cycles 2–8 |
+|---|---:|---:|---:|---:|
+| L2 heads, no memory | 91.08% | 85.62% | 94.99% | 86.02% |
+| L2 heads, full memory | 91.05% | 85.01% | 97.54% | 84.91% |
+| L1 head, no memory | 91.24% | 84.71% | 97.13% | 84.94% |
+
+**Memory is not credited with a global gain:** its effect is −0.03 points, with a
+95% cluster-bootstrap interval of [−0.26, +0.23]. The filter blend raises
+reference-rest RoA by 1.86 points but lowers ramp5s cycles 2–8 by 1.14 points
+[−1.91, −0.46]. Without memory, the retrained L2 heads fall to 94.99% at rest,
+below the 97% criterion. Retraining C4 improves the first ramp5s cycle by 3.64
+points and recall by 1.32, while lowering precision by 1.66.
+
+The full L2 loop scores 91.20%, 90.29%, and 91.66% with seeds 0, 1, and 2. The
+accepted +0.42-point gain over L1 belongs to the selected seed and is smaller
+than this 1.37-point seed spread. L3 assumes that blending stored filters helps
+repeated cycles; in L2, the blend lowered them. No accepted level changes.
+
+Exact label-free screening also explains the inactive L2 search trials. On the
+60 training records, only 8 bins with h=0.03 or h=0.06 blend filters in more
+than 2% of batches. Five of the nine structures never blend at any threshold of
+at least 0.5. Three of them cannot reach 0.5 even at the reference posture
+(maximum mass 0.19–0.36). The calculation matches all 45 sealed search traces
+without a single mismatch.
+
+L3's full memory behaves very differently. A registered label-free screen ran
+the L3 loop, which writes memory after calibration, on the 30 records of
+sub-01 to sub-03 at 30 and 20 dB. It used L3's search head (L2 seed 0),
+κ=0.16, beta_max=0.45 and momentum 0.895, for all nine structures at thresholds
+0.6 and 0.85. **No structure is inactive.** Every arm blends filters on every
+record, in 37–93% of unit-batches, against 0–6% for L2's calibration-only
+memory. Blending is most frequent with 8 bins, h=0.03 and threshold 0.6
+(92.8%), and least with 32 bins, h=0.12 and threshold 0.85 (36.8%). The screen
+excludes no structure from L3's search. It does not measure RoA, and in L2 a
+much rarer blend already lowered ramp5s cycles 2–8.
+
+```powershell
+$env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/development_v2'
+$env:OPENBLAS_NUM_THREADS = '1'
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.l2_ablation run --workers 4
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.l2_ablation screen
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.l2_ablation score
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.l2_ablation screen-full --workers 4
+```
+
+See the [analysis](../../docs/benchmarks/pareto_mc_l2_ablation/analysis.json),
+[reproduction check](../../docs/benchmarks/pareto_mc_l2_ablation/reproduction.json),
+[calibration-only screening](../../docs/benchmarks/pareto_mc_l2_ablation/screen_calibration_only.json),
+and [full-memory screening](../../docs/benchmarks/pareto_mc_l3_screen/summary.json).
+
+### C1 posture as a C4 input (P1, open loop)
+
+C1 tracks posture well on sub-04: q correlates with the batch angle at r=0.968
+(RMSE 3.15°). The current loop does not use this estimate for decisions. C4
+receives only |Δq| over 100 ms, which does not separate movement from rest
+(AUC 0.518). The predicted log-variance does not track the error either.
+
+P1 retrains C4 with the exact L2 data, labels, recipe, seeds, and TPE, adding
+q and its causal 2-second displacement. Before the comparison:
+
+- The memory-free arm reproduced the L2 checkpoint and its TPE selection bit
+  for bit.
+- The accepted L2 head, decided open loop on its own sealed final candidates,
+  reproduced its closed-loop spikes with zero differing samples.
+
+Both arms then decided on those sealed candidates, which neither arm saw
+during training or selection.
+
+| Seed-mean arm | Global RoA | ramp5s | Ramp5s cycle 1 | Reference rest | Recall |
+|---|---:|---:|---:|---:|---:|
+| 22 L2 inputs | 91.53% | 85.10% | 69.54% | 97.53% | 94.21% |
+| + posture inputs | **92.01%** | **86.38%** | **71.96%** | **98.20%** | **95.10%** |
+
+**Posture improves open-loop decisions:** +0.49 global points, with a 95%
+cluster-bootstrap interval of [+0.08, +0.88], and +1.28 points on ramp5s.
+Validation BCE is lower for all three seeds, and every posture seed beats every
+baseline seed. The expected mechanism did not hold: the gain is larger near
+the reference posture (+1.50 points) than at 20° or more (+0.33, interval
+[−0.23, +0.87]). The three lost units remain lost.
+
+This is an open-loop result on one validation subject, without feedback into
+adaptation. It meets the registered condition for proposing a closed-loop
+level, which has not been run. L2 remains the accepted stage.
+
+```powershell
+$env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/development_v2'
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 prepare
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 train --arm base22 --seeds 0
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 train --arm posture24 --seeds 0
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 train --arm posture24 --seeds 1
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 train --arm posture24 --seeds 2
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 select --arm base22
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 select --arm posture24
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 decide
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.posture_c4 score
+```
+
+Training memory-maps about 45 GB of candidate caches per epoch. Run it without
+concurrent CPU rollouts, and run seeds as parallel processes. See the
+[analysis](../../docs/benchmarks/pareto_mc_p1_posture/analysis.json) and
+[sealed decisions](../../docs/benchmarks/pareto_mc_p1_posture/decisions_sealed.json).
+
+### C4 context heads (P2, open loop)
+
+The decoding bottleneck is the ranking of candidates within a unit. There are
+about 50 candidates per true discharge, and C4's median within-unit AUC is
+already 0.985. P1's head judges each candidate on its own, so it sees neither
+the competitors in its batch nor the unit's recent history. P2 keeps P1's data,
+labels, 24 inputs, seeds, epoch selection and TPE, and changes only the head.
+Every head starts at the Pareto prior.
+
+| Arm | Head |
+|---|---|
+| `wide24` | Per-candidate MLP 24→64→64→1, a capacity control |
+| `set24` | Attention over the unit's candidates in the batch and the previous batch |
+| `setrec24` | `set24` plus a per-unit GRU across batches that carries the posture trajectory |
+| `mdiff24` | `setrec24` trained as masked discrete diffusion over the joint discharge labels (discrete flow matching with a mask source) |
+
+Each arm decided on L2's sealed final candidates, open loop. Seed means:
+
+| Arm | Global RoA | ramp5s | ≥20° | Moving | Precision | Recall | Lost units |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| P1 `posture24` | 92.01% | 86.38% | 86.92% | 91.30% | 95.31% | 95.10% | 3 |
+| `wide24` | 92.75% | 88.21% | 88.10% | 92.09% | 95.79% | 95.62% | 2.7 |
+| `set24` | 93.06% | 88.23% | 88.74% | 92.45% | 95.68% | 95.99% | 2 |
+| `setrec24` | 94.06% | 89.55% | 89.78% | 93.50% | 96.96% | 96.52% | 2 |
+| `mdiff24` | **94.19%** | **89.64%** | **90.07%** | **93.64%** | **97.47%** | 96.00% | 2 |
+
+**All four heads beat P1.** Against `posture24`, the gains in global RoA, with
+95% cluster-bootstrap intervals, are:
+
+- `wide24`: +0.74 [+0.46, +1.05];
+- `set24`: +1.04 [+0.67, +1.47];
+- `setrec24`: +2.04 [+1.18, +3.18];
+- `mdiff24`: +2.18 [+1.37, +3.24].
+
+**History helps.** `setrec24` beats `set24` by +1.00 [+0.38, +1.94].
+
+**The gain sits where adaptation lags movement.** For `setrec24`:
+
+- +2.85 at 20° or more;
+- +3.16 on ramp5s;
+- +2.20 while moving;
+- none near the reference (+0.04).
+
+This is the mechanism P1 expected but did not find. P1's per-candidate
+posture input left the ≥20° stratum unchanged.
+
+**Generative training does not help.** `mdiff24` ties `setrec24`: +0.14
+[−0.16, +0.45]. It trades recall for precision, and its validation BCE is
+higher (0.0215 against 0.0179). It also costs about 50% more per epoch and
+three passes per batch.
+
+A post-hoc split against `wide24`, not registered, attributes the gain over P1
+roughly as follows:
+
+- about +0.7 to capacity;
+- about +0.3 to batch context;
+- about +1.0 to history and the posture trajectory.
+
+The heads depend strongly on their context inputs. These are inference-time
+ablations, so they measure reliance, not what a head trained without the
+input would reach:
+
+- zeroing the GRU state drops RoA to 39–44%;
+- freezing posture costs `setrec24` 12.5 points;
+- that posture reliance varies widely by seed (seed 2 falls to 65%).
+
+This is an open-loop result on one validation subject that P1 already used,
+with no external evaluation. It meets the registered condition for proposing a
+closed-loop level, which needs its own protocol and has not been run. For that
+level, `setrec24` is the simpler candidate, with fewer feedback paths than
+`mdiff24`. L2 remains the accepted stage.
+
+```powershell
+$env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/development_v2'
+$env:CUBLAS_WORKSPACE_CONFIG = ':4096:8'
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.context_c4 register
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.context_c4 train --arm setrec24 --seeds 0 1 2
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.context_c4 select --arm setrec24
+.venv-stage-b-gpu/Scripts/python.exe -m benchmarks.pareto_mc.context_c4 decide
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.context_c4 score --workers 4
+```
+
+Repeat `train` and `select` for `wide24`, `set24` and `mdiff24`, one process
+per arm. Context heads bound each truncated-BPTT block by a memory budget.
+Without that bound, the 8 GB GPU spills into shared memory on Windows instead
+of failing. See the [analysis](../../docs/benchmarks/pareto_mc_p2_context/analysis.json),
+[sealed decisions](../../docs/benchmarks/pareto_mc_p2_context/decisions_sealed.json)
+and [post-hoc contrasts](../../docs/benchmarks/pareto_mc_p2_context/posthoc_vs_wide24.json).

@@ -1,0 +1,1847 @@
+{
+  "prepared_at_utc": "2026-11-02T11:18:29.722126+00:00",
+  "labels_opened": false,
+  "sources": {
+    "L1/open/features/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "d59f9da5265238ebe42e02a2b6d9d51d1154f8b1306a5f4d7afbae85c68468be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "ea1fcc6cb94ee05e71cabf384cb37ff5ca06f39f487cd44e45c9be1bca3682ca",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "71baed2372a69e58a412ec6bbe3b5846c2e96dc132ebd53e83ab53b9edbd5b1d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "cded5156805cc92bcc9774a2ad502752316bbcee0bfbd86565fcb069230be19a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "061b6f354927f680ff393d289e61ff5b00ced945f219d6811025fec98cfa630b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "ff4c86cee39932568720e0236920710caf2ae239d96b67942fb596a0f4abc1fd",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "f7348dd0d7d4ff3e72f55371821a4e48c15e767abf046ce25035e2604eefbba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3a3fba8ce250d7bd6150c42dcbd22f938d0d4dd8277184c46d5acbab879a36ad",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "52e7cb5edcb3e2ec22c86f676d92d9c1f4281ddafadad4b32e550e524f000a2e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "7156a0b9fbb98295934bb954c19c25742a748005481113c0bdd76400625ac43e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "72a85b559f5cd99285684f75ff5d2e19395ee9a7c69c0251f2ad643e93ad5752",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "13f115513a75e0bbb9330e47ff9ab2c7525ff581ff882c6ea49fe86b7a21d9f6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "89f2404d86cbe4f113ad2caa9b0fba12d3c1a348597ff0048683d3bf52f772e0",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "4d182802e8defdd86111b2c41950890272b57d807c7902abe070daec452ae997",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "00804554e7dd2eb454da3ffce6a5d830481e527a53d41be72d085a7cece554a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "e00007adafa9ca110c99d1066398ff2c229849cf5f53e0e12d90b396a1b90100",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "867d1dbac1c9bf4ab16ce7112ca9ee41a2a10b89ce9ffae84010487b2e524818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "c9a12210e2108077813602cd3ddb49350c23dcf1cf15434082e845ec036e5956",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "13580079b40a537598ff27d7bcbbf62936bc36c0572bbd1bbcffac6842e4b3ee",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "131360b0dd999040698dbc44f9a88ca309722cec65ef647b0023530dcecb4291",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "6759a77f2cd72bd3ad69c4f3abfc996672c7f48c06b3416f37c0d9df7a130619",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "747a25956d7da9dbb7bd7546c80c94508c70afb5cdd52e1ff7108566fe3fb9ea",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "6963c487afc6e4868e70513dafb2c754da9aaaba1437ec6e9a8defa3f24d4795",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "ced3fd1de067486b5065a680354cf93ed580fa775be33aad032ab445b8d100c0",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "e7baad4ce06c667767cea9534db610f4cad4d3e999c9ec425266fb9b7e44e8d5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5e6d20df2ab7c1ab12439330fedbb6cac3b233ef48993b0c03ab97c6449fbcaa",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "3b5697d8242dd61697a72005f4a71a2a9c7e902d98e95aaf27048f448933a464",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "f6145975f1e9ade33622951770d708c45131a6806e358512c490446ac5636df5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "5fe7a427e9408d167be74d7cbd59ac434632daf13154ad2c7b55a82f58486307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "2080239e0c11b079e784777a7b9f24c2aee154efeb9ffebc1a9fc0a2251a1bb7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "40029b513cca86d6a532d872bb0f68dbd8a65543ccfbef8a081bc146ca51c7d2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "81c064ce469cccd032401c3eca313f0f0c7fa9f598624afd84b4031369c1fad2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "8357c22775e5d742376b1534b07f406f9cb53fc887c7367fc9d9c38fae750401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "341b4f10eb1760438303cc1ea8b453af0940acce2d536b3f83a2ee8ba7d767be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "193d398f70a0b75985540c438cc4012a04004edbc9b0524ae73c993130d97bdb",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "4505ed69aabef9f0b4515a40c30aad541a589e16916a700690908eb0eb5a3a44",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "b0e11c3fd599f4aaabb1e9837ba1938b326a1f005d1b3424f430ad51cb713e7c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a71ae5f63481cbb289da2ba837f22af5de0fa49f6473f85906f54e243bb07181",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "3c4e7a11ea7c1397a95d672885f7253c4da9525895aee78b118926bf2f1b6e1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "298b1e8a731208db2d3ae3d0f586833d640203453603d44d488fbd3c2f049bc2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "9ffb5a4f57a93bf9a4eed4dc2f92cf81833bf46b7ddc7e9d79f23a7e61ba90c3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "9d031405f6461ccef28468650f76cde348bbbe7fefd4db3650f50aa2ba8c2fae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "e772f8c893efde7e041e10414ebdcf705423462961631aff726daf84b255d903",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "fade150a62cf0fb5ca7ff2896dcd830c4f055d4be8fd9595968988cd58d94617",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "17537cdeeb85d37aca277743737f883d7afac379da877428e4468f2ea6b90359",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "649143179a1bc38b0d60cc5393899576b34ce26feb3e4489a9a8dc682ff0b7b6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c838a7a7cedc2f080bd9f7946fedf0a02d693ed59a194461751cf05f704c1cb7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "4a6570b5cc17210f62c7b70438267aa98ddde49997b87badf405405bf9a83a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "951f18b4ff859b1a0f497785fa19542a7b3fd2e699ac3e4c4f606cd41f0932a1",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "4efa71f34a857533ac938ca55be6b0d71f7246d8be129e946965f41b7d995f7d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "1bee94c6b4770dea86ddad73ab8db5a2f1e11da51a88ac8764ec60eb4407b410",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "0907f61b82c0aa19dc3d17c105950cd41f7f7788287b26a35feadb664ad87611",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "4ee07ffb666b71779f8f51fce26e776ad3e6e26cee6b4e33f08ca0acc850bf72",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "23d11fc5e12a138c4a1eaa84f90791e52398f1bdc4fe71898347a7adfd752739",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "53db61b3b4089f90f08e568d496c0ba91ddd8d3eb4e8b4180527acf25baee81c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "d143771dbd3d67f663e0518066a8df4e069ce06781ec6173f525a1b90dd1aba6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "5f2e3f58545877bf5de212f76dc2dfc7de5f8fd1e1c057dea14a19911bd169d0",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "17734291c91597bee4906ea8c2c9cd28c46b737b2be56f9c095092eea908d828",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "0361157e224b6acfacba3d9ff8359c814d73085c21a479cc303e0829f56a4e20",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/open/features/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "b3d2a2482323eac2f17040832374932407c7f16bee2356b2e0b6e4769d3aaaee",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "fa704dea719bb7e0a0b6d2aee5883a65ff69f88660eacc817c3702686bc14fbc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "d3fb8dce89e0b907c2b76e799434a00bd8787c146394aaf9558e7ead54c077a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "3fca5b5c2e63a455d9ab03e0d9d29d16e52e1628dca17d028b92263c13dccbd7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "136450c9301dfd951c8147ca59d6afbdc1f1d3b89c996394aea3f1199b6927c7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "64b9ef65e836bcf83c5c17e015cd7920be14229621a1fed4dbb441206a735a6d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "2ce116acd66721dd078dda098715bd436cef9c91985d478ef6790ac3b6875e5f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c33da4b003fe4fdf402893d8e70002ca4e205b36a5b012d8785899a1890a23db",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "ac5fc64795ff3c8d7b63ca86f6dba91cbd3f43d5653fdc917ab934b35035f521",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "b6dce859717fcd32b47c0fbc28781a5e11c9e4200777b81f58559b10701d8b0d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "87d423b5c75f8649e21fe4b981fdfd024c238fea5820b71956a54da475c21345",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "11f175c02f494f9e80b5f1183cf0ef206f61692a02e90049bfee405f81dc292d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "b7c7c533720fb66b27b660f925f3e59fb8f401268f879bb9f64cb1199e40fc1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "31e957cbc2322d9980f88d5bd9a5d16c57964d763ec4528703e03850e34c4644",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "dfb2e13a429f5c87b4cbb099a860b91fdcddaf994f13460a15e96d742df8dd2a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "e2d4fa0e6a24643283266abbcb42ff781f25dff5d6ef9f9ba1cc6b389aafc031",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "8c03f5f777a273362c1684757cf2675d3b27d98de43a8efdd0852c5efd2f7540",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "fc68b5ed5a61962b6bda0753f3ff1412081d70156abd8a4ca6a3ffc864457e61",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "141a87c956c44fc11a1c74ed85b2abf5cab9cfcf0212c7d0484e750c122f3f3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "43fad70c2a0dfc6f1e0bcf49a5ef83a92d284657d2faaffe7f361349802bc325",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8c7531c31732155c4d2633377a5c2204371b562b99c2bbd9e1f0848b0d4b8cb3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "c7fde00eb0e881365526b2f0047ea17cf9f92ae90473abcae9531e34e69775be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "8b7de5c008f3294ae8cad32bdcaf923ae64eee0aea5cd69c177a4e059e14d230",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "869a736d9fd4ced54730caff9eb23b247af2af33b13b14c53eb9e5f8baa9752d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "06d22a2c7c7affdaae7ff927daf95bcf0104560b2e20d02bda21c8d0828eb398",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "419199bfb97a3237d6f9c5b919a085a896a11ab768d4585bac9f348937df29a4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "19d7a6354fcf3d11d7c93bf81013cbc8e74db38336db5af4d91b7c170656aba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "4b271605f1b8a488a489fe73279b50322afc399c88c96715dd7f630351d9d2d8",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3e396ce3ecf766eb68527513a90b049a4e073098207e8d6d562702c78d84ee3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "8adcd63921b79a8d4e373ade993ad9ff93f5eb1c238c158f54c614578eff2307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "ad6e70792d7782fd0a76cb2707054cd78fd86d34a2214a25db9ba6516189b401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "811bf6c6310bfb304a3024a8bb4dd63fb758196078c0c099e913d88e8a0492dc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "108f1a74d70d300b8487878e0b9036fa9f30999e8974bd908aee4e3292f03266",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "17efaa747c707b2042dccf77f390356264b1ee7d1eb78d2d9a95c7773ef66cd5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "6d6a810db8803f54cddb045fa01c69718cec47aab9cfcbb4bd95668b5d92afba",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "031342670cd4d02975a722bf9ec98cbd519da5a322bd6be67f374032a341c6e2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "801e303e5a6ce87dc4673bec09d71ce669fd7e67ad8f959c1db54db6a3c79098",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "9a5ba74571863e7c1ca0ee4d2062ab5719f5fd844707cfbb13dc490e37ceb628",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a0afb702dcbdf124960f4f13d8c010a319692dc6148db430899a011c97066e45",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "9ab54bca6139b0064a862c612dc21d3ddbbb59ebd3794c8362ae29c9ee4d9c74",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8148148761b6d3253729118cd2609436f124b6fb789c619c6cd17b9964a92632",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "deb8f8153ae628701fe02a5bcc130b9c3ab5e36ae2d17f43c94a193812fd4a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "3e9a7f79a3a985b2a88c9897bb0246f84f6668049b9dac33861f9bb514eb5a51",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "bd2c842474a037025ada13766b217c198afd33d7d6a22d28671be2dd8b17341b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "c0c542866c4f153ad7f3bf4606f9c47f0bbe9356d32c0851f25c3c1fc9c304fe",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "9d48f25e0b6f4f471b3aa07659d1506ebd812286a423a0f9d2884d2d0cb19636",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5f4adfe4ab48b57528a692569dea5e5cc15440b6277f537bc21778ade2ae1b64",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "b91b722eab744830322953b4042881320a0a910b08d589cf10db2063cd60c524",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "845e429c8c58065bb21f3fb0b93a41db7a91cfeac27be5555ca65a396e2d586f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "0fcaf765f2115648ff072ae1113b241539302b6423a856ffaa22ed9435c3cfae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "657b5628e747b5c5dd85cd7830480d1f6e9a57f82fbf9dae33b1fec655a77bd6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "57324c4bfa22c120652741fbeeece9aec30b7dcfb47b1c0d9e3a7913dc7b8f5c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "69d37e4cc57c22c7045a420540737e77cd20ab2f788323cb00c47529cd54e818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "ce8e55fa5da8a0bf2e8fd3419533dd5cddea1c94b8b3404b725709f0ffb2579d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "cf24ebfeddb76f85bcff2d35907706d847f64a089c876e6cc886df3f28f5a542",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "9ed8a58d946d8380e2171128703e9757be00b32e51475a995a10e070f73324b9",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "60286d021feff4f06249f630b76583f6d8774b901323daa5fc07f074cce2d22a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "6076ffea0dc33571e1045f3fce42931a0130043235b96579d55113118c4bef6e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "e22c09c014eb4f22fad079bf0c8a46d4e312e608c2a0a2a6e64d47fb3a885e01",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "a42975dfc33994732f581a9c3fafaa0fe37bfcb10c814155a6ca733975629c2d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "a0830970a719b97ae72c03e3a56e6b161b67bc97d30e41d14ec7f2fbd9066167",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "fa704dea719bb7e0a0b6d2aee5883a65ff69f88660eacc817c3702686bc14fbc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "d3fb8dce89e0b907c2b76e799434a00bd8787c146394aaf9558e7ead54c077a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "3fca5b5c2e63a455d9ab03e0d9d29d16e52e1628dca17d028b92263c13dccbd7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "136450c9301dfd951c8147ca59d6afbdc1f1d3b89c996394aea3f1199b6927c7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "64b9ef65e836bcf83c5c17e015cd7920be14229621a1fed4dbb441206a735a6d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "2ce116acd66721dd078dda098715bd436cef9c91985d478ef6790ac3b6875e5f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c33da4b003fe4fdf402893d8e70002ca4e205b36a5b012d8785899a1890a23db",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "ac5fc64795ff3c8d7b63ca86f6dba91cbd3f43d5653fdc917ab934b35035f521",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "b6dce859717fcd32b47c0fbc28781a5e11c9e4200777b81f58559b10701d8b0d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "87d423b5c75f8649e21fe4b981fdfd024c238fea5820b71956a54da475c21345",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "11f175c02f494f9e80b5f1183cf0ef206f61692a02e90049bfee405f81dc292d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "b7c7c533720fb66b27b660f925f3e59fb8f401268f879bb9f64cb1199e40fc1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "31e957cbc2322d9980f88d5bd9a5d16c57964d763ec4528703e03850e34c4644",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "dfb2e13a429f5c87b4cbb099a860b91fdcddaf994f13460a15e96d742df8dd2a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "e2d4fa0e6a24643283266abbcb42ff781f25dff5d6ef9f9ba1cc6b389aafc031",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "8c03f5f777a273362c1684757cf2675d3b27d98de43a8efdd0852c5efd2f7540",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "fc68b5ed5a61962b6bda0753f3ff1412081d70156abd8a4ca6a3ffc864457e61",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "141a87c956c44fc11a1c74ed85b2abf5cab9cfcf0212c7d0484e750c122f3f3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "43fad70c2a0dfc6f1e0bcf49a5ef83a92d284657d2faaffe7f361349802bc325",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8c7531c31732155c4d2633377a5c2204371b562b99c2bbd9e1f0848b0d4b8cb3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "c7fde00eb0e881365526b2f0047ea17cf9f92ae90473abcae9531e34e69775be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "8b7de5c008f3294ae8cad32bdcaf923ae64eee0aea5cd69c177a4e059e14d230",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "869a736d9fd4ced54730caff9eb23b247af2af33b13b14c53eb9e5f8baa9752d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "06d22a2c7c7affdaae7ff927daf95bcf0104560b2e20d02bda21c8d0828eb398",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "419199bfb97a3237d6f9c5b919a085a896a11ab768d4585bac9f348937df29a4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "19d7a6354fcf3d11d7c93bf81013cbc8e74db38336db5af4d91b7c170656aba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "4b271605f1b8a488a489fe73279b50322afc399c88c96715dd7f630351d9d2d8",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3e396ce3ecf766eb68527513a90b049a4e073098207e8d6d562702c78d84ee3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "8adcd63921b79a8d4e373ade993ad9ff93f5eb1c238c158f54c614578eff2307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "ad6e70792d7782fd0a76cb2707054cd78fd86d34a2214a25db9ba6516189b401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "811bf6c6310bfb304a3024a8bb4dd63fb758196078c0c099e913d88e8a0492dc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "108f1a74d70d300b8487878e0b9036fa9f30999e8974bd908aee4e3292f03266",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "17efaa747c707b2042dccf77f390356264b1ee7d1eb78d2d9a95c7773ef66cd5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "6d6a810db8803f54cddb045fa01c69718cec47aab9cfcbb4bd95668b5d92afba",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "031342670cd4d02975a722bf9ec98cbd519da5a322bd6be67f374032a341c6e2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "801e303e5a6ce87dc4673bec09d71ce669fd7e67ad8f959c1db54db6a3c79098",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "9a5ba74571863e7c1ca0ee4d2062ab5719f5fd844707cfbb13dc490e37ceb628",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a0afb702dcbdf124960f4f13d8c010a319692dc6148db430899a011c97066e45",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "9ab54bca6139b0064a862c612dc21d3ddbbb59ebd3794c8362ae29c9ee4d9c74",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8148148761b6d3253729118cd2609436f124b6fb789c619c6cd17b9964a92632",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "deb8f8153ae628701fe02a5bcc130b9c3ab5e36ae2d17f43c94a193812fd4a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "3e9a7f79a3a985b2a88c9897bb0246f84f6668049b9dac33861f9bb514eb5a51",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "bd2c842474a037025ada13766b217c198afd33d7d6a22d28671be2dd8b17341b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "c0c542866c4f153ad7f3bf4606f9c47f0bbe9356d32c0851f25c3c1fc9c304fe",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "9d48f25e0b6f4f471b3aa07659d1506ebd812286a423a0f9d2884d2d0cb19636",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5f4adfe4ab48b57528a692569dea5e5cc15440b6277f537bc21778ade2ae1b64",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "b91b722eab744830322953b4042881320a0a910b08d589cf10db2063cd60c524",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "845e429c8c58065bb21f3fb0b93a41db7a91cfeac27be5555ca65a396e2d586f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "0fcaf765f2115648ff072ae1113b241539302b6423a856ffaa22ed9435c3cfae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "657b5628e747b5c5dd85cd7830480d1f6e9a57f82fbf9dae33b1fec655a77bd6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "57324c4bfa22c120652741fbeeece9aec30b7dcfb47b1c0d9e3a7913dc7b8f5c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "69d37e4cc57c22c7045a420540737e77cd20ab2f788323cb00c47529cd54e818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "ce8e55fa5da8a0bf2e8fd3419533dd5cddea1c94b8b3404b725709f0ffb2579d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "cf24ebfeddb76f85bcff2d35907706d847f64a089c876e6cc886df3f28f5a542",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "9ed8a58d946d8380e2171128703e9757be00b32e51475a995a10e070f73324b9",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "60286d021feff4f06249f630b76583f6d8774b901323daa5fc07f074cce2d22a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "6076ffea0dc33571e1045f3fce42931a0130043235b96579d55113118c4bef6e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "e22c09c014eb4f22fad079bf0c8a46d4e312e608c2a0a2a6e64d47fb3a885e01",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "a42975dfc33994732f581a9c3fafaa0fe37bfcb10c814155a6ca733975629c2d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "a0830970a719b97ae72c03e3a56e6b161b67bc97d30e41d14ec7f2fbd9066167",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "fa704dea719bb7e0a0b6d2aee5883a65ff69f88660eacc817c3702686bc14fbc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "d3fb8dce89e0b907c2b76e799434a00bd8787c146394aaf9558e7ead54c077a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "3fca5b5c2e63a455d9ab03e0d9d29d16e52e1628dca17d028b92263c13dccbd7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "136450c9301dfd951c8147ca59d6afbdc1f1d3b89c996394aea3f1199b6927c7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "64b9ef65e836bcf83c5c17e015cd7920be14229621a1fed4dbb441206a735a6d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "2ce116acd66721dd078dda098715bd436cef9c91985d478ef6790ac3b6875e5f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c33da4b003fe4fdf402893d8e70002ca4e205b36a5b012d8785899a1890a23db",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "ac5fc64795ff3c8d7b63ca86f6dba91cbd3f43d5653fdc917ab934b35035f521",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "b6dce859717fcd32b47c0fbc28781a5e11c9e4200777b81f58559b10701d8b0d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "87d423b5c75f8649e21fe4b981fdfd024c238fea5820b71956a54da475c21345",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "11f175c02f494f9e80b5f1183cf0ef206f61692a02e90049bfee405f81dc292d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "b7c7c533720fb66b27b660f925f3e59fb8f401268f879bb9f64cb1199e40fc1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "31e957cbc2322d9980f88d5bd9a5d16c57964d763ec4528703e03850e34c4644",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "dfb2e13a429f5c87b4cbb099a860b91fdcddaf994f13460a15e96d742df8dd2a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "e2d4fa0e6a24643283266abbcb42ff781f25dff5d6ef9f9ba1cc6b389aafc031",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "8c03f5f777a273362c1684757cf2675d3b27d98de43a8efdd0852c5efd2f7540",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "fc68b5ed5a61962b6bda0753f3ff1412081d70156abd8a4ca6a3ffc864457e61",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "141a87c956c44fc11a1c74ed85b2abf5cab9cfcf0212c7d0484e750c122f3f3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "43fad70c2a0dfc6f1e0bcf49a5ef83a92d284657d2faaffe7f361349802bc325",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8c7531c31732155c4d2633377a5c2204371b562b99c2bbd9e1f0848b0d4b8cb3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "c7fde00eb0e881365526b2f0047ea17cf9f92ae90473abcae9531e34e69775be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "8b7de5c008f3294ae8cad32bdcaf923ae64eee0aea5cd69c177a4e059e14d230",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "869a736d9fd4ced54730caff9eb23b247af2af33b13b14c53eb9e5f8baa9752d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "06d22a2c7c7affdaae7ff927daf95bcf0104560b2e20d02bda21c8d0828eb398",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "419199bfb97a3237d6f9c5b919a085a896a11ab768d4585bac9f348937df29a4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "19d7a6354fcf3d11d7c93bf81013cbc8e74db38336db5af4d91b7c170656aba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "4b271605f1b8a488a489fe73279b50322afc399c88c96715dd7f630351d9d2d8",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3e396ce3ecf766eb68527513a90b049a4e073098207e8d6d562702c78d84ee3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "8adcd63921b79a8d4e373ade993ad9ff93f5eb1c238c158f54c614578eff2307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "ad6e70792d7782fd0a76cb2707054cd78fd86d34a2214a25db9ba6516189b401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "811bf6c6310bfb304a3024a8bb4dd63fb758196078c0c099e913d88e8a0492dc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "108f1a74d70d300b8487878e0b9036fa9f30999e8974bd908aee4e3292f03266",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "17efaa747c707b2042dccf77f390356264b1ee7d1eb78d2d9a95c7773ef66cd5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "6d6a810db8803f54cddb045fa01c69718cec47aab9cfcbb4bd95668b5d92afba",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "031342670cd4d02975a722bf9ec98cbd519da5a322bd6be67f374032a341c6e2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "801e303e5a6ce87dc4673bec09d71ce669fd7e67ad8f959c1db54db6a3c79098",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "9a5ba74571863e7c1ca0ee4d2062ab5719f5fd844707cfbb13dc490e37ceb628",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a0afb702dcbdf124960f4f13d8c010a319692dc6148db430899a011c97066e45",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "9ab54bca6139b0064a862c612dc21d3ddbbb59ebd3794c8362ae29c9ee4d9c74",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8148148761b6d3253729118cd2609436f124b6fb789c619c6cd17b9964a92632",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "deb8f8153ae628701fe02a5bcc130b9c3ab5e36ae2d17f43c94a193812fd4a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "3e9a7f79a3a985b2a88c9897bb0246f84f6668049b9dac33861f9bb514eb5a51",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "bd2c842474a037025ada13766b217c198afd33d7d6a22d28671be2dd8b17341b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "c0c542866c4f153ad7f3bf4606f9c47f0bbe9356d32c0851f25c3c1fc9c304fe",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "9d48f25e0b6f4f471b3aa07659d1506ebd812286a423a0f9d2884d2d0cb19636",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5f4adfe4ab48b57528a692569dea5e5cc15440b6277f537bc21778ade2ae1b64",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "b91b722eab744830322953b4042881320a0a910b08d589cf10db2063cd60c524",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "845e429c8c58065bb21f3fb0b93a41db7a91cfeac27be5555ca65a396e2d586f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "0fcaf765f2115648ff072ae1113b241539302b6423a856ffaa22ed9435c3cfae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "657b5628e747b5c5dd85cd7830480d1f6e9a57f82fbf9dae33b1fec655a77bd6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "57324c4bfa22c120652741fbeeece9aec30b7dcfb47b1c0d9e3a7913dc7b8f5c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "69d37e4cc57c22c7045a420540737e77cd20ab2f788323cb00c47529cd54e818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "ce8e55fa5da8a0bf2e8fd3419533dd5cddea1c94b8b3404b725709f0ffb2579d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "cf24ebfeddb76f85bcff2d35907706d847f64a089c876e6cc886df3f28f5a542",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "9ed8a58d946d8380e2171128703e9757be00b32e51475a995a10e070f73324b9",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "60286d021feff4f06249f630b76583f6d8774b901323daa5fc07f074cce2d22a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "6076ffea0dc33571e1045f3fce42931a0130043235b96579d55113118c4bef6e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "e22c09c014eb4f22fad079bf0c8a46d4e312e608c2a0a2a6e64d47fb3a885e01",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "a42975dfc33994732f581a9c3fafaa0fe37bfcb10c814155a6ca733975629c2d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L1/all_feedback/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "a0830970a719b97ae72c03e3a56e6b161b67bc97d30e41d14ec7f2fbd9066167",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "fa704dea719bb7e0a0b6d2aee5883a65ff69f88660eacc817c3702686bc14fbc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "d3fb8dce89e0b907c2b76e799434a00bd8787c146394aaf9558e7ead54c077a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "3fca5b5c2e63a455d9ab03e0d9d29d16e52e1628dca17d028b92263c13dccbd7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "136450c9301dfd951c8147ca59d6afbdc1f1d3b89c996394aea3f1199b6927c7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "64b9ef65e836bcf83c5c17e015cd7920be14229621a1fed4dbb441206a735a6d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "2ce116acd66721dd078dda098715bd436cef9c91985d478ef6790ac3b6875e5f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c33da4b003fe4fdf402893d8e70002ca4e205b36a5b012d8785899a1890a23db",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "ac5fc64795ff3c8d7b63ca86f6dba91cbd3f43d5653fdc917ab934b35035f521",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "b6dce859717fcd32b47c0fbc28781a5e11c9e4200777b81f58559b10701d8b0d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "87d423b5c75f8649e21fe4b981fdfd024c238fea5820b71956a54da475c21345",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "11f175c02f494f9e80b5f1183cf0ef206f61692a02e90049bfee405f81dc292d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "b7c7c533720fb66b27b660f925f3e59fb8f401268f879bb9f64cb1199e40fc1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "31e957cbc2322d9980f88d5bd9a5d16c57964d763ec4528703e03850e34c4644",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "dfb2e13a429f5c87b4cbb099a860b91fdcddaf994f13460a15e96d742df8dd2a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "e2d4fa0e6a24643283266abbcb42ff781f25dff5d6ef9f9ba1cc6b389aafc031",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "8c03f5f777a273362c1684757cf2675d3b27d98de43a8efdd0852c5efd2f7540",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "fc68b5ed5a61962b6bda0753f3ff1412081d70156abd8a4ca6a3ffc864457e61",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "141a87c956c44fc11a1c74ed85b2abf5cab9cfcf0212c7d0484e750c122f3f3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "43fad70c2a0dfc6f1e0bcf49a5ef83a92d284657d2faaffe7f361349802bc325",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8c7531c31732155c4d2633377a5c2204371b562b99c2bbd9e1f0848b0d4b8cb3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "c7fde00eb0e881365526b2f0047ea17cf9f92ae90473abcae9531e34e69775be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "8b7de5c008f3294ae8cad32bdcaf923ae64eee0aea5cd69c177a4e059e14d230",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "869a736d9fd4ced54730caff9eb23b247af2af33b13b14c53eb9e5f8baa9752d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "06d22a2c7c7affdaae7ff927daf95bcf0104560b2e20d02bda21c8d0828eb398",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "419199bfb97a3237d6f9c5b919a085a896a11ab768d4585bac9f348937df29a4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "19d7a6354fcf3d11d7c93bf81013cbc8e74db38336db5af4d91b7c170656aba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "4b271605f1b8a488a489fe73279b50322afc399c88c96715dd7f630351d9d2d8",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3e396ce3ecf766eb68527513a90b049a4e073098207e8d6d562702c78d84ee3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "8adcd63921b79a8d4e373ade993ad9ff93f5eb1c238c158f54c614578eff2307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "ad6e70792d7782fd0a76cb2707054cd78fd86d34a2214a25db9ba6516189b401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "811bf6c6310bfb304a3024a8bb4dd63fb758196078c0c099e913d88e8a0492dc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "108f1a74d70d300b8487878e0b9036fa9f30999e8974bd908aee4e3292f03266",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "17efaa747c707b2042dccf77f390356264b1ee7d1eb78d2d9a95c7773ef66cd5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "6d6a810db8803f54cddb045fa01c69718cec47aab9cfcbb4bd95668b5d92afba",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "031342670cd4d02975a722bf9ec98cbd519da5a322bd6be67f374032a341c6e2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "801e303e5a6ce87dc4673bec09d71ce669fd7e67ad8f959c1db54db6a3c79098",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "9a5ba74571863e7c1ca0ee4d2062ab5719f5fd844707cfbb13dc490e37ceb628",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a0afb702dcbdf124960f4f13d8c010a319692dc6148db430899a011c97066e45",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "9ab54bca6139b0064a862c612dc21d3ddbbb59ebd3794c8362ae29c9ee4d9c74",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8148148761b6d3253729118cd2609436f124b6fb789c619c6cd17b9964a92632",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "deb8f8153ae628701fe02a5bcc130b9c3ab5e36ae2d17f43c94a193812fd4a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "3e9a7f79a3a985b2a88c9897bb0246f84f6668049b9dac33861f9bb514eb5a51",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "bd2c842474a037025ada13766b217c198afd33d7d6a22d28671be2dd8b17341b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "c0c542866c4f153ad7f3bf4606f9c47f0bbe9356d32c0851f25c3c1fc9c304fe",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "9d48f25e0b6f4f471b3aa07659d1506ebd812286a423a0f9d2884d2d0cb19636",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5f4adfe4ab48b57528a692569dea5e5cc15440b6277f537bc21778ade2ae1b64",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "b91b722eab744830322953b4042881320a0a910b08d589cf10db2063cd60c524",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "845e429c8c58065bb21f3fb0b93a41db7a91cfeac27be5555ca65a396e2d586f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "0fcaf765f2115648ff072ae1113b241539302b6423a856ffaa22ed9435c3cfae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "657b5628e747b5c5dd85cd7830480d1f6e9a57f82fbf9dae33b1fec655a77bd6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "57324c4bfa22c120652741fbeeece9aec30b7dcfb47b1c0d9e3a7913dc7b8f5c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "69d37e4cc57c22c7045a420540737e77cd20ab2f788323cb00c47529cd54e818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "ce8e55fa5da8a0bf2e8fd3419533dd5cddea1c94b8b3404b725709f0ffb2579d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "cf24ebfeddb76f85bcff2d35907706d847f64a089c876e6cc886df3f28f5a542",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "9ed8a58d946d8380e2171128703e9757be00b32e51475a995a10e070f73324b9",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "60286d021feff4f06249f630b76583f6d8774b901323daa5fc07f074cce2d22a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "6076ffea0dc33571e1045f3fce42931a0130043235b96579d55113118c4bef6e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "e22c09c014eb4f22fad079bf0c8a46d4e312e608c2a0a2a6e64d47fb3a885e01",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "a42975dfc33994732f581a9c3fafaa0fe37bfcb10c814155a6ca733975629c2d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round1/rollout/events/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "a0830970a719b97ae72c03e3a56e6b161b67bc97d30e41d14ec7f2fbd9066167",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "fa704dea719bb7e0a0b6d2aee5883a65ff69f88660eacc817c3702686bc14fbc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "d3fb8dce89e0b907c2b76e799434a00bd8787c146394aaf9558e7ead54c077a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "3fca5b5c2e63a455d9ab03e0d9d29d16e52e1628dca17d028b92263c13dccbd7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "136450c9301dfd951c8147ca59d6afbdc1f1d3b89c996394aea3f1199b6927c7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "64b9ef65e836bcf83c5c17e015cd7920be14229621a1fed4dbb441206a735a6d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "2ce116acd66721dd078dda098715bd436cef9c91985d478ef6790ac3b6875e5f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c33da4b003fe4fdf402893d8e70002ca4e205b36a5b012d8785899a1890a23db",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "ac5fc64795ff3c8d7b63ca86f6dba91cbd3f43d5653fdc917ab934b35035f521",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "b6dce859717fcd32b47c0fbc28781a5e11c9e4200777b81f58559b10701d8b0d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "87d423b5c75f8649e21fe4b981fdfd024c238fea5820b71956a54da475c21345",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "11f175c02f494f9e80b5f1183cf0ef206f61692a02e90049bfee405f81dc292d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "b7c7c533720fb66b27b660f925f3e59fb8f401268f879bb9f64cb1199e40fc1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "31e957cbc2322d9980f88d5bd9a5d16c57964d763ec4528703e03850e34c4644",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "dfb2e13a429f5c87b4cbb099a860b91fdcddaf994f13460a15e96d742df8dd2a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "e2d4fa0e6a24643283266abbcb42ff781f25dff5d6ef9f9ba1cc6b389aafc031",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "8c03f5f777a273362c1684757cf2675d3b27d98de43a8efdd0852c5efd2f7540",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "fc68b5ed5a61962b6bda0753f3ff1412081d70156abd8a4ca6a3ffc864457e61",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "141a87c956c44fc11a1c74ed85b2abf5cab9cfcf0212c7d0484e750c122f3f3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "43fad70c2a0dfc6f1e0bcf49a5ef83a92d284657d2faaffe7f361349802bc325",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8c7531c31732155c4d2633377a5c2204371b562b99c2bbd9e1f0848b0d4b8cb3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "c7fde00eb0e881365526b2f0047ea17cf9f92ae90473abcae9531e34e69775be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "8b7de5c008f3294ae8cad32bdcaf923ae64eee0aea5cd69c177a4e059e14d230",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "869a736d9fd4ced54730caff9eb23b247af2af33b13b14c53eb9e5f8baa9752d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "06d22a2c7c7affdaae7ff927daf95bcf0104560b2e20d02bda21c8d0828eb398",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "419199bfb97a3237d6f9c5b919a085a896a11ab768d4585bac9f348937df29a4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "19d7a6354fcf3d11d7c93bf81013cbc8e74db38336db5af4d91b7c170656aba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "4b271605f1b8a488a489fe73279b50322afc399c88c96715dd7f630351d9d2d8",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3e396ce3ecf766eb68527513a90b049a4e073098207e8d6d562702c78d84ee3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "8adcd63921b79a8d4e373ade993ad9ff93f5eb1c238c158f54c614578eff2307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "ad6e70792d7782fd0a76cb2707054cd78fd86d34a2214a25db9ba6516189b401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "811bf6c6310bfb304a3024a8bb4dd63fb758196078c0c099e913d88e8a0492dc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "108f1a74d70d300b8487878e0b9036fa9f30999e8974bd908aee4e3292f03266",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "17efaa747c707b2042dccf77f390356264b1ee7d1eb78d2d9a95c7773ef66cd5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "6d6a810db8803f54cddb045fa01c69718cec47aab9cfcbb4bd95668b5d92afba",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "031342670cd4d02975a722bf9ec98cbd519da5a322bd6be67f374032a341c6e2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "801e303e5a6ce87dc4673bec09d71ce669fd7e67ad8f959c1db54db6a3c79098",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "9a5ba74571863e7c1ca0ee4d2062ab5719f5fd844707cfbb13dc490e37ceb628",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a0afb702dcbdf124960f4f13d8c010a319692dc6148db430899a011c97066e45",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "9ab54bca6139b0064a862c612dc21d3ddbbb59ebd3794c8362ae29c9ee4d9c74",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8148148761b6d3253729118cd2609436f124b6fb789c619c6cd17b9964a92632",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "deb8f8153ae628701fe02a5bcc130b9c3ab5e36ae2d17f43c94a193812fd4a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "3e9a7f79a3a985b2a88c9897bb0246f84f6668049b9dac33861f9bb514eb5a51",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "bd2c842474a037025ada13766b217c198afd33d7d6a22d28671be2dd8b17341b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "c0c542866c4f153ad7f3bf4606f9c47f0bbe9356d32c0851f25c3c1fc9c304fe",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "9d48f25e0b6f4f471b3aa07659d1506ebd812286a423a0f9d2884d2d0cb19636",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5f4adfe4ab48b57528a692569dea5e5cc15440b6277f537bc21778ade2ae1b64",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "b91b722eab744830322953b4042881320a0a910b08d589cf10db2063cd60c524",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "845e429c8c58065bb21f3fb0b93a41db7a91cfeac27be5555ca65a396e2d586f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "0fcaf765f2115648ff072ae1113b241539302b6423a856ffaa22ed9435c3cfae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "657b5628e747b5c5dd85cd7830480d1f6e9a57f82fbf9dae33b1fec655a77bd6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "57324c4bfa22c120652741fbeeece9aec30b7dcfb47b1c0d9e3a7913dc7b8f5c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "69d37e4cc57c22c7045a420540737e77cd20ab2f788323cb00c47529cd54e818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "ce8e55fa5da8a0bf2e8fd3419533dd5cddea1c94b8b3404b725709f0ffb2579d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "cf24ebfeddb76f85bcff2d35907706d847f64a089c876e6cc886df3f28f5a542",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "9ed8a58d946d8380e2171128703e9757be00b32e51475a995a10e070f73324b9",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "60286d021feff4f06249f630b76583f6d8774b901323daa5fc07f074cce2d22a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "6076ffea0dc33571e1045f3fce42931a0130043235b96579d55113118c4bef6e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "e22c09c014eb4f22fad079bf0c8a46d4e312e608c2a0a2a6e64d47fb3a885e01",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "a42975dfc33994732f581a9c3fafaa0fe37bfcb10c814155a6ca733975629c2d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round2/rollout/events/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "a0830970a719b97ae72c03e3a56e6b161b67bc97d30e41d14ec7f2fbd9066167",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "fa704dea719bb7e0a0b6d2aee5883a65ff69f88660eacc817c3702686bc14fbc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "d3fb8dce89e0b907c2b76e799434a00bd8787c146394aaf9558e7ead54c077a3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "3fca5b5c2e63a455d9ab03e0d9d29d16e52e1628dca17d028b92263c13dccbd7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "136450c9301dfd951c8147ca59d6afbdc1f1d3b89c996394aea3f1199b6927c7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "64b9ef65e836bcf83c5c17e015cd7920be14229621a1fed4dbb441206a735a6d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "2ce116acd66721dd078dda098715bd436cef9c91985d478ef6790ac3b6875e5f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "c33da4b003fe4fdf402893d8e70002ca4e205b36a5b012d8785899a1890a23db",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "ac5fc64795ff3c8d7b63ca86f6dba91cbd3f43d5653fdc917ab934b35035f521",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "b6dce859717fcd32b47c0fbc28781a5e11c9e4200777b81f58559b10701d8b0d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "87d423b5c75f8649e21fe4b981fdfd024c238fea5820b71956a54da475c21345",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "11f175c02f494f9e80b5f1183cf0ef206f61692a02e90049bfee405f81dc292d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "b7c7c533720fb66b27b660f925f3e59fb8f401268f879bb9f64cb1199e40fc1f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "31e957cbc2322d9980f88d5bd9a5d16c57964d763ec4528703e03850e34c4644",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "dfb2e13a429f5c87b4cbb099a860b91fdcddaf994f13460a15e96d742df8dd2a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "e2d4fa0e6a24643283266abbcb42ff781f25dff5d6ef9f9ba1cc6b389aafc031",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "8c03f5f777a273362c1684757cf2675d3b27d98de43a8efdd0852c5efd2f7540",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "fc68b5ed5a61962b6bda0753f3ff1412081d70156abd8a4ca6a3ffc864457e61",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "141a87c956c44fc11a1c74ed85b2abf5cab9cfcf0212c7d0484e750c122f3f3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "43fad70c2a0dfc6f1e0bcf49a5ef83a92d284657d2faaffe7f361349802bc325",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-01_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8c7531c31732155c4d2633377a5c2204371b562b99c2bbd9e1f0848b0d4b8cb3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "c7fde00eb0e881365526b2f0047ea17cf9f92ae90473abcae9531e34e69775be",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "8b7de5c008f3294ae8cad32bdcaf923ae64eee0aea5cd69c177a4e059e14d230",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "869a736d9fd4ced54730caff9eb23b247af2af33b13b14c53eb9e5f8baa9752d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "06d22a2c7c7affdaae7ff927daf95bcf0104560b2e20d02bda21c8d0828eb398",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "419199bfb97a3237d6f9c5b919a085a896a11ab768d4585bac9f348937df29a4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "19d7a6354fcf3d11d7c93bf81013cbc8e74db38336db5af4d91b7c170656aba4",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "4b271605f1b8a488a489fe73279b50322afc399c88c96715dd7f630351d9d2d8",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "3e396ce3ecf766eb68527513a90b049a4e073098207e8d6d562702c78d84ee3f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "8adcd63921b79a8d4e373ade993ad9ff93f5eb1c238c158f54c614578eff2307",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "ad6e70792d7782fd0a76cb2707054cd78fd86d34a2214a25db9ba6516189b401",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "811bf6c6310bfb304a3024a8bb4dd63fb758196078c0c099e913d88e8a0492dc",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "108f1a74d70d300b8487878e0b9036fa9f30999e8974bd908aee4e3292f03266",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "17efaa747c707b2042dccf77f390356264b1ee7d1eb78d2d9a95c7773ef66cd5",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "6d6a810db8803f54cddb045fa01c69718cec47aab9cfcbb4bd95668b5d92afba",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "031342670cd4d02975a722bf9ec98cbd519da5a322bd6be67f374032a341c6e2",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "801e303e5a6ce87dc4673bec09d71ce669fd7e67ad8f959c1db54db6a3c79098",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "9a5ba74571863e7c1ca0ee4d2062ab5719f5fd844707cfbb13dc490e37ceb628",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "a0afb702dcbdf124960f4f13d8c010a319692dc6148db430899a011c97066e45",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "9ab54bca6139b0064a862c612dc21d3ddbbb59ebd3794c8362ae29c9ee4d9c74",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-02_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "8148148761b6d3253729118cd2609436f124b6fb789c619c6cd17b9964a92632",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "deb8f8153ae628701fe02a5bcc130b9c3ab5e36ae2d17f43c94a193812fd4a73",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "3e9a7f79a3a985b2a88c9897bb0246f84f6668049b9dac33861f9bb514eb5a51",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "bd2c842474a037025ada13766b217c198afd33d7d6a22d28671be2dd8b17341b",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "c0c542866c4f153ad7f3bf4606f9c47f0bbe9356d32c0851f25c3c1fc9c304fe",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "9d48f25e0b6f4f471b3aa07659d1506ebd812286a423a0f9d2884d2d0cb19636",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "5f4adfe4ab48b57528a692569dea5e5cc15440b6277f537bc21778ade2ae1b64",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "b91b722eab744830322953b4042881320a0a910b08d589cf10db2063cd60c524",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "845e429c8c58065bb21f3fb0b93a41db7a91cfeac27be5555ca65a396e2d586f",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "0fcaf765f2115648ff072ae1113b241539302b6423a856ffaa22ed9435c3cfae",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "657b5628e747b5c5dd85cd7830480d1f6e9a57f82fbf9dae33b1fec655a77bd6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "57324c4bfa22c120652741fbeeece9aec30b7dcfb47b1c0d9e3a7913dc7b8f5c",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "69d37e4cc57c22c7045a420540737e77cd20ab2f788323cb00c47529cd54e818",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "ce8e55fa5da8a0bf2e8fd3419533dd5cddea1c94b8b3404b725709f0ffb2579d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "cf24ebfeddb76f85bcff2d35907706d847f64a089c876e6cc886df3f28f5a542",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "9ed8a58d946d8380e2171128703e9757be00b32e51475a995a10e070f73324b9",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "60286d021feff4f06249f630b76583f6d8774b901323daa5fc07f074cce2d22a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "6076ffea0dc33571e1045f3fce42931a0130043235b96579d55113118c4bef6e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "e22c09c014eb4f22fad079bf0c8a46d4e312e608c2a0a2a6e64d47fb3a885e01",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "a42975dfc33994732f581a9c3fafaa0fe37bfcb10c814155a6ca733975629c2d",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-03_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "a0830970a719b97ae72c03e3a56e6b161b67bc97d30e41d14ec7f2fbd9066167",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "bd8b113af3aeb6d75862b28b820645cbfb4e2b1550473028a830f87c66f29bf0",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "6ecb4c5fc481e52988afe4b266d66a1b0fdcb629336b6bd6de2998812f760cf6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "19af5199c1bcfa0e2d2b9f2506614d204c6ca9f83607f5ade1a412946bb647ff",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "fee328742a7f379116c50306d183c1515369dadba939c0f732ba16adcdc1de0a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "188449585f92a947e043c66308b22e3161b5a7587352e8b76bec19b6f3032da3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "1051f81b5ff31e6601a684822c55188ae7cfe71e803810f6debc00cb6d2b788e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "7bd24302d54f132c8d0ee77cae15fb17e5c3ef194616669d32c2deda6abf6836",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "db61ef828813c757ec80657bc9466a4bfa1f689f9249fbbef0eca6d84ce7c669",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "d0b2b1930db6063dfc0bd951eb50f2626afb8b5113f43f447f7ed86769ba59ed",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "5799f3a3662112c58015e66daf568dd29dca39915b272c4d668966f9fc1dc880",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "3ecca01a5c8ab682655f3fb23e5e07eb2b897dd832668a3f43e8ce97267f77e6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "0c410270dd23d7558b06a16f8abb3d0cc7145a96c3c71e980c47960cd22f4253",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "011ef566ad6e3ab89a38e2ec83e11c376484b091e01d5fbea72832f068f09f5e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "411bcc1ae0526253c846b92e983276585fde16a11497dc8a2a60f1cda267e116",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "5aeffd1e92ebb5a6663d45c93acdf2eaa2ae144aa5096c6422ec518d9dda1880",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "58573d86ca9bcb0d9b527f5e95bbddbb5a4f165f54706a0819151dde04f65445",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "1bb83c2b94d44019dfd24b19bd389428709ec6672ae9e3fb11b7ea8e40fbf9a7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "7922297914c63dc5db5cd5c6f53c133309c51ccdf0bf0740d815685630e53770",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "c1726d9ee80e3d05838efd8ae215bc18be1e5430de80617075703b29b74ce390",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/round3/rollout/events/sub-04_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "f061bd39f97f1a2fb576d8b3788a249463a81b027624667ba25521a27330200e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_staircase_snr30dB.npz": {
+      "q_sha256": "bd8b113af3aeb6d75862b28b820645cbfb4e2b1550473028a830f87c66f29bf0",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_staircase_snr25dB.npz": {
+      "q_sha256": "6ecb4c5fc481e52988afe4b266d66a1b0fdcb629336b6bd6de2998812f760cf6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_staircase_snr20dB.npz": {
+      "q_sha256": "19af5199c1bcfa0e2d2b9f2506614d204c6ca9f83607f5ade1a412946bb647ff",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_staircase_snr15dB.npz": {
+      "q_sha256": "fee328742a7f379116c50306d183c1515369dadba939c0f732ba16adcdc1de0a",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp40s_snr30dB.npz": {
+      "q_sha256": "188449585f92a947e043c66308b22e3161b5a7587352e8b76bec19b6f3032da3",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp40s_snr25dB.npz": {
+      "q_sha256": "1051f81b5ff31e6601a684822c55188ae7cfe71e803810f6debc00cb6d2b788e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp40s_snr20dB.npz": {
+      "q_sha256": "7bd24302d54f132c8d0ee77cae15fb17e5c3ef194616669d32c2deda6abf6836",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp40s_snr15dB.npz": {
+      "q_sha256": "db61ef828813c757ec80657bc9466a4bfa1f689f9249fbbef0eca6d84ce7c669",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp20s_snr30dB.npz": {
+      "q_sha256": "d0b2b1930db6063dfc0bd951eb50f2626afb8b5113f43f447f7ed86769ba59ed",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp20s_snr25dB.npz": {
+      "q_sha256": "5799f3a3662112c58015e66daf568dd29dca39915b272c4d668966f9fc1dc880",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp20s_snr20dB.npz": {
+      "q_sha256": "3ecca01a5c8ab682655f3fb23e5e07eb2b897dd832668a3f43e8ce97267f77e6",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp20s_snr15dB.npz": {
+      "q_sha256": "0c410270dd23d7558b06a16f8abb3d0cc7145a96c3c71e980c47960cd22f4253",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp10s_snr30dB.npz": {
+      "q_sha256": "011ef566ad6e3ab89a38e2ec83e11c376484b091e01d5fbea72832f068f09f5e",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp10s_snr25dB.npz": {
+      "q_sha256": "411bcc1ae0526253c846b92e983276585fde16a11497dc8a2a60f1cda267e116",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp10s_snr20dB.npz": {
+      "q_sha256": "5aeffd1e92ebb5a6663d45c93acdf2eaa2ae144aa5096c6422ec518d9dda1880",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp10s_snr15dB.npz": {
+      "q_sha256": "58573d86ca9bcb0d9b527f5e95bbddbb5a4f165f54706a0819151dde04f65445",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp5s_snr30dB.npz": {
+      "q_sha256": "1bb83c2b94d44019dfd24b19bd389428709ec6672ae9e3fb11b7ea8e40fbf9a7",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp5s_snr25dB.npz": {
+      "q_sha256": "7922297914c63dc5db5cd5c6f53c133309c51ccdf0bf0740d815685630e53770",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp5s_snr20dB.npz": {
+      "q_sha256": "c1726d9ee80e3d05838efd8ae215bc18be1e5430de80617075703b29b74ce390",
+      "speed_max_abs_mismatch": 0.0
+    },
+    "L2/standard/final_validation/events/sub-04_FDSI_triangular-ramp5s_snr15dB.npz": {
+      "q_sha256": "f061bd39f97f1a2fb576d8b3788a249463a81b027624667ba25521a27330200e",
+      "speed_max_abs_mismatch": 0.0
+    }
+  },
+  "alignment": "stored C4 speed equals C1 speed at time // 204 (exact for loop rollouts; open-loop features recomputed with the same observer, tolerance 1e-4)"
+}
