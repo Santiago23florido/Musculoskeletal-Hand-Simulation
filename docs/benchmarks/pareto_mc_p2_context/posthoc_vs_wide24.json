@@ -1,0 +1,134 @@
+{
+ "set24_vs_wide24": {
+  "global_roa_pct": {
+   "estimate": 0.303,
+   "ci95": [
+    0.059,
+    0.589
+   ]
+  },
+  "ramp5s_roa_pct": {
+   "estimate": 0.027,
+   "ci95": [
+    -0.312,
+    0.367
+   ]
+  },
+  "precision_pct": {
+   "estimate": -0.107,
+   "ci95": [
+    -0.457,
+    0.264
+   ]
+  },
+  "recall_pct": {
+   "estimate": 0.372,
+   "ci95": [
+    0.273,
+    0.477
+   ]
+  },
+  "moving": {
+   "estimate": 0.36,
+   "ci95": [
+    0.091,
+    0.673
+   ]
+  },
+  "hold_away": {
+   "estimate": 0.146,
+   "ci95": [
+    -0.249,
+    0.679
+   ]
+  }
+ },
+ "setrec24_vs_wide24": {
+  "global_roa_pct": {
+   "estimate": 1.303,
+   "ci95": [
+    0.626,
+    2.296
+   ]
+  },
+  "ramp5s_roa_pct": {
+   "estimate": 1.341,
+   "ci95": [
+    0.13,
+    2.882
+   ]
+  },
+  "precision_pct": {
+   "estimate": 1.176,
+   "ci95": [
+    0.123,
+    2.663
+   ]
+  },
+  "recall_pct": {
+   "estimate": 0.897,
+   "ci95": [
+    0.575,
+    1.359
+   ]
+  },
+  "moving": {
+   "estimate": 1.411,
+   "ci95": [
+    0.687,
+    2.467
+   ]
+  },
+  "hold_away": {
+   "estimate": 2.175,
+   "ci95": [
+    0.073,
+    6.807
+   ]
+  }
+ },
+ "mdiff24_vs_wide24": {
+  "global_roa_pct": {
+   "estimate": 1.442,
+   "ci95": [
+    0.801,
+    2.312
+   ]
+  },
+  "ramp5s_roa_pct": {
+   "estimate": 1.431,
+   "ci95": [
+    0.572,
+    2.667
+   ]
+  },
+  "precision_pct": {
+   "estimate": 1.688,
+   "ci95": [
+    0.673,
+    3.089
+   ]
+  },
+  "recall_pct": {
+   "estimate": 0.375,
+   "ci95": [
+    0.015,
+    0.825
+   ]
+  },
+  "moving": {
+   "estimate": 1.551,
+   "ci95": [
+    0.861,
+    2.476
+   ]
+  },
+  "hold_away": {
+   "estimate": 2.288,
+   "ci95": [
+    0.304,
+    6.424
+   ]
+  }
+ }
+}

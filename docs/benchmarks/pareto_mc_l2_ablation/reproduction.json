@@ -1,0 +1,399 @@
+{
+  "checked_at_utc": "2026-11-02T10:26:48.157788+00:00",
+  "labels_opened": false,
+  "arms": {
+    "l2_seed2_full": {
+      "reference": "L2/standard/final_validation",
+      "bitwise": true,
+      "records": {
+        "sub-04_FDSI_staircase_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_staircase_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_staircase_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_staircase_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "memory": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        }
+      }
+    },
+    "l1_off": {
+      "reference": "L1/all_feedback/final_validation",
+      "bitwise": true,
+      "records": {
+        "sub-04_FDSI_staircase_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_staircase_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_staircase_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_staircase_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp40s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp20s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp10s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr30dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr25dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr20dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        },
+        "sub-04_FDSI_triangular-ramp5s_snr15dB": {
+          "equal": {
+            "spikes": true,
+            "state": true,
+            "centroid": true,
+            "trusted_count": true
+          },
+          "spike_samples_equal_pct": 100.0
+        }
+      }
+    }
+  },
+  "bitwise": true
+}

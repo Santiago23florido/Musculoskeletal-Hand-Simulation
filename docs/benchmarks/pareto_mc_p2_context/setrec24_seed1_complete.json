@@ -1,0 +1,10 @@
+{
+  "completed_at_utc": "2026-11-04T16:44:55.717245+00:00",
+  "checkpoint_sha256": "ee4e8b953b0b5b0b68f6b37cbf452e0b9cebe8a12c9962071ffbb646b9a93e2f",
+  "validation_bce": 0.016619982978990002,
+  "training_trajectories": 420,
+  "epochs": 3,
+  "seed": 1,
+  "parameters": 32065,
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU"
+}

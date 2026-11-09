@@ -42,3 +42,6 @@ lessons/
 !.env.example
 .idea/
 .vscode/
+
+# Local lessons ledger kept by the coding assistant; never committed.
+LESSONS.md
