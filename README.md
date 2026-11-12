@@ -21,7 +21,7 @@ physical hand model the later stages will drive.
 | Stage | Goal | Status |
 | --- | --- | --- |
 | **1a. Musculoskeletal hand** | Load, simulate and query the MyoSuite MyoHand model in MuJoCo | **Done** |
-| **1b. Motor-unit decoding during movement** | Keep identifying motor-unit discharges while the wrist moves fast | **In progress**: best result below |
+| **1b. Motor-unit decoding during movement** | Keep identifying motor-unit discharges while the wrist moves fast | **In progress**: 87.38% on a held-out subject, below |
 | 2. From motor units to movement intent | Turn decoded discharges into per-muscle drive and joint commands | Planned |
 | 3. Hand control | Drive the simulated hand, then a robotic hand, from decoded motor-unit activity | Planned |
 
@@ -40,32 +40,48 @@ The starting point is the adaptive decomposition of
 in its published "Pareto" configuration. This repository keeps its update rules
 and adds learned decisions about which detected peaks are true discharges.
 
-![Accuracy of each development stage on the validation subject](docs/images/pareto_mc_results.png)
+![Accuracy on the validation subject and on the held-out subject](docs/images/pareto_mc_results.png)
 
-| System (seed mean of three trainings) | All conditions | 5-s ramps | Units ≥90% | Precision | Recall |
+**Held-out subject (sub-05).** This subject was used for no training, tuning or
+diagnostics, and was evaluated once with every system frozen. Seed means of
+three trainings over 140 motor-unit instances:
+
+| System | All conditions | 5-s ramps | Units ≥90% | Precision | Recall | Units lost |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Pareto, the original adaptive method | 76.85% | 60.48% | 48.57% | 89.94% | 80.27% | 21 |
+| L2: learned decisions and filter memory | 80.60% | 68.30% | 56.90% | 88.33% | 85.90% | 13 |
+| **P3: context head, closed loop** | **87.38%** | **78.63%** | **68.10%** | **93.97%** | **90.91%** | **5.3** |
+
+Accuracy is the rate of agreement, `RoA = TP / (TP + FP + FN)`. A unit counts as
+lost when less than half of its discharges are found.
+
+- The closed-loop context head **matches 87.38% of discharges on the new
+  subject, 10.53 points more than the original method** (95% cluster-bootstrap
+  interval [7.58, 13.99]) and 6.78 points more than L2 [4.46, 9.51].
+- On the fastest 5-second ramps it reaches **78.63%, against 60.48%**
+  (+18.15 [13.70, 22.91]).
+- **68.10% of its motor units are tracked with an RoA of at least 90%**, against
+  48.57%. Lost units fall from 21 to about 5.
+- Precision and recall improve together, so the gain does not come from
+  accepting more candidates.
+
+Sub-05 is harder for every method: the original method scores 76.85% there,
+against 87.65% on sub-04. The learned systems keep most of their advantage, and
+P3's margin is larger on the new subject than on the validation subject.
+
+**Validation subject (sub-04).** All learned systems had their thresholds tuned
+on this subject, so these are development figures (124 instances):
+
+| System | All conditions | 5-s ramps | Units ≥90% | Precision | Recall |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Pareto, the original adaptive method | 87.65% | 73.88% | 66.94% | 96.06% | 89.03% |
 | L2: learned decisions and filter memory | 91.05% | 85.01% | 71.77% | 94.95% | 94.17% |
 | P2: context head, open loop | 94.06% | 89.55% | 81.99% | 96.96% | 96.52% |
 | **P3: context head, closed loop** | **95.21%** | **90.38%** | **88.71%** | **97.74%** | **96.95%** |
 
-Accuracy is the rate of agreement, `RoA = TP / (TP + FP + FN)`, on 124
-motor-unit instances of the validation subject.
-
-- The closed-loop context head (P3) **matches 95.21% of discharges across all
-  conditions and 90.38% on the fastest 5-second ramps**.
-- **88.71% of its motor units are tracked with an RoA of at least 90%**, against
-  66.94% for the original method.
-- Its gains over L2 have 95% cluster-bootstrap intervals above zero: +4.16
-  points overall [2.41, 6.61] and +16.94 points in units at or above 90%
-  [10.83, 24.29].
-- Training in closed loop adds +1.15 points [0.43, 2.23] over the same head
-  used open loop.
-
-Every system's thresholds were tuned on sub-04, so these are development
-figures. The held-out subject sub-05 gives the unbiased estimate; its results
-will be added here when that single evaluation is complete. All results come
-from simulated recordings.
+On sub-04, training the head in closed loop adds +1.15 points [0.43, 2.23] over
+the same head used open loop. P2 was not part of the held-out evaluation. All
+results come from simulated recordings of five subjects.
 
 ### How the decoder works
 
@@ -212,7 +228,7 @@ within a row's own documentation.
 | Workflow | Approach | Outcome |
 | --- | --- | --- |
 | [Farina references](benchmarks/farina/README.md) | Reproduction of the published adaptive method and its benchmark | All 28 published Table 2 values reproduced within one point; tutorial RoA 90.25% |
-| [Pareto-MC](benchmarks/pareto_mc/README.md) | Learned discharge decisions inside the adaptive loop, EMG-only posture, filter memory, context heads | **Best result: 95.21% RoA on the validation subject (P3, above)** |
+| [Pareto-MC](benchmarks/pareto_mc/README.md) | Learned discharge decisions inside the adaptive loop, EMG-only posture, filter memory, context heads | **Best result (P3, above): 87.38% vs 76.85% for Pareto on the held-out subject** |
 | [Spike likelihood](benchmarks/spike_likelihood/README.md) | Shared classifier of discharge candidates, without angle inputs | 83.51% vs 80.89% for Pareto on 80 outer-subject records; 72.33% vs 65.81% on 5-s ramps |
 | [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded correction of the adaptation steps, conditioned on the measured wrist angle | 81.69% vs 80.89% on the same 80 records |
 | [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel templates that recover dormant units | 81.42% on the same 80 records; recovers 511 retained unit instances |
