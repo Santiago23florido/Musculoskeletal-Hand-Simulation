@@ -1,0 +1,13 @@
+{
+  "opened_at_utc": "2026-11-12T08:03:17.066420+00:00",
+  "arms": [
+    "cl_seed0",
+    "cl_seed1",
+    "cl_seed2",
+    "l2_seed0",
+    "l2_seed1",
+    "l2_seed2",
+    "pareto_published",
+    "pareto_rerun"
+  ]
+}

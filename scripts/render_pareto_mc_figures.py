@@ -307,11 +307,17 @@ def results_figure(path):
                 ax.set_yticks(range(len(systems)))
                 ax.set_yticklabels(labels[::-1], fontsize=10, color=INK)
     height = fig.get_figheight()
-    fig.tight_layout(rect=(0, 0.3 / height, 1, 1 - 1.15 / height), h_pad=4.5)
+    fig.tight_layout(rect=(0, 0.3 / height, 1, 1 - 1.15 / height), h_pad=6.0)
     for r, (heading, _) in enumerate(rows):
         top = axes[r][0].get_position().y1
         fig.text(
-            0.012, top + 0.4 / height, heading, fontsize=11.5, weight="bold", color=INK, va="bottom"
+            0.012,
+            top + (0.4 if r == 0 else 0.15) / height,
+            heading,
+            fontsize=11.5,
+            weight="bold",
+            color=INK,
+            va="bottom",
         )
     fig.text(
         0.012,

@@ -1067,3 +1067,40 @@ exactamente las espigas publicadas en 19 de 20 registros, y el registro restante
 coincide en el 99,9999 % de las muestras. El defecto afecta al tiempo de cálculo,
 no a los resultados. La frase anterior que lo presentaba como una posible
 desviación numérica compartida queda corregida.
+
+### P3 — apertura única de sub-05 (12 de noviembre de 2026)
+
+Se abrió una sola vez, a las 08:03:17 UTC, con su protocolo registrado. El
+análisis terminó a las 11:26 UTC, con 20 registros y 140 instancias. Todos los
+sistemas estaban congelados en sub-01 a sub-04. Medias de semillas:
+
+| Sistema | Global | ramp5s | ≥90 % | Precisión | Recall | Movimiento | Ciclo 1 ramp5s | Perdidas |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Pareto (publicado = reejecutado) | 76,85 | 60,48 | 48,57 | 89,94 | 80,27 | 75,30 | 45,08 | 21 |
+| L2 | 80,60 | 68,30 | 56,90 | 88,33 | 85,90 | 79,06 | 56,79 | 13 |
+| P3 setrec24, lazo cerrado | 87,38 | 78,63 | 68,10 | 93,97 | 90,91 | 86,27 | 67,04 | 5,33 |
+
+Contrastes registrados (bootstrap pareado por condición × unidad, 2000 muestras):
+
+| Contraste | Global | ramp5s | ≥90 % | Precisión | Recall | Perdidas |
+|---|---|---|---|---|---|---|
+| P3 − L2 | +6,78 [4,46; 9,51] | +10,33 [5,60; 16,73] | +11,19 [5,96; 17,76] | +5,64 [3,16; 8,75] | +5,01 [3,26; 7,00] | −7,67 [−14,33; −2,00] |
+| P3 − Pareto | +10,53 [7,58; 13,99] | +18,15 [13,70; 22,91] | +19,52 [11,90; 27,69] | +4,03 [1,47; 7,19] | +10,64 [7,87; 13,69] | −15,67 [−24,33; −7,67] |
+| L2 − Pareto | +3,75 [1,84; 5,67] | +7,82 [2,44; 12,90] | +8,33 [3,47; 13,47] | −1,61 [−3,79; 0,39] | +5,62 [3,81; 7,48] | −8,00 [−14,34; −2,00] |
+| L2 seleccionado (semilla 2) − Pareto | +5,02 [2,83; 7,32] | +8,41 [3,47; 13,02] | +8,57 [3,33; 14,18] | −0,13 [−2,34; 2,19] | +6,33 [4,30; 8,61] | −10,00 [−17,00; −4,00] |
+
+**Conclusión:**
+- P3 generaliza al sujeto reservado: todos sus intervalos frente a L2 y frente a
+  Pareto quedan por encima de cero, y su margen es mayor que en sub-04 (+6,78
+  frente a +4,16 puntos sobre L2).
+- Por semilla, P3 obtiene 88,20, 86,21 y 87,71, y L2 80,62, 79,31 y 81,87.
+- Sub-05 es más difícil para todos: Pareto baja de 87,65 en sub-04 a 76,85.
+- Pareto reejecutado coincide con el publicado: 19 de 20 registros idénticos y el
+  restante en el 99,9999 % de las muestras, con diferencias de métricas por debajo
+  de 0,01 puntos.
+
+**Limitaciones:** son registros simulados de un solo banco, con cinco sujetos; no
+se ha probado la transferencia a otro generador de EMG ni a registros reales. La
+latencia sigue lejos de 22 ms.
+
+Artefactos: `docs/benchmarks/pareto_mc_p3_closed_context/heldout_*.json`.

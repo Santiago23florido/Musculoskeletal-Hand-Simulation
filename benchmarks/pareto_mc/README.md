@@ -1,12 +1,12 @@
 # Pareto-MC
 
 Pareto adaptation with learned discharge decisions, EMG-only posture
-estimation and memory local to each recording. **The best development result is
-the context head trained and run in closed loop (P3): 95.21% global RoA and
-90.38% on 5-second ramps on the validation subject sub-04, against 87.65% and
-73.88% for the original method.** The reserved subject sub-05 is evaluated once,
-with every system frozen; its results are added below when that evaluation is
-complete. CPU latency remains far above the 22 ms target.
+estimation and memory local to each recording. **The best system is the context
+head trained and run in closed loop (P3). On the held-out subject sub-05, evaluated
+once with every system frozen, it reaches 87.38% global RoA and 78.63% on
+5-second ramps, against 76.85% and 60.48% for the original method.** On the
+validation subject sub-04 it reaches 95.21% and 90.38%. CPU latency remains far
+above the 22 ms target.
 
 ![Closed-loop decoder and the architecture of the context head](../../docs/images/pareto_mc_decoder.png)
 
@@ -19,7 +19,7 @@ The work advanced in levels, each building on the previous one:
 | L2 | Calibration-filter memory; accepted development stage | 91.66% (seed mean 91.05%) |
 | P1 | EMG-only posture as an input of C4, open loop | 92.01% |
 | P2 | Context heads: attention over candidates and a per-unit GRU, open loop | 94.06% (`setrec24`) |
-| **P3** | **The `setrec24` context head trained and run in closed loop** | **95.21%** |
+| **P3** | **The `setrec24` context head trained and run in closed loop** | **95.21%** (held-out sub-05: 87.38%) |
 
 P1 to P3 report seed means of three trainings. L3, full memory with insertions
 during the recording, is set up but paused. The sections below describe each
@@ -526,11 +526,33 @@ on the same head used open loop.** The largest closed-loop gain is consistency:
 their thresholds tuned on sub-04, so these are development figures. P3 met the
 registered rule for entering the held-out evaluation (P3 − L2 above zero).
 
-**Held-out subject sub-05.** Opened once on 12 November 2026, with Pareto (as
-published and rerun), the three L2 seeds and the three P3 seeds, all frozen.
-Results will be added here when the evaluation completes. Without using labels,
-the Pareto rerun already reproduces the published spikes on 19 of 20 records
-exactly, and the remaining record at 99.9999% of samples.
+**Held-out subject sub-05.** Opened once on 12 November 2026 under its own
+registered protocol, with Pareto (as published and rerun), the three L2 seeds
+and the three P3 seeds, all frozen. 20 records, 140 instances, seed means:
+
+| System | Global RoA | ramp5s | ≥90% | Precision | Recall | Moving | Ramp5s cycle 1 | Lost units |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Pareto-rerun | 76.85% | 60.48% | 48.57% | 89.94% | 80.27% | 75.30% | 45.08% | 21 |
+| L2 | 80.60% | 68.30% | 56.90% | 88.33% | 85.90% | 79.06% | 56.79% | 13 |
+| **P3 `setrec24`, closed loop** | **87.38%** | **78.63%** | **68.10%** | **93.97%** | **90.91%** | **86.27%** | **67.04%** | **5.3** |
+
+| Contrast | Global RoA | ramp5s | ≥90% | Precision | Recall | Lost units |
+|---|---|---|---|---|---|---|
+| P3 − L2 | +6.78 [4.46, 9.51] | +10.33 [5.60, 16.73] | +11.19 [5.96, 17.76] | +5.64 [3.16, 8.75] | +5.01 [3.26, 7.00] | −7.67 [−14.33, −2.00] |
+| P3 − Pareto | +10.53 [7.58, 13.99] | +18.15 [13.70, 22.91] | +19.52 [11.90, 27.69] | +4.03 [1.47, 7.19] | +10.64 [7.87, 13.69] | −15.67 [−24.33, −7.67] |
+| L2 − Pareto | +3.75 [1.84, 5.67] | +7.82 [2.44, 12.90] | +8.33 [3.47, 13.47] | −1.61 [−3.79, 0.39] | +5.62 [3.81, 7.48] | −8.00 [−14.34, −2.00] |
+
+**The closed-loop head generalises to the new subject.** Every interval of P3
+against L2 and against Pareto lies above zero, and its margins are larger than
+on sub-04 (+6.78 against +4.16 points over L2). The three P3 seeds score 88.20%,
+86.21% and 87.71%; the three L2 seeds score 80.62%, 79.31% and 81.87%. Sub-05 is
+harder for every system: Pareto falls from 87.65% on sub-04 to 76.85%. The
+accepted L2 selection (seed 2) gains +5.02 [2.83, 7.32] over Pareto.
+
+The Pareto rerun reproduces the published spikes on 19 of 20 records exactly,
+and on the remaining record at 99.9999% of samples. Their metrics differ by less
+than 0.01 points. These are simulated recordings from one benchmark; transfer to
+another EMG generator or to real recordings is not tested.
 
 **Latency.** The registered measurement processes one sub-04 record at a time
 with four Torch threads, on five 20 dB records (4871 batches per system):
@@ -572,5 +594,7 @@ used for that schedule call the same registered functions. Set
 `KMP_BLOCKTIME=0` and `OMP_WAIT_POLICY=PASSIVE` for multi-process rollouts, but
 not for latency. See the [protocol](../../docs/benchmarks/pareto_mc_p3_closed_context/protocol.json),
 [analysis](../../docs/benchmarks/pareto_mc_p3_closed_context/analysis.json),
-[round selections](../../docs/benchmarks/pareto_mc_p3_closed_context/round3_selected.json)
-and [latency](../../docs/benchmarks/pareto_mc_p3_closed_context/latency.json).
+[round selections](../../docs/benchmarks/pareto_mc_p3_closed_context/round3_selected.json),
+[latency](../../docs/benchmarks/pareto_mc_p3_closed_context/latency.json),
+[held-out protocol](../../docs/benchmarks/pareto_mc_p3_closed_context/heldout_protocol.json)
+and [held-out analysis](../../docs/benchmarks/pareto_mc_p3_closed_context/heldout_analysis.json).
