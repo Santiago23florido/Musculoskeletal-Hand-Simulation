@@ -1,10 +1,29 @@
 # Pareto-MC
 
-Pareto adaptation with EMG-only state estimation, feedback from discharge
-decisions, and memory local to each recording. **L2 is the latest accepted
-development stage: 91.66% global RoA and 85.05% on 5-second ramps.** These are
-validation results; external evaluation and the final latency target remain
-pending. **L3 is paused at the user's request.**
+Pareto adaptation with learned discharge decisions, EMG-only posture
+estimation and memory local to each recording. **The best development result is
+the context head trained and run in closed loop (P3): 95.21% global RoA and
+90.38% on 5-second ramps on the validation subject sub-04, against 87.65% and
+73.88% for the original method.** The reserved subject sub-05 is evaluated once,
+with every system frozen; its results are added below when that evaluation is
+complete. CPU latency remains far above the 22 ms target.
+
+![Closed-loop decoder and the architecture of the context head](../../docs/images/pareto_mc_decoder.png)
+
+The work advanced in levels, each building on the previous one:
+
+| Level | What it adds | Global RoA, sub-04 |
+|---|---|---:|
+| L0 | Exact causal reimplementation of Pareto (Pareto-rerun) | 87.65% |
+| L1 | Learned decision head C4, trained in closed loop with DAgger | 91.24% |
+| L2 | Calibration-filter memory; accepted development stage | 91.66% (seed mean 91.05%) |
+| P1 | EMG-only posture as an input of C4, open loop | 92.01% |
+| P2 | Context heads: attention over candidates and a per-unit GRU, open loop | 94.06% (`setrec24`) |
+| **P3** | **The `setrec24` context head trained and run in closed loop** | **95.21%** |
+
+P1 to P3 report seed means of three trainings. L3, full memory with insertions
+during the recording, is set up but paused. The sections below describe each
+level in the order it was developed.
 
 ## Development protocol
 
@@ -387,7 +406,9 @@ Every head starts at the Pareto prior.
 | `setrec24` | `set24` plus a per-unit GRU across batches that carries the posture trajectory |
 | `mdiff24` | `setrec24` trained as masked discrete diffusion over the joint discharge labels (discrete flow matching with a mask source) |
 
-Each arm decided on L2's sealed final candidates, open loop. Seed means:
+Panel b of the figure at the top of this README shows the `setrec24`
+architecture. Each arm decided on L2's sealed final candidates, open loop.
+Seed means:
 
 | Arm | Global RoA | ramp5s | ≥20° | Moving | Precision | Recall | Lost units |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -438,10 +459,9 @@ input would reach:
 - that posture reliance varies widely by seed (seed 2 falls to 65%).
 
 This is an open-loop result on one validation subject that P1 already used,
-with no external evaluation. It meets the registered condition for proposing a
-closed-loop level, which needs its own protocol and has not been run. For that
-level, `setrec24` is the simpler candidate, with fewer feedback paths than
-`mdiff24`. L2 remains the accepted stage.
+with no external evaluation. It met the registered condition for proposing a
+closed-loop level. `setrec24` was chosen for it as the simpler candidate, with
+fewer feedback paths than `mdiff24`; that level is P3, below.
 
 ```powershell
 $env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/development_v2'
@@ -459,3 +479,98 @@ Without that bound, the 8 GB GPU spills into shared memory on Windows instead
 of failing. See the [analysis](../../docs/benchmarks/pareto_mc_p2_context/analysis.json),
 [sealed decisions](../../docs/benchmarks/pareto_mc_p2_context/decisions_sealed.json)
 and [post-hoc contrasts](../../docs/benchmarks/pareto_mc_p2_context/posthoc_vs_wide24.json).
+
+### Context head in closed loop (P3)
+
+P2 decided open loop, on candidates that L2 had already produced. In P3 the
+`setrec24` head runs inside the adaptive loop instead: it decides each 100-ms
+batch as it arrives, and the discharges it accepts update the unit's filter and
+centroids before the next batch (panel a of the figure at the top). Its GRU
+state is carried across batches in the stream. A unit test checks that this
+streamed head gives the same logits as the batched predictor used for
+training.
+
+Running in closed loop changes the candidates the head sees, so it is trained
+with DAgger. Each round rolls out the current head on the 60 training and 20
+validation records, labels the new candidates with the true discharges, and
+retrains on P2's 420 trajectories plus every closed-loop trajectory gathered
+so far. There are three rounds. Each keeps P2's recipe: three seeds, AdamW,
+three epochs, unit-balanced BCE, and a 40-trial TPE search of threshold and
+strength whose top three are repeated with all seeds. The final systems are
+the round-3 heads of the three seeds, with threshold 0.384 and strength 0.725.
+
+The median selection objective barely moves across rounds (92.61, 92.96,
+92.86), so most of the closed-loop gain arrives in the first two rounds.
+
+Sub-04 validation, 20 records and 124 instances, seed means:
+
+| System | Global RoA | ramp5s | ≥90% | Precision | Recall | Moving | Lost units |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Pareto-rerun | 87.65% | 73.88% | 66.94% | 96.06% | 89.03% | 86.72% | 5 |
+| L2 | 91.05% | 85.01% | 71.77% | 94.95% | 94.17% | 90.29% | 3.3 |
+| P2 `setrec24`, open loop | 94.06% | 89.55% | 81.99% | 96.96% | 96.52% | 93.50% | 2 |
+| **P3 `setrec24`, closed loop** | **95.21%** | **90.38%** | **88.71%** | **97.74%** | **96.95%** | **94.75%** | 2.3 |
+
+Registered contrasts, in points, with 95% cluster-bootstrap intervals
+(conditions × units, 2000 draws):
+
+| Contrast | Global RoA | ramp5s | ≥90% | Precision | Moving |
+|---|---|---|---|---|---|
+| P3 − L2 (primary) | +4.16 [2.41, 6.61] | +5.38 [2.62, 8.75] | +16.94 [10.83, 24.29] | +2.78 [1.10, 5.01] | +4.46 [2.60, 7.06] |
+| P3 − P2 | +1.15 [0.43, 2.23] | +0.84 [0.22, 1.61] | +6.72 [3.28, 11.11] | +0.78 [0.34, 1.28] | +1.24 [0.48, 2.39] |
+| P3 − Pareto | +7.56 [4.86, 10.73] | +16.51 [9.39, 23.39] | +21.77 [13.33, 31.27] | +1.68 [−0.19, 4.17] | +8.03 [5.16, 11.37] |
+
+**P3 improves on L2 in every registered metric, and closing the loop improves
+on the same head used open loop.** The largest closed-loop gain is consistency:
+6.7 more points of units reach an RoA of at least 90%. All learned systems had
+their thresholds tuned on sub-04, so these are development figures. P3 met the
+registered rule for entering the held-out evaluation (P3 − L2 above zero).
+
+**Held-out subject sub-05.** Opened once on 12 November 2026, with Pareto (as
+published and rerun), the three L2 seeds and the three P3 seeds, all frozen.
+Results will be added here when the evaluation completes. Without using labels,
+the Pareto rerun already reproduces the published spikes on 19 of 20 records
+exactly, and the remaining record at 99.9999% of samples.
+
+**Latency.** The registered measurement processes one sub-04 record at a time
+with four Torch threads, on five 20 dB records (4871 batches per system):
+
+| System | Median | p95 |
+|---|---:|---:|
+| Pareto | 271.3 ms | 1841.2 ms |
+| L2 | 294.7 ms | 1922.5 ms |
+| P3 `setrec24` | 292.9 ms | 2038.9 ms |
+
+The learned systems add about 20–25 ms of median over Pareto, but all three are
+far above the 22 ms target. The cost comes from batches in which Pareto
+re-whitens its 1000-dimensional extended signal. On this laptop, the
+four-thread oneMKL LU inside `torch.linalg.slogdet` is about 40 times slower than
+with one thread (500 ms against 12 ms for a 1000 × 1000 matrix). The same
+library prints the `SLASWP` messages noted above. Under fixed-step adaptation
+these do not change the decisions, as the identity checks show. An earlier
+check on sub-01 at 30 dB measured Pareto at 38 ms, so absolute timings depend
+strongly on the record and on the linear-algebra configuration.
+
+```powershell
+$env:PARETO_MC_OUTPUT = 'outputs/pareto_mc/development_v2'
+$env:PYTHONPATH = '.'
+$env:OPENBLAS_NUM_THREADS = '1'
+$env:CUBLAS_WORKSPACE_CONFIG = ':4096:8'
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.closed_context smoke
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.closed_context register
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.closed_context run --workers 4
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.closed_context latency
+.venv-benchmarks/Scripts/python.exe -m benchmarks.pareto_mc.closed_context heldout --workers 4
+```
+
+`run` executes the three rounds, the final rollouts and the analysis, starting
+the fits and selections in `.venv-stage-b-gpu`. On an 8 GB GPU next to other
+applications, train one seed at a time: three parallel fits saturated GPU
+memory and system commit on the development laptop. The
+[orchestration scripts](../../docs/benchmarks/pareto_mc_p3_closed_context/orchestration/)
+used for that schedule call the same registered functions. Set
+`KMP_BLOCKTIME=0` and `OMP_WAIT_POLICY=PASSIVE` for multi-process rollouts, but
+not for latency. See the [protocol](../../docs/benchmarks/pareto_mc_p3_closed_context/protocol.json),
+[analysis](../../docs/benchmarks/pareto_mc_p3_closed_context/analysis.json),
+[round selections](../../docs/benchmarks/pareto_mc_p3_closed_context/round3_selected.json)
+and [latency](../../docs/benchmarks/pareto_mc_p3_closed_context/latency.json).

@@ -792,8 +792,16 @@ valor real de la historia, la comparación correcta es `setrec24` frente a
 `set24`. La dependencia de la postura varía mucho entre semillas. Congelarla
 cambia el 6,7 / 15,0 / 46,7 % de las descargas en `setrec24` y el
 6,7 / 7,3 / 26,5 % en `mdiff24`. En la semilla 2 de `setrec24`, el RoA cae a
-65,2 %. Es una fragilidad para el lazo cerrado, donde q depende de las propias
-decisiones a través de C1.
+65,2 %. Esa dependencia pesa si la estimación de q se degrada.
+
+*Corrección (9 de noviembre de 2026).* Una versión anterior de este párrafo
+decía que, en lazo cerrado, q depende de las propias decisiones a través de C1.
+No es así: C1 (`EMGFeatures` en `observer.py`) solo usa el RMS del EMG crudo, el
+espectro de covarianza en una proyección fija de calibración y fuentes
+calculadas con los filtros fijos de calibración. Por tanto, q es la misma en
+lazo abierto y en lazo cerrado. Las entradas de `setrec24` que sí dependen de
+las decisiones son las características de los candidatos, a través de la
+adaptación.
 
 **Contrastes posteriores, no registrados** (mismo bootstrap; en
 `docs/benchmarks/pareto_mc_p2_context/posthoc_vs_wide24.json`):
@@ -837,3 +845,225 @@ necesita su propio protocolo y la decisión del usuario. Por coste y por
 número de realimentaciones, se propone `setrec24` como brazo principal y
 `mdiff24` solo como secundario. Artefactos en
 `docs/benchmarks/pareto_mc_p2_context/`.
+
+## P3 — cabeza de contexto en lazo cerrado, registro (10 de noviembre de 2026)
+
+**Pregunta:** ¿se mantiene en lazo cerrado la ganancia de P2, cuando las decisiones
+de `setrec24` también guían la adaptación?
+
+**Qué cambia:** solo la cabeza de decisión. El resto es el lazo L2 aceptado:
+- backbone de Pareto;
+- observador C1;
+- memoria de solo calibración con los ajustes elegidos en L2;
+- decodificación con umbral y fuerza;
+- Pareto mantenido durante la calibración.
+
+**Cómo funciona la cabeza en el lazo:** procesa los lotes uno a uno con la misma
+semántica de bloques que P2.
+- **Test sintético:** reproduce el predictor de P2 con tolerancia 2·10⁻⁵, con
+  lotes vacíos y con el desplazamiento del lote 0.
+- **Comprobación en un registro real** (sub-04, ramp5s, 20 dB, sin etiquetas):
+  sobre los 152 403 candidatos que produjo el propio lazo, la diferencia máxima
+  de logit frente al predictor de P2 es 9·10⁻⁶.
+- **Coste:** 53,5 ms de mediana por lote, con un solo registro en ejecución.
+
+**DAgger, tres rondas:**
+- **Inicio:** la ronda 1 despliega el `setrec24` elegido en P2 (semilla 2, con sus
+  parámetros de TPE).
+- **Datos:** cada ronda añade 60 trayectorias de entrenamiento en lazo cerrado a
+  las 420 de P2.
+- **Entrenamiento:** tres semillas desde cero con la receta de P2.
+- **Selección:** la época por BCE de validación, y el umbral y la fuerza por TPE,
+  sobre los candidatos de sub-04 de la misma ronda.
+- **Final:** las tres semillas de la ronda 3 deciden sobre sub-04 con los
+  parámetros elegidos. Las decisiones se sellan antes de abrir el evaluador.
+
+**Reglas registradas:**
+- **Métrica primaria:** RoA global medio de las semillas de P3 menos el de las
+  tres semillas del lazo L2 completo (de la ablación de L2), con bootstrap por
+  clúster. P3 mejora a L2 solo si el IC 95 % queda por encima de cero.
+- **Lazo abierto frente a cerrado:** se considera que el lazo cerrado pierde parte
+  del nivel de lazo abierto solo si el IC de P3 menos P2 en lazo abierto queda
+  por debajo de cero.
+- **Latencia:** se mide aislada y se compara con el objetivo de 22 ms.
+- **Apertura única de sub-05,** con protocolo propio registrado antes de abrirlo:
+  - Pareto, la ejecución publicada y la reejecutada, comparadas muestra a muestra;
+  - L2 con sus tres semillas;
+  - P3 solo si mejora a L2 en sub-04.
+
+Nada se despliega ni cambia el nivel aceptado sin el usuario.
+
+**Incidencia de ejecución, sin cambio de protocolo (10 de noviembre).**
+- **Qué pasó:** en la ronda 1, las tres semillas arrancaron a la vez y construyeron
+  la misma entrada nueva de la caché de etiquetas. Dos fallaron con
+  `FileExistsError`. Las 25 entradas ya escritas coinciden con sus hashes.
+- **Corrección:** el lanzamiento se repite con un orquestador externo
+  (`p3_driver.py`) que construye primero las etiquetas de las trayectorias nuevas
+  de cada ronda, un proceso por ruta. Después lanza las semillas en paralelo.
+- **Por qué no cambia el resultado:** las etiquetas son idénticas, las haya
+  construido quien las haya construido. El módulo registrado no cambia, y las
+  simulaciones selladas de la ronda 1 se reutilizan tras verificarlas.
+
+**Segunda incidencia de ejecución, sin cambio de protocolo (10 de noviembre).**
+- **Qué pasó:** a mitad de la ronda 3, el tiempo por lote de las simulaciones pasó
+  de unos 100–150 ms a 2–4,5 s durante horas, a tramos, sin que cambiaran ni el
+  modelo ni el número de candidatos. Hipótesis: sobresuscripción de hilos con
+  espera activa de OpenMP (5 procesos × 4 hilos, junto con otros programas del
+  equipo).
+- **Corrección:** se detuvo el orquestador. Los 45 registros completos de la ronda
+  3 se conservan y no había archivos huérfanos. Se relanzó con `KMP_BLOCKTIME=0`
+  y `OMP_WAIT_POLICY=PASSIVE`, que no alteran la aritmética, y con 4 procesos en
+  vez de 5. Cada proceso sigue con 4 hilos de Torch, como registra el protocolo.
+
+**Tercera incidencia de ejecución, sin cambio de protocolo (11 de noviembre).**
+- **Qué pasó:** los tres entrenamientos de la ronda 3 se pausaron unos minutos a
+  petición del usuario y se reanudaron. Después estuvieron unas 9 horas sin
+  completar ni una época, con la memoria de la GPU casi llena (7,7 de 8 GB).
+  Hipótesis: al pausarlos, Windows desalojó su memoria de GPU.
+- **Corrección:** como no había ningún checkpoint, se detuvieron y la ronda 3 se
+  entrena con una semilla tras otra, mediante el orquestador externo. Cada
+  semilla es determinista e independiente, así que el resultado no depende del
+  orden. El módulo registrado no cambia.
+La semilla 0 completó su primera época en 50 minutos estando sola en la GPU, lo
+que confirma que la causa del atasco anterior fue la pausa. Con la memoria de la
+GPU holgada (unos 2 GB) y las etiquetas de la ronda ya construidas, las semillas 1
+y 2 se lanzaron en paralelo a la 0, que siguió en marcha. El orquestador solo
+espera sus tres `complete.json` antes de pasar a la selección.
+**Corrección a lo anterior (11 de noviembre, 10:20 UTC).**
+- **Qué pasó:** con las tres semillas en paralelo, la memoria de GPU volvió a
+  7,5 GB y la memoria virtual comprometida del sistema llegó a 59,4 de 61,5 GB,
+  junto a las aplicaciones del usuario. Un proceso auxiliar del orquestador no
+  pudo arrancar (`BrokenProcessPool`). El atasco nocturno probablemente se debió
+  sobre todo a la saturación de la GPU con tres semillas a la vez, no solo a la
+  pausa.
+- **Corrección:** se detuvieron las semillas 1 y 2, que no habían guardado nada.
+  La semilla 0 sigue sola. El orquestador espera a que termine y entrena después
+  la 1 y la 2, una tras otra. Ya no reabre rondas selladas ni lanza procesos
+  auxiliares durante el entrenamiento.
+
+**Ronda 3 completada (11 de noviembre, 16:09 UTC).** Con una semilla tras otra,
+cada entrenamiento tardó entre 1,7 y 2,6 horas, sin errores. La memoria comprometida
+del sistema se mantuvo en unos 47–49 de 60 GB. La selección TPE de la ronda 3 eligió
+umbral 0,384 y fuerza 0,725, con la semilla 1 como cabeza de referencia. El objetivo
+mediano por ronda en validación de sub-04 fue 92,61 (ronda 1), 92,96 (ronda 2) y
+92,86 (ronda 3). Son cifras de selección, no la comparación registrada con L2, que
+se calcula después sobre las simulaciones finales.
+
+**Validación final y análisis de P3 (11 de noviembre, 20:43 UTC).** Las cinco
+decisiones registradas quedaron así: mejora sobre L2, por encima del lazo abierto
+de P2, mejora sobre Pareto y elegible para sub-05. Los resultados se detallan en la
+sección de resultados de P3.
+
+**Cuarta incidencia de ejecución: latencia y oneMKL (11 de noviembre).**
+- **Qué pasó:** la medida registrada de latencia (cuatro hilos de Torch) tardaba unos
+  1,4 s por lote en Pareto, frente a los 38 ms de mediana medidos en L0. Además
+  imprimía unas 816 veces `Intel oneMKL ERROR: Parameter 6 was incorrect on entry to
+  SLASWP`.
+- **Diagnóstico** (scripts en el scratchpad, sin tocar el módulo registrado):
+  - la diferencia está en los lotes en que Pareto recalcula su blanqueo de 1000
+    dimensiones;
+  - en este portátil, `torch.linalg.slogdet` sobre 1000×1000 tarda unos 12 ms con un
+    hilo y unos 500 ms con cuatro;
+  - los mensajes de MKL aparecen al construir la calibración de Pareto: 0 con un hilo,
+    327 con dos y entre 814 y 817 con cuatro;
+  - la estadística KL de calibración cambia con el número de hilos: 655,65 con uno,
+    612,44 con dos y 639,47 con cuatro.
+
+  Con cuatro hilos, el valor es idéntico en tres ejecuciones (con la espera de OpenMP
+  por defecto y pasiva), así que el defecto es determinista. Dentro del bucle no
+  apareció ningún mensaje.
+- **Alcance:** todas las simulaciones de desarrollo usan cuatro hilos por proceso, así
+  que Pareto, L2, P2 y P3 comparten la misma desviación y las comparaciones son
+  coherentes entre sí. Pareto publicado frente a reejecutado ya coincidía al 100 % en
+  L0 (sub-01, 30 dB). En sub-05, la comparación muestra a muestra registrada mostrará
+  si la desviación aparece también allí.
+- **Corrección de la ejecución, sin cambio de protocolo:**
+  - se detuvieron dos intentos de latencia antes de escribir `latency.json`. El
+    primero usaba los ajustes de OpenMP de las simulaciones paralelas, que no
+    corresponden a una medida aislada;
+  - la latencia registrada se mide sin cambios (cuatro hilos, espera por defecto), de
+    noche y sin otra carga;
+  - después se mide, como análisis posterior, la misma latencia con un hilo
+    (`outputs/pareto_mc/development_v2/p3_latency_threads1.py`, en `P3_posthoc/`);
+  - sub-05 se abre después con los mismos ajustes de desarrollo (cuatro procesos de
+    cuatro hilos), para que sea comparable con sub-04.
+
+### P3 — resultados en validación sub-04 (11 de noviembre de 2026)
+
+Se usaron 20 registros y 124 instancias, con el evaluador original tras el sello. Los
+sistemas de aprendizaje se resumen con la media de sus tres semillas. La cabeza P3 es
+la de la ronda 3 de cada semilla, con el umbral y la fuerza seleccionados (0,384 y
+0,725).
+
+| Sistema | Global | ramp5s | ≥90 % | Precisión | Recall | Movimiento | Mesetas alejadas | Perdidas |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Pareto-rerun | 87,65 | 73,88 | 66,94 | 96,06 | 89,03 | 86,72 | 90,69 | 5,00 |
+| L2 | 91,05 | 85,01 | 71,77 | 94,95 | 94,17 | 90,29 | 89,65 | 3,33 |
+| P2 setrec24, lazo abierto | 94,06 | 89,55 | 81,99 | 96,96 | 96,52 | 93,50 | 93,49 | 2,00 |
+| P3 setrec24, lazo cerrado | 95,21 | 90,38 | 88,71 | 97,74 | 96,95 | 94,75 | 96,50 | 2,33 |
+
+Contrastes registrados (bootstrap pareado por condición × unidad, 2000 muestras):
+
+| Contraste | Global | ramp5s | ≥90 % | Precisión | Movimiento |
+|---|---|---|---|---|---|
+| P3 − L2 (primario) | +4,16 [2,41; 6,61] | +5,38 [2,62; 8,75] | +16,94 [10,83; 24,29] | +2,78 [1,10; 5,01] | +4,46 [2,60; 7,06] |
+| P3 − P2 | +1,15 [0,43; 2,23] | +0,84 [0,22; 1,61] | +6,72 [3,28; 11,11] | +0,78 [0,34; 1,28] | +1,24 [0,48; 2,39] |
+| P3 − Pareto | +7,56 [4,86; 10,73] | +16,51 [9,39; 23,39] | +21,77 [13,33; 31,27] | +1,68 [−0,19; 4,17] | +8,03 [5,16; 11,37] |
+| L2 − Pareto | +3,40 [1,79; 5,13] | +11,13 [6,14; 16,22] | +4,84 [−2,24; 11,83] | −1,10 [−1,94; −0,31] | +3,57 [1,74; 5,47] |
+
+Decisiones registradas: P3 mejora sobre L2 (intervalo por encima de cero), queda por
+encima del lazo abierto y mejora sobre Pareto, así que entra en sub-05.
+
+**Limitaciones:**
+- Sub-04 es también el conjunto donde se eligieron el umbral, la fuerza y la época de
+  todos los sistemas de aprendizaje (L2, P2 y P3). Por eso estas cifras son de
+  selección, no de prueba. La medida limpia es sub-05.
+- La ganancia de P3 sobre P2 (+1,15 pp global) es menor que la de P2 sobre L2.
+  P3 añade 180 trayectorias de lazo cerrado y tres selecciones TPE más sobre el mismo
+  sujeto de validación.
+- Todas las ejecuciones comparten la desviación de oneMKL con cuatro hilos descrita
+  arriba.
+
+**Latencia registrada (11 de noviembre, 21:20–23:37 UTC).** Cuatro hilos de Torch,
+espera de OpenMP por defecto, un registro a la vez, cinco condiciones de sub-04 a
+20 dB y 4871 lotes por sistema:
+
+| Sistema | Mediana | p95 | Media | Máximo |
+|---|---:|---:|---:|---:|
+| Pareto | 271,3 ms | 1841,2 ms | 522,3 ms | 5860,7 ms |
+| L2 | 294,7 ms | 1922,5 ms | 562,4 ms | 6956,6 ms |
+| P3 setrec24 | 292,9 ms | 2038,9 ms | 581,8 ms | 5569,0 ms |
+
+Las medianas por registro oscilan entre 88 y 764 ms y siguen los lotes de
+reblanqueo, así que esta medida refleja sobre todo el defecto de oneMKL con
+cuatro hilos. En L0, Pareto daba 38 ms de mediana en sub-01 a 30 dB. Lo
+interpretable es la diferencia: las cabezas aprendidas añaden unos 20–25 ms de
+mediana sobre el mismo Pareto. Ningún sistema cumple el objetivo de 22 ms en esta
+configuración. La medida posterior con un hilo se describe a continuación.
+
+**Quinta incidencia: reinicio de Windows Update (12 de noviembre, 00:30 UTC).**
+- **Qué pasó:** Windows reinició el portátil para instalar actualizaciones
+  (`MoUsoCoreWorker` y después `TrustedInstaller`, en el registro del sistema)
+  durante la latencia posterior con un hilo. Se perdieron 4 de las 15 medidas, que
+  solo quedaron en el log (Pareto unos 400–476 ms de mediana con un hilo, más lento
+  que con cuatro). `latency.json` estaba ya escrito y sub-05 no se había abierto.
+- **Primer relanzamiento:** se hizo mediante WMI y abortó al arrancar con
+  `forrtl: error (200): program aborting due to window-CLOSE event`, el manejador de
+  consola del runtime Fortran de Intel. Fue antes de registrar el protocolo de sub-05,
+  así que no se escribió nada.
+- **Corrección:** se relanzó con `Start-Process` en una ventana oculta y con
+  `FOR_DISABLE_CONSOLE_CTRL_HANDLER=1`, en `p3_finish2.sh`, que ejecuta primero sub-05
+  y después la latencia con un hilo.
+- **Apertura única de sub-05:** 12 de noviembre, 08:03:17 UTC. Elegibilidad
+  registrada: sí (P3 − L2 en sub-04: +4,16 [2,41; 6,61]). Brazos: Pareto publicado y
+  reejecutado, L2 con semillas 0–2 y P3 con semillas 0–2; 20 registros.
+
+**Corrección sobre oneMKL (12 de noviembre).** Los mensajes `SLASWP` y la
+estadística KL de calibración que cambia con el número de hilos ya estaban
+documentados en L0, en el README de Pareto-MC. Con adaptación de paso fijo
+(`lr_mode=fixed`), esa estadística no escala los pasos ni cambia las decisiones.
+Lo confirma la comparación sin etiquetas en sub-05: Pareto reejecutado reproduce
+exactamente las espigas publicadas en 19 de 20 registros, y el registro restante
+coincide en el 99,9999 % de las muestras. El defecto afecta al tiempo de cálculo,
+no a los resultados. La frase anterior que lo presentaba como una posible
+desviación numérica compartida queda corregida.
