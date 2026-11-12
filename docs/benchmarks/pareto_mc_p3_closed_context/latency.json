@@ -1,0 +1,36 @@
+{
+  "measured_at_utc": "2026-11-11T23:37:22.715560+00:00",
+  "scope": "native Windows CPU, one record at a time, no concurrent work, four Torch threads; raw filtering through closed-loop update; 204-sample (99.6 ms) batches",
+  "records": [
+    "sub-04_FDSI_staircase_snr20dB",
+    "sub-04_FDSI_triangular-ramp40s_snr20dB",
+    "sub-04_FDSI_triangular-ramp20s_snr20dB",
+    "sub-04_FDSI_triangular-ramp10s_snr20dB",
+    "sub-04_FDSI_triangular-ramp5s_snr20dB"
+  ],
+  "target_ms": 22,
+  "systems": {
+    "pareto": {
+      "batches": 4871,
+      "median_ms": 271.3322998024523,
+      "p95_ms": 1841.2232499103993,
+      "mean_ms": 522.3129154555805,
+      "max_ms": 5860.695500392467
+    },
+    "l2": {
+      "batches": 4871,
+      "median_ms": 294.6564997546375,
+      "p95_ms": 1922.4890498444438,
+      "mean_ms": 562.3927870445073,
+      "max_ms": 6956.574000418186
+    },
+    "context": {
+      "batches": 4871,
+      "median_ms": 292.8865998983383,
+      "p95_ms": 2038.8662500772625,
+      "mean_ms": 581.7523225619004,
+      "max_ms": 5569.0433997660875
+    }
+  },
+  "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel"
+}

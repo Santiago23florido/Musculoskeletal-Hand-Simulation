@@ -5,15 +5,107 @@
 ![MuJoCo 3.16.0](https://img.shields.io/badge/MuJoCo-3.16.0-55d9cf)
 ![MyoSuite 3.0.0](https://img.shields.io/badge/MyoSuite-3.0.0-ff7b80)
 
-A Python workspace for inspecting the **official MyoSuite MyoHand model** and
-researching motor-unit discharge identification in EMG during hand movement.
-The current implementation includes a working musculoskeletal simulation,
-anatomical queries, a MuJoCo viewer, and separate EMG research benchmarks with
-recorded results, including unsuccessful experiments.
+The long-term goal of this project is to **control a hand from the activity of
+individual motor units**: decode motor-unit discharges from high-density surface
+EMG (HD-sEMG), turn them into movement commands, and use those commands to
+drive first a simulated musculoskeletal hand and later a robotic hand.
+
+Motor units are the smallest units of muscle control. Reading them directly
+gives a much richer command signal than overall muscle activity, but today's
+decomposition methods lose track of motor units when the joint moves quickly.
+The first stage of the project addresses exactly that problem, alongside the
+physical hand model the later stages will drive.
+
+## Roadmap
+
+| Stage | Goal | Status |
+| --- | --- | --- |
+| **1a. Musculoskeletal hand** | Load, simulate and query the MyoSuite MyoHand model in MuJoCo | **Done** |
+| **1b. Motor-unit decoding during movement** | Keep identifying motor-unit discharges while the wrist moves fast | **In progress**: best result below |
+| 2. From motor units to movement intent | Turn decoded discharges into per-muscle drive and joint commands | Planned |
+| 3. Hand control | Drive the simulated hand, then a robotic hand, from decoded motor-unit activity | Planned |
+
+## Current focus: decoding motor units during fast movements (Stage 1b)
+
+The decoder is evaluated on a public simulated HD-sEMG benchmark of wrist
+flexion from 0° to 40°: a staircase and triangular ramps lasting 40, 20, 10
+and 5 seconds, at signal-to-noise ratios of 15 to 30 dB. Because the data are
+simulated, the true discharge times are known and every decoded spike can be
+scored. Subjects sub-01 to sub-03 are used for training and sub-04 for
+validation. Sub-05 is held out and evaluated only once, with every system
+frozen.
+
+The starting point is the adaptive decomposition of
+[Mendez Guerra, Barsakcioglu and Farina (2024)](https://doi.org/10.1088/1741-2552/ad5ebf)
+in its published "Pareto" configuration. This repository keeps its update rules
+and adds learned decisions about which detected peaks are true discharges.
+
+![Accuracy of each development stage on the validation subject](docs/images/pareto_mc_results.png)
+
+| System (seed mean of three trainings) | All conditions | 5-s ramps | Units ≥90% | Precision | Recall |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Pareto, the original adaptive method | 87.65% | 73.88% | 66.94% | 96.06% | 89.03% |
+| L2: learned decisions and filter memory | 91.05% | 85.01% | 71.77% | 94.95% | 94.17% |
+| P2: context head, open loop | 94.06% | 89.55% | 81.99% | 96.96% | 96.52% |
+| **P3: context head, closed loop** | **95.21%** | **90.38%** | **88.71%** | **97.74%** | **96.95%** |
+
+Accuracy is the rate of agreement, `RoA = TP / (TP + FP + FN)`, on 124
+motor-unit instances of the validation subject.
+
+- The closed-loop context head (P3) **matches 95.21% of discharges across all
+  conditions and 90.38% on the fastest 5-second ramps**.
+- **88.71% of its motor units are tracked with an RoA of at least 90%**, against
+  66.94% for the original method.
+- Its gains over L2 have 95% cluster-bootstrap intervals above zero: +4.16
+  points overall [2.41, 6.61] and +16.94 points in units at or above 90%
+  [10.83, 24.29].
+- Training in closed loop adds +1.15 points [0.43, 2.23] over the same head
+  used open loop.
+
+Every system's thresholds were tuned on sub-04, so these are development
+figures. The held-out subject sub-05 gives the unbiased estimate; its results
+will be added here when that single evaluation is complete. All results come
+from simulated recordings.
+
+### How the decoder works
+
+![Closed-loop decoder and the architecture of the context head](docs/images/pareto_mc_decoder.png)
+
+Every 100 ms, the adaptive decomposition whitens the new EMG samples and
+projects them onto one separation vector per motor unit. Peaks in each
+projected source become discharge candidates, about 50 for every true
+discharge. The **context head** decides which candidates are real discharges,
+and the accepted ones update each unit's filter and centroids before the next
+batch. Decisions therefore shape the adaptation itself: the loop is closed.
+
+The head sees more than one candidate at a time.
+
+- **Attention** compares each candidate with the other candidates of the same
+  unit in the current and previous batch.
+- **A per-unit GRU** carries the unit's recent history and posture trajectory
+  from batch to batch and modulates the candidates through FiLM.
+- **An EMG-only posture observer** estimates the wrist angle, so no angle
+  sensor is needed at inference.
+
+The head is trained with DAgger: it is rolled out in closed loop on the
+training records, its candidates are labelled with the true discharges, and
+it is retrained on the aggregated data for three rounds. Its output starts at
+zero, so an untrained head reproduces the original method exactly.
+
+**Speed is the main open limitation.** On the development laptop's CPU, one
+100-ms batch currently takes a median of about 290 ms with the context head,
+against about 270 ms for the original method alone. Most of that time goes to
+the decomposition's own re-whitening, not to the learned head. Real-time
+operation, with a 22 ms budget per batch, is not reached yet.
+
+Method details, protocols and every intermediate level are in the
+[Pareto-MC README](benchmarks/pareto_mc/README.md). The
+[development journal](docs/benchmarks/pareto_mc_journal.md), in Spanish,
+records each decision.
+
+## The musculoskeletal hand (Stage 1a)
 
 ![Official MyoHand bones and muscle-tendon paths rendered in MuJoCo](docs/images/myohand-overview.png)
-
-## What is implemented
 
 The `hand_sim` package loads the upstream model without changing its bodies,
 joint constraints, tendon paths, muscle force laws, activation dynamics, or
@@ -34,9 +126,11 @@ Total tendon tension and separate muscle-fiber force are not exposed as
 measurement channels. See the [physical model](docs/simulation_model.md) and
 [anatomical inventory](docs/anatomical_names.md) for the measurement contract.
 
-The simulation supplies physical state and geometry. The optional `benchmarks/`
-workflows use independently published simulated EMG recordings; they do not
-synthesize EMG from MyoHand or establish a live tracking system.
+Today the hand model and the EMG decoder are still separate. The simulation
+supplies physical state and geometry, while the decoding benchmarks use
+independently published simulated EMG; they do not synthesize EMG from MyoHand
+and are not yet a live tracking system. Connecting decoded motor-unit activity
+to the hand is the work of Stages 2 and 3.
 
 ## Install and run on Windows
 
@@ -108,63 +202,35 @@ They contain observations and provenance rather than complete restart states.
 
 ![Physical observations from a 200-step native simulation](docs/images/physical-observations.png)
 
-## EMG research benchmarks
+## Other decoding approaches explored
 
-The research goal is movement-robust identification of motor unit action
-potentials (MUAPs) and their discharges. The current benchmarks investigate
-adaptation, template morphing, and event detection on the authors' FDSI data.
-Each workflow has its own commands, protocol, scoring, and documented limits.
+The context head is the latest of several approaches tried in Stage 1b. Each
+workflow has its own README with commands, protocol, scoring and limits.
+Results from different rows use different record sets, so compare numbers only
+within a row's own documentation.
 
-| Workflow | Implemented approach | Recorded outcome |
+| Workflow | Approach | Outcome |
 | --- | --- | --- |
-| [Farina references](benchmarks/farina/README.md) | Pinned adaptive tutorial, spike scoring, detector ablation, and cached FDSI reproduction | **Tutorial adaptive RoA: 90.25%; all 28 cached Table 2 comparisons pass the one-point tolerance.** |
-| [Stage A](benchmarks/stage_a/README.md) | Causal encoder and invertible low-rank whitening correction | 57.83% mean RoA versus Pareto's 79.25% on 100 records; accuracy targets unmet. |
-| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded calibration-conditioned correction with 97 shared parameters; two inputs are the measured wrist angle and its velocity | 81.69% versus 80.89% on 80 outer records; rapid-movement and final-retention targets unmet. |
-| [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel directions, dormant-unit recovery, and Pareto fallback | 81.42% on the same 80 records; **restores 511 final retained instances**; full acceptance criteria unmet. |
-| [Stage B MoCA](benchmarks/stage_b/README.md) | Shared FiLM MUAP morphing and an EMG-only state observer | MoCA-B: 37.26%, MoCA-K: 36.97%, versus Pareto's 80.89%; accuracy targets unmet. |
-| [Separation pilot](benchmarks/stage_b_separation/README.md) | Covariance-aware source loss and MVDR normalization | Stopped during validation; no outer-test predictions. |
-| [Geometry pilot](benchmarks/stage_b_geometry/README.md) | Shared physical template warping | Stopped during validation; no outer-test predictions. |
-| [Spike likelihood](benchmarks/spike_likelihood/README.md) | Bounded shared classifier of discharge candidates, without angular inputs | **83.51% versus 80.89% globally; 72.33% versus 65.81% on 5-second ramps.** Full accuracy targets remain unmet. |
-| [Robust MVDR](benchmarks/robust_mvdr/README.md) | Training-free analytic decoding, with phase, target-reliability and frozen-checkpoint audits | Executed, then **withdrawn**: 5.22% RoA; a FIFO-regime amplitude defect reproduced on sub-01. See the [correction and CPU audit](docs/benchmarks/robust_mvdr_correction.md). |
-| [Pareto-MC](benchmarks/pareto_mc/README.md) | EMG-only state estimation, closed-loop spike likelihood, and bounded calibration-filter memory | On sub-04 development validation, **L2 reaches 91.66% RoA versus 87.65% for Pareto-rerun, and 85.05% on 5-second ramps. L2 passes its validation criteria.** The CPU latency target is unmet and L3 is paused by request. |
+| [Farina references](benchmarks/farina/README.md) | Reproduction of the published adaptive method and its benchmark | All 28 published Table 2 values reproduced within one point; tutorial RoA 90.25% |
+| [Pareto-MC](benchmarks/pareto_mc/README.md) | Learned discharge decisions inside the adaptive loop, EMG-only posture, filter memory, context heads | **Best result: 95.21% RoA on the validation subject (P3, above)** |
+| [Spike likelihood](benchmarks/spike_likelihood/README.md) | Shared classifier of discharge candidates, without angle inputs | 83.51% vs 80.89% for Pareto on 80 outer-subject records; 72.33% vs 65.81% on 5-s ramps |
+| [Pareto residual](benchmarks/pareto_residual/README.md) | Bounded correction of the adaptation steps, conditioned on the measured wrist angle | 81.69% vs 80.89% on the same 80 records |
+| [Template rescue](benchmarks/template_rescue/README.md) | Analytic multichannel templates that recover dormant units | 81.42% on the same 80 records; recovers 511 retained unit instances |
+| [Stage A](benchmarks/stage_a/README.md) | Causal encoder with a low-rank whitening correction | 57.83% vs 79.25% for Pareto on 100 records |
+| [Stage B MoCA](benchmarks/stage_b/README.md) | Shared FiLM morphing of MUAP templates with a state observer | 37.26% vs 80.89% for Pareto |
+| [Separation](benchmarks/stage_b_separation/README.md) and [geometry](benchmarks/stage_b_geometry/README.md) pilots | Covariance-aware source loss; physical template warping | Stopped during validation |
+| [Robust MVDR](benchmarks/robust_mvdr/README.md) | Training-free analytic decoding | Withdrawn after an amplitude defect was found; see the [correction](docs/benchmarks/robust_mvdr_correction.md) |
 
-Phase metrics follow the reference `get_triangular_phases`: for triangular
-conditions the reported "first hold" spans 0–10 s, while it is the 5 s calibration
-hold in the staircase. The triangular "first hold" RoA falls with ramp speed for
-every method (Pareto: 98.3% at 40 s ramps, 73.5% at 5 s ramps), which indicates
-that this window contains movement after the 5 s calibration hold. Verify with
-`python -m benchmarks.robust_mvdr.run phase-audit` before interpreting
-"first hold" differences; see the [independent review](docs/benchmarks/independent_review.md).
-
-RoA is `TP / (TP + FP + FN)` and differs from F1. The tutorial evaluates a
-separate example and window. Stage A uses 100 records; later outer-subject
-experiments use the same 80 records and 591 calibrated instances. Comparisons
-must preserve these populations and scoring protocols.
-
-**L2 also reaches 75.81% of instances with RoA ≥90%, 97.54% at reference rest,
-and 90.94% during movement.** Its calibration-filter memory improves movement
-accuracy over L1 while meeting the 97% rest criterion.
-
-Pareto-MC uses a separate development split: training on sub-01 through sub-03
-and validation on sub-04 (20 records, 124 instances). Its current results are
-exploratory; the external 80-record evaluation and confirmation on new data are
-pending. **L2's CPU timing remains above the 22 ms target:** 86.16 ms median
-and 105.51 ms p95 with four records processed concurrently. An isolated L2
-profile is still pending. See the
-[recorded L2 gate](docs/benchmarks/pareto_mc_l2_standard/gate.json) and
-[L3 pause](docs/benchmarks/pareto_mc_l3_setup/pause.json). Publishing the code
-does not resume the experiment.
-
-The spike-likelihood result **improves recall from 83.16% to 87.74%**, while
-precision falls from 91.47% to 91.10%. It demonstrates an event-detection gain on
-this benchmark. Independent-generator transfer, true MUAP-trajectory recovery,
-and full live-stream latency remain unverified. See the
-[published summary](docs/benchmarks/spike_likelihood_summary.json) and
-[analysis](docs/benchmarks/spike_likelihood_analysis.json).
+The ideas that worked were kept and combined. The spike-likelihood study showed
+that learning which candidates are discharges pays off, and Pareto-MC moved
+that decision inside the adaptive loop. Approaches that replaced the
+decomposition itself (Stage A, Stage B) fell well short of the original method.
+An [independent review](docs/benchmarks/independent_review.md) documents scoring
+details, such as how the reference code defines movement phases.
 
 ![Spike-likelihood comparison on the same outer-subject records](docs/images/spike-likelihood.png)
 
-### Benchmark environments and data
+## Running the EMG benchmarks
 
 Benchmarks run separately from `hand_sim`; do not install their numerical stack
 into the simulation environment. Start with the pinned reference setup:
@@ -185,13 +251,9 @@ benchmark inference and timing use the CPU environment.
 
 Tracked `docs/benchmarks/` files contain compact result summaries, protocols,
 audits, and per-unit tables. Large signals, downloaded implementations,
-checkpoints, predictions, environments, and generated runtime outputs remain
-local under Git-ignored directories. PDF guides, agent instructions, and internal
-research notes are also ignored. Public READMEs and result documentation remain
-versioned. The local research PDF is optional provenance: new run manifests
-record `null` for its hash when it is absent. Archived reports retain their
-original values. Use fresh output directories for new runs so existing frozen
-experiments and their source checks are preserved.
+checkpoints, predictions, environments, and generated runtime outputs stay
+local in Git-ignored directories. Use a fresh output directory for each new run,
+so that frozen experiments and their source checks are preserved.
 
 ## Project layout
 
@@ -227,7 +289,9 @@ tests skip when their required display or device is unavailable.
 Windows and Ubuntu. See the [original platform validation](docs/validation.md)
 and [publication validation](docs/publication_validation.md) for local results.
 Regenerate the model figures with
-`uv run --locked python scripts/render_readme_assets.py` on a desktop with OpenGL.
+`uv run --locked python scripts/render_readme_assets.py` on a desktop with OpenGL,
+and the decoder figures with
+`.\.venv-benchmarks\Scripts\python.exe scripts/render_pareto_mc_figures.py`.
 
 ## Ubuntu / WSL2
 

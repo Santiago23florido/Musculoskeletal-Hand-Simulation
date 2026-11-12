@@ -1,0 +1,119 @@
+{
+  "selected_at_utc": "2026-11-10T11:51:31.544577+00:00",
+  "repeats": [
+    {
+      "trial": 7,
+      "parameters": {
+        "threshold": 0.42758038881425375,
+        "strength": 0.8940884610144999
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 95.36462239279592,
+          "ramp5s_roa_pct": 91.74710783814791,
+          "precision_pct": 97.13190896855465
+        },
+        {
+          "global_roa_pct": 94.51302293790822,
+          "ramp5s_roa_pct": 88.22766392983756,
+          "precision_pct": 97.70106739940024
+        },
+        {
+          "global_roa_pct": 94.90046956619007,
+          "ramp5s_roa_pct": 90.31879252406418,
+          "precision_pct": 97.38776463023054
+        }
+      ],
+      "median_objective": 92.60963104512712,
+      "selected_seed": 2
+    },
+    {
+      "trial": 21,
+      "parameters": {
+        "threshold": 0.47688035739036594,
+        "strength": 0.8230806474697041
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 95.43731975582592,
+          "ramp5s_roa_pct": 91.67078305942655,
+          "precision_pct": 97.43763688838263
+        },
+        {
+          "global_roa_pct": 94.49839074294924,
+          "ramp5s_roa_pct": 87.68864715056691,
+          "precision_pct": 98.0732951860733
+        },
+        {
+          "global_roa_pct": 94.92391514908869,
+          "ramp5s_roa_pct": 90.0532529058417,
+          "precision_pct": 97.7318676093477
+        }
+      ],
+      "median_objective": 92.4885840274652,
+      "selected_seed": 2
+    },
+    {
+      "trial": 27,
+      "parameters": {
+        "threshold": 0.4557819350682657,
+        "strength": 0.8069765952756583
+      },
+      "seed_metrics": [
+        {
+          "global_roa_pct": 95.40375322279343,
+          "ramp5s_roa_pct": 91.6950589380505,
+          "precision_pct": 97.31519023536505
+        },
+        {
+          "global_roa_pct": 94.57148005979926,
+          "ramp5s_roa_pct": 87.93220000069617,
+          "precision_pct": 97.97022243693128
+        },
+        {
+          "global_roa_pct": 94.9396658357011,
+          "ramp5s_roa_pct": 90.16582269543531,
+          "precision_pct": 97.6522637451823
+        }
+      ],
+      "median_objective": 92.55274426556821,
+      "selected_seed": 2
+    }
+  ],
+  "selection": {
+    "trial": 7,
+    "parameters": {
+      "threshold": 0.42758038881425375,
+      "strength": 0.8940884610144999
+    },
+    "seed_metrics": [
+      {
+        "global_roa_pct": 95.36462239279592,
+        "ramp5s_roa_pct": 91.74710783814791,
+        "precision_pct": 97.13190896855465
+      },
+      {
+        "global_roa_pct": 94.51302293790822,
+        "ramp5s_roa_pct": 88.22766392983756,
+        "precision_pct": 97.70106739940024
+      },
+      {
+        "global_roa_pct": 94.90046956619007,
+        "ramp5s_roa_pct": 90.31879252406418,
+        "precision_pct": 97.38776463023054
+      }
+    ],
+    "median_objective": 92.60963104512712,
+    "selected_seed": 2
+  },
+  "head": {
+    "kind": "context",
+    "checkpoint": "P3_closed_context/round1/seed2/model.pt",
+    "checkpoint_sha256": "794296d4148f8157ebc34981683e03889b24879bcc6cf4858d46a8edd6b5a150",
+    "parameters": {
+      "threshold": 0.42758038881425375,
+      "strength": 0.8940884610144999
+    }
+  },
+  "scope": "this round's closed-loop sub-04 candidates; final comparison uses new rollouts"
+}

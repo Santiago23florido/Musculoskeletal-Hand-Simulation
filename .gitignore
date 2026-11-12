@@ -45,3 +45,6 @@ lessons/
 
 # Local lessons ledger kept by the coding assistant; never committed.
 LESSONS.md
+
+# Private preprint drafts; never committed.
+preprint/
