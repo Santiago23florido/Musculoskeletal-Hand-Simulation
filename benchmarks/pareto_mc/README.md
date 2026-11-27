@@ -598,3 +598,51 @@ not for latency. See the [protocol](../../docs/benchmarks/pareto_mc_p3_closed_co
 [latency](../../docs/benchmarks/pareto_mc_p3_closed_context/latency.json),
 [held-out protocol](../../docs/benchmarks/pareto_mc_p3_closed_context/heldout_protocol.json)
 and [held-out analysis](../../docs/benchmarks/pareto_mc_p3_closed_context/heldout_analysis.json).
+
+### Cluster verification: Linux latency, P3 memory ablation, and NeuroMotion confirmation
+
+Executed on the ENSTA Mesogip cluster (`ENSTA-l40s`, Linux 6.8, Python 3.12,
+PyTorch 2.7.0+cu126, Singularity 3.11) without modifying any frozen P1–P3
+sources or sealed predictions:
+
+1. **Component-level Linux latency** (`sub-04`, 20 dB, 5 records, 4,871 100-ms
+   batches, 4 Torch threads, CPU only):
+   - Pareto: **43.55 ms** median / **49.08 ms** p95 / **75.95 ms** max.
+   - P3 `setrec24`: **48.62 ms** median / **54.92 ms** p95 / **75.88 ms** max
+     (100% of batches below the 100-ms batch duration).
+   - Breakdown for P3: `whiten_ms` **39.02 ms** (80.3%), `preprocess_ms`
+     2.11 ms, `decide_ms` (C1 + features + head) **5.70 ms** (p95 6.75 ms),
+     `head_ms` (`setrec24` alone) **2.58 ms** (p95 3.19 ms), detection +
+     SV/SD updates 1.12 ms. Running `setrec24` on an L40S GPU (`head_ms`
+     2.71 ms at 1 thread) is slightly slower than CPU (`2.59 ms`) due to
+     per-batch transfer overhead.
+2. **Zero-retraining L2 memory ablation inside P3** (`sub-04`, 3 frozen P3
+   seeds, `beta_max=0` vs full P3, 2,000-draw cluster bootstrap):
+   - Disabling calibration-filter memory **improves** global RoA from 95.21% to
+     **95.29%** (+0.09 pp [+0.02, +0.17]), `ramp5s` from 90.38% to **90.78%**
+     (+0.39 pp [+0.13, +0.73]), late cycles 6–8 by **+0.81 pp [+0.33, +1.48]**,
+     and preserves reference rest (98.29% vs 98.32%).
+3. **Confirmatory unseen subjects and OOD movements** (official MUniverse
+   NeuroMotion Singularity container `pranavm19/muniverse:neuromotion`,
+   reserved seeds `210601–210603`, 3 subjects × 4 conditions × 20/30 dB = 24
+   recordings, 162 calibrated instances, 118 clusters, all models frozen):
+   - Global RoA: Pareto **60.69%**, L2 **69.92%**, P3 full **71.16%** (+10.47
+     [8.32, 12.72] vs Pareto), **P3 without L2 memory 72.97%** (**+12.28
+     [10.01, 14.71]** vs Pareto; **+1.81 [1.25, 2.46]** over P3 full; lost
+     units reduced from 56.0 to 15.3).
+   - Matched (`ramp10s`, `ramp5s`, n=80): Pareto 65.29% → P3 nomem **76.47%**
+     (+11.18 [8.05, 14.45]; `ramp5s` alone +14.91 [10.92, 19.15]).
+   - OOD `triangular-ramp3s` (13.3°/s, n=40): Pareto 57.88% → L2 70.76%, P3
+     nomem **70.99%** (+13.12 [8.41, 17.38] vs Pareto; ≥90% units +23.33 pp).
+   - OOD `sinusoid-0.1Hz` (n=42): Pareto 54.59% → L2 64.15%, P3 full 64.77%,
+     **P3 nomem 68.17%** (+13.58 [8.29, 18.92] vs Pareto; **+3.40 [1.64,
+     5.35]** over P3 full).
+
+```bash
+# On Mesogip (see scripts/mesogip/ for Slurm templates)
+sbatch --export=ALL,MESOGIP_VENV=$HOME/venvs/pareto-mc scripts/mesogip/02_latency_and_ablation.sbatch
+sbatch --export=ALL,MESOGIP_VENV=$HOME/venvs/pareto-mc scripts/mesogip/04_phase2_neuromotion.sbatch
+```
+
+Compact summaries are archived in `docs/benchmarks/pareto_mc_embc_phase1/` and
+`docs/benchmarks/pareto_mc_embc_phase2/analysis.json`.
