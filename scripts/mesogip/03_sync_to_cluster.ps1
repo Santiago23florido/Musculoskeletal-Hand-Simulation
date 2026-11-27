@@ -16,15 +16,22 @@ Write-Host "Checking SSH connectivity to $HostAlias..." -ForegroundColor Cyan
 ssh $HostAlias "mkdir -p $RemoteRepo/data/benchmarks/farina $RemoteRepo/external/farina $RemoteRepo/outputs/pareto_mc/development_v2"
 
 $paths = @(
-    @{ Local = "external/farina/adapt_decomp"; Remote = "$RemoteRepo/external/farina/" },
     @{ Local = "data/benchmarks/farina/fdsi_benchmark/data/sub-04"; Remote = "$RemoteRepo/data/benchmarks/farina/fdsi_benchmark/data/" },
-    @{ Local = "data/benchmarks/farina/fdsi_benchmark/outputs/adaptation/sub-04"; Remote = "$RemoteRepo/data/benchmarks/farina/fdsi_benchmark/outputs/adaptation/" },
-    @{ Local = "outputs/pareto_mc/development_v2/C1"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/" },
-    @{ Local = "outputs/pareto_mc/development_v2/L0/validation"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L0/" },
+    @{ Local = "data/benchmarks/farina/fdsi_benchmark/outputs/calibration/sub-04"; Remote = "$RemoteRepo/data/benchmarks/farina/fdsi_benchmark/outputs/calibration/" },
+    @{ Local = "outputs/pareto_mc/development_v2/C1/seed0"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/C1/" },
+    @{ Local = "outputs/pareto_mc/development_v2/L0/validation/scores"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L0/validation/" },
+    @{ Local = "outputs/pareto_mc/development_v2/L0/validation/summary.json"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L0/validation/" },
     @{ Local = "outputs/pareto_mc/development_v2/L2/retained.json"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L2/" },
-    @{ Local = "outputs/pareto_mc/development_v2/L2/standard/round3"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L2/standard/" },
-    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/round3"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/" },
-    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/final_validation"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/" }
+    @{ Local = "outputs/pareto_mc/development_v2/L2/standard/round3/seed0"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L2/standard/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/L2/standard/round3/seed1"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L2/standard/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/L2/standard/round3/seed2"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L2/standard/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/round3/selected.json"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/round3/seed0"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/round3/seed1"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/round3/seed2"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/round3/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/final_validation/seed0/scores"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/final_validation/seed0/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/final_validation/seed1/scores"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/final_validation/seed1/" },
+    @{ Local = "outputs/pareto_mc/development_v2/P3_closed_context/final_validation/seed2/scores"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/P3_closed_context/final_validation/seed2/" }
 )
 
 $hasRsync = $null -ne (Get-Command rsync -ErrorAction SilentlyContinue)

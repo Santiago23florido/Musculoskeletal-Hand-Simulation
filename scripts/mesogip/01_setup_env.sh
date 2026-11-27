@@ -24,11 +24,14 @@ else
     python -m pip install torch==2.7.0 --index-url https://download.pytorch.org/whl/cu126
 fi
 
-if [ -d "$REPO_ROOT/external/farina/adapt_decomp" ]; then
-    python -m pip install --no-deps -e "$REPO_ROOT/external/farina/adapt_decomp"
-else
-    echo "[WARN] external/farina/adapt_decomp not found yet. Sync external/ or run git clone for adapt_decomp."
+ADAPT_DIR="$REPO_ROOT/external/farina/adapt_decomp"
+ADAPT_COMMIT="a8f53736e297962670276bc123c137050b7056b6"
+if [ ! -d "$ADAPT_DIR/.git" ]; then
+    mkdir -p "$REPO_ROOT/external/farina"
+    git clone https://github.com/imendezguerra/adapt_decomp.git "$ADAPT_DIR"
 fi
+git -C "$ADAPT_DIR" checkout "$ADAPT_COMMIT"
+python -m pip install --no-deps -e "$ADAPT_DIR"
 
 python -c "import torch, numpy, scipy, optuna; print('Torch:', torch.__version__, 'CUDA:', torch.cuda.is_available())"
 echo "=== Setup complete ==="
