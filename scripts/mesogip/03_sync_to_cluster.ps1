@@ -18,6 +18,7 @@ ssh $HostAlias "mkdir -p $RemoteRepo/data/benchmarks/farina $RemoteRepo/external
 $paths = @(
     @{ Local = "data/benchmarks/farina/fdsi_benchmark/data/sub-04"; Remote = "$RemoteRepo/data/benchmarks/farina/fdsi_benchmark/data/" },
     @{ Local = "data/benchmarks/farina/fdsi_benchmark/outputs/calibration/sub-04"; Remote = "$RemoteRepo/data/benchmarks/farina/fdsi_benchmark/outputs/calibration/" },
+    @{ Local = "data/benchmarks/farina/fdsi_benchmark/outputs/adaptation/sub-04/lr_fixed/tpe_pareto/*_config.yaml"; Remote = "$RemoteRepo/data/benchmarks/farina/fdsi_benchmark/outputs/adaptation/sub-04/lr_fixed/tpe_pareto/" },
     @{ Local = "outputs/pareto_mc/development_v2/C1/seed0"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/C1/" },
     @{ Local = "outputs/pareto_mc/development_v2/L0/validation/scores"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L0/validation/" },
     @{ Local = "outputs/pareto_mc/development_v2/L0/validation/summary.json"; Remote = "$RemoteRepo/outputs/pareto_mc/development_v2/L0/validation/" },
