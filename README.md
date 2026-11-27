@@ -80,8 +80,36 @@ on this subject, so these are development figures (124 instances):
 | **P3: context head, closed loop** | **95.21%** | **90.38%** | **88.71%** | **97.74%** | **96.95%** |
 
 On sub-04, training the head in closed loop adds +1.15 points [0.43, 2.23] over
-the same head used open loop. P2 was not part of the held-out evaluation. All
-results come from simulated recordings of five subjects.
+the same head used open loop. P2 was not part of the held-out evaluation.
+
+**Confirmatory unseen subjects and out-of-distribution movements (MUniverse
+NeuroMotion).** Using the official containerized NeuroMotion simulator
+(`BioMime + OpenSim`), we generated three brand-new virtual subjects (seeds
+210601–210603, 24 recordings, 162 motor-unit instances at 20 and 30 dB SNR)
+covering both matched ramps (`ramp10s`, `ramp5s`) and two unseen OOD regimes:
+**3-second ramps** (`13.3°/s`, 1.67× faster than training) and **0.1 Hz
+sinusoidal flexion** (0°–40°). Every system ran frozen, with zero retraining or
+threshold tuning (seed means of three trainings):
+
+| System | All 4 conditions | Matched (`ramp10s`/`5s`) | OOD `ramp3s` (13.3°/s) | OOD `sinusoid` (0.1 Hz) | Units ≥90% | Units lost |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Pareto (original adaptive method) | 60.69% | 65.29% | 57.88% | 54.59% | 22.84% | 56.0 |
+| L2: learned decisions + filter memory | 69.92% | 72.54% | 70.76% | 64.15% | 35.80% | 24.3 |
+| P3: context head, closed loop | 71.16% | 74.84% | 70.51% | 64.77% | 38.68% | 20.7 |
+| **P3 without L2 filter memory** | **72.97%** | **76.47%** | **70.99%** | **68.17%** | **40.95%** | **15.3** |
+
+- Against Pareto, frozen P3 without L2 memory gains **+12.28 points [10.01,
+  14.71]** overall (**+11.18** matched, **+13.12** on OOD 3-s ramps, **+13.58**
+  on OOD sinusoids) and cuts lost units by **73%** (from 56.0 to 15.3).
+- **L2 calibration memory is unnecessary inside P3:** disabling `beta_max=0`
+  without retraining improves `sub-04` validation (+0.09 pp [0.02, 0.17];
+  +0.81 pp on late `ramp5s` cycles 6–8) and adds **+1.81 points [1.25, 2.46]**
+  on the new NeuroMotion subjects (**+3.40 points [1.64, 5.35]** on smooth
+  sinusoids), confirming that the gain comes from the context head, posture
+  observer, and closed-loop DAgger training alone.
+- On OOD 3-s ramps (1.67× faster than training), P3 and L2 both strongly beat
+  Pareto (+13 pp) and tie with each other, showing where velocity extrapolation
+  saturates. All results remain simulated; recorded human EMG is the next step.
 
 ### How the decoder works
 
@@ -108,11 +136,25 @@ training records, its candidates are labelled with the true discharges, and
 it is retrained on the aggregated data for three rounds. Its output starts at
 zero, so an untrained head reproduces the original method exactly.
 
-**Speed is the main open limitation.** On the development laptop's CPU, one
-100-ms batch currently takes a median of about 290 ms with the context head,
-against about 270 ms for the original method alone. Most of that time goes to
-the decomposition's own re-whitening, not to the learned head. Real-time
-operation, with a 22 ms budget per batch, is not reached yet.
+**Real-time streaming latency (Linux CPU, no GPU required).** Earlier Windows
+laptop timings (~290 ms) were dominated by a four-thread `oneMKL` defect. On a
+clean Linux CPU node (Mesogip, 4 Torch threads, 4,871 consecutive 100-ms batches
+on `sub-04` at 20 dB), **100% of batches finish below the 100-ms real-time
+budget**:
+
+| System (Linux CPU, 4 threads) | Median | p95 | Max | Learned overhead |
+| --- | ---: | ---: | ---: | ---: |
+| Pareto (original adaptive method) | 43.55 ms | 49.08 ms | 75.95 ms | — |
+| L2: learned decisions + memory | 47.03 ms | 52.40 ms | 162.60 ms | +3.48 ms |
+| **P3: `setrec24` context head** | **48.62 ms** | **54.92 ms** | **75.88 ms** | **+5.07 ms** |
+
+Component profiling shows that **80.3% of batch time (`39.02 ms`) is Pareto's
+1000×1000 re-whitening**, while the entire learned decision path (C1 observer,
+candidate features, and `setrec24`) costs **5.70 ms** median (`6.75 ms` p95),
+and the `setrec24` network itself costs just **2.58 ms** median on CPU (faster
+than GPU streaming due to host-to-device transfer). Reaching a tighter 22-ms
+budget therefore depends on faster re-whitening, not on compressing the neural
+head.
 
 Method details, protocols and every intermediate level are in the
 [Pareto-MC README](benchmarks/pareto_mc/README.md). The

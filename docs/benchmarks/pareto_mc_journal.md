@@ -1104,3 +1104,83 @@ se ha probado la transferencia a otro generador de EMG ni a registros reales. La
 latencia sigue lejos de 22 ms.
 
 Artefactos: `docs/benchmarks/pareto_mc_p3_closed_context/heldout_*.json`.
+
+### P3 — latencia con un hilo, medida post hoc (12 de noviembre de 2026)
+
+No está registrada; se informa como medida post hoc. Repite los mismos cinco
+registros de sub-04 a 20 dB y los mismos sistemas que la latencia registrada, con
+un solo hilo de Torch (4871 lotes por sistema, de 11:26 a 12:20 UTC):
+
+| Sistema | Mediana, 1 hilo | p95, 1 hilo | Mediana, 4 hilos (registrada) | p95, 4 hilos (registrada) |
+|---|---:|---:|---:|---:|
+| Pareto | 117,2 ms | 212,2 ms | 271,3 ms | 1841,2 ms |
+| L2 | 129,7 ms | 359,3 ms | 294,7 ms | 1922,5 ms |
+| P3 setrec24 | 147,9 ms | 774,2 ms | 292,9 ms | 2038,9 ms |
+
+**Conclusión:**
+- El defecto de oneMKL con cuatro hilos explica unas 2,3 veces la mediana y casi
+  toda la cola.
+- Aun con un hilo, los tres sistemas superan la duración del lote (99,6 ms) en
+  estos registros, y quedan lejos de los 22 ms.
+- Con un hilo, la cabeza de contexto añade unos 31 ms de mediana sobre Pareto, y
+  su p95 es mucho mayor (774 frente a 212 ms).
+- Hay picos aislados de 16 a 40 s en los tres sistemas, sin explicar.
+
+Artefacto local: `outputs/pareto_mc/development_v2/P3_posthoc/latency_threads1.json`.
+
+## Fase 1 en Mesogip — latencia por componente y ablación de memoria en P3 (27 de noviembre de 2026)
+
+Ejecutado en el clúster ENSTA Mesogip (`ensta-l40s01`, Linux 6.8, NVIDIA L40S 46 GB,
+Python 3.12, Torch 2.7.0+cu126, Singularity 3.11) mediante `benchmarks/pareto_mc/embc_cluster.py`
+(job Slurm `20348`), sin modificar ningún módulo congelado ni predicción sellada.
+
+**Latencia limpia por componente** (`sub-04`, cinco condiciones a 20 dB, 4 871 lotes de 100 ms,
+cuatro hilos CPU Linux, sin GPU):
+
+| Sistema | Mediana | p95 | Máximo | Reblanqueo (`whiten`) | Módulo aprendido (`decide`) | Solo `setrec24` (`head`) |
+|---|---:|---:|---:|---:|---:|---:|
+| Pareto | 43,55 ms | 49,08 ms | 75,95 ms | 39,81 ms | — | — |
+| L2 | 47,03 ms | 52,40 ms | 162,60 ms | 39,21 ms | 3,26 ms | 0,15 ms |
+| **P3 `setrec24`** | **48,62 ms** | **54,92 ms** | **75,88 ms** | **39,02 ms (80,3 %)** | **5,70 ms (p95 6,75)** | **2,58 ms (p95 3,19)** |
+
+- **El 100 % de los 4 871 lotes cumple tiempo real (<100 ms) en CPU sin GPU.**
+- Con un hilo, `head_ms` en CPU (2,59 ms) es incluso algo más rápido que en CUDA L40S (2,71 ms
+  por transferencia host–GPU). El cuello de botella real para bajar a 22 ms es el reblanqueo
+  1000×1000 de Pareto (80,3 %), no la cabeza neuronal.
+
+**Ablación sin reentrenamiento de la memoria L2 dentro de P3** (`sub-04`, tres semillas
+congeladas de P3, `beta_max=0` frente a P3 completo, sellado previo al evaluador, 2 000 réplicas
+bootstrap por clúster):
+
+- Global: 95,29 % frente a 95,21 % (**+0,09 pp [+0,02; +0,17]**).
+- `ramp5s`: 90,78 % frente a 90,38 % (**+0,39 pp [+0,13; +0,73]**); ciclos 6–8 **+0,81 pp [+0,33; +1,48]**.
+- Reposo de referencia: 98,29 % frente a 98,32 % (−0,03 pp [−0,12; +0,07], sin pérdida).
+- Conclusión: la memoria de calibración L2 sobra dentro de P3.
+
+Artefactos: `docs/benchmarks/pareto_mc_embc_phase1/`.
+
+## Fase 2 en Mesogip — confirmación en 3 sujetos nuevos y movimientos OOD (27 de noviembre de 2026)
+
+Ejecutado en `ensta-l40s01` (job Slurm `20349`, 2 h 29 min, `ExitCode 0:0`) con el contenedor
+oficial de MUniverse NeuroMotion (`docker://pranavm19/muniverse:neuromotion` vía Singularity en
+`/tmp` local del nodo, eliminado al concluir). Se generaron tres sujetos nuevos con las semillas
+reservadas en Fase 0 (`210601`, `210602`, `210603`), 10×10 canales FDSI, 2 048 Hz, 5 s de
+calibración isométrica + 80 s de movimiento + 5 s de reposo, a 20 y 30 dB SNR (24 registros,
+162 instancias calibradas por CBSS con RoA≥0,9, 118 clústeres). Todos los modelos se evaluaron
+**congelados**, sin reentrenar ni reajustar umbrales:
+
+| Subconjunto (instancias) | Pareto | L2 | P3 completo | **P3 sin memoria (`p3_nomem`)** | `P3 nomem − Pareto` (IC 95 %) | `P3 nomem − P3 full` (IC 95 %) |
+|---|---:|---:|---:|---:|---|---|
+| Global (n=162) | 60,69 % | 69,92 % | 71,16 % | **72,97 %** | **+12,28 [+10,01; +14,71]** | **+1,81 [+1,25; +2,46]** |
+| Emparejadas (`ramp10s`/`5s`, n=80) | 65,29 % | 72,54 % | 74,84 % | **76,47 %** | **+11,18 [+8,05; +14,45]** | **+1,63 [+1,06; +2,36]** |
+| OOD `ramp3s` (13,3°/s, n=40) | 57,88 % | 70,76 % | 70,51 % | **70,99 %** | **+13,12 [+8,41; +17,38]** | +0,49 [+0,00; +0,89] |
+| OOD `sinusoid-0.1Hz` (n=42) | 54,59 % | 64,15 % | 64,77 % | **68,17 %** | **+13,58 [+8,29; +18,92]** | **+3,40 [+1,64; +5,35]** |
+
+- Unidades perdidas globales: Pareto **56,0** → L2 24,3 → P3 completo 20,7 → **P3 sin memoria 15,3** (−73 %).
+- Unidades con RoA ≥90 % globales: Pareto **22,84 %** → **P3 sin memoria 40,95 %** (+18,11 pp [+11,95; +24,89]).
+- En `sinusoid-0.1Hz` y `ramp5s`, quitar la memoria de calibración L2 aporta un salto neto grande
+  (+3,40 pp y +2,46 pp) porque evita arrastrar los filtros adaptados hacia el estado estático de 0°
+  al pasar por cada valle del ciclo. En `ramp3s` (1,67× más rápido que entrenamiento), P3 y L2
+  empataron (~71 %, +13 pp sobre Pareto), señalando el límite de extrapolación en velocidad del GRU.
+
+Artefacto: `docs/benchmarks/pareto_mc_embc_phase2/analysis.json`.
