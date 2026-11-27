@@ -1,0 +1,33 @@
+{
+  "probed_at_utc": "2026-11-27T14:36:28.531135+00:00",
+  "platform": "Linux-6.8.0-41-generic-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "python": "3.12.3",
+  "torch": "2.7.0+cu126",
+  "cuda_available": true,
+  "cuda_device": "NVIDIA L40S",
+  "cpu_count": 128,
+  "slurm_job_id": "20348",
+  "slurm_partition": "ENSTA-l40s",
+  "slurm_tmpdir": null,
+  "disk_free_gb": 21885.09,
+  "tools": {
+    "apptainer": {
+      "available": false
+    },
+    "singularity": {
+      "available": true,
+      "stdout": "singularity-ce version 3.11.0-jammy",
+      "stderr": ""
+    },
+    "docker": {
+      "available": false
+    },
+    "nvidia_smi": {
+      "available": true,
+      "stdout": "NVIDIA L40S, 46068 MiB, 560.35.03",
+      "stderr": ""
+    }
+  },
+  "neuromotion_container_runtime_available": true
+}
